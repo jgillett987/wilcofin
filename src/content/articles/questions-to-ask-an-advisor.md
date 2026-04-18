@@ -2,11 +2,10 @@
 title: "What to Ask an Advisor Before You Hire Them"
 description: "Ten direct questions that reveal more about a prospective financial advisor than any marketing page. And what the honest answers sound like."
 pubDate: 2025-10-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Working With Advisors", "Fiduciary"]
-heroImage: /images/jenny-lake-rocks.jpg
+heroImage: "/images/Skeptical.jpg"
 ---
-
 Most advisor-shopping conversations are too polite. The prospect is nervous, the advisor is selling, and the questions that would actually reveal whether this is the right relationship never get asked. Here are ten direct ones — and what an honest answer sounds like.
 
 ## 1. Are you a fiduciary at all times?
