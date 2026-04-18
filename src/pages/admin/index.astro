@@ -236,7 +236,6 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
           </div>
           <div class="right">
             <div id="slugRow" class="hidden"><input type="text" id="fSlug" pattern="[a-z0-9-]+" placeholder="article-slug" style="padding:8px 10px;border:1px solid #d7dce7;border-radius:6px" /></div>
-            <button type="button" class="btn btn-secondary" id="downloadBtn" title="Download the article as a .md file (fallback if GitHub save fails)">⬇ Download .md</button>
             <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
             <button type="submit" class="btn" id="saveBtn">Save &amp; Deploy</button>
           </div>
@@ -359,7 +358,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
       function b64(str) { return btoa(unescape(encodeURIComponent(str))); }
 
       // Update body-floated photo + store path
-      function setCurrentImage(path) {
+      function setCurrentImage(path, userAction) {
         $('fHeroImage').value = path || '';
         const img = $('aeHeroImage');
         const wrap = $('aeImgWrap');
@@ -372,9 +371,11 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
           wrap.classList.add('empty');
           wrap.innerHTML = '🖼<br />Click to select an image';
         }
+        if (userAction) markDirty();
       }
-      function setCurrentVideo(path) {
+      function setCurrentVideo(path, userAction) {
         $('fHeroVideo').value = path || '';
+        if (userAction) markDirty();
         const vid = $('aeHeroVideo');
         const note = $('aeVideoNote');
         const displayPath = path || (editing && editing.autoVideo) || (composing && CONFIG.videos[0] ? '/videos/' + CONFIG.videos[0] : '');
@@ -416,7 +417,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
           const none = document.createElement('div');
           none.className = 'modal-tile none' + (!current ? ' selected' : '');
           none.innerHTML = '<div class="media">None — no video</div><div class="caption">(no video)</div>';
-          none.addEventListener('click', () => { setCurrentVideo(''); closeModal(); });
+          none.addEventListener('click', () => { setCurrentVideo('', true); closeModal(); });
           grid.appendChild(none);
         }
 
@@ -430,7 +431,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
             tile.innerHTML = '<video class="media" src="' + fullPath + '" muted playsinline preload="metadata"></video><div class="caption">' + f + '</div>';
           }
           tile.addEventListener('click', () => {
-            if (isImage) setCurrentImage(fullPath); else setCurrentVideo(fullPath);
+            if (isImage) setCurrentImage(fullPath, true); else setCurrentVideo(fullPath, true);
             closeModal();
           });
           grid.appendChild(tile);
@@ -455,6 +456,8 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
 
       let editing = null;
       let composing = false;
+      let dirty = false;
+      function markDirty() { dirty = true; }
 
       function slugify(s) {
         return String(s || '').toLowerCase()
@@ -477,6 +480,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
         if (!a) return;
         editing = a;
         composing = false;
+        dirty = false;
         $('saveBtn').textContent = 'Save & Deploy';
         $('slugRow').classList.add('hidden');
         $('editSlug').value = slug;
@@ -503,6 +507,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
       function openCompose() {
         editing = null;
         composing = true;
+        dirty = false;
         $('saveBtn').textContent = 'Create & Deploy';
         $('slugRow').classList.remove('hidden');
         $('editSlug').value = '';
@@ -529,10 +534,12 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
       }
 
       // Contenteditable → hidden input sync (title/desc are plain text)
-      function syncTitle() { $('fTitle').value = $('aeTitle').textContent.trim(); $('aeCrumbTitle').textContent = $('fTitle').value; }
-      function syncDesc() { $('fDesc').value = $('aeDesc').textContent.trim(); }
+      function syncTitle() { $('fTitle').value = $('aeTitle').textContent.trim(); $('aeCrumbTitle').textContent = $('fTitle').value; markDirty(); }
+      function syncDesc() { $('fDesc').value = $('aeDesc').textContent.trim(); markDirty(); }
       $('aeTitle').addEventListener('input', syncTitle);
       $('aeDesc').addEventListener('input', syncDesc);
+      // Mark dirty on any secondary-field edit
+      ['fDate','fAuthor','fTags'].forEach((id) => { const el = $(id); if (el) el.addEventListener('input', markDirty); });
       $('aeEyebrow').addEventListener('input', () => {
         // First tag follows the eyebrow
         const current = $('fTags').value.split(',').map((t) => t.trim()).filter(Boolean);
@@ -676,6 +683,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
       // Keep the hidden markdown field in sync on every body edit
       $('aeBody').addEventListener('input', () => {
         $('fBody').value = htmlToMarkdown($('aeBody'));
+        markDirty();
       });
 
       // Auto-fill slug from title while composing (until user edits slug manually)
@@ -812,10 +820,10 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
             const txt = (await putRes.text()).slice(0, 400);
             console.error('[admin] GitHub PUT rejected', putRes.status, txt);
             if (putRes.status === 403 || /not accessible by personal access token/i.test(txt)) {
-              throw new Error('GitHub rejected the save (403). Your Personal Access Token does not have write access to this repo. Fix: go to github.com/settings/personal-access-tokens, edit the token, set "Repository permissions → Contents" to "Read and write" for jgillett987/wilcofin, then Sign Out of this admin and paste the new token. Your edits are still in this form — use "⬇ Download .md" to save a copy meanwhile.');
+              throw new Error('GitHub rejected the save (403). Your Personal Access Token does not have write access to this repo. Fix: go to github.com/settings/personal-access-tokens, edit the token, set "Repository permissions → Contents" to "Read and write" for jgillett987/wilcofin, then Sign Out of this admin and paste the new token.');
             }
             if (putRes.status === 409) {
-              throw new Error('GitHub rejected the save (409 SHA mismatch). The file changed on the server since this page loaded. Reload the admin page to pick up the latest version, then try again. Your edits are still in this form — use "⬇ Download .md" to save a copy meanwhile.');
+              throw new Error('GitHub rejected the save (409 SHA mismatch). The file changed on the server since this page loaded. Reload the admin page to pick up the latest version, then try again.');
             }
             throw new Error('PUT failed: ' + putRes.status + ' ' + txt);
           }
@@ -830,6 +838,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
           } else {
             Object.assign(editing, data, { body: $('fBody').value, heroVideo: heroVideo });
           }
+          dirty = false;
 
           // Stay on the edit view and show a clear, verifiable success state.
           const commitBit = commitUrl
@@ -937,7 +946,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
       });
       $('aeImgWrap').addEventListener('click', () => openModal('image'));
       $('heroVideoChangeBtn').addEventListener('click', (e) => { e.preventDefault(); openModal('video'); });
-      $('heroVideoClearBtn').addEventListener('click', (e) => { e.preventDefault(); setCurrentVideo(''); });
+      $('heroVideoClearBtn').addEventListener('click', (e) => { e.preventDefault(); setCurrentVideo('', true); });
 
       $('modalCloseBtn').addEventListener('click', closeModal);
       $('mediaModal').addEventListener('click', (e) => { if (e.target.id === 'mediaModal') closeModal(); });
@@ -950,7 +959,13 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
         if (idx < 0) return;
         const target = order[idx + delta];
         if (!target) return;
-        // Save current edits (best-effort) before jumping, so work isn't lost
+        // If there are no unsaved edits, jump instantly — no network trip.
+        if (!dirty) {
+          pushEditState(target);
+          openEdit(target);
+          return;
+        }
+        // Otherwise save first so work isn't lost
         saveArticle().finally(() => {
           pushEditState(target);
           openEdit(target);
@@ -977,33 +992,6 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
         }
       });
 
-      // Download .md fallback — always works, bypasses GitHub entirely
-      $('downloadBtn').addEventListener('click', () => {
-        syncTitle(); syncDesc();
-        $('fBody').value = htmlToMarkdown($('aeBody'));
-        const slug = (editing && editing.slug) || slugify($('fSlug') && $('fSlug').value || $('fTitle').value) || 'article';
-        const data = {
-          title: $('fTitle').value,
-          description: $('fDesc').value,
-          pubDate: $('fDate').value || new Date().toISOString().slice(0,10),
-          author: $('fAuthor').value || 'Wilco Financial',
-          tags: $('fTags').value.split(',').map((t) => t.trim()).filter(Boolean),
-          heroImage: $('fHeroImage').value || '',
-        };
-        const heroVideo = $('fHeroVideo').value;
-        if (heroVideo) data.heroVideo = heroVideo;
-        const out = stringifyFrontmatter(data, '\n' + $('fBody').value);
-        const blob = new Blob([out], { type: 'text/markdown;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = slug + '.md';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        flash($('editFlash'), 'Downloaded ' + slug + '.md — drop it into src/content/articles/ and commit.', 'ok');
-      });
 
       // Initial view — restore edit deep-link if present
       const hashMatch = location.hash.match(/^#edit\/([\w-]+|__new__)$/);
