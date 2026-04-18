@@ -3,7 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
 import { render } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
-import { SITE } from '../../consts';
+import { SITE, CONTACT } from '../../consts';
+
+const currentYear = new Date().getFullYear();
 import { getPublishedArticles } from '../../lib/articles';
 
 // Pool of hero videos — one is picked per article based on a hash of the slug,
@@ -142,6 +144,11 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
         <p class="print-desc">{article.data.description}</p>
         <div class="print-byline">{formattedDate} · {article.data.author}</div>
       </div>
+      {article.data.heroImage && (
+        <div class="print-only print-hero" aria-hidden="true">
+          <img src={article.data.heroImage} alt="" class="print-hero-img" />
+        </div>
+      )}
 
       <article class="article-body prose">
         {article.data.heroImage && (
@@ -150,15 +157,58 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
         <Content />
       </article>
 
+      {/* Print-only CTA card — encourages reach-out, just before footer */}
+      <div class="print-only print-cta" aria-hidden="true">
+        <div class="print-cta-eyebrow">Have questions about what you just read?</div>
+        <div class="print-cta-title">Let's have a short conversation.</div>
+        <div class="print-cta-body">
+          No pressure, no sales pitch. We offer a complimentary initial consultation
+          to any prospective client — a chance to talk through your situation and
+          decide together whether we're a fit.
+        </div>
+        <div class="print-cta-contact">
+          <div class="print-cta-row"><span class="print-cta-label">Schedule:</span> {SITE.url}/contact</div>
+          <div class="print-cta-row"><span class="print-cta-label">Phone:</span> {CONTACT.phone}</div>
+          <div class="print-cta-row"><span class="print-cta-label">Email:</span> {CONTACT.email}</div>
+          <div class="print-cta-row"><span class="print-cta-label">Mail:</span> {CONTACT.addressLine1}, {CONTACT.addressLine2} · {CONTACT.city}, {CONTACT.state} {CONTACT.zip}</div>
+        </div>
+      </div>
+
       {/* Print-only footer — last page of PDF */}
       <div class="print-only print-footer" aria-hidden="true">
-        <div class="print-footer-brand">
-          <strong>Wilco Financial, LLC</strong><br />
-          6688 Nolensville Rd, Ste 108 #3029 · Brentwood, TN 37027<br />
-          (615) 237-8750 · info@wilcofin.com · wilcofin.com
+        <div class="print-footer-top">
+          <div class="print-footer-brand">
+            <img src="/logo-color.png" alt="" class="print-footer-logo" />
+            <div>
+              <strong>{SITE.legalName}</strong><br />
+              Registered Investment Adviser · Tennessee<br />
+              Assets custodied at Charles Schwab
+            </div>
+          </div>
+          <div class="print-footer-contact">
+            <strong>Contact</strong><br />
+            {CONTACT.phone}<br />
+            {CONTACT.email}<br />
+            {SITE.url.replace(/^https?:\/\//, '')}
+          </div>
         </div>
         <div class="print-disclaimer">
-          Wilco Financial, LLC is a state-registered investment adviser and fiduciary. This article is general educational content, not personalized investment, tax, or legal advice. Consult a qualified professional for advice about your specific situation.
+          <strong>Important disclosures.</strong> This article is general educational
+          information prepared by {SITE.legalName} and does not constitute personalized
+          investment, tax, legal, or accounting advice. No information contained herein
+          should be construed as a recommendation to buy or sell any security or as a
+          solicitation to engage {SITE.legalName} for advisory services. Investment
+          advice is provided only after entering into a written advisory agreement.
+          Past performance does not guarantee future results. Investing involves risk,
+          including the possible loss of principal. Information is believed reliable but
+          is not guaranteed and is subject to change. Tax laws, IRS limits, and regulations
+          referenced in this article are current as of the date shown and may change.
+          Consult a qualified professional regarding your specific circumstances.
+          Verify {SITE.legalName}'s registration status at adviserinfo.sec.gov.
+        </div>
+        <div class="print-copyright">
+          © {currentYear} {SITE.legalName}. All rights reserved. · Originally published
+          at {SITE.url}/articles/{article.id}
         </div>
       </div>
     </div>

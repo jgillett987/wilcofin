@@ -794,7 +794,13 @@ img { max-width: 100%; height: auto; display: block; }
   html, body { background: #fff !important; color: #1a2238 !important; }
   body { font: 10.5pt/1.55 Georgia, 'Times New Roman', serif; }
   a { color: #011342 !important; text-decoration: none; }
-  img { max-width: 100% !important; height: auto !important; }
+  /* Scoped img reset — do NOT affect the branded print elements, which
+     rely on their own explicit sizing. Without this :not(), the logo
+     and hero banner blew out to full page width. */
+  img:not(.print-logo):not(.print-hero-img):not(.print-footer-logo) {
+    max-width: 100% !important;
+    height: auto !important;
+  }
 
   /* Hide all site chrome for clean PDF output */
   .nav, .skip-link, .breadcrumb, .article-top-nav,
@@ -829,9 +835,27 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 18pt;
   }
   .print-logo {
-    height: 38pt;
-    width: auto;
-    display: block;
+    height: 28pt !important;
+    width: auto !important;
+    max-width: 180pt !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+  /* Hero banner — the article's photo, rendered as a clean landscape
+     strip between the title block and the body. Gives the PDF a visual
+     anchor without a huge header image. */
+  .print-hero {
+    margin: 0 0 16pt;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+  .print-hero-img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 160pt !important;
+    object-fit: cover !important;
+    border-radius: 4pt;
   }
   .print-header-right {
     text-align: right;
@@ -935,30 +959,124 @@ img { max-width: 100%; height: auto; display: block; }
     font-style: italic;
   }
 
+  /* Call-to-action card — sits above the footer, formal tone, clear next-step */
+  .print-cta {
+    display: block !important;
+    margin: 20pt 0 14pt;
+    padding: 14pt 16pt;
+    background: #f7f9fc;
+    border-left: 3pt solid #81c460;
+    page-break-inside: avoid;
+  }
+  .print-cta-eyebrow {
+    font-family: -apple-system, 'Segoe UI', sans-serif;
+    color: #6aad4a;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4pt;
+  }
+  .print-cta-title {
+    font-family: Georgia, serif;
+    color: #011342 !important;
+    font-size: 13pt;
+    font-weight: 700;
+    margin-bottom: 6pt;
+  }
+  .print-cta-body {
+    font-family: -apple-system, 'Segoe UI', sans-serif;
+    color: #1a2238;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    margin-bottom: 8pt;
+  }
+  .print-cta-contact {
+    font-family: -apple-system, 'Segoe UI', sans-serif;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #011342;
+  }
+  .print-cta-row { margin-bottom: 1pt; }
+  .print-cta-label {
+    display: inline-block;
+    min-width: 52pt;
+    color: #5a6582;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+  }
+
   .print-footer {
     display: block !important;
-    margin-top: 24pt;
+    margin-top: 14pt;
     padding-top: 12pt;
     border-top: 2px solid #81c460;
     page-break-inside: avoid;
   }
+  .print-footer-top {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20pt;
+    margin-bottom: 10pt;
+  }
   .print-footer-brand {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10pt;
     font-family: Georgia, serif;
-    font-size: 10pt;
-    color: #011342;
-    line-height: 1.5;
-    margin-bottom: 8pt;
+    font-size: 9pt;
+    color: #1a2238;
+    line-height: 1.45;
+    flex: 1;
   }
   .print-footer-brand strong {
+    color: #011342 !important;
+    font-size: 10.5pt;
+  }
+  .print-footer-logo {
+    height: 22pt !important;
+    width: auto !important;
+    max-width: 110pt !important;
+    display: block !important;
+    flex-shrink: 0;
+  }
+  .print-footer-contact {
+    font-family: Georgia, serif;
+    font-size: 9pt;
     color: #011342;
-    font-size: 11pt;
+    line-height: 1.5;
+    text-align: right;
+    min-width: 140pt;
+  }
+  .print-footer-contact strong {
+    color: #011342 !important;
+    font-size: 9.5pt;
+    display: block;
+    margin-bottom: 2pt;
   }
   .print-disclaimer {
     font-family: -apple-system, 'Segoe UI', sans-serif;
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #5a6582;
     line-height: 1.45;
-    font-style: italic;
+    padding: 8pt 0;
+    border-top: 1px solid #d7dce7;
+    border-bottom: 1px solid #d7dce7;
+  }
+  .print-disclaimer strong {
+    color: #011342 !important;
+    font-size: 8pt;
+  }
+  .print-copyright {
+    font-family: -apple-system, 'Segoe UI', sans-serif;
+    font-size: 7.5pt;
+    color: #5a6582;
+    text-align: center;
+    margin-top: 8pt;
+    letter-spacing: 0.02em;
   }
 }
 
