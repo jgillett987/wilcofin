@@ -86,6 +86,9 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
     th,td{padding:10px 14px;text-align:left;border-bottom:1px solid #e5e9f2;vertical-align:middle;overflow:hidden}
     th{background:#eef2f8;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
     tr:last-child td{border-bottom:none}
+    tbody tr[data-edit]{cursor:pointer;transition:background .12s}
+    tbody tr[data-edit]:hover{background:#f3f7fd}
+    tbody tr[data-edit]:hover .btn{background:#6aad4a}
     td.c-thumb{width:88px}
     td.c-date{width:130px;color:#5a6582;font-size:.85rem}
     td.c-act{width:90px;text-align:right}
@@ -205,7 +208,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
         <thead><tr><th></th><th>Title</th><th>Date</th><th></th></tr></thead>
         <tbody>
           {articles.map((a) => (
-            <tr>
+            <tr data-edit={a.slug} title="Click to edit">
               <td class="c-thumb">{a.heroImage && <img class="thumb" src={a.heroImage} alt="" loading="lazy" />}</td>
               <td><strong>{a.title}</strong><br /><span style="color:#5a6582;font-size:.85rem">{a.slug}</span></td>
               <td class="c-date">{a.pubDate}</td>
@@ -801,9 +804,14 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
         }
       });
 
-      // Wire up Edit buttons in the server-rendered list
+      // Row-level + button-level Edit handlers. Click anywhere on the row
+      // to open the article; the green Edit button still works (and its
+      // click is stopped from bubbling so it doesn't fire twice).
+      document.querySelectorAll('tr[data-edit]').forEach((tr) => {
+        tr.addEventListener('click', () => openEdit(tr.getAttribute('data-edit')));
+      });
       document.querySelectorAll('button[data-edit]').forEach((btn) => {
-        btn.addEventListener('click', () => openEdit(btn.getAttribute('data-edit')));
+        btn.addEventListener('click', (e) => { e.stopPropagation(); openEdit(btn.getAttribute('data-edit')); });
       });
       $('composeBtn').addEventListener('click', openCompose);
 
