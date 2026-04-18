@@ -2,11 +2,10 @@
 title: "The Roth Conversion Decade: Why the Years Between Retirement and RMDs Matter Most"
 description: "The years between retirement and required minimum distributions are often the highest-leverage tax-planning window of a lifetime. Here's how to think about Roth conversions during it."
 pubDate: 2026-03-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Retirement", "Tax Planning", "Roth"]
-heroImage: /images/stone-steps.jpg
+heroImage: "/images/tax-photo.jpg"
 ---
-
 For a large portion of retirees, the decade between retirement and the start of required minimum distributions (RMDs) is the most valuable tax-planning window of their lives. Income drops. Taxable brackets open up. And the choices made during that window — especially around Roth conversions — ripple through the rest of retirement and into the next generation.
 
 This is a framework for thinking about it. Every situation is different, and the actual execution requires modeling with your specific numbers.
