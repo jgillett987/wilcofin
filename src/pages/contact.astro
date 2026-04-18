@@ -36,27 +36,21 @@ const contactSchema = {
         </p>
       </div>
       <div>
-        <form class="card" action={`mailto:${CONTACT.email}`} method="post" enctype="text/plain">
-          <h3 style="margin-top:0;">Send us a message</h3>
-          <p class="muted" style="font-size:0.9rem;">This form opens your email client. Prefer something else? Email us directly at <a href={CONTACT.emailHref}>{CONTACT.email}</a> or <a href={CONTACT.calendlyUrl} target="_blank" rel="noopener">schedule a meeting</a>.</p>
-          <label style="display:block; margin-bottom:12px;">
-            <span style="display:block; font-weight:600; margin-bottom:4px;">Name</span>
-            <input type="text" name="name" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
-          </label>
-          <label style="display:block; margin-bottom:12px;">
-            <span style="display:block; font-weight:600; margin-bottom:4px;">Email</span>
-            <input type="email" name="email" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
-          </label>
-          <label style="display:block; margin-bottom:12px;">
-            <span style="display:block; font-weight:600; margin-bottom:4px;">Phone (optional)</span>
-            <input type="tel" name="phone" style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
-          </label>
-          <label style="display:block; margin-bottom:16px;">
-            <span style="display:block; font-weight:600; margin-bottom:4px;">How can we help?</span>
-            <textarea name="message" rows="5" style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px; font-family:inherit;"></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+        <div class="card">
+          <h3 style="margin-top:0;">What happens when you reach out</h3>
+          <ol style="padding-left:1.2em; line-height:1.7; margin-bottom:0;">
+            <li style="margin-bottom:10px;"><strong>A short intro call.</strong> 15–30 minutes by phone or video. We talk about what you're trying to accomplish and what's been getting in the way. No pitch, no paperwork.</li>
+            <li style="margin-bottom:10px;"><strong>A written proposal, if it's a fit.</strong> If we think we can help, you get a plain-language summary of what we'd do, what you'd pay, and how we'd work together.</li>
+            <li style="margin-bottom:10px;"><strong>You decide — no pressure.</strong> Take as long as you need. If it's not the right fit on either side, we'll say so and point you toward something that is.</li>
+          </ol>
+          <hr style="border:none; border-top:1px solid var(--border); margin:20px 0;" />
+          <p style="margin:0; font-size:0.95rem; color:var(--muted);">
+            Our fee is a flat <strong style="color:var(--navy);">{SITE.fee}/year</strong> of assets under management
+            (<strong style="color:var(--navy);">{SITE.swaEffectiveFee}</strong> for Southwest Airlines employees and pilots).
+            Client assets are custodied independently at <strong style="color:var(--navy);">Charles Schwab</strong>,
+            in accounts titled in the client's name.
+          </p>
+        </div>
       </div>
     </div>
   </section>
