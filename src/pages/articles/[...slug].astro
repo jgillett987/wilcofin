@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTA from '../../components/CTA.astro';
 import { render } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 import { SITE, CONTACT } from '../../consts';
@@ -244,11 +243,6 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
       </div>
     </nav>
   )}
-
-  <CTA
-    title="Have questions about what you just read?"
-    subtitle="Let's have a short conversation — no pressure, no sales pitch."
-  />
 
   <script is:inline define:vars={{ articleTitle: article.data.title }}>
     (function () {
