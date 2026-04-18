@@ -28,7 +28,7 @@ export const CONTACT = {
   country: 'US',
   region: 'Williamson County',
   calendlyUrl: 'https://calendly.com/wilcofinancial/30min',
-  hours: 'Mon–Fri 9:00am – 5:00pm CT',
+  hours: 'Mon–Fri 8:00am – 5:00pm CT',
 } as const;
 
 export const SOCIAL = {
