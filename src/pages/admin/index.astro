@@ -128,11 +128,16 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     .page-hero [contenteditable=true]:hover,.page-hero [contenteditable=true]:focus{background:rgba(255,255,255,0.08)}
     [contenteditable=true][data-placeholder]:empty::before{content:attr(data-placeholder);color:rgba(180,180,180,0.6);font-style:italic}
     .page-hero [contenteditable=true][data-placeholder]:empty::before{color:rgba(255,255,255,0.45)}
-    /* Click-to-change hotspots on the video + image */
-    .ae-video-click{position:absolute;inset:0;z-index:3;cursor:pointer}
-    .ae-video-click::after{content:'🎬  Click video to change';position:absolute;top:12px;right:12px;background:rgba(1,19,66,0.75);color:#fff;padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:600;opacity:0;transition:opacity .15s;pointer-events:none}
-    .ae-video-click:hover::after{opacity:1}
-    .ae-hero-bg{cursor:pointer}
+    /* Click-to-change hotspots on the video + image. The hero itself is the
+       click target; the .container raises the title/desc above it so text
+       editing doesn't trigger the video picker. */
+    .page-hero{cursor:pointer}
+    .page-hero .container{position:relative;z-index:4;cursor:auto}
+    .page-hero .container *{cursor:auto}
+    .page-hero [contenteditable=true]{cursor:text}
+    .page-hero a{cursor:pointer}
+    .ae-video-hint{position:absolute;top:16px;right:16px;background:rgba(1,19,66,0.75);color:#fff;padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:600;opacity:0;transition:opacity .15s;pointer-events:none;z-index:5}
+    .page-hero:hover .ae-video-hint{opacity:1}
     .article-hero-float{cursor:pointer;position:relative}
     .article-hero-float:hover{outline:3px solid #81c460;outline-offset:3px}
     .ae-img-hint{position:absolute;top:8px;right:8px;background:rgba(1,19,66,0.75);color:#fff;padding:5px 10px;border-radius:999px;font-size:.75rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .15s;z-index:2}
@@ -233,9 +238,9 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         <div id="editFlash" style="max-width:1200px;margin:12px auto 0;padding:0 24px"></div>
 
         <!-- HERO: mirrors src/pages/articles/[...slug].astro -->
-        <section class="page-hero page-hero-with-video-bg">
+        <section class="page-hero page-hero-with-video-bg" id="aeHero" title="Click the video background to change it">
           <video id="aeHeroVideo" class="page-hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-          <div class="ae-video-click" id="aeVideoClick" title="Click to change video"></div>
+          <span class="ae-video-hint">🎬 Click to change video</span>
           <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
               <a href="#" onclick="return false">Home</a> / <a href="#" onclick="return false">Articles</a> / <span id="aeCrumbTitle"></span>
@@ -381,10 +386,15 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         }
       }
 
-      // Full-screen picker modal
+      // Full-screen picker modal. Opening the modal pushes a history entry
+      // so the browser Back button closes the modal (rather than firing the
+      // edit-view popstate save).
       let modalMode = null; // 'image' | 'video'
       function openModal(mode) {
         modalMode = mode;
+        suppressPopstate = true;
+        try { history.pushState({ view: 'modal', mode }, '', location.hash); }
+        finally { setTimeout(() => { suppressPopstate = false; }, 0); }
         const isImage = mode === 'image';
         $('modalTitle').textContent = isImage ? 'Select image' : 'Select video';
         const files = isImage ? CONFIG.images : CONFIG.videos;
@@ -420,10 +430,18 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         $('mediaModal').classList.remove('hidden');
         document.body.style.overflow = 'hidden';
       }
-      function closeModal() {
+      function closeModal(fromPopstate) {
         $('mediaModal').classList.add('hidden');
         document.body.style.overflow = '';
         modalMode = null;
+        // If we opened with a pushState, pop it when closing by UI so the
+        // browser history stays clean. If closeModal was triggered by a
+        // popstate (user hit Back), skip — the pop already happened.
+        if (!fromPopstate) {
+          suppressPopstate = true;
+          try { history.back(); }
+          finally { setTimeout(() => { suppressPopstate = false; }, 20); }
+        }
       }
 
       let editing = null;
@@ -747,23 +765,27 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         finally { setTimeout(() => { suppressPopstate = false; }, 0); }
       }
       function returnToList() {
-        // Clear any edit hash so back from list doesn't bounce into edit
         suppressPopstate = true;
         try {
-          if (location.hash) history.replaceState({ view: 'list' }, '', location.pathname + location.search);
+          // Replace whatever edit / modal hash is in the URL with the clean
+          // list URL, so subsequent Back presses don't bounce back into edit.
+          history.replaceState({ view: 'list' }, '', location.pathname + location.search);
         } finally { setTimeout(() => { suppressPopstate = false; }, 0); }
         show('list');
+        window.scrollTo(0, 0);
       }
       window.addEventListener('popstate', async () => {
         if (suppressPopstate) return;
+        // If a picker is open, the Back just closes it.
+        if (modalMode) { closeModal(true); return; }
         if (currentView === 'edit') {
-          // Browser Back from edit → save and return to list
+          // Browser Back from edit → try to save, but always return to the
+          // list. If the save fails, carry the error into the list flash so
+          // the user can see it and isn't trapped.
           const ok = await saveArticle();
-          if (!ok) {
-            // Save failed — re-push edit state so user stays on the article with the error flash
-            const slug = editing ? editing.slug : '__new__';
-            pushEditState(slug);
-          }
+          const errHtml = ok ? '' : $('editFlash').innerHTML;
+          returnToList();
+          if (errHtml) $('flash').innerHTML = errHtml;
         }
       });
 
@@ -783,9 +805,17 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       });
       $('cancelBtn').addEventListener('click', () => returnToList());
       $('backBtn').addEventListener('click', async () => {
-        // "Back to list" saves first (like browser Back does)
+        // "Back to list" tries to save, but always returns. If the save
+        // fails (e.g. GitHub PAT 403), show the error on the list so the
+        // user isn't trapped on the edit view.
         const ok = await saveArticle();
-        if (ok) returnToList();
+        if (!ok) {
+          const errHtml = $('editFlash').innerHTML;
+          returnToList();
+          $('flash').innerHTML = errHtml || '<div class="flash err">Save failed — your changes were not written.</div>';
+        } else {
+          returnToList();
+        }
       });
       $('editForm').addEventListener('submit', saveArticle);
       $('signOutBtn').addEventListener('click', () => {
@@ -793,12 +823,15 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         show('gate');
       });
 
-      // Click-to-change: video (anywhere over the hero) and image (the floated photo)
-      $('aeVideoClick').addEventListener('click', () => openModal('video'));
-      $('aeImgWrap').addEventListener('click', (e) => {
-        // Avoid swallowing clicks on the hint text; any click in the wrap opens picker
-        openModal('image');
+      // Click-to-change: video fires only when the click target is the hero
+      // background itself — not the title/desc/breadcrumb/eyebrow/tag links
+      // inside .container. Those remain editable / navigable.
+      $('aeHero').addEventListener('click', (e) => {
+        if (e.target.closest('.container')) return; // editing text
+        if (e.target.closest('a')) return;
+        openModal('video');
       });
+      $('aeImgWrap').addEventListener('click', () => openModal('image'));
       $('heroVideoChangeBtn').addEventListener('click', (e) => { e.preventDefault(); openModal('video'); });
       $('heroVideoClearBtn').addEventListener('click', (e) => { e.preventDefault(); setCurrentVideo(''); });
 
