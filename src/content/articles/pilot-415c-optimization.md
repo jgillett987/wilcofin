@@ -2,11 +2,10 @@
 title: "Pilot 415(c) Limit Optimization: Maximizing the After-Tax Bucket"
 description: "The IRS 415(c) limit caps total annual 401(k) contributions at $70K (2025). For high-earning SWA pilots with after-tax contribution access, structuring around this limit is one of the highest-leverage moves available."
 pubDate: 2026-11-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines", "Tax Planning", "Roth"]
-heroImage: /images/IMG_9483.JPEG
+heroImage: "/images/IMG_9483.JPEG"
 ---
-
 For high-earning Southwest Airlines pilots, one of the most powerful — and least understood — wealth-building features of the 401(k) is the **IRS Section 415(c) limit**. It caps total annual contributions to a single 401(k) plan at $70,000 in 2025 ($77,500 with the standard age 50+ catch-up, or higher with the new SECURE 2.0 super-catch-up at age 60–63).
 
 For pilots with the cash flow to fund up to that limit and a plan that allows after-tax contributions with in-plan Roth conversions, the after-tax bucket adds tens of thousands per year of new Roth space. This is the math worth knowing.
@@ -70,12 +69,12 @@ For a high-earning pilot maxing 415(c) optimization:
 
 **Mid-year:**
 
-4. Monitor remaining 415(c) headroom as profit-sharing contributions arrive (typically front-loaded in some plans, distributed throughout in others).
-5. Adjust after-tax contribution rate if approaching the ceiling.
+1. Monitor remaining 415(c) headroom as profit-sharing contributions arrive (typically front-loaded in some plans, distributed throughout in others).
+2. Adjust after-tax contribution rate if approaching the ceiling.
 
 **End of year:**
 
-6. Verify all conversions completed cleanly. Any after-tax balance still in the plan at year-end should be flagged for next-year follow-up.
+1. Verify all conversions completed cleanly. Any after-tax balance still in the plan at year-end should be flagged for next-year follow-up.
 
 ## The earnings-on-after-tax wrinkle
 
