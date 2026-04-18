@@ -53,6 +53,10 @@ const contactSchema = {
           {/* Subject line on the email you receive */}
           <input type="hidden" name="_subject" value="New contact-form message from wilcofin.com" />
 
+          {/* After submit, bounce back to our branded thanks page instead
+              of the generic Formspree success screen. */}
+          <input type="hidden" name="_next" value="https://www.wilcofin.com/contact/thanks" />
+
           <label style="display:block; margin-bottom:12px;">
             <span style="display:block; font-weight:600; margin-bottom:4px;">Name</span>
             <input type="text" name="name" autocomplete="name" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
