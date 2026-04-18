@@ -98,22 +98,34 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
 
   <section class="section">
     <div class="article-container">
-      <p class="article-meta" style="font-size:0.9rem; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; color:var(--muted); margin-bottom:8px;">
-        {formattedDate} · {article.data.author}
-      </p>
-      {article.data.tags.length > 0 && (
-        <p style="margin-bottom:28px; font-size:0.9rem;">
-          {article.data.tags.map((t, i) => {
-            const slug = t.toLowerCase().replace(/\s+/g, '-');
-            return (
-              <>
-                {i > 0 && ' · '}
-                <a href={`/articles/tag/${slug}`}>{t}</a>
-              </>
-            );
-          })}
-        </p>
-      )}
+      <div class="article-meta-row">
+        <div>
+          <p class="article-meta" style="font-size:0.9rem; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; color:var(--muted); margin-bottom:8px;">
+            {formattedDate} · {article.data.author}
+          </p>
+          {article.data.tags.length > 0 && (
+            <p style="margin-bottom:0; font-size:0.9rem;">
+              {article.data.tags.map((t, i) => {
+                const slug = t.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <>
+                    {i > 0 && ' · '}
+                    <a href={`/articles/tag/${slug}`}>{t}</a>
+                  </>
+                );
+              })}
+            </p>
+          )}
+        </div>
+        <div class="article-top-nav">
+          {prev && (
+            <a href={prev.href} class="article-top-nav-btn" data-prev-next="prev" aria-label={`Older: ${prev.label}`} title={`← ${prev.label}`}>← Prev</a>
+          )}
+          {next && (
+            <a href={next.href} class="article-top-nav-btn" data-prev-next="next" aria-label={`Newer: ${next.label}`} title={`${next.label} →`}>Next →</a>
+          )}
+        </div>
+      </div>
       <article class="article-body prose">
         {article.data.heroImage && (
           <img class="article-hero-float" src={article.data.heroImage} alt="" loading="lazy" />
