@@ -4,7 +4,7 @@ description: "Airline pilots have a few estate planning considerations that the 
 pubDate: 2026-06-18
 author: Wilco Financial
 tags: ["Pilots", "Southwest Airlines", "Estate Planning"]
-heroImage: /images/welcome-wilco-card2.jpg
+heroImage: /images/IMG_9396.JPEG
 ---
 
 Most estate plans for pilots look like estate plans for everyone else: a will, a trust if assets warrant, beneficiary designations, powers of attorney. The structure is fine. What gets missed are the items unique to airline life that almost no general-practice estate attorney thinks to ask about.

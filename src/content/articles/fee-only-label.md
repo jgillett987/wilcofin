@@ -4,7 +4,7 @@ description: "\"Fee-only\" sounds clean — no commissions, aligned interests. I
 pubDate: 2026-01-18
 author: Wilco Financial
 tags: ["Fees", "Fiduciary"]
-heroImage: /images/forest-stream.jpg
+heroImage: /images/young-family.jpg
 ---
 
 "Fee-only" is one of the most repeated — and most loosely defined — phrases in financial services. Advisors use it to signal clean, aligned, client-first economics. Consumers read it as shorthand for "no commissions, no conflicts." The gap between the two is bigger than most people realize.
