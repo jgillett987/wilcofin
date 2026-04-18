@@ -2,11 +2,10 @@
 title: "When a Pilot Should Consider a Roth Conversion"
 description: "Airline pilots often have an unusually clean Roth conversion window — if they know when it opens and when it closes. The planning rules that matter most for Age 65 retirees."
 pubDate: 2025-01-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines", "Roth", "Retirement", "Tax Planning"]
-heroImage: /images/yellowstone-bison.jpg
+heroImage: "/images/iStock-2228773030.jpg"
 ---
-
 Airline pilots face a retirement math problem most professions don't: a legally mandated, absolutely fixed stop date. For pilots at Southwest Airlines and every U.S. Part 121 carrier, the FAA's Age 65 rule ends the career on a specific day, often with a seven-figure 401(k) and profit-sharing balance sitting in pre-tax accounts. That combination makes the **Roth conversion decade** — the years between retirement and the start of RMDs — one of the most valuable tax-planning windows a pilot ever has.
 
 Here's how to think about it.
