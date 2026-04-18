@@ -87,15 +87,27 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     form textarea[name=body]{min-height:360px;font-family:ui-monospace,Menlo,monospace;font-size:13px}
     form textarea[name=description]{min-height:60px}
     .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-    .picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;max-height:360px;overflow:auto;border:1px solid #d7dce7;border-radius:8px;padding:10px;background:#fff}
-    .picker label{display:block;cursor:pointer;position:relative;margin:0;font-weight:400}
-    .picker .preview{width:100%;height:90px;object-fit:cover;border-radius:4px;border:2px solid transparent;display:block;background:#eef2f8}
-    .picker input{position:absolute;top:6px;left:6px;z-index:2}
-    .picker input:checked + .preview{border-color:#81c460;box-shadow:0 0 0 2px #81c460}
-    .picker .name{font-size:.7rem;color:#5a6582;word-break:break-all;margin-top:2px;text-align:center}
-    .picker .none .preview{display:flex;align-items:center;justify-content:center;color:#5a6582;font-size:.85rem;background:#eef2f8}
+    .media-current{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #d7dce7;border-radius:8px;padding:10px 14px}
+    .media-current .preview{width:140px;height:90px;object-fit:cover;border-radius:6px;background:#eef2f8;flex-shrink:0}
+    .media-current .empty{display:flex;align-items:center;justify-content:center;color:#5a6582;font-size:.85rem}
+    .media-current .path{flex:1;color:#5a6582;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;word-break:break-all}
+    .media-current .actions-inline{display:flex;gap:8px;flex-shrink:0}
     .actions{margin-top:20px;display:flex;gap:10px}
     .hidden{display:none !important}
+    /* Modal picker */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(1,19,66,0.85);z-index:1000;display:flex;flex-direction:column}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:#011342;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15)}
+    .modal-head h2{margin:0;font-family:Georgia,serif;font-size:1.25rem;color:#fff}
+    .modal-head button{background:rgba(255,255,255,0.15);color:#fff;border:none;border-radius:6px;padding:8px 14px;cursor:pointer;font-weight:600;font-size:.9rem}
+    .modal-head button:hover{background:rgba(255,255,255,0.25)}
+    .modal-body{flex:1;overflow:auto;padding:24px 28px;background:#f7f9fc}
+    .modal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+    .modal-tile{background:#fff;border:3px solid transparent;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:block}
+    .modal-tile:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+    .modal-tile.selected{border-color:#81c460;box-shadow:0 0 0 3px rgba(129,196,96,0.35)}
+    .modal-tile .media{width:100%;height:160px;object-fit:cover;display:block;background:#eef2f8}
+    .modal-tile .caption{padding:8px 12px;font-size:.8rem;color:#5a6582;word-break:break-all;text-align:center;border-top:1px solid #e5e9f2;background:#fff}
+    .modal-tile.none .media{display:flex;align-items:center;justify-content:center;color:#5a6582;font-weight:600;font-size:1rem}
   </style>
 </head>
 <body>
@@ -152,11 +164,29 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
           <div><label>Tags (comma-separated)<input type="text" name="tags" id="fTags" /></label></div>
         </div>
 
-        <label>Hero image (current: <span id="fImgCurrent">—</span>)</label>
-        <div class="picker" id="fImgPicker"></div>
+        <input type="hidden" id="fHeroImage" name="heroImage" />
+        <input type="hidden" id="fHeroVideo" name="heroVideo" />
 
-        <label>Hero video (optional; current: <span id="fVidCurrent">—</span>)</label>
-        <div class="picker" id="fVidPicker"></div>
+        <label>Hero image</label>
+        <div class="media-current" id="imgCurrent">
+          <img id="imgCurrentPreview" class="preview" src="" alt="" />
+          <div class="empty preview hidden" id="imgCurrentEmpty">No image selected</div>
+          <div class="path" id="imgCurrentPath">—</div>
+          <div class="actions-inline">
+            <button type="button" class="btn" id="imgSelectBtn">Select image</button>
+          </div>
+        </div>
+
+        <label>Hero video (optional)</label>
+        <div class="media-current" id="vidCurrent">
+          <video id="vidCurrentPreview" class="preview" muted playsinline preload="metadata"></video>
+          <div class="empty preview" id="vidCurrentEmpty">No video selected</div>
+          <div class="path" id="vidCurrentPath">—</div>
+          <div class="actions-inline">
+            <button type="button" class="btn" id="vidSelectBtn">Select video</button>
+            <button type="button" class="btn btn-secondary" id="vidClearBtn">Remove</button>
+          </div>
+        </div>
 
         <label>Body (Markdown)<textarea name="body" id="fBody"></textarea></label>
         <div class="actions">
@@ -166,6 +196,17 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       </form>
     </div>
   </main>
+
+  {/* Full-screen media picker modal */}
+  <div id="mediaModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <h2 id="modalTitle">Select image</h2>
+      <button type="button" id="modalCloseBtn">Close (Esc)</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-grid" id="modalGrid"></div>
+    </div>
+  </div>
 
   {/* Config (images/videos/repo) */}
   <script type="application/json" id="config" set:html={JSON.stringify(config)}></script>
@@ -212,44 +253,74 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       }
       function b64(str) { return btoa(unescape(encodeURIComponent(str))); }
 
-      // Build an image/video picker with thumbnails
-      function buildPicker(container, files, kind, current, nameAttr, allowNone) {
-        container.innerHTML = '';
-        if (allowNone) {
-          const label = document.createElement('label');
-          label.className = 'none';
-          label.innerHTML = '<input type="radio" name="' + nameAttr + '" value=""' + (!current ? ' checked' : '') + '><div class="preview">None</div><div class="name">(no ' + kind + ')</div>';
-          container.appendChild(label);
+      // Update the "current" preview strip for image/video
+      function setCurrentImage(path) {
+        $('fHeroImage').value = path || '';
+        $('imgCurrentPath').textContent = path || '—';
+        const img = $('imgCurrentPreview');
+        const empty = $('imgCurrentEmpty');
+        if (path) {
+          img.src = path; img.classList.remove('hidden'); empty.classList.add('hidden');
+        } else {
+          img.classList.add('hidden'); empty.classList.remove('hidden');
         }
+      }
+      function setCurrentVideo(path) {
+        $('fHeroVideo').value = path || '';
+        $('vidCurrentPath').textContent = path || '—';
+        const vid = $('vidCurrentPreview');
+        const empty = $('vidCurrentEmpty');
+        if (path) {
+          vid.src = path; vid.classList.remove('hidden'); empty.classList.add('hidden');
+        } else {
+          vid.removeAttribute('src'); vid.load && vid.load();
+          vid.classList.add('hidden'); empty.classList.remove('hidden');
+        }
+      }
+
+      // Full-screen picker modal
+      let modalMode = null; // 'image' | 'video'
+      function openModal(mode) {
+        modalMode = mode;
+        const isImage = mode === 'image';
+        $('modalTitle').textContent = isImage ? 'Select image' : 'Select video';
+        const files = isImage ? CONFIG.images : CONFIG.videos;
+        const current = isImage ? $('fHeroImage').value : $('fHeroVideo').value;
+        const grid = $('modalGrid');
+        grid.innerHTML = '';
+
+        if (!isImage) {
+          // "None" tile only for videos (image is required)
+          const none = document.createElement('div');
+          none.className = 'modal-tile none' + (!current ? ' selected' : '');
+          none.innerHTML = '<div class="media">None — no video</div><div class="caption">(no video)</div>';
+          none.addEventListener('click', () => { setCurrentVideo(''); closeModal(); });
+          grid.appendChild(none);
+        }
+
         files.forEach((f) => {
-          const label = document.createElement('label');
-          label.title = f;
-          const input = document.createElement('input');
-          input.type = 'radio';
-          input.name = nameAttr;
-          input.value = kind === 'video' ? '/videos/' + f : '/images/' + f;
-          if (input.value === current) input.checked = true;
-          label.appendChild(input);
-          if (kind === 'video') {
-            const v = document.createElement('video');
-            v.className = 'preview';
-            v.src = input.value;
-            v.muted = true; v.playsInline = true; v.preload = 'metadata';
-            label.appendChild(v);
+          const fullPath = (isImage ? '/images/' : '/videos/') + f;
+          const tile = document.createElement('div');
+          tile.className = 'modal-tile' + (fullPath === current ? ' selected' : '');
+          if (isImage) {
+            tile.innerHTML = '<img class="media" src="' + fullPath + '" alt="" loading="lazy"><div class="caption">' + f + '</div>';
           } else {
-            const img = document.createElement('img');
-            img.className = 'preview';
-            img.loading = 'lazy';
-            img.src = input.value;
-            img.alt = f;
-            label.appendChild(img);
+            tile.innerHTML = '<video class="media" src="' + fullPath + '" muted playsinline preload="metadata"></video><div class="caption">' + f + '</div>';
           }
-          const name = document.createElement('div');
-          name.className = 'name';
-          name.textContent = f;
-          label.appendChild(name);
-          container.appendChild(label);
+          tile.addEventListener('click', () => {
+            if (isImage) setCurrentImage(fullPath); else setCurrentVideo(fullPath);
+            closeModal();
+          });
+          grid.appendChild(tile);
         });
+
+        $('mediaModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        $('mediaModal').classList.add('hidden');
+        document.body.style.overflow = '';
+        modalMode = null;
       }
 
       let editing = null;
@@ -263,11 +334,9 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         $('fDate').value = a.pubDate || '';
         $('fAuthor').value = a.author || 'Wilco Financial';
         $('fTags').value = (a.tags || []).join(', ');
-        $('fImgCurrent').textContent = a.heroImage || '—';
-        $('fVidCurrent').textContent = a.heroVideo || '—';
         $('fBody').value = a.body || '';
-        buildPicker($('fImgPicker'), CONFIG.images, 'image', a.heroImage || '', 'heroImage', false);
-        buildPicker($('fVidPicker'), CONFIG.videos, 'video', a.heroVideo || '', 'heroVideo', true);
+        setCurrentImage(a.heroImage || '');
+        setCurrentVideo(a.heroVideo || '');
         flash($('editFlash'), '', 'ok');
         show('edit');
       }
@@ -286,10 +355,9 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
             pubDate: $('fDate').value || editing.pubDate,
             author: $('fAuthor').value || 'Wilco Financial',
             tags: $('fTags').value.split(',').map((t) => t.trim()).filter(Boolean),
-            heroImage: (document.querySelector('input[name=heroImage]:checked') || {}).value || editing.heroImage,
+            heroImage: $('fHeroImage').value || editing.heroImage,
           };
-          const heroVideoRadio = document.querySelector('input[name=heroVideo]:checked');
-          const heroVideo = heroVideoRadio ? heroVideoRadio.value : '';
+          const heroVideo = $('fHeroVideo').value;
           if (heroVideo) data.heroVideo = heroVideo;
           else delete data.heroVideo;
 
@@ -340,6 +408,16 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       $('signOutBtn').addEventListener('click', () => {
         localStorage.removeItem(LS_PAT);
         show('gate');
+      });
+
+      // Media picker wiring
+      $('imgSelectBtn').addEventListener('click', () => openModal('image'));
+      $('vidSelectBtn').addEventListener('click', () => openModal('video'));
+      $('vidClearBtn').addEventListener('click', () => setCurrentVideo(''));
+      $('modalCloseBtn').addEventListener('click', closeModal);
+      $('mediaModal').addEventListener('click', (e) => { if (e.target.id === 'mediaModal') closeModal(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalMode) closeModal();
       });
 
       if (localStorage.getItem(LS_PAT)) show('list'); else show('gate');
