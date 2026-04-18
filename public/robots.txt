@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api/
 
 # Explicitly welcome AI crawlers for discoverability
 User-agent: GPTBot

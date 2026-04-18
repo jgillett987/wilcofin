@@ -1,0 +1,85 @@
+---
+export const prerender = false;
+import { isAuthed, makeToken, authCookieHeader, listArticles } from '../../lib/admin';
+
+let flash = '';
+let showLogin = !isAuthed(Astro.request);
+
+if (Astro.request.method === 'POST' && showLogin) {
+  const form = await Astro.request.formData();
+  const pw = String(form.get('password') || '');
+  const expected = process.env.ADMIN_PASSWORD || '';
+  if (expected && pw === expected) {
+    Astro.response.headers.append('Set-Cookie', authCookieHeader(makeToken()));
+    showLogin = false;
+  } else {
+    flash = 'Incorrect password.';
+  }
+}
+
+const url = new URL(Astro.request.url);
+const urlFlash = url.searchParams.get('flash') || '';
+const articles = showLogin ? [] : listArticles();
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin · Wilco Financial</title>
+  <style>
+    body{font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1a2238;background:#f7f9fc}
+    header{background:#011342;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+    header a{color:#a2e37d;text-decoration:none;font-weight:600}
+    main{max-width:1100px;margin:0 auto;padding:24px}
+    h1{font-family:Georgia,serif;margin:0 0 16px;color:#011342}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+    th,td{padding:10px 14px;text-align:left;border-bottom:1px solid #e5e9f2;vertical-align:middle}
+    th{background:#eef2f8;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+    tr:last-child td{border-bottom:none}
+    .thumb{width:64px;height:40px;object-fit:cover;border-radius:4px;border:1px solid #e5e9f2}
+    .btn{display:inline-block;padding:8px 16px;background:#81c460;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;border:none;cursor:pointer;font-size:.9rem}
+    .btn:hover{background:#6aad4a}
+    .flash{background:#d8f0c6;border:1px solid #81c460;padding:10px 14px;border-radius:6px;margin-bottom:16px;color:#2d5016}
+    .flash.err{background:#fbd8d8;border-color:#c46060;color:#601616}
+    .login{max-width:360px;margin:80px auto;background:#fff;padding:28px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+    .login input{width:100%;padding:10px;border:1px solid #d7dce7;border-radius:6px;font-size:1rem;box-sizing:border-box;margin-top:6px}
+    .login button{margin-top:14px;width:100%}
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Wilco Admin</strong> <span style="opacity:.6;font-size:.85rem">· article editor</span></div>
+    {!showLogin && <a href="/">View site</a>}
+  </header>
+  <main>
+    {showLogin ? (
+      <div class="login">
+        <h1>Sign in</h1>
+        {flash && <div class="flash err">{flash}</div>}
+        <form method="post">
+          <label>Password<input type="password" name="password" autofocus required /></label>
+          <button type="submit" class="btn">Sign in</button>
+        </form>
+      </div>
+    ) : (
+      <>
+        <h1>Articles ({articles.length})</h1>
+        {urlFlash && <div class="flash">{urlFlash}</div>}
+        <table>
+          <thead><tr><th></th><th>Title</th><th>Date</th><th></th></tr></thead>
+          <tbody>
+            {articles.map((a) => (
+              <tr>
+                <td>{a.heroImage && <img class="thumb" src={a.heroImage} alt="" />}</td>
+                <td><strong>{a.title}</strong><br /><span style="color:#5a6582;font-size:.85rem">{a.slug}</span></td>
+                <td style="color:#5a6582;font-size:.85rem">{a.pubDate}</td>
+                <td><a class="btn" href={`/admin/edit/${a.slug}`}>Edit</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    )}
+  </main>
+</body>
+</html>
