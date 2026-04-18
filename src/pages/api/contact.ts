@@ -21,7 +21,9 @@ const json = (data: unknown, status = 200) =>
 export const POST: APIRoute = async ({ request }) => {
   // Resolve API key at call time (not at module load) so builds without
   // the secret still compile; only requests at runtime require it.
-  const apiKey = import.meta.env.RESEND_API_KEY;
+  // process.env is the reliable runtime reader on Vercel serverless —
+  // import.meta.env in SSR mode can get replaced at build time.
+  const apiKey = process.env.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error('[contact] RESEND_API_KEY missing at runtime');
     return json({ ok: false, error: 'Email service is not configured.' }, 500);
