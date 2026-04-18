@@ -4,7 +4,7 @@ description: "Where your money is held — separate from who advises you about i
 pubDate: 2027-03-18
 author: "Wilco Financial"
 tags: ["Working With Advisors", "Investments"]
-heroImage: "/images/IMG_8787.JPEG"
+heroImage: "/images/IMG_9396.JPEG"
 ---
 When you hire a financial advisor, two distinct functions get bundled in your mind: **advice** and **custody**. They're separate. Understanding the difference — and why the separation matters — is one of the most important pieces of investor protection that most people never think about.
 
