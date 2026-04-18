@@ -197,6 +197,19 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-cta { display: none; }
 }
 
+/* Only visible inside the mobile menu; hidden on desktop */
+.nav-item-mobile-cta { display: none; }
+@media (max-width: 960px) {
+  .nav[data-open="true"] .nav-item-mobile-cta {
+    display: block;
+    padding: 14px 0 4px;
+  }
+  .nav[data-open="true"] .nav-item-mobile-cta .btn {
+    display: block; width: 100%; text-align: center;
+    padding: 14px 20px;
+  }
+}
+
 /* Hero — full-width photo with soft gradient fading across */
 .hero {
   position: relative;
@@ -1035,4 +1048,172 @@ img { max-width: 100%; height: auto; display: block; }
 .article-pdf-btn {
   font-family: inherit;
   cursor: pointer;
+}
+
+/* =========================================================
+   Mobile refinements (≤ 640px)
+   Layered on top of existing breakpoints. Focuses on making
+   phones feel native — tighter padding, larger tap targets,
+   16px input fonts to prevent iOS zoom, tighter hero,
+   single-column grids.
+   ========================================================= */
+
+/* Prevent horizontal scroll from any one overflowing element */
+html, body { overflow-x: hidden; }
+
+/* Form controls: 16px minimum font-size avoids iOS zoom-on-focus.
+   Apply broadly to any input/select/textarea on the site. */
+input, select, textarea, button {
+  font-size: max(16px, 1rem);
+}
+
+@media (max-width: 640px) {
+  /* Body type: keep readable without being oversized */
+  body { font-size: 16px; }
+
+  /* All section padding tightens */
+  .section { padding: 56px 0; }
+  .section-sm { padding: 36px 0; }
+  .container, .container.narrow { padding: 0 18px; }
+
+  /* Heading scale */
+  h1 { font-size: clamp(1.7rem, 7vw, 2.3rem); }
+  h2 { font-size: clamp(1.35rem, 5.5vw, 1.8rem); }
+  h3 { font-size: 1.15rem; }
+
+  /* Home hero — full-bleed photo hero */
+  .hero {
+    min-height: 0;
+    padding: 88px 0 72px;
+  }
+  .hero-content { max-width: 100%; }
+  .hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .hero p.lead { font-size: 1rem; }
+
+  /* Video hero */
+  .hero.hero-video {
+    min-height: 0;
+    padding: 72px 0 60px;
+  }
+  .hero-logo { max-width: 200px; margin-bottom: 22px; }
+
+  /* Page hero (inner pages) */
+  .page-hero { padding: 72px 0 56px; }
+  .page-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .page-hero .eyebrow { font-size: 0.75rem; }
+  .page-hero .breadcrumb { font-size: 0.8rem; flex-wrap: wrap; gap: 4px; }
+
+  /* Family band + CTA band + fee block compression */
+  .family-band { padding: 72px 20px; }
+  .cta, .cta-band { padding: 48px 18px; }
+  .fee-block { padding: 26px 22px; }
+  .fee-strip { flex-direction: column; gap: 18px; }
+  .fee-stat-divider { display: none; }
+
+  /* Buttons wrap, larger touch targets */
+  .btn { padding: 14px 24px; font-size: 0.95rem; min-height: 44px; }
+  .btn + .btn { margin-left: 0; }
+
+  /* Split layouts — collapse to one column comfortably */
+  .split, .container.split,
+  .split-3, .split-4 {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Articles: top-nav row wraps cleanly */
+  .article-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .article-top-nav {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+  .article-top-nav-btn {
+    flex: 1 1 auto;
+    min-height: 40px;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  /* Article body: remove the floated hero image indent */
+  .article-hero-float {
+    float: none !important;
+    margin: 0 0 20px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .article-body, .article-body.prose {
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  /* Prev/Next cards stack */
+  .prev-next-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .prev-next-link { padding: 14px 16px; }
+
+  /* Nav: roomier mobile menu, bigger tap rows, fewer edge-hugging items */
+  .nav-inner { padding: 12px 18px; gap: 12px; }
+  .nav-brand img { height: 36px; }
+  .nav[data-open="true"] .nav-links {
+    padding: 12px 18px 18px;
+  }
+  .nav[data-open="true"] .nav-links a {
+    padding: 14px 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+  }
+  .nav[data-open="true"] .nav-links li:last-child a {
+    border-bottom: none;
+  }
+  .nav[data-open="true"] .nav-dropdown a {
+    padding-left: 24px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .nav-toggle { padding: 10px; min-width: 44px; min-height: 44px; }
+
+  /* Footer: slightly tighter gaps */
+  .footer-grid { gap: 28px; }
+  .footer { padding: 40px 0 24px; }
+
+  /* Contact strip (top phone/email/schedule bar) — wrap cleanly */
+  .contact-strip { flex-direction: column; gap: 10px; text-align: center; padding: 14px 18px; }
+  .contact-strip .btn { width: 100%; }
+
+  /* Cards stack with full width */
+  .card { padding: 22px 20px; }
+
+  /* Tables become horizontally scrollable containers */
+  table { display: block; max-width: 100%; overflow-x: auto; }
+
+  /* Images never overflow */
+  img, video { max-width: 100%; height: auto; }
+
+  /* Reduce hero-video overlay darkness slightly for legibility on
+     narrow screens where text fills the frame */
+  .page-hero-with-video-bg .container { padding-top: 4px; padding-bottom: 4px; }
+}
+
+/* Very small phones (iPhone SE, etc.) */
+@media (max-width: 380px) {
+  .container, .container.narrow { padding: 0 14px; }
+  .section { padding: 48px 0; }
+  .hero { padding: 72px 0 56px; }
+  .btn { padding: 12px 20px; font-size: 0.92rem; }
+  .article-top-nav-btn { font-size: 0.78rem; padding: 9px 10px; }
+}
+
+/* Smooth focus + tap highlights on touch devices */
+@media (hover: none) {
+  a, button { -webkit-tap-highlight-color: rgba(129, 196, 96, 0.2); }
+  .btn:hover, .nav-links a:hover { transform: none; }
 }
