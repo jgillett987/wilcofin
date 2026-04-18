@@ -2,11 +2,11 @@
 title: "The Concentrated Stock Position Problem: Five Ways to Solve It"
 description: "Holding too much of one company — typically your employer or an inherited holding — is one of the most common sources of avoidable risk in HNW portfolios. The unwind is harder than it looks."
 pubDate: 2025-11-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Tax Planning", "Investments"]
-heroImage: /images/sunset-pier.jpg
+heroImage: "/images/iStock-2258773474.jpg"
+heroVideo: "/videos/05.mp4"
 ---
-
 If a meaningful slice of your net worth is tied up in a single stock — usually a current or former employer's shares, sometimes an inherited holding, occasionally a long-held position whose cost basis is now nearly zero — you have a planning problem worth solving carefully. Done well, the unwind preserves wealth and reduces risk. Done badly, it generates a large tax bill and locks you into a worse position than you started.
 
 ## Why concentration is a real problem
