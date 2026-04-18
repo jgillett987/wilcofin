@@ -134,7 +134,10 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     </div>
 
     <div id="listView" class="hidden">
-      <h1>Articles ({articles.length})</h1>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <h1 style="margin:0">Articles ({articles.length})</h1>
+        <button type="button" class="btn" id="composeBtn">+ Compose article</button>
+      </div>
       <div id="flash"></div>
       <table>
         <thead><tr><th></th><th>Title</th><th>Date</th><th></th></tr></thead>
@@ -152,10 +155,11 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     </div>
 
     <div id="editView" class="hidden">
-      <h1>Edit article</h1>
+      <h1 id="editHeading">Edit article</h1>
       <div id="editFlash"></div>
       <form id="editForm">
         <input type="hidden" id="editSlug" />
+        <div id="slugRow" class="hidden"><label>Slug (lowercase, dash-separated — becomes the URL)<input type="text" id="fSlug" pattern="[a-z0-9-]+" placeholder="my-new-article" /></label></div>
         <label>Title<input type="text" name="title" id="fTitle" required /></label>
         <label>Description<textarea name="description" id="fDesc"></textarea></label>
         <div class="row">
@@ -324,10 +328,25 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       }
 
       let editing = null;
+      let composing = false;
+
+      function slugify(s) {
+        return String(s || '').toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, '')
+          .trim()
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .slice(0, 80);
+      }
+
       function openEdit(slug) {
         const a = ARTS[slug];
         if (!a) return;
         editing = a;
+        composing = false;
+        $('editHeading').textContent = 'Edit article';
+        $('saveBtn').textContent = 'Save & Deploy';
+        $('slugRow').classList.add('hidden');
         $('editSlug').value = slug;
         $('fTitle').value = a.title || '';
         $('fDesc').value = a.description || '';
@@ -341,52 +360,108 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         show('edit');
       }
 
+      function openCompose() {
+        editing = null;
+        composing = true;
+        $('editHeading').textContent = 'Compose article';
+        $('saveBtn').textContent = 'Create & Deploy';
+        $('slugRow').classList.remove('hidden');
+        $('editSlug').value = '';
+        $('fSlug').value = '';
+        $('fTitle').value = '';
+        $('fDesc').value = '';
+        const today = new Date().toISOString().slice(0, 10);
+        $('fDate').value = today;
+        $('fAuthor').value = 'Wilco Financial';
+        $('fTags').value = '';
+        $('fBody').value = '';
+        setCurrentImage('');
+        setCurrentVideo('');
+        flash($('editFlash'), '', 'ok');
+        show('edit');
+      }
+
+      // Auto-fill slug from title while composing (until user edits slug manually)
+      let slugManual = false;
+      const fSlug = $('fSlug');
+      if (fSlug) fSlug.addEventListener('input', () => { slugManual = true; });
+      $('fTitle').addEventListener('input', (e) => {
+        if (composing && !slugManual) fSlug.value = slugify(e.target.value);
+      });
+
       async function saveArticle(e) {
         e.preventDefault();
-        if (!editing) return;
         const pat = localStorage.getItem(LS_PAT);
         if (!pat) { show('gate'); return; }
         const btn = $('saveBtn');
-        btn.disabled = true; btn.textContent = 'Saving…';
+        const labelDefault = composing ? 'Create & Deploy' : 'Save & Deploy';
+        btn.disabled = true; btn.textContent = composing ? 'Creating…' : 'Saving…';
         try {
+          let slug;
+          if (composing) {
+            slug = slugify($('fSlug').value || $('fTitle').value);
+            if (!slug) throw new Error('Slug is required.');
+            if (!/^[a-z0-9-]+$/.test(slug)) throw new Error('Slug must be lowercase letters, numbers, and dashes only.');
+            if (ARTS[slug]) throw new Error('An article with slug "' + slug + '" already exists.');
+          } else {
+            if (!editing) return;
+            slug = editing.slug;
+          }
+
           const data = {
             title: $('fTitle').value,
             description: $('fDesc').value,
-            pubDate: $('fDate').value || editing.pubDate,
+            pubDate: $('fDate').value || (editing && editing.pubDate) || new Date().toISOString().slice(0,10),
             author: $('fAuthor').value || 'Wilco Financial',
             tags: $('fTags').value.split(',').map((t) => t.trim()).filter(Boolean),
-            heroImage: $('fHeroImage').value || editing.heroImage,
+            heroImage: $('fHeroImage').value || (editing && editing.heroImage) || '',
           };
+          if (composing && !data.heroImage) throw new Error('Hero image is required.');
           const heroVideo = $('fHeroVideo').value;
           if (heroVideo) data.heroVideo = heroVideo;
           else delete data.heroVideo;
 
           const out = stringifyFrontmatter(data, '\n' + $('fBody').value);
-          const filePath = 'src/content/articles/' + editing.slug + '.md';
+          const filePath = 'src/content/articles/' + slug + '.md';
           const url = 'https://api.github.com/repos/' + CONFIG.repo + '/contents/' + filePath;
-          const getRes = await fetch(url + '?ref=' + encodeURIComponent(CONFIG.branch), {
-            headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' },
-          });
-          if (!getRes.ok) throw new Error('GET failed: ' + getRes.status + ' ' + (await getRes.text()).slice(0, 200));
-          const meta = await getRes.json();
+
+          let sha;
+          if (!composing) {
+            const getRes = await fetch(url + '?ref=' + encodeURIComponent(CONFIG.branch), {
+              headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' },
+            });
+            if (!getRes.ok) throw new Error('GET failed: ' + getRes.status + ' ' + (await getRes.text()).slice(0, 200));
+            const meta = await getRes.json();
+            sha = meta.sha;
+          }
+
+          const putBody = {
+            message: (composing ? 'Add article: ' : 'Edit article: ') + slug + ' (via admin)',
+            content: b64(out),
+            branch: CONFIG.branch,
+          };
+          if (sha) putBody.sha = sha;
+
           const putRes = await fetch(url, {
             method: 'PUT',
             headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              message: 'Edit article: ' + editing.slug + ' (via admin)',
-              content: b64(out),
-              sha: meta.sha,
-              branch: CONFIG.branch,
-            }),
+            body: JSON.stringify(putBody),
           });
           if (!putRes.ok) throw new Error('PUT failed: ' + putRes.status + ' ' + (await putRes.text()).slice(0, 300));
-          Object.assign(editing, data, { body: $('fBody').value, heroVideo: heroVideo });
-          flash($('flash'), 'Saved ' + editing.slug + '. Vercel will redeploy in ~1-2 minutes.', 'ok');
+
+          if (composing) {
+            // Add to in-memory ARTS so subsequent edits work without reload
+            ARTS[slug] = { slug, body: $('fBody').value, ...data };
+            flash($('flash'), 'Created ' + slug + '. Vercel will redeploy in ~1-2 minutes; after that, refresh this page to see the new article in the list.', 'ok');
+          } else {
+            Object.assign(editing, data, { body: $('fBody').value, heroVideo: heroVideo });
+            flash($('flash'), 'Saved ' + slug + '. Vercel will redeploy in ~1-2 minutes.', 'ok');
+          }
           show('list');
         } catch (err) {
           flash($('editFlash'), String(err.message || err), 'err');
         } finally {
-          btn.disabled = false; btn.textContent = 'Save & Deploy';
+          btn.disabled = false; btn.textContent = labelDefault;
         }
       }
 
@@ -394,6 +469,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       document.querySelectorAll('button[data-edit]').forEach((btn) => {
         btn.addEventListener('click', () => openEdit(btn.getAttribute('data-edit')));
       });
+      $('composeBtn').addEventListener('click', openCompose);
 
       $('gateForm').addEventListener('submit', (e) => {
         e.preventDefault();
