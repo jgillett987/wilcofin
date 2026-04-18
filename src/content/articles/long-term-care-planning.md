@@ -2,11 +2,10 @@
 title: "Long-Term Care Planning: Self-Insure, Insure, or Hybrid?"
 description: "The probability of needing long-term care is real, the cost is substantial, and the planning approaches are increasingly varied. Here's the honest framework for HNW households."
 pubDate: 2026-08-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Retirement", "Estate Planning"]
-heroImage: /images/welcome-wilco-card1.jpg
+heroImage: "/images/father-daughter.jpg"
 ---
-
 Long-term care is one of the largest unfunded retirement liabilities most households face. The data is sobering — roughly 70% of people over 65 will need some form of long-term care, with average costs running $50K–$120K per year depending on care level and geography, and the average duration of need around 2–4 years. For a couple, the household exposure can run into $300K–$700K or more.
 
 The planning question isn't whether to address it. It's how.
