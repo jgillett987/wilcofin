@@ -1,7 +1,7 @@
 ---
 title: "The \"Fee-Only\" Label Doesn't Mean What You Think"
 description: "\"Fee-only\" sounds clean — no commissions, aligned interests. In practice, the term is self-described and unregulated. Here's how to actually verify."
-daysAgo: 100
+daysAgo: 90
 author: Wilco Financial
 tags: ["Fees", "Fiduciary"]
 heroImage: /images/forest-stream.jpg

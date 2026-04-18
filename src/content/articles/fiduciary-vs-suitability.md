@@ -1,7 +1,7 @@
 ---
 title: "Fiduciary vs. Suitability: What Your Advisor's Standard Actually Means"
 description: "Not every 'financial advisor' is legally required to act in your best interest. Here's the difference between the fiduciary and suitability standards — and how to verify which one applies to you."
-daysAgo: 520
+daysAgo: 510
 author: Wilco Financial
 tags: ["Fiduciary", "Working With Advisors"]
 heroImage: /images/tetons-lake.jpg

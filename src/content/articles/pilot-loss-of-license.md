@@ -1,7 +1,7 @@
 ---
 title: "Loss-of-License Insurance for Professional Pilots"
 description: "What LOL coverage actually pays, what SWAPA provides, and the outside coverage decisions that matter most for pilots at peak earning years."
-daysAgo: 590
+daysAgo: 600
 author: Wilco Financial
 tags: ["Pilots", "Southwest Airlines"]
 heroImage: /images/waterfall-scale.jpg
