@@ -2,12 +2,11 @@
 title: "Tax-Loss Harvesting: What It Is and When It Actually Helps"
 description: "The mechanics of tax-loss harvesting — and an honest look at when the tax savings are real, when they're overstated, and when it doesn't apply at all."
 pubDate: 2025-08-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Tax Planning", "Working With Advisors"]
-heroImage: /images/multigen-dinner.jpg
-heroVideo: /videos/10.mp4
+heroImage: "/images/iStock-2254421366.jpg"
+heroVideo: "/videos/08.mp4"
 ---
-
 Tax-loss harvesting is one of those strategies that sounds like magic in marketing copy and turns out to be genuinely useful — but more modestly so — once you understand the mechanics. Here's the honest version.
 
 ## The mechanics
