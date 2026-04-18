@@ -1,7 +1,7 @@
 ---
 title: "The SWA 401(k) Decision: Pre-Tax, Roth, or After-Tax?"
 description: "Southwest Airlines pilots and employees with access to all three contribution buckets face a real planning question every year. The right mix depends on age, income, marginal bracket, and what comes next."
-daysAgo: 690
+pubDate: 2024-05-18
 author: Wilco Financial
 tags: ["Pilots", "Southwest Airlines", "Tax Planning", "Roth", "Retirement"]
 heroImage: /images/yellowstone-geyser.jpg

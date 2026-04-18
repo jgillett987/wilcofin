@@ -1,7 +1,7 @@
 ---
 title: "Asset Location: The Quiet Tax Win Most Investors Miss"
 description: "Holding the same portfolio in the wrong account types can cost real money over a lifetime. The principle is simple — the execution is where most plans go wrong."
-daysAgo: 60
+pubDate: 2026-02-18
 author: Wilco Financial
 tags: ["Tax Planning", "Investments"]
 heroImage: /images/tn-creek-log.jpg

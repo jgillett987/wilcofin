@@ -1,7 +1,7 @@
 ---
 title: "The #1 Estate Planning Mistake (and It's Not What You Think)"
 description: "The most expensive estate planning mistake we see isn't a missing will or an unfunded trust. It's the beneficiary designations on retirement accounts and life insurance — and almost every household has at least one wrong one."
-daysAgo: 300
+pubDate: 2025-06-18
 author: Wilco Financial
 tags: ["Estate Planning"]
 heroImage: /images/weathered-wood-1.jpg

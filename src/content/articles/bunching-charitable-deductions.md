@@ -1,7 +1,7 @@
 ---
 title: "Bunching Charitable Deductions: How TCJA Made an Old Strategy New Again"
 description: "The 2017 doubling of the standard deduction made annual charitable giving tax-invisible for most households. Bunching multiple years of giving into one tax year solves it."
-daysAgo: 360
+pubDate: 2025-04-18
 author: Wilco Financial
 tags: ["Tax Planning", "Charitable Planning"]
 heroImage: /images/weathered-wood-2.jpg

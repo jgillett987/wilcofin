@@ -1,7 +1,7 @@
 ---
 title: "All-In Cost: How to Read Your Advisor's Fee Stack"
 description: "The advisory fee on the proposal is usually only one layer of what you're paying. A straightforward method for calculating your real all-in cost — and what a reasonable number looks like."
-daysAgo: 660
+pubDate: 2024-06-18
 author: Wilco Financial
 tags: ["Fees", "Working With Advisors"]
 heroImage: /images/tn-creek-log.jpg

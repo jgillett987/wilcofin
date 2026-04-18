@@ -1,7 +1,7 @@
 ---
 title: "Trusts vs. Beneficiary Designations: The Quiet Conflict in Most Estate Plans"
 description: "Most households have both a trust and a stack of beneficiary designations. The two often disagree — and the beneficiary form wins. Here's how to make them work together."
-daysAgo: 570
+pubDate: 2024-09-18
 author: Wilco Financial
 tags: ["Estate Planning"]
 heroImage: /images/weathered-wood-4.jpg

@@ -1,7 +1,7 @@
 ---
 title: "When a Pilot Should Actually Move States (and When They Shouldn't)"
 description: "Many pilots have meaningful flexibility on where to live. Over a 25-year career, the difference between a no-tax state and a high-tax state can run into seven figures. Here's the realistic framework."
-daysAgo: 540
+pubDate: 2024-10-18
 author: Wilco Financial
 tags: ["Pilots", "Southwest Airlines", "Tax Planning"]
 heroImage: /images/jackson-hole-antler-arch.jpg

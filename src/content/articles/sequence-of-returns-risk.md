@@ -1,7 +1,7 @@
 ---
 title: "Sequence-of-Returns Risk: The Hidden Killer of Retirement Plans"
 description: "The same average return can produce wildly different retirement outcomes depending on the order of the years. Why the first decade after retirement matters disproportionately — and what to do about it."
-daysAgo: 120
+pubDate: 2025-12-18
 author: Wilco Financial
 tags: ["Retirement", "Investments"]
 heroImage: /images/yellowstone-bison.jpg

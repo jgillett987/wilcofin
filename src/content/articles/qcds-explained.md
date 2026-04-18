@@ -1,7 +1,7 @@
 ---
 title: "QCDs: The Tax Move Every Charitable Retiree Over 70½ Should Know"
 description: "Qualified charitable distributions let you give from your IRA tax-free, satisfy your RMD, and preserve other deductions. For charitable retirees, it's almost always the most efficient way to give."
-daysAgo: 270
+pubDate: 2025-07-18
 author: Wilco Financial
 tags: ["Charitable Planning", "Tax Planning", "Retirement"]
 heroImage: /images/jackson-hole-antler-arch.jpg

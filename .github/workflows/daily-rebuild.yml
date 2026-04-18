@@ -1,0 +1,27 @@
+name: Daily Vercel rebuild
+
+# Triggers a fresh Vercel deploy every day so that any articles whose
+# pubDate has now arrived will start showing on the live site.
+# Also lets articles' "X days ago" displays stay current.
+
+on:
+  schedule:
+    # 06:00 UTC daily = 01:00 CT (CST) / 02:00 CT (CDT)
+    # GitHub may delay scheduled jobs by a few minutes during peak load.
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # allow manual trigger from the Actions tab
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK" ]; then
+            echo "VERCEL_DEPLOY_HOOK secret is not set."
+            exit 1
+          fi
+          curl -fsSL -X POST "$VERCEL_DEPLOY_HOOK"
+          echo "Deploy triggered."
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}

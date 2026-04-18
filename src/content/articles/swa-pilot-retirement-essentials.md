@@ -1,7 +1,7 @@
 ---
 title: "A Southwest Airlines Pilot's Retirement Planning Essentials"
 description: "The retirement-planning items every SWAPA-represented Southwest Airlines pilot should be thinking about — from Age 65 to the 401(k) to state-of-residence planning."
-daysAgo: 720
+pubDate: 2024-04-18
 author: Wilco Financial
 tags: ["Southwest Airlines", "Pilots", "Retirement"]
 heroImage: /images/tetons-framed.jpg

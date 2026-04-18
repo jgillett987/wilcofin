@@ -1,7 +1,7 @@
 ---
 title: "The Backdoor Roth and Mega-Backdoor Roth, Explained"
 description: "Two legal strategies that let high earners put meaningful dollars into Roth accounts despite income limits. The mechanics, the traps, and when they're worth doing."
-daysAgo: 390
+pubDate: 2025-03-18
 author: Wilco Financial
 tags: ["Roth", "Tax Planning"]
 heroImage: /images/tetons-shoreline.jpg

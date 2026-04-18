@@ -1,10 +1,10 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
-import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
+import { getPublishedArticles } from '../../../lib/articles';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  const articles = await getPublishedArticles();
   const tags = new Set<string>();
   for (const a of articles) for (const t of a.data.tags) tags.add(t);
   const allTags = [...tags].sort();

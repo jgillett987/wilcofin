@@ -1,7 +1,7 @@
 ---
 title: "When a Pilot Should Consider a Roth Conversion"
 description: "Airline pilots often have an unusually clean Roth conversion window — if they know when it opens and when it closes. The planning rules that matter most for Age 65 retirees."
-daysAgo: 450
+pubDate: 2025-01-18
 author: Wilco Financial
 tags: ["Pilots", "Southwest Airlines", "Roth", "Retirement", "Tax Planning"]
 heroImage: /images/yellowstone-bison.jpg

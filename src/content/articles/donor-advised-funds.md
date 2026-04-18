@@ -1,7 +1,7 @@
 ---
 title: "Donor-Advised Funds: The Most Underused HNW Strategy"
 description: "A donor-advised fund decouples the timing of your tax deduction from the timing of your charitable giving. For most high earners doing meaningful giving, it's the right tool — and it's nearly free."
-daysAgo: 210
+pubDate: 2025-09-18
 author: Wilco Financial
 tags: ["Charitable Planning", "Tax Planning"]
 heroImage: /images/kid-rock-climbing.jpg

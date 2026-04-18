@@ -1,7 +1,7 @@
 ---
 title: "Social Security for Two-Earner Households: The Coordination That Saves Six Figures"
 description: "When both spouses worked, Social Security claiming becomes a coordination problem. The right strategy depends on the income gap, age gap, and health expectations — and the wrong default can cost a household hundreds of thousands."
-daysAgo: 630
+pubDate: 2024-07-18
 author: Wilco Financial
 tags: ["Retirement"]
 heroImage: /images/kids-hay-bales.jpg

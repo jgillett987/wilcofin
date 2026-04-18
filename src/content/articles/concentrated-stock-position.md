@@ -1,7 +1,7 @@
 ---
 title: "The Concentrated Stock Position Problem: Five Ways to Solve It"
 description: "Holding too much of one company — typically your employer or an inherited holding — is one of the most common sources of avoidable risk in HNW portfolios. The unwind is harder than it looks."
-daysAgo: 150
+pubDate: 2025-11-18
 author: Wilco Financial
 tags: ["Tax Planning", "Investments"]
 heroImage: /images/tetons-shoreline.jpg

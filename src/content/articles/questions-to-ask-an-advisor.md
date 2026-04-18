@@ -1,7 +1,7 @@
 ---
 title: "What to Ask an Advisor Before You Hire Them"
 description: "Ten direct questions that reveal more about a prospective financial advisor than any marketing page. And what the honest answers sound like."
-daysAgo: 180
+pubDate: 2025-10-18
 author: Wilco Financial
 tags: ["Working With Advisors", "Fiduciary"]
 heroImage: /images/jenny-lake-rocks.jpg

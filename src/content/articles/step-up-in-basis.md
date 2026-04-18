@@ -1,7 +1,7 @@
 ---
 title: "The Step-Up in Basis at Death: A Tax Cliff Worth Planning Around"
 description: "Holding appreciated assets until death wipes out the embedded capital gains tax for your heirs. Most people know that. The planning question is which assets to hold, which to sell, and when."
-daysAgo: 420
+pubDate: 2025-02-18
 author: Wilco Financial
 tags: ["Estate Planning", "Tax Planning"]
 heroImage: /images/tetons-shoreline.jpg
