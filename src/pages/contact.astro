@@ -36,21 +36,47 @@ const contactSchema = {
         </p>
       </div>
       <div>
-        <div class="card">
-          <h3 style="margin-top:0;">What happens when you reach out</h3>
-          <ol style="padding-left:1.2em; line-height:1.7; margin-bottom:0;">
-            <li style="margin-bottom:10px;"><strong>A short intro call.</strong> 15–30 minutes by phone or video. We talk about what you're trying to accomplish and what's been getting in the way. No pitch, no paperwork.</li>
-            <li style="margin-bottom:10px;"><strong>A written proposal, if it's a fit.</strong> If we think we can help, you get a plain-language summary of what we'd do, what you'd pay, and how we'd work together.</li>
-            <li style="margin-bottom:10px;"><strong>You decide — no pressure.</strong> Take as long as you need. If it's not the right fit on either side, we'll say so and point you toward something that is.</li>
-          </ol>
-          <hr style="border:none; border-top:1px solid var(--border); margin:20px 0;" />
-          <p style="margin:0; font-size:0.95rem; color:var(--muted);">
-            Our fee is a flat <strong style="color:var(--navy);">{SITE.fee}/year</strong> of assets under management
-            (<strong style="color:var(--navy);">{SITE.swaEffectiveFee}</strong> for Southwest Airlines employees and pilots).
-            Client assets are custodied independently at <strong style="color:var(--navy);">Charles Schwab</strong>,
-            in accounts titled in the client's name.
-          </p>
-        </div>
+        {/*
+          Form submits securely over HTTPS to Formspree. Replace
+          FORMSPREE_FORM_ID below with the form ID from your Formspree
+          dashboard (https://formspree.io → New Form → copy the ID from
+          the endpoint URL, e.g. https://formspree.io/f/xpzgvwkl → the ID
+          is "xpzgvwkl"). First submission triggers an email confirmation
+          to verify delivery address. Nothing else to set up.
+        */}
+        <form
+          class="card"
+          action="https://formspree.io/f/FORMSPREE_FORM_ID"
+          method="POST"
+          autocomplete="on"
+        >
+          <h3 style="margin-top:0;">Send us a message</h3>
+          <p class="muted" style="font-size:0.9rem;">Prefer something else? Email us directly at <a href={CONTACT.emailHref}>{CONTACT.email}</a> or <a href={CONTACT.calendlyUrl} target="_blank" rel="noopener">schedule a meeting</a>.</p>
+
+          {/* Honeypot: real users can't see this; bots fill it and get dropped */}
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;" aria-hidden="true" />
+
+          {/* Subject line on the email you receive */}
+          <input type="hidden" name="_subject" value="New contact-form message from wilcofin.com" />
+
+          <label style="display:block; margin-bottom:12px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">Name</span>
+            <input type="text" name="name" autocomplete="name" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
+          </label>
+          <label style="display:block; margin-bottom:12px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">Email</span>
+            <input type="email" name="email" autocomplete="email" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
+          </label>
+          <label style="display:block; margin-bottom:12px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">Phone (optional)</span>
+            <input type="tel" name="phone" autocomplete="tel" style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
+          </label>
+          <label style="display:block; margin-bottom:16px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">How can we help?</span>
+            <textarea name="message" rows="5" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px; font-family:inherit;"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
       </div>
     </div>
   </section>
