@@ -2,11 +2,11 @@
 title: "How Advisor Fees Actually Work — and What 'All-In Cost' Really Means"
 description: "The advisory fee you see on the proposal is often only part of what you're paying. Learn how to read a fee structure and calculate your true all-in cost."
 pubDate: 2025-05-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Fees", "Working With Advisors"]
-heroImage: /images/yellowstone-river.jpg
+heroImage: "/images/iStock-2225405260.jpg"
+heroVideo: "/videos/10.mp4"
 ---
-
 One of the more frustrating realities in financial services: the number you see on the advisor's proposal is often a fraction of what you're actually paying. The gap between "what it looks like it costs" and "what it really costs" can exceed 1 percent per year — a figure that compounds into serious money over a long investing life.
 
 Here's a simplified guide to the layers, and how to calculate your true all-in cost.
