@@ -575,14 +575,14 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   padding: 8px 14px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
-  color: var(--navy);
+  color: #4a587a;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 8px;
   text-transform: uppercase;
-  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s, color 0.15s;
   white-space: nowrap;
 }
 .article-top-nav-btn:hover {
