@@ -2,11 +2,11 @@
 title: "When a Pilot Should Actually Move States (and When They Shouldn't)"
 description: "Many pilots have meaningful flexibility on where to live. Over a 25-year career, the difference between a no-tax state and a high-tax state can run into seven figures. Here's the realistic framework."
 pubDate: 2024-10-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines", "Tax Planning"]
-heroImage: /images/forest-stream.jpg
+heroImage: "/images/forest-stream.jpg"
+heroVideo: "/videos/08.mp4"
 ---
-
 Few professions have as much flexibility on residency as commercial pilots. Your work is wherever the airplane is, your schedule lets you commute, and the tax implications of where you live are often the largest controllable variable in your financial life. Yet most pilots default to "I live where I lived when I got hired" without ever modeling the alternative.
 
 For pilots considering a move — or considering whether to consider it — here's the honest framework.
@@ -34,9 +34,9 @@ Three reasons pilots underweight the residency decision:
 
 1. **They don't fully control where they fly from.** A pilot based in JFK isn't moving to Florida and commuting to JFK every trip — except, actually, many do. Commuting is a normal part of airline pilot life. Whether to commute is a separate decision from where to be domiciled.
 
-2. **They overweight commute pain.** Most senior pilots already dead-head, jumpseat, or commute to base. Adding 90 minutes of flight time isn't trivial but is often manageable for the tax savings.
+1. **They overweight commute pain.** Most senior pilots already dead-head, jumpseat, or commute to base. Adding 90 minutes of flight time isn't trivial but is often manageable for the tax savings.
 
-3. **They underestimate the tax difference.** Most know "no state income tax" exists. Few have done the actual math on their own income.
+1. **They underestimate the tax difference.** Most know "no state income tax" exists. Few have done the actual math on their own income.
 
 ## The cases where moving genuinely makes sense
 
