@@ -2,11 +2,10 @@
 title: "The HSA: The Most Underused Retirement Account in America"
 description: "Health Savings Accounts get pitched as a way to pay current medical bills. The much bigger play is using them as a stealth retirement account — triple tax-free and uniquely flexible."
 pubDate: 2026-05-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Retirement", "Tax Planning"]
-heroImage: /images/father-daughter.jpg
+heroImage: "/images/tax-photo.jpg"
 ---
-
 If you have access to a Health Savings Account (HSA) and you're using it the way most people do — funding it just enough to cover current-year medical bills — you're missing the most tax-favored retirement vehicle available in the U.S. tax code.
 
 The HSA is the only account that gets **three layers of tax exemption**:
