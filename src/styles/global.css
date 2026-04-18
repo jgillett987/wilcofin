@@ -805,7 +805,7 @@ img { max-width: 100%; height: auto; display: block; }
   /* Hide all site chrome for clean PDF output */
   .nav, .skip-link, .breadcrumb, .article-top-nav,
   .page-hero, .page-hero-with-video-bg, .page-hero-bg-video,
-  .contact-strip, .cta, .prev-next, .footer,
+  .contact-strip, .cta, .cta-band, .prev-next, .footer,
   header:not(.print-header), footer,
   video, iframe,
   .article-meta-row,
