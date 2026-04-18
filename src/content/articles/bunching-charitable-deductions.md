@@ -5,7 +5,7 @@ pubDate: 2025-04-17
 author: "Wilco Financial"
 tags: ["Tax Planning", "Charitable Planning"]
 heroImage: "/images/iStock-2254421366.jpg"
-heroVideo: "/videos/01.mp4"
+heroVideo: "/videos/08.mp4"
 ---
 If you give meaningfully to charity every year and take the standard deduction on your tax return, your charitable giving is generating zero current tax benefit. Most people don't realize this. Most CPAs don't bring it up because the fix isn't a tax-prep matter — it's a planning matter, made before the year ends.
 
