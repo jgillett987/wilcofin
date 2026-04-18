@@ -2,11 +2,10 @@
 title: "ACA Marketplace Planning: The Bridge Years Before Medicare"
 description: "Retiring before 65 means buying your own health insurance. The Affordable Care Act marketplace can be surprisingly affordable for early retirees — if you understand how income controls the premium."
 pubDate: 2026-12-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Retirement", "Tax Planning"]
-heroImage: /images/IMG_2007.JPEG
+heroImage: "/images/IMG_2007.JPEG"
 ---
-
 For retirees who stop working before 65, the gap between leaving employer health coverage and Medicare eligibility is one of the most expensive line items of early retirement — unless they understand how the ACA marketplace works. Done thoughtfully, the same household can spend $24,000+ per year on COBRA or pay closer to $0 in premium subsidies. The difference is income management.
 
 ## The system, briefly
