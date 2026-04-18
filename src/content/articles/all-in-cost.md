@@ -2,11 +2,10 @@
 title: "All-In Cost: How to Read Your Advisor's Fee Stack"
 description: "The advisory fee on the proposal is usually only one layer of what you're paying. A straightforward method for calculating your real all-in cost — and what a reasonable number looks like."
 pubDate: 2024-06-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Fees", "Working With Advisors"]
-heroImage: /images/tn-creek-log.jpg
+heroImage: "/images/iStock-2207740982.jpg"
 ---
-
 If someone asks you what your financial advisor charges, you probably quote the advisory fee — 0.85%, 1.0%, 1.25%, whatever it is. That number is usually only a fraction of what you're actually paying. The gap between headline fee and **all-in cost** can easily exceed another full percentage point per year, and over a long investing horizon, one percentage point is a career-changing amount of money. Here's how to actually calculate it.
 
 ## The layers
@@ -29,23 +28,13 @@ Let's compare two portfolios, both $1,000,000.
 
 **Portfolio A — fee-based firm, actively managed funds:**
 
-| Layer | Cost |
-|---|---|
-| Advisory fee | 1.00% |
-| Weighted fund expense ratios (actively managed) | 0.75% |
-| Platform/wrap fee | 0.15% |
-| **All-in** | **1.90%** |
+| Layer | Cost | |---|---| | Advisory fee | 1.00% | | Weighted fund expense ratios (actively managed) | 0.75% | | Platform/wrap fee | 0.15% | | **All-in** | **1.90%** |
 
 Annual dollar cost: **$19,000.**
 
 **Portfolio B — fee-only RIA, low-cost index ETFs:**
 
-| Layer | Cost |
-|---|---|
-| Advisory fee | 0.85% |
-| Weighted fund expense ratios (index ETFs) | 0.08% |
-| Platform/wrap fee | 0 |
-| **All-in** | **0.93%** |
+| Layer | Cost | |---|---| | Advisory fee | 0.85% | | Weighted fund expense ratios (index ETFs) | 0.08% | | Platform/wrap fee | 0 | | **All-in** | **0.93%** |
 
 Annual dollar cost: **$9,300.**
 
