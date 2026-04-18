@@ -2,11 +2,10 @@
 title: "The Backdoor Roth and Mega-Backdoor Roth, Explained"
 description: "Two legal strategies that let high earners put meaningful dollars into Roth accounts despite income limits. The mechanics, the traps, and when they're worth doing."
 pubDate: 2025-03-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Roth", "Tax Planning"]
-heroImage: /images/tetons-shoreline.jpg
+heroImage: "/images/iStock-2254421366.jpg"
 ---
-
 The IRS phases out direct Roth IRA contributions above certain income thresholds — $161,000 for single filers and $240,000 for married filing jointly in 2024. For high earners, that's supposed to close the door on Roth contributions. In practice, two perfectly legal strategies — the **backdoor Roth** and the **mega-backdoor Roth** — reopen it. Here's how they work and when to use them.
 
 ## The backdoor Roth — the basics
@@ -23,6 +22,7 @@ Net result: $7,000 into a Roth account that you technically shouldn't have been 
 The backdoor works cleanly only if you have **no pre-tax balances in any traditional IRA, SEP-IRA, or SIMPLE IRA** at year-end. If you do, the IRS's **pro-rata rule** treats your conversion as a blended mix of pre-tax and post-tax dollars, generating a taxable event on the pre-tax portion.
 
 Workarounds:
+
 - **Roll pre-tax IRA balances into your current 401(k)** (if the plan accepts incoming rollovers). The pro-rata rule only looks at IRAs, not 401(k)s.
 - Convert the whole pre-tax balance in a high-income-tolerant year, paying the tax. Expensive but clean.
 - Skip the backdoor if neither works — it's not worth triggering a pro-rata tax.
