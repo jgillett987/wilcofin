@@ -2,12 +2,10 @@
 title: "A Southwest Airlines Pilot's Retirement Planning Essentials"
 description: "The retirement-planning items every SWAPA-represented Southwest Airlines pilot should be thinking about — from Age 65 to the 401(k) to state-of-residence planning."
 pubDate: 2024-04-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Southwest Airlines", "Pilots", "Retirement"]
-heroImage: /images/tetons-framed.jpg
-featured: true
+heroImage: "/images/Vault.jpg"
 ---
-
 A career at Southwest Airlines — especially as a SWAPA-represented pilot — comes with a retirement picture unlike most professions. The FAA's Age 65 mandatory retirement puts a hard date on the calendar. Variable monthly pay adds complexity to savings discipline. And a handful of decisions made in the final decade of flying can meaningfully reshape what you leave the career with.
 
 This is a short tour of the items we think every SWA pilot should have a view on — not exhaustive, not tax advice, just a starting map.
