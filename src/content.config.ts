@@ -15,6 +15,7 @@ const articles = defineCollection({
       author: z.string().default('Wilco Financial'),
       tags: z.array(z.string()).default([]),
       heroImage: z.string().optional(),
+      heroVideo: z.string().optional(),
       draft: z.boolean().default(false),
       featured: z.boolean().default(false),
     })

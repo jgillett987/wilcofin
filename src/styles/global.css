@@ -554,25 +554,38 @@ img { max-width: 100%; height: auto; display: block; }
 .article-card-body .meta { color: var(--muted); font-size: 0.85rem; }
 .article-card-body p { color: var(--ink); margin: 0; }
 
-/* Individual article hero image */
-.article-hero-image {
-  max-width: 1200px;
-  margin: -40px auto 0;
+/* Individual article body — wider than .narrow, with a floating hero image
+   that the opening paragraphs wrap around. */
+.article-container {
+  max-width: 980px;
+  margin: 0 auto;
   padding: 0 24px;
-  position: relative;
-  z-index: 2;
 }
-.article-hero-image img {
-  width: 100%;
-  max-height: 440px;
+.article-hero-float {
+  float: right;
+  width: 42%;
+  max-width: 420px;
+  max-height: 340px;
   object-fit: cover;
+  margin: 8px 0 28px 64px;
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(1, 19, 66, 0.2);
+  box-shadow: 0 10px 40px rgba(1, 19, 66, 0.15);
   display: block;
+  shape-outside: margin-box;
 }
 @media (max-width: 720px) {
-  .article-hero-image { margin-top: -20px; }
-  .article-hero-image img { max-height: 280px; }
+  .article-hero-float {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px 0;
+  }
+}
+/* Clear floats so sections after the wrap don't get stuck beside the image */
+.article-body::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 /* Footer */

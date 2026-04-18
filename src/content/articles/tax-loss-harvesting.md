@@ -5,6 +5,7 @@ daysAgo: 240
 author: Wilco Financial
 tags: ["Tax Planning", "Working With Advisors"]
 heroImage: /images/yellowstone-geyser.jpg
+heroVideo: /videos/10.mp4
 ---
 
 Tax-loss harvesting is one of those strategies that sounds like magic in marketing copy and turns out to be genuinely useful — but more modestly so — once you understand the mechanics. Here's the honest version.

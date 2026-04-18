@@ -1,10 +1,30 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
-import PrevNext from '../../components/PrevNext.astro';
 import { getCollection, render } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 import { SITE } from '../../consts';
+
+// Pool of hero videos — one is picked per article based on a hash of the slug,
+// so the same article always gets the same video but articles vary across the set.
+const HERO_VIDEOS = [
+  '/videos/00.mp4',
+  '/videos/01.mp4',
+  '/videos/02.mp4',
+  '/videos/03.mp4',
+  '/videos/04.mp4',
+  '/videos/05.mp4',
+  '/videos/06.mp4',
+  '/videos/08.mp4',
+  '/videos/10.mp4',
+  '/videos/14.mp4',
+];
+
+const pickVideo = (slug: string) => {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return HERO_VIDEOS[h % HERO_VIDEOS.length];
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articles = (await getCollection('articles', ({ data }) => !data.draft))
@@ -21,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const { article, prev, next } = Astro.props;
 const { Content } = await render(article);
-const prevNextItems = [prev, next].filter(Boolean) as { label: string; href: string }[];
+const heroVideo = article.data.heroVideo ?? pickVideo(article.id);
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -49,6 +69,8 @@ const breadcrumbsSchema = {
     { '@type': 'ListItem', position: 3, name: article.data.title },
   ],
 };
+
+const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 <BaseLayout
   title={article.data.title}
@@ -62,31 +84,43 @@ const breadcrumbsSchema = {
 >
   <section class="page-hero page-hero-with-video-bg">
     <video class="page-hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="/videos/00.mp4" type="video/mp4" />
+      <source src={heroVideo} type="video/mp4" />
     </video>
-    <div class="container narrow">
+    <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> / <a href="/articles">Articles</a> / <span>{article.data.title}</span>
       </nav>
+      {article.data.tags.length > 0 && <span class="eyebrow">{article.data.tags[0]}</span>}
       <h1>{article.data.title}</h1>
-      <p class="article-meta" style="color:#cfe1ff;">
-        {article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-        {' · '} {article.data.author}
-        {article.data.tags.length > 0 && <> · {article.data.tags.join(', ')}</>}
-      </p>
+      <p>{article.data.description}</p>
     </div>
   </section>
 
-  {article.data.heroImage && (
-    <div class="article-hero-image">
-      <img src={article.data.heroImage} alt="" />
-    </div>
-  )}
-
   <section class="section">
-    <article class="container narrow article-body prose">
-      <Content />
-    </article>
+    <div class="article-container">
+      <p class="article-meta" style="font-size:0.9rem; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; color:var(--muted); margin-bottom:8px;">
+        {formattedDate} · {article.data.author}
+      </p>
+      {article.data.tags.length > 0 && (
+        <p style="margin-bottom:28px; font-size:0.9rem;">
+          {article.data.tags.map((t, i) => {
+            const slug = t.toLowerCase().replace(/\s+/g, '-');
+            return (
+              <>
+                {i > 0 && ' · '}
+                <a href={`/articles/tag/${slug}`}>{t}</a>
+              </>
+            );
+          })}
+        </p>
+      )}
+      <article class="article-body prose">
+        {article.data.heroImage && (
+          <img class="article-hero-float" src={article.data.heroImage} alt="" loading="lazy" />
+        )}
+        <Content />
+      </article>
+    </div>
   </section>
 
   {(prev || next) && (
