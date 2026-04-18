@@ -2,11 +2,10 @@
 title: "Donor-Advised Funds: The Most Underused HNW Strategy"
 description: "A donor-advised fund decouples the timing of your tax deduction from the timing of your charitable giving. For most high earners doing meaningful giving, it's the right tool — and it's nearly free."
 pubDate: 2025-09-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Charitable Planning", "Tax Planning"]
-heroImage: /images/kid-rock-climbing.jpg
+heroImage: "/images/multigen-dinner.jpg"
 ---
-
 Most households giving meaningful amounts to charity each year would be better off using a donor-advised fund (DAF) than writing checks. The strategy is simple, the cost is minimal, and the tax leverage is real. It's one of the most undeployed tools in HNW planning.
 
 ## What a DAF is
