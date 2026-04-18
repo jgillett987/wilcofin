@@ -2,11 +2,10 @@
 title: "The Roth IRA Five-Year Rules: The Two Traps That Catch People"
 description: "Roth IRAs have not one but two five-year rules — and they catch people who thought they understood the account. Here's the clear version."
 pubDate: 2026-09-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Roth", "Tax Planning"]
-heroImage: /images/welcome-wilco-card3.jpg
+heroImage: "/images/iStock-2215417110.jpg"
 ---
-
 The Roth IRA is famously simple: contribute after-tax dollars, grow tax-free, withdraw tax-free in retirement. Most of the time that's all you need to know. But two specific rules — both involving five-year holding periods — trip up investors who thought they understood the rules. Each rule applies in different circumstances, and they're often confused.
 
 Here's the clear version.
