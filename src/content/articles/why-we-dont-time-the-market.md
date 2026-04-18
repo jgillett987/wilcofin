@@ -2,11 +2,10 @@
 title: "Why We Don't Time the Market — and What the Data Actually Shows"
 description: "Market timing is one of the most repeated promises in financial services and one of the most consistently bad outcomes for investors. The data is unambiguous. Here's the honest case."
 pubDate: 2026-10-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Investments", "Working With Advisors"]
-heroImage: /images/IMG_1978.JPEG
+heroImage: "/images/iStock-2260474979.jpg"
 ---
-
 Periodically a client asks why we don't move portfolios to cash before a downturn, or rotate aggressively into whatever's working. The honest answer is that we've looked carefully at what market timing actually delivers in practice, and the evidence against it is overwhelming. This isn't a philosophical position. It's a conclusion from 90+ years of data.
 
 ## What "market timing" actually is
