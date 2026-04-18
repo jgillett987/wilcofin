@@ -1,12 +1,12 @@
 ---
 title: "The \"Fee-Only\" Label Doesn't Mean What You Think"
 description: "\"Fee-only\" sounds clean — no commissions, aligned interests. In practice, the term is self-described and unregulated. Here's how to actually verify."
-pubDate: 2026-01-18
-author: Wilco Financial
+pubDate: 2026-01-17
+author: "Wilco Financial"
 tags: ["Fees", "Fiduciary"]
-heroImage: /images/young-family.jpg
+heroImage: "/images/iStock-2207740982.jpg"
+heroVideo: "/videos/10.mp4"
 ---
-
 "Fee-only" is one of the most repeated — and most loosely defined — phrases in financial services. Advisors use it to signal clean, aligned, client-first economics. Consumers read it as shorthand for "no commissions, no conflicts." The gap between the two is bigger than most people realize.
 
 ## The intended meaning
