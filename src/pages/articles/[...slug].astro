@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/CTA.astro';
 import { render } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 import { SITE, CONTACT } from '../../consts';
@@ -156,23 +157,6 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
         <Content />
       </article>
 
-      {/* Print-only CTA card — encourages reach-out, just before footer */}
-      <div class="print-only print-cta" aria-hidden="true">
-        <div class="print-cta-eyebrow">Have questions about what you just read?</div>
-        <div class="print-cta-title">Let's have a short conversation.</div>
-        <div class="print-cta-body">
-          No pressure, no sales pitch. We offer a complimentary initial consultation
-          to any prospective client — a chance to talk through your situation and
-          decide together whether we're a fit.
-        </div>
-        <div class="print-cta-contact">
-          <div class="print-cta-row"><span class="print-cta-label">Schedule:</span> {SITE.url}/contact</div>
-          <div class="print-cta-row"><span class="print-cta-label">Phone:</span> {CONTACT.phone}</div>
-          <div class="print-cta-row"><span class="print-cta-label">Email:</span> {CONTACT.email}</div>
-          <div class="print-cta-row"><span class="print-cta-label">Mail:</span> {CONTACT.addressLine1}, {CONTACT.addressLine2} · {CONTACT.city}, {CONTACT.state} {CONTACT.zip}</div>
-        </div>
-      </div>
-
       {/* Print-only footer — last page of PDF */}
       <div class="print-only print-footer" aria-hidden="true">
         <div class="print-footer-top">
@@ -243,6 +227,11 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
       </div>
     </nav>
   )}
+
+  <CTA
+    title="Have questions about what you just read?"
+    subtitle="Let's have a short conversation — no pressure, no sales pitch."
+  />
 
   <script is:inline define:vars={{ articleTitle: article.data.title }}>
     (function () {

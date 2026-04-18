@@ -959,55 +959,6 @@ img { max-width: 100%; height: auto; display: block; }
     font-style: italic;
   }
 
-  /* Call-to-action card — sits above the footer, formal tone, clear next-step */
-  .print-cta {
-    display: block !important;
-    margin: 20pt 0 14pt;
-    padding: 14pt 16pt;
-    background: #f7f9fc;
-    border-left: 3pt solid #81c460;
-    page-break-inside: avoid;
-  }
-  .print-cta-eyebrow {
-    font-family: -apple-system, 'Segoe UI', sans-serif;
-    color: #6aad4a;
-    font-size: 8.5pt;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 4pt;
-  }
-  .print-cta-title {
-    font-family: Georgia, serif;
-    color: #011342 !important;
-    font-size: 13pt;
-    font-weight: 700;
-    margin-bottom: 6pt;
-  }
-  .print-cta-body {
-    font-family: -apple-system, 'Segoe UI', sans-serif;
-    color: #1a2238;
-    font-size: 9.5pt;
-    line-height: 1.5;
-    margin-bottom: 8pt;
-  }
-  .print-cta-contact {
-    font-family: -apple-system, 'Segoe UI', sans-serif;
-    font-size: 9pt;
-    line-height: 1.6;
-    color: #011342;
-  }
-  .print-cta-row { margin-bottom: 1pt; }
-  .print-cta-label {
-    display: inline-block;
-    min-width: 52pt;
-    color: #5a6582;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 8pt;
-    letter-spacing: 0.04em;
-  }
-
   .print-footer {
     display: block !important;
     margin-top: 14pt;
