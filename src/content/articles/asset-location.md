@@ -4,7 +4,7 @@ description: "Holding the same portfolio in the wrong account types can cost rea
 pubDate: 2026-02-18
 author: Wilco Financial
 tags: ["Tax Planning", "Investments"]
-heroImage: /images/tn-creek-log.jpg
+heroImage: /images/retirement-beach.jpg
 ---
 
 There's a planning concept that almost every long-term investor has heard of, almost nobody implements properly, and routinely costs households six figures over a working life: **asset location**.

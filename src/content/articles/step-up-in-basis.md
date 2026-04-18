@@ -4,7 +4,7 @@ description: "Holding appreciated assets until death wipes out the embedded capi
 pubDate: 2025-02-18
 author: Wilco Financial
 tags: ["Estate Planning", "Tax Planning"]
-heroImage: /images/tetons-shoreline.jpg
+heroImage: /images/weathered-wood-3.jpg
 ---
 
 One of the most powerful provisions in the U.S. tax code is also one of the most easily wasted. The **step-up in basis at death** wipes out unrealized capital gains on most assets passed to heirs. For households with substantial appreciated holdings, getting the planning right can save heirs hundreds of thousands — sometimes millions — in capital gains tax.

@@ -4,7 +4,7 @@ description: "Holding too much of one company — typically your employer or an 
 pubDate: 2025-11-18
 author: Wilco Financial
 tags: ["Tax Planning", "Investments"]
-heroImage: /images/tetons-shoreline.jpg
+heroImage: /images/sunset-pier.jpg
 ---
 
 If a meaningful slice of your net worth is tied up in a single stock — usually a current or former employer's shares, sometimes an inherited holding, occasionally a long-held position whose cost basis is now nearly zero — you have a planning problem worth solving carefully. Done well, the unwind preserves wealth and reduces risk. Done badly, it generates a large tax bill and locks you into a worse position than you started.

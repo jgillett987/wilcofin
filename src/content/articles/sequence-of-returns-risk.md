@@ -4,7 +4,7 @@ description: "The same average return can produce wildly different retirement ou
 pubDate: 2025-12-18
 author: Wilco Financial
 tags: ["Retirement", "Investments"]
-heroImage: /images/yellowstone-bison.jpg
+heroImage: /images/family-home.jpg
 ---
 
 Two retirees with identical portfolios, identical withdrawal rates, and the same average annual return over 30 years can end up in completely different places. One ends with more money than they started with. The other runs out at age 78. The difference is **the order in which the returns happened**.

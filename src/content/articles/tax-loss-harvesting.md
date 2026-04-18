@@ -4,7 +4,7 @@ description: "The mechanics of tax-loss harvesting — and an honest look at whe
 pubDate: 2025-08-18
 author: Wilco Financial
 tags: ["Tax Planning", "Working With Advisors"]
-heroImage: /images/yellowstone-geyser.jpg
+heroImage: /images/multigen-dinner.jpg
 heroVideo: /videos/10.mp4
 ---
 
