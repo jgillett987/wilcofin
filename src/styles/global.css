@@ -593,16 +593,22 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .article-hero-float {
   float: right;
-  width: 42%;
-  max-width: 420px;
-  max-height: 340px;
+  width: 38%;
+  max-width: 380px;
+  /* Landscape crop — tall portrait images used to leave dead space below
+     the image when the intro was short. A 16:10 cap keeps the float from
+     extending far past the first paragraph or two of text. */
+  aspect-ratio: 16 / 10;
+  max-height: 240px;
   object-fit: cover;
-  margin: 8px 0 28px 64px;
+  margin: 8px 0 24px 40px;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(1, 19, 66, 0.15);
   display: block;
   shape-outside: margin-box;
 }
+/* Headings inside the body should wrap around the float, not clear it. */
+.article-body h2, .article-body h3 { clear: none; }
 @media (max-width: 720px) {
   .article-hero-float {
     float: none;
