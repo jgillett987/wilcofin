@@ -2,11 +2,10 @@
 title: "Pilot Estate Planning: The Issues Most Plans Miss"
 description: "Airline pilots have a few estate planning considerations that the typical estate attorney doesn't ask about. Multiple-state property, international family, mid-flight contingencies, and SWAPA-specific benefits all deserve coordination."
 pubDate: 2026-06-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines", "Estate Planning"]
-heroImage: /images/IMG_9396.JPEG
+heroImage: "/images/hero-home.jpg"
 ---
-
 Most estate plans for pilots look like estate plans for everyone else: a will, a trust if assets warrant, beneficiary designations, powers of attorney. The structure is fine. What gets missed are the items unique to airline life that almost no general-practice estate attorney thinks to ask about.
 
 A handful that come up regularly in our pilot conversations.
