@@ -4,7 +4,7 @@ description: "A CRT can convert a highly-appreciated asset into lifetime income,
 pubDate: 2027-02-18
 author: "Wilco Financial"
 tags: ["Charitable Planning", "Estate Planning", "Tax Planning"]
-heroImage: "/images/IMG_3292.JPG"
+heroImage: "/images/multigen-dinner.jpg"
 ---
 A Charitable Remainder Trust (CRT) is one of the more sophisticated tools in HNW planning. Done well, it solves a specific set of problems elegantly: a large appreciated asset, a desire for lifetime income, a charitable goal, and a substantial tax bill that would otherwise come due on sale. Done in the wrong situation, it's expensive complexity that doesn't earn its keep.
 
