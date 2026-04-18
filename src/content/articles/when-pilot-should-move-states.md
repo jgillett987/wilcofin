@@ -4,8 +4,8 @@ description: "Many pilots have meaningful flexibility on where to live. Over a 2
 pubDate: 2024-10-18
 author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines", "Tax Planning"]
-heroImage: "/images/forest-stream.jpg"
-heroVideo: "/videos/08.mp4"
+heroImage: "/images/IMG_9396.JPEG"
+heroVideo: "/videos/01.mp4"
 ---
 Few professions have as much flexibility on residency as commercial pilots. Your work is wherever the airplane is, your schedule lets you commute, and the tax implications of where you live are often the largest controllable variable in your financial life. Yet most pilots default to "I live where I lived when I got hired" without ever modeling the alternative.
 
