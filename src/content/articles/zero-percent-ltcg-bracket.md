@@ -2,11 +2,10 @@
 title: "The 0% Long-Term Capital Gains Bracket: Who Gets It and How to Use It"
 description: "Long-term capital gains can be taxed at zero percent at the federal level. The income threshold is wider than most people realize, and the planning value is significant for early retirees and lower-income years."
 pubDate: 2026-04-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Tax Planning", "Retirement"]
-heroImage: /images/IMG_9063.JPEG
+heroImage: "/images/iStock-2254421366.jpg"
 ---
-
 Most investors know that long-term capital gains are taxed more favorably than ordinary income. Fewer realize that there's a federal bracket where the long-term capital gains rate is **zero**. Even fewer plan around it deliberately. For households who can model their income year by year, the 0% LTCG bracket is one of the cleanest tax wins available.
 
 ## The thresholds
