@@ -2,11 +2,10 @@
 title: "The SWA 401(k) Decision: Pre-Tax, Roth, or After-Tax?"
 description: "Southwest Airlines pilots and employees with access to all three contribution buckets face a real planning question every year. The right mix depends on age, income, marginal bracket, and what comes next."
 pubDate: 2024-05-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines", "Tax Planning", "Roth", "Retirement"]
-heroImage: /images/yellowstone-geyser.jpg
+heroImage: "/images/iStock-2254814013.jpg"
 ---
-
 Southwest Airlines' 401(k) plan, like many institutional plans, offers three contribution buckets: **traditional pre-tax**, **Roth**, and (where the plan allows) **after-tax** contributions that can be converted to Roth via the in-plan mega-backdoor mechanism. For SWA pilots and employees with the income and the discipline to fill multiple buckets, the question of how to split annual contributions is one of the highest-leverage planning decisions you face every year.
 
 There's no single right answer. Here's how to think about it.
@@ -39,9 +38,9 @@ For a senior pilot at SWA, it's often wrong. Three reasons:
 
 1. **You're going to retire on a lot.** A senior captain with 20+ years of full-deferral 401(k) plus profit-sharing contributions, plus other savings, is going to retire with seven figures in pre-tax accounts. Required minimum distributions on a $3M pre-tax balance at age 73 will be approximately $113K/year — and growing. Add Social Security and any taxable account income, and you're not in a low bracket in retirement.
 
-2. **Tax rates are historically low.** Federal marginal rates above 24% used to be much higher. The 2017 Tax Cuts and Jobs Act dropped them, and those provisions are scheduled to sunset (currently set for end of 2025, though Congressional action may extend them). The bet that "rates will be lower when I retire" is a bet on continued low rates over decades — not historically a great bet.
+1. **Tax rates are historically low.** Federal marginal rates above 24% used to be much higher. The 2017 Tax Cuts and Jobs Act dropped them, and those provisions are scheduled to sunset (currently set for end of 2025, though Congressional action may extend them). The bet that "rates will be lower when I retire" is a bet on continued low rates over decades — not historically a great bet.
 
-3. **You have a fixed retirement age.** [FAA Age 65](/articles/swa-pilot-retirement-essentials) is a hard stop. You don't have the option to "just keep working a bit longer if I need to." Roth dollars give you flexibility — they're not subject to RMDs, they don't push you into IRMAA brackets, they don't make Social Security more taxable.
+1. **You have a fixed retirement age.** [FAA Age 65](/articles/swa-pilot-retirement-essentials) is a hard stop. You don't have the option to "just keep working a bit longer if I need to." Roth dollars give you flexibility — they're not subject to RMDs, they don't push you into IRMAA brackets, they don't make Social Security more taxable.
 
 For most pilots in their final 10–15 career years with a substantial pre-tax balance already accumulated, the marginal next dollar should generally go to Roth. The first $23K elective deferral split should lean Roth-heavy.
 
