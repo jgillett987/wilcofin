@@ -1,12 +1,12 @@
 ---
 title: "Bunching Charitable Deductions: How TCJA Made an Old Strategy New Again"
 description: "The 2017 doubling of the standard deduction made annual charitable giving tax-invisible for most households. Bunching multiple years of giving into one tax year solves it."
-pubDate: 2025-04-18
-author: Wilco Financial
+pubDate: 2025-04-17
+author: "Wilco Financial"
 tags: ["Tax Planning", "Charitable Planning"]
-heroImage: /images/weathered-wood-2.jpg
+heroImage: "/images/iStock-2254421366.jpg"
+heroVideo: "/videos/01.mp4"
 ---
-
 If you give meaningfully to charity every year and take the standard deduction on your tax return, your charitable giving is generating zero current tax benefit. Most people don't realize this. Most CPAs don't bring it up because the fix isn't a tax-prep matter — it's a planning matter, made before the year ends.
 
 The fix is **bunching**.
@@ -30,10 +30,12 @@ Same total giving over 5 years. Same charities receive the same money. But the t
 Married couple, $200K AGI, $10K SALT (capped), $0 mortgage interest, $20K/year of charitable giving, 24% marginal bracket.
 
 **Without bunching (5 years, status quo):**
+
 - Each year: itemizable = $30K vs. standard = $29.2K. They itemize at $30K.
 - Marginal tax benefit of charity: $30K - $29.2K = $800 of benefit at 24% = **$192/year × 5 = $960 over 5 years**
 
 **With bunching (5 years' giving in year 1):**
+
 - Year 1: $100K to a [donor-advised fund](/articles/donor-advised-funds). Itemizable = $110K. Tax benefit of itemizing over standard: $110K - $29.2K = $80.8K × 24% = **$19,400**
 - Years 2–5: take standard deduction. No itemized deductions. $0 charity-related tax benefit.
 
