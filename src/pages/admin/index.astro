@@ -686,6 +686,48 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
         if (composing && !slugManual && fSlug) fSlug.value = slugify($('aeTitle').textContent);
       });
 
+      // Poll the live article URL until the new content appears. The admin
+      // and the live site are same-origin so this is a plain fetch. We look
+      // for the saved title and description in the returned HTML. Gives up
+      // after 10 minutes.
+      let livePollToken = 0;
+      async function pollLive(slug, expected, stillRelevant) {
+        const myToken = ++livePollToken;
+        const liveUrl = '/articles/' + slug + '/';
+        const started = Date.now();
+        const statusEl = () => document.getElementById('livePollStatus');
+        const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const check = async () => {
+          if (myToken !== livePollToken) return; // superseded by a newer save
+          if (stillRelevant && !stillRelevant()) return; // flash is gone
+          const elapsed = Math.round((Date.now() - started) / 1000);
+          if (elapsed > 600) {
+            const s = statusEl(); if (s) s.innerHTML = '<strong>Still waiting after 10 min.</strong> Check <a href="https://vercel.com/jgillett987s-projects/wilcofin" target="_blank" rel="noopener" style="color:#011342;text-decoration:underline">Vercel deployments</a>.';
+            return;
+          }
+          try {
+            const res = await fetch(liveUrl + '?_=' + Date.now(), { cache: 'no-store' });
+            if (res.ok) {
+              const html = await res.text();
+              // Match on the *exact* saved title or description (rendered into
+              // the page as <h1> text and <meta name="description">). Use a
+              // loose-ish contains check that tolerates HTML entities.
+              const needle = esc(expected.title) || '';
+              const needleDesc = esc(expected.description) || '';
+              const live = (needle && html.indexOf(needle) !== -1) ||
+                           (needleDesc && html.indexOf(needleDesc) !== -1);
+              if (live) {
+                const s = statusEl(); if (s) s.innerHTML = '<strong>✓ Live on the site</strong> after ' + elapsed + 's.';
+                return;
+              }
+            }
+          } catch (err) { /* network blip — keep polling */ }
+          const s = statusEl(); if (s) s.textContent = 'Waiting for Vercel to redeploy… ' + elapsed + 's';
+          setTimeout(check, 8000);
+        };
+        setTimeout(check, 8000); // first check after 8s; GitHub→Vercel handoff is ~10-30s
+      }
+
       async function saveArticle(e) {
         if (e && e.preventDefault) e.preventDefault();
         syncTitle(); syncDesc();
@@ -789,17 +831,23 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
             Object.assign(editing, data, { body: $('fBody').value, heroVideo: heroVideo });
           }
 
-          // Stay on the edit view and show a clear, verifiable success state
-          // (with a link to the actual GitHub commit) instead of bouncing to
-          // the stale list. The list is server-rendered at build time, so
-          // changes only appear there after Vercel redeploys.
+          // Stay on the edit view and show a clear, verifiable success state.
           const commitBit = commitUrl
             ? ' · <a href="' + commitUrl + '" target="_blank" rel="noopener" style="color:#011342;text-decoration:underline"><code>' + (commitSha ? commitSha.slice(0, 7) : 'commit') + '</code> on GitHub</a>'
             : '';
-          $('editFlash').innerHTML = '<div class="flash ok">✓ Saved <strong>' + slug + '.md</strong>' + commitBit + ' · Vercel will redeploy in ~1–2 minutes.</div>';
+          const liveUrl = '/articles/' + slug + '/';
+          const viewBit = ' · <a href="' + liveUrl + '" target="_blank" rel="noopener" style="color:#011342;text-decoration:underline">View article ↗</a>';
+          const baseFlash = '<div class="flash ok">✓ Saved <strong>' + slug + '.md</strong>' + commitBit + viewBit;
+          $('editFlash').innerHTML = baseFlash + ' · <span id="livePollStatus">Waiting for Vercel to redeploy (typically 30–90s)…</span></div>';
           const savedLabel = composing ? 'Created ✓' : 'Saved ✓';
           btn.textContent = savedLabel;
           setTimeout(() => { if (btn.textContent === savedLabel) btn.textContent = labelDefault; }, 2000);
+          // Kick off a poll of the live URL; tell the user the moment the
+          // new content is actually visible on the production site.
+          pollLive(slug, {
+            title: data.title,
+            description: data.description,
+          }, () => $('editFlash').innerHTML.includes(slug)); // keep polling only while this flash is current
           return true;
         } catch (err) {
           flash($('editFlash'), String(err.message || err), 'err');
