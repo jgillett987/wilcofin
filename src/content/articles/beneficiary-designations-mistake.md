@@ -4,7 +4,7 @@ description: "The most expensive estate planning mistake we see isn't a missing 
 pubDate: 2025-06-18
 author: "Wilco Financial"
 tags: ["Estate Planning"]
-heroImage: "/images/family-home.jpg"
+heroImage: "/images/Shark.jpg"
 ---
 When most people think about estate planning, they think about wills and trusts. Those documents matter. But they govern a smaller portion of most estates than people realize — and they're routinely overridden by a simpler, more powerful document type that almost everyone fills out and almost nobody reviews: **beneficiary designations**.
 
