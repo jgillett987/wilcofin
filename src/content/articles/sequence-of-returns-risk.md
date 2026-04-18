@@ -2,11 +2,10 @@
 title: "Sequence-of-Returns Risk: The Hidden Killer of Retirement Plans"
 description: "The same average return can produce wildly different retirement outcomes depending on the order of the years. Why the first decade after retirement matters disproportionately — and what to do about it."
 pubDate: 2025-12-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Retirement", "Investments"]
-heroImage: /images/family-home.jpg
+heroImage: "/images/Shark.jpg"
 ---
-
 Two retirees with identical portfolios, identical withdrawal rates, and the same average annual return over 30 years can end up in completely different places. One ends with more money than they started with. The other runs out at age 78. The difference is **the order in which the returns happened**.
 
 This is sequence-of-returns risk. It's the single most underappreciated risk in retirement planning, and it disproportionately determines whether a plan works.
