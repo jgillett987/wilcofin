@@ -1,0 +1,66 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+const faqs = (await getCollection('faqs')).sort((a, b) => a.data.order - b.data.order);
+
+// Group by category
+const byCategory = new Map<string, typeof faqs>();
+for (const f of faqs) {
+  const cat = f.data.category;
+  if (!byCategory.has(cat)) byCategory.set(cat, []);
+  byCategory.get(cat)!.push(f);
+}
+
+// Render each FAQ body to plain text for JSON-LD
+const faqEntries = await Promise.all(
+  faqs.map(async (f) => {
+    const { Content } = await render(f);
+    return { f, Content };
+  })
+);
+
+// Build structured data
+const plainText = (str: string) => str.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.data.question,
+    acceptedAnswer: { '@type': 'Answer', text: plainText(f.body || '') },
+  })),
+};
+---
+<PageLayout
+  title="Frequently Asked Questions"
+  description="Answers to common questions about Wilco Financial's services, fees, the fiduciary standard, and working with a state-registered investment adviser."
+  eyebrow="FAQ"
+  heroTitle="Frequently Asked Questions"
+  heroSubtitle="Short, honest answers. If you don't see yours, reach out."
+  breadcrumbs={[{ label: 'FAQ' }]}
+  heroVideo="/videos/08.mp4"
+  structuredData={faqSchema}
+>
+  <section class="section">
+    <div class="container narrow">
+      {[...byCategory.entries()].map(([cat, list]) => (
+        <div style="margin-bottom:48px;">
+          <h2>{cat}</h2>
+          {list.map((f) => {
+            const entry = faqEntries.find((e) => e.f.id === f.id)!;
+            const { Content } = entry;
+            return (
+              <details class="faq-item">
+                <summary>{f.data.question}</summary>
+                <div class="faq-body">
+                  <Content />
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  </section>
+</PageLayout>

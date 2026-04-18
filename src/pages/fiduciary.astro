@@ -1,0 +1,70 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrevNext from '../components/PrevNext.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a fiduciary?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A fiduciary is a financial professional who is legally and ethically required to act in their client\'s best interest. Registered investment advisers, like Wilco Financial, are held to the fiduciary standard under the Investment Advisers Act of 1940.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is every financial advisor a fiduciary?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Many brokers and insurance agents operate under a lower "suitability" standard, which only requires that a recommendation be suitable — not that it be the best available option for you. This is a meaningful difference, especially when commissions or product-sales incentives are involved.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I verify an advisor is a fiduciary?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Check the advisor\'s Form ADV on adviserinfo.sec.gov — all registered investment advisers must file one. Wilco Financial\'s Form ADV is also available directly on our site.',
+      },
+    },
+  ],
+};
+---
+<PageLayout
+  title="What is a Fiduciary?"
+  description="A fiduciary is legally required to act in your best interest. Learn what the fiduciary standard means — and why it matters when choosing a financial adviser."
+  eyebrow="About"
+  heroTitle="What is a fiduciary?"
+  heroSubtitle="The short version: a fiduciary is legally required to put your interests ahead of their own."
+  breadcrumbs={[{ label: 'About', href: '/about' }, { label: 'What is a Fiduciary' }]}
+  heroVideo="/videos/00.mp4"
+  structuredData={faqSchema}
+>
+  <section class="section">
+    <div class="container narrow">
+      <h2>The fiduciary standard</h2>
+      <p>A <strong>fiduciary</strong> is a financial professional who is legally and ethically required to act in your best interest. Registered investment advisers — including Wilco Financial — are held to the fiduciary standard under the <em>Investment Advisers Act of 1940</em> and applicable state law.</p>
+      <p>That means:</p>
+      <ul class="checklist">
+        <li>Our advice must be in <strong>your</strong> best interest — not the firm's, not the adviser's.</li>
+        <li>We must disclose conflicts of interest.</li>
+        <li>We must charge reasonable, transparent fees.</li>
+        <li>We must act with <em>loyalty</em> and <em>care</em>.</li>
+      </ul>
+
+      <h2>Fiduciary vs. "suitability"</h2>
+      <p>Many people are surprised to learn that <strong>not everyone who calls themselves a financial advisor is a fiduciary</strong>. Brokers, insurance agents, and representatives of many broker-dealers operate under a lower <em>suitability</em> standard. Under that standard, a recommendation only has to be "suitable" — not optimal, not cheapest, not best for you.</p>
+      <p>That distinction matters most when commissions, product-sales incentives, or proprietary products are in the picture. A commissioned salesperson may legitimately recommend a higher-cost product over a cheaper, equally good alternative — as long as the recommendation is "suitable." A fiduciary cannot.</p>
+
+      <h2>How to verify</h2>
+      <p>Every registered investment adviser must file a <strong>Form ADV</strong> with regulators. You can look up any adviser at <a href="https://adviserinfo.sec.gov" target="_blank" rel="noopener">adviserinfo.sec.gov</a>. Wilco Financial's Form ADV is also available directly on our site — <a href="/form-adv">view our Form ADV</a>.</p>
+
+      <h2>Why it matters</h2>
+      <p>Over a 30-year investing career, the difference between a 1% and a 2% all-in cost can equal hundreds of thousands of dollars. When you factor in product commissions, sub-advisor fees, and hidden expense ratios, the gap widens further. A fiduciary relationship gives you the clearest line of sight into what you're paying and why.</p>
+    </div>
+  </section>
+  <PrevNext section="about" />
+</PageLayout>

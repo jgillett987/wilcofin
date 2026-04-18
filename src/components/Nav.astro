@@ -1,0 +1,39 @@
+---
+import { NAV, CONTACT } from '../consts';
+const path = Astro.url.pathname;
+const isActive = (href: string) => href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
+---
+<nav class="nav" id="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/" aria-label="Wilco Financial home">
+      <img src="/logo-color.png" alt="Wilco Financial" width="180" height="44" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      {NAV.map((item) => (
+        <li class={`nav-item${item.children ? ' has-children' : ''}`}>
+          <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+          {item.children && (
+            <ul class="nav-dropdown">
+              {item.children.map((c) => (
+                <li><a href={c.href} aria-current={path === c.href ? 'page' : undefined}>{c.label}</a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+    <a class="btn btn-accent nav-cta" href="/contact">Contact</a>
+  </div>
+</nav>
+<script>
+  const nav = document.getElementById('site-nav');
+  const toggle = nav?.querySelector('.nav-toggle');
+  toggle?.addEventListener('click', () => {
+    const open = nav?.getAttribute('data-open') === 'true';
+    nav?.setAttribute('data-open', String(!open));
+    toggle?.setAttribute('aria-expanded', String(!open));
+  });
+</script>

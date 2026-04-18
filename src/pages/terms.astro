@@ -1,0 +1,35 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE, CONTACT, DISCLOSURE } from '../consts';
+---
+<PageLayout
+  title="Terms of Use"
+  description="Terms of use for the Wilco Financial website, including important regulatory disclosures."
+  eyebrow="Legal"
+  heroTitle="Terms of Use"
+  heroSubtitle="Website terms and regulatory disclosures."
+  breadcrumbs={[{ label: 'Terms of Use' }]}
+  heroVideo="/videos/02.mp4"
+  hideCTA={true}
+>
+  <section class="section">
+    <div class="container narrow">
+      <p class="muted"><em>Last updated: January 2026</em></p>
+
+      <h2>Website purpose</h2>
+      <p>This website is operated by {SITE.legalName} for informational purposes. Content on this site is provided for general information and education. Nothing on this site constitutes personalized investment, tax, or legal advice, which can only be provided in one-on-one communications.</p>
+
+      <h2>Regulatory disclosure</h2>
+      <p>{DISCLOSURE}</p>
+
+      <h2>Third-party links</h2>
+      <p>Links from this site to third-party websites are provided for convenience. We do not endorse or control third-party sites and are not responsible for their content.</p>
+
+      <h2>No warranty</h2>
+      <p>Information on this site is provided "as is" without warranty of any kind. We strive for accuracy but make no guarantees that content is current, complete, or free from error. Market data and planning strategies change; consult us or another qualified professional before acting on any content on this site.</p>
+
+      <h2>Contact</h2>
+      <p>Questions? Email <a href={CONTACT.emailHref}>{CONTACT.email}</a> or call <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>.</p>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,110 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  heroVideo?: string;
+  heroVideoFreeze?: boolean;
+  breadcrumbs?: { label: string; href?: string }[];
+  hideCTA?: boolean;
+  structuredData?: object | object[];
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  author?: string;
+}
+const {
+  title,
+  description,
+  eyebrow,
+  heroTitle,
+  heroSubtitle,
+  heroImage,
+  heroImageAlt = '',
+  heroVideo,
+  heroVideoFreeze = false,
+  breadcrumbs = [],
+  hideCTA = false,
+  structuredData,
+  type,
+  publishedTime,
+  modifiedTime,
+  author,
+} = Astro.props;
+
+const bcJsonLd = breadcrumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).toString() },
+    ...breadcrumbs.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: b.label,
+      item: b.href ? new URL(b.href, Astro.site).toString() : undefined,
+    })),
+  ],
+} : null;
+
+const sd = [
+  ...(bcJsonLd ? [bcJsonLd] : []),
+  ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : []),
+];
+---
+<BaseLayout
+  title={title}
+  description={description}
+  structuredData={sd}
+  type={type}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  author={author}
+>
+  <section class={`page-hero${heroImage ? ' page-hero-with-image' : ''}${heroVideo ? ' page-hero-with-video-bg' : ''}`}>
+    {heroVideo && (
+      heroVideoFreeze ? (
+        <video class="page-hero-bg-video" autoplay muted playsinline preload="auto" aria-hidden="true">
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      ) : (
+        <video class="page-hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      )
+    )}
+    <div class="container">
+      <div class={heroImage ? 'page-hero-grid' : ''}>
+        <div>
+          {breadcrumbs.length > 0 && (
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              {breadcrumbs.map((b, i) => (
+                <span>
+                  {' / '}
+                  {b.href && i < breadcrumbs.length - 1 ? <a href={b.href}>{b.label}</a> : <span>{b.label}</span>}
+                </span>
+              ))}
+            </nav>
+          )}
+          {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+          <h1>{heroTitle || title}</h1>
+          {heroSubtitle && <p>{heroSubtitle}</p>}
+        </div>
+        {heroImage && (
+          <div class="page-hero-image">
+            <img src={heroImage} alt={heroImageAlt} loading="eager" />
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+  <slot />
+  {!hideCTA && <CTA />}
+</BaseLayout>

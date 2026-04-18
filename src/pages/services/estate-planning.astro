@@ -1,0 +1,59 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PrevNext from '../../components/PrevNext.astro';
+---
+<PageLayout
+  title="Estate Planning"
+  description="Wilco Financial coordinates with your estate attorney to help protect and efficiently transfer what you've built — wills, trusts, beneficiary designations, and more."
+  eyebrow="Services"
+  heroTitle="Estate Planning"
+  heroSubtitle="Protect what you've built. Pass on what you choose. Avoid the costly, common mistakes."
+  heroVideo="/videos/03.mp4"
+  breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'Estate Planning' }]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">Because You Care</h2>
+          <p style="font-size:1.15rem;">A good estate plan is more than a will. It's a coordinated set of documents and designations that ensures your assets go where you intend, with minimum delay, cost, and tax leakage — and that someone you trust can act on your behalf if you can't.</p>
+          <p style="font-size:1.15rem;">Done well, it's one of the most meaningful gifts you leave the people you love — clarity and confidence when they need it most.</p>
+        </div>
+        <div>
+          <img src="/images/hero-home.jpg" alt="Grandfather dancing with his granddaughter — the legacy an estate plan protects" loading="lazy" style="width:100%; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <h2>The core documents</h2>
+      <ul class="checklist">
+        <li><strong>Last will and testament</strong> — how probate assets are distributed</li>
+        <li><strong>Revocable living trust</strong> — where appropriate, to avoid probate and maintain privacy</li>
+        <li><strong>Durable power of attorney</strong> — someone to act on financial matters if you're incapacitated</li>
+        <li><strong>Healthcare directive / living will</strong> — your wishes for medical decisions</li>
+        <li><strong>HIPAA authorization</strong> — letting chosen family members access medical info</li>
+        <li><strong>Beneficiary designations</strong> — on every IRA, 401(k), life insurance policy, and TOD account</li>
+      </ul>
+
+      <h2>Our role</h2>
+      <p>We don't draft legal documents — that's your estate attorney's job. What we <em>do</em> is make sure your financial life is aligned with your estate plan:</p>
+      <ul>
+        <li>Reviewing beneficiary designations (the #1 source of unintended disinheritance)</li>
+        <li>Coordinating account titling with your trust structure</li>
+        <li>Modeling estate tax exposure and planning strategies</li>
+        <li>Introducing you to experienced estate attorneys if you don't have one</li>
+        <li>Reviewing existing plans when life events change the picture — marriage, divorce, children, grandchildren, a move across state lines</li>
+      </ul>
+
+      <h2>The common mistakes we help prevent</h2>
+      <ul class="checklist">
+        <li>Outdated beneficiary designations (e.g., naming an ex-spouse on your 401(k))</li>
+        <li>Trusts that are never funded</li>
+        <li>Titling assets in ways that defeat the trust structure</li>
+        <li>Ignoring state-specific issues when you move (e.g., to or from Tennessee)</li>
+        <li>Surprises at tax time — both federal estate tax and state-level exposure</li>
+      </ul>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

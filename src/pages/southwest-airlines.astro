@@ -1,0 +1,138 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrevNext from '../components/PrevNext.astro';
+import { SITE, CONTACT } from '../consts';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do Southwest Airlines employees really get a discount on Wilco Financial fees?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Yes. SWA employees — including SWAPA-represented pilots, flight attendants, ground ops, tech ops, and corporate employees — receive a ${SITE.swaDiscount} discount on our standard advisory fee, bringing the effective rate to ${SITE.swaEffectiveFee} per year of managed assets.`,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What makes pilot retirement planning different?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pilots face unique planning challenges: an FAA Age 65 mandatory retirement, variable income based on flight hours and overrides, Social Security interaction with a high peak-earning career, significant 401(k) and profit-sharing contributions concentrated in peak years, and state-of-residence decisions that can materially affect lifetime taxes.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I have to live in Tennessee to work with Wilco?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. We can work with clients in any state where we are registered or otherwise permitted. Virtual meetings are standard, and many SWA pilots — who already live flexibly — find remote relationships natural.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is the SWA 401(k) plan structured?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Southwest Airlines offers a 401(k) with an employer match plus profit sharing. Plan design, vesting, match percentage, and profit-sharing formulas vary by employee group and contract. We help you optimize contributions, balance between traditional and Roth treatment where available, and coordinate with your outside accounts.',
+      },
+    },
+  ],
+};
+---
+<PageLayout
+  title="Southwest Airlines Pilots & Employees"
+  description="Wilco Financial has deep knowledge of the Southwest Airlines retirement plan and the financial planning issues SWAPA pilots and SWA employees face — and offers every SWA employee a 20% discount on our advisory fee."
+  eyebrow="A Special Offer"
+  heroTitle="A Special Offer for Southwest Airlines Pilots and Employees"
+  heroSubtitle={`We know the plan, we know the career, and we enjoy the people — the ${SITE.swaDiscount} discount is our way of saying thanks.`}
+  heroVideo="/videos/05.mp4"
+  breadcrumbs={[{ label: 'SWA Pilots & Employees' }]}
+  structuredData={faqSchema}
+>
+  <style>
+    .page-hero .container > div { text-align: center; max-width: 880px; margin: 0 auto; }
+    .page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 20px; }
+    .page-hero p { font-size: 1.25rem; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .page-hero .breadcrumb { text-align: left; }
+    .page-hero .eyebrow { display: inline-block; }
+  </style>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Why the offer</span>
+        <h2 class="underline">A career worth planning around.</h2>
+        <p>We work with families across a range of professions, but we've spent real time learning the Southwest Airlines picture — particularly for SWAPA-represented pilots. FAA Age 65. Variable monthly income driven by the bid line. Concentrated peak-earning years. A 401(k) and profit-sharing plan with specifics most generalist advisors have never opened. Tax decisions driven by where you base vs. where you live.</p>
+        <p>It's not the only thing we do — but it's something we're genuinely good at, and we like the people. The discount is our way of making it easy to start a conversation.</p>
+      </div>
+      <div class="card" style="background: linear-gradient(135deg, #011342 0%, #0a2a6f 100%); color:#fff; border:none; text-align:center;">
+        <div style="text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; opacity:0.9;">SWA Employee Advisory Fee</div>
+        <div style="font-family:var(--font-head); font-size:4rem; color:#fff; line-height:1; margin:12px 0;">{SITE.swaEffectiveFee}</div>
+        <div style="opacity:0.9; margin-bottom:12px;">per year of managed assets</div>
+        <div style="display:inline-block; background:rgba(129,196,96,0.25); border:1px solid rgba(129,196,96,0.6); color:#d8f0c6; padding:6px 14px; border-radius:20px; font-size:0.85rem; font-weight:700; letter-spacing:0.05em;">{SITE.swaDiscount} OFF STANDARD {SITE.fee} FEE</div>
+        <p style="margin-top:24px; margin-bottom:0;">
+          <a href={CONTACT.calendlyUrl} class="btn btn-accent" target="_blank" rel="noopener">Schedule a Meeting</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-soft">
+    <div class="container narrow">
+      <h2>What we know about the Southwest Airlines retirement picture</h2>
+      <h3>The SWA 401(k) and profit sharing</h3>
+      <p>Southwest Airlines offers a 401(k) plan with an employer match, along with a profit-sharing contribution that can meaningfully boost total retirement savings — especially in strong earning years. Plan specifics vary by employee group and collectively bargained agreement, but the common questions we help answer:</p>
+      <ul class="checklist">
+        <li>How should I split between pre-tax, Roth, and after-tax contributions (if available to you)?</li>
+        <li>How does the mega-backdoor Roth apply, where in-plan Roth conversions are permitted?</li>
+        <li>What's the right investment mix inside the 401(k) given my other accounts?</li>
+        <li>When should I roll old balances over — and when shouldn't I?</li>
+        <li>How does profit sharing interact with annual contribution limits?</li>
+      </ul>
+
+      <h3>SWAPA and the pilot-specific picture</h3>
+      <p>SWAPA — the Southwest Airlines Pilots Association — provides extensive retirement resources for its members, including retirement education, seminars, and member benefits. Our work complements those resources, not replaces them. If you want a second set of eyes on how it all fits with your broader financial life, that's where we can help.</p>
+      <p>Planning issues that come up regularly for pilots:</p>
+      <ul class="checklist">
+        <li><strong>FAA Age 65 mandatory retirement</strong> — planning backwards from a fixed date</li>
+        <li><strong>Variable monthly income</strong> — the bid line, override pay, overtime, and how to save consistently when pay isn't</li>
+        <li><strong>State-of-residence planning</strong> — many pilots have real optionality on where to establish domicile; the tax implications over a career can be meaningful</li>
+        <li><strong>Social Security strategy</strong> — peak earners often benefit from delayed claiming, but it depends on spousal earnings and health</li>
+        <li><strong>Disability and loss-of-license</strong> — coordinating SWAPA benefits with outside coverage</li>
+        <li><strong>Second careers</strong> — many pilots work after Age 65; how the income interacts with the retirement plan</li>
+        <li><strong>Medicare vs. retiree health</strong> — the transition between age 65 and your retirement date</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <h2>For all SWA employees, not just pilots</h2>
+      <p>The {SITE.swaDiscount} discount applies to every SWA employee: pilots, flight attendants, ground operations, maintenance, dispatchers, customer service, corporate staff, and retirees. If you work or worked at Southwest, you qualify.</p>
+      <p>The planning issues vary — a flight attendant's bid structure is different from a pilot's, and corporate stock compensation has its own set of questions — but the underlying philosophy is the same: one plan, coordinated across accounts, aligned with your real life.</p>
+    </div>
+  </section>
+
+  <section class="section bg-soft">
+    <div class="container narrow">
+      <h2>How we get started</h2>
+      <ol style="font-size:1.08rem; line-height:1.9;">
+        <li><strong>Introductory call (30 minutes, no cost).</strong> We talk about your situation, answer questions, and see if we're a fit.</li>
+        <li><strong>Discovery.</strong> We gather the relevant documents — 401(k) statement, outside accounts, Social Security estimate, any existing plans.</li>
+        <li><strong>Plan and recommendations.</strong> We put together a clear, written view of where you are, where you want to go, and what to change.</li>
+        <li><strong>Implementation.</strong> If you choose to engage us for ongoing management, we implement the portfolio changes and coordinate the other moving pieces.</li>
+        <li><strong>Ongoing.</strong> Quarterly check-ins, annual reviews, and open access whenever life changes.</li>
+      </ol>
+      <p style="margin-top:32px;">
+        <a href={CONTACT.calendlyUrl} class="btn btn-primary" target="_blank" rel="noopener">Schedule a Meeting</a>
+        <a href="/contact" class="btn btn-outline">Contact Us</a>
+      </p>
+      <p class="muted" style="font-size:0.9rem; margin-top:32px;">
+        Wilco Financial, LLC is not affiliated with, endorsed by, or sponsored by Southwest Airlines Co. or SWAPA (Southwest Airlines Pilots Association). References to SWA and SWAPA are for identification of our area of practice only.
+      </p>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

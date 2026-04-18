@@ -1,0 +1,102 @@
+---
+import { SITE, CONTACT } from '../consts';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  author?: string;
+  noindex?: boolean;
+  structuredData?: object | object[];
+}
+
+const {
+  title,
+  description = SITE.shortDescription,
+  image = '/og-default.png',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  noindex = false,
+  structuredData,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const ogImage = new URL(image, SITE.url).toString();
+const fullTitle = title === SITE.name ? SITE.name : `${title} | ${SITE.name}`;
+
+// Default organization structured data — always included
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FinancialService',
+  '@id': `${SITE.url}#organization`,
+  name: SITE.legalName,
+  alternateName: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}/logo.svg`,
+  description: SITE.description,
+  telephone: CONTACT.phone,
+  email: CONTACT.email,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: `${CONTACT.addressLine1}, ${CONTACT.addressLine2}`,
+    addressLocality: CONTACT.city,
+    addressRegion: CONTACT.state,
+    postalCode: CONTACT.zip,
+    addressCountry: CONTACT.country,
+  },
+  areaServed: {
+    '@type': 'State',
+    name: 'Tennessee',
+  },
+  knowsAbout: [
+    'Investment Management',
+    'Financial Planning',
+    'Retirement Planning',
+    'Estate Planning',
+    'Fiduciary Advice',
+  ],
+};
+
+const allStructured = [orgJsonLd, ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [])];
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+<link rel="canonical" href={canonical} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate" type="application/rss+xml" title={`${SITE.name} Articles`} href="/rss.xml" />
+
+<meta name="theme-color" content="#011342" />
+<meta name="author" content={author || SITE.legalName} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content="en_US" />
+{publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Geo tags for local SEO -->
+<meta name="geo.region" content="US-TN" />
+<meta name="geo.placename" content={`${CONTACT.city}, ${CONTACT.state}`} />
+
+<script type="application/ld+json" set:html={JSON.stringify(allStructured)} />

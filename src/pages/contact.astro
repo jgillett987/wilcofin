@@ -1,0 +1,65 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrevNext from '../components/PrevNext.astro';
+import { CONTACT, SITE } from '../consts';
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  url: new URL('/contact', Astro.site).toString(),
+  about: { '@id': `${SITE.url}#organization` },
+};
+---
+<PageLayout
+  title="Contact Wilco Financial"
+  description="Schedule a meeting, call (615) 237-8750, or email info@wilcofin.com. Based in Williamson County, Tennessee — serving clients across the states where we're registered."
+  eyebrow="Contact"
+  heroTitle="Let's start a conversation"
+  heroSubtitle="No pressure, no sales pitch — just a straightforward chat about what you're trying to accomplish."
+  breadcrumbs={[{ label: 'Contact' }]}
+  heroVideo="/videos/04.mp4"
+  structuredData={contactSchema}
+>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2>Reach out</h2>
+        <p><strong>Phone</strong><br /><a href={CONTACT.phoneHref}>{CONTACT.phone}</a></p>
+        <p><strong>Email</strong><br /><a href={CONTACT.emailHref}>{CONTACT.email}</a></p>
+        <p><strong>Mailing Address</strong><br />
+          {CONTACT.addressLine1}, {CONTACT.addressLine2}<br />
+          {CONTACT.city}, {CONTACT.state} {CONTACT.zip}
+        </p>
+        <p><strong>Hours</strong><br />{CONTACT.hours}</p>
+        <p style="margin-top:28px;">
+          <a href={CONTACT.calendlyUrl} class="btn btn-primary" target="_blank" rel="noopener">Schedule a Meeting</a>
+        </p>
+      </div>
+      <div>
+        <form class="card" action={`mailto:${CONTACT.email}`} method="post" enctype="text/plain">
+          <h3 style="margin-top:0;">Send us a message</h3>
+          <p class="muted" style="font-size:0.9rem;">This form opens your email client. Prefer something else? Email us directly at <a href={CONTACT.emailHref}>{CONTACT.email}</a> or <a href={CONTACT.calendlyUrl} target="_blank" rel="noopener">schedule a meeting</a>.</p>
+          <label style="display:block; margin-bottom:12px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">Name</span>
+            <input type="text" name="name" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
+          </label>
+          <label style="display:block; margin-bottom:12px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">Email</span>
+            <input type="email" name="email" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
+          </label>
+          <label style="display:block; margin-bottom:12px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">Phone (optional)</span>
+            <input type="tel" name="phone" style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
+          </label>
+          <label style="display:block; margin-bottom:16px;">
+            <span style="display:block; font-weight:600; margin-bottom:4px;">How can we help?</span>
+            <textarea name="message" rows="5" style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px; font-family:inherit;"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <PrevNext section="about" />
+</PageLayout>

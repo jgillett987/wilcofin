@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import ContactStrip from '../components/ContactStrip.astro';
+import { SITE, CONTACT } from '../consts';
+import { getCollection } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Auto-discover hero videos. Drop any .mp4/.webm/.mov into public/videos and they'll cycle.
+const videosDir = path.resolve('./public/videos');
+const heroVideos = fs.existsSync(videosDir)
+  ? fs.readdirSync(videosDir)
+      .filter((f) => /\.(mp4|webm|mov|m4v)$/i.test(f))
+      .sort()
+      .map((f) => `/videos/${f}`)
+  : [];
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const homeStructured = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  url: SITE.url,
+  name: SITE.name,
+  publisher: { '@id': `${SITE.url}#organization` },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE.url}/articles?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+<BaseLayout
+  title={SITE.name}
+  description={SITE.description}
+  structuredData={homeStructured}
+>
+  <section class="hero hero-video">
+    <video
+      id="hero-video"
+      class="hero-video-bg"
+      autoplay muted playsinline preload="auto"
+      aria-hidden="true"
+    >
+      {heroVideos.length > 0 && <source src={heroVideos[0]} type="video/mp4" />}
+    </video>
+    <div class="hero-video-overlay" aria-hidden="true"></div>
+    <script is:inline define:vars={{ playlist: heroVideos }}>
+      (function () {
+        if (!playlist || playlist.length === 0) return;
+        const v = document.getElementById('hero-video');
+        if (!v) return;
+        // If only one video, browser-native loop is fine.
+        if (playlist.length === 1) { v.loop = true; return; }
+        // Multiple videos: advance on `ended`, wrap back to 0 after the last.
+        let i = 0;
+        const playNext = () => {
+          i = (i + 1) % playlist.length; // wraps 4 → 0
+          v.src = playlist[i];
+          v.load();
+          v.play().catch(() => {});
+        };
+        v.addEventListener('ended', playNext);
+        // Safety net for browsers that don't fire `ended` reliably
+        v.addEventListener('error', playNext);
+      })();
+    </script>
+    <div class="hero-inner hero-inner-center">
+      <img src="/logo-hero.png" alt="Wilco Financial" class="hero-logo" width="400" />
+      <div class="hero-content hero-content-center">
+        <h1>Let us handle the details, so you can focus on more important things.</h1>
+        <p class="lead">Fiduciary investment management and financial planning for families, individuals, small businesses, and 401(k) plans — at a simple, transparent <strong>{SITE.fee}</strong> annual fee.</p>
+        <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+          <a href="/contact" class="btn btn-accent">Get Started</a>
+          <a href={CONTACT.calendlyUrl} class="btn btn-ghost-light" target="_blank" rel="noopener">Schedule a Meeting</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <img src="/images/senior-couple-field.jpg" alt="Senior couple laughing together outdoors at sunset" loading="lazy" style="width:100%; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+      </div>
+      <div>
+        <span class="eyebrow">Welcome to Wilco Financial</span>
+        <h2 class="underline">Investment and financial consulting from Williamson County, TN</h2>
+        <p>Based in Williamson County, Tennessee, Wilco Financial provides investment management and financial planning to help individuals, families, and businesses make improved, informed financial decisions and control risk.</p>
+        <p>We are a <strong>state-registered investment adviser</strong> and a <strong>fiduciary</strong> — which means we are legally required to act in your best interest, not ours.</p>
+        <p><a href="/about" class="btn btn-outline">About Wilco</a> <a href={CONTACT.calendlyUrl} class="btn btn-primary" target="_blank" rel="noopener">Schedule a Meeting</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="background:var(--navy); color:#fff;">
+    <div class="container text-center">
+      <div class="fee-strip">
+        <div class="fee-stat">
+          <div class="fee-stat-num">{SITE.fee}</div>
+          <div class="fee-stat-label">Standard advisory fee</div>
+        </div>
+        <div class="fee-stat-divider" aria-hidden="true"></div>
+        <div class="fee-stat">
+          <div class="fee-stat-num">0%</div>
+          <div class="fee-stat-label">Commissions · kickbacks · hidden fees</div>
+        </div>
+      </div>
+      <p style="margin-top:32px;"><a href="/fees" class="btn btn-accent">See How Our Fee Works</a></p>
+    </div>
+  </section>
+
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:48px;">
+        <span class="eyebrow">Services</span>
+        <h2 class="underline center">Investment & financial solutions</h2>
+        <p style="max-width:640px; margin:16px auto 0;">We offer comprehensive planning designed around your life — not a product menu.</p>
+      </div>
+      <div class="grid grid-3" style="margin-bottom:32px;">
+        <a href="/services/financial-planning" class="photo-card">
+          <div class="photo-card-img" style="background-image:url('/images/family-home.jpg');" aria-hidden="true"></div>
+          <div class="photo-card-body">
+            <h3>Financial Planning</h3>
+            <p class="muted">A roadmap that connects investments, taxes, estates, and goals to help ensure your long-term plans are met.</p>
+          </div>
+        </a>
+        <a href="/services/retirement-planning" class="photo-card">
+          <div class="photo-card-img" style="background-image:url('/images/retirement-beach.jpg');" aria-hidden="true"></div>
+          <div class="photo-card-body">
+            <h3>Retirement Planning</h3>
+            <p class="muted">Retirement planning isn't something you start a few years out. Build your plan for the future — today.</p>
+          </div>
+        </a>
+        <a href="/services/multi-generational-planning" class="photo-card">
+          <div class="photo-card-img" style="background-image:url('/images/multigen-dinner.jpg');" aria-hidden="true"></div>
+          <div class="photo-card-body">
+            <h3>Multi-Generational Planning</h3>
+            <p class="muted">Document your wishes and establish plans so your children and grandchildren are provided for long-term.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="grid grid-3">
+        <a href="/services/investment-management" class="card">
+          <div class="icon" aria-hidden="true">📈</div>
+          <h3>Investment Management</h3>
+          <p class="muted">Custom portfolios built on institutional-quality research, managed to your goals and risk tolerance.</p>
+        </a>
+        <a href="/services/estate-planning" class="card">
+          <div class="icon" aria-hidden="true">⚖️</div>
+          <h3>Estate Planning</h3>
+          <p class="muted">Coordinate with your attorney to protect and efficiently transfer what you've built.</p>
+        </a>
+        <a href="/services/charitable-planning" class="card">
+          <div class="icon" aria-hidden="true">❤️</div>
+          <h3>Charitable Planning</h3>
+          <p class="muted">Give to causes you care about in tax-efficient ways — including donor-advised funds and qualified charitable distributions.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="family-band" aria-label="What this is all for">
+    <div class="family-band-overlay"></div>
+    <div class="container family-band-content">
+      <h2 class="underline center">This is what it's all for.</h2>
+      <p>A good financial plan isn't about the portfolio. It's about the people around the table — and the freedom to be fully there with them.</p>
+    </div>
+  </section>
+
+  <ContactStrip />
+
+  {articles.length > 0 && (
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:40px;">
+          <span class="eyebrow">Insights</span>
+          <h2 class="underline center">Latest articles</h2>
+        </div>
+        <div class="grid grid-3">
+          {articles.map((a) => (
+            <a href={`/articles/${a.id}`} class="article-card-photo">
+              {a.data.heroImage && (
+                <div class="article-card-img" style={`background-image:url('${a.data.heroImage}'); height:180px;`} aria-hidden="true"></div>
+              )}
+              <div class="article-card-body">
+                <div class="meta">{a.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</div>
+                <h3>{a.data.title}</h3>
+                <p>{a.data.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+        <p class="text-center" style="margin-top:32px;"><a href="/articles" class="btn btn-outline">View All Articles</a></p>
+      </div>
+    </section>
+  )}
+
+  <CTA />
+</BaseLayout>

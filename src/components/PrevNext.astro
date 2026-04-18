@@ -1,0 +1,60 @@
+---
+import { NAV } from '../consts';
+
+interface NavItem { label: string; href: string }
+interface Props {
+  section?: 'services' | 'about';
+  items?: NavItem[];
+  current?: string;
+}
+const { section, items, current } = Astro.props;
+const path = current ?? Astro.url.pathname;
+const normalize = (p: string) => (p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p);
+
+const sectionLabel: Record<string, string> = {
+  services: 'Services',
+  about: 'About',
+};
+
+let list: NavItem[] = [];
+if (items) {
+  list = items;
+} else if (section && sectionLabel[section]) {
+  const match = NAV.find((n) => 'children' in n && n.label === sectionLabel[section]) as any;
+  list = (match?.children as NavItem[]) ?? [];
+}
+
+const idx = list.findIndex((i) => normalize(i.href) === normalize(path));
+const prev = idx > 0 ? list[idx - 1] : null;
+const next = idx >= 0 && idx < list.length - 1 ? list[idx + 1] : null;
+---
+{(prev || next) && (
+  <nav class="prev-next" aria-label="Section navigation">
+    <div class="container narrow">
+      <div class="prev-next-grid">
+        <div>
+          {prev && (
+            <a href={prev.href} class="prev-next-link prev-next-prev" data-prev-next="prev">
+              <span class="prev-next-arrow" aria-hidden="true">←</span>
+              <span class="prev-next-text">
+                <span class="prev-next-meta">Previous</span>
+                <span class="prev-next-label">{prev.label}</span>
+              </span>
+            </a>
+          )}
+        </div>
+        <div class="prev-next-right">
+          {next && (
+            <a href={next.href} class="prev-next-link prev-next-next" data-prev-next="next">
+              <span class="prev-next-text">
+                <span class="prev-next-meta">Next</span>
+                <span class="prev-next-label">{next.label}</span>
+              </span>
+              <span class="prev-next-arrow" aria-hidden="true">→</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </nav>
+)}

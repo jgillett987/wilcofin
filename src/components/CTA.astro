@@ -1,0 +1,29 @@
+---
+import { CONTACT } from '../consts';
+interface Props {
+  title?: string;
+  subtitle?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+const {
+  title = 'Ready to start your journey with Wilco?',
+  subtitle = 'It all starts with a conversation.',
+  primaryLabel = "Let's Talk",
+  primaryHref = '/contact',
+  secondaryLabel = 'Schedule a Meeting',
+  secondaryHref = CONTACT.calendlyUrl,
+} = Astro.props;
+---
+<section class="cta-band">
+  <div class="container">
+    <h2 class="underline center">{title}</h2>
+    <p style="font-size:1.15rem; margin-top:18px; max-width:620px; margin-left:auto; margin-right:auto;">{subtitle}</p>
+    <div style="margin-top:28px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <a href={primaryHref} class="btn btn-primary">{primaryLabel}</a>
+      <a href={secondaryHref} class="btn btn-ghost-light" target={secondaryHref.startsWith('http') ? '_blank' : undefined} rel={secondaryHref.startsWith('http') ? 'noopener' : undefined}>{secondaryLabel}</a>
+    </div>
+  </div>
+</section>

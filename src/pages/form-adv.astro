@@ -1,0 +1,49 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrevNext from '../components/PrevNext.astro';
+---
+<PageLayout
+  title="Form ADV"
+  description="Wilco Financial's Form ADV disclosure documents. Required regulatory filings for our state-registered investment advisory firm."
+  eyebrow="About"
+  heroTitle="Form ADV & Regulatory Disclosures"
+  heroSubtitle="Transparency is part of the fiduciary standard. Our filings are available here and at the SEC's public adviser database."
+  breadcrumbs={[{ label: 'About', href: '/about' }, { label: 'Form ADV' }]}
+  heroVideo="/videos/06.mp4"
+>
+  <section class="section">
+    <div class="container narrow">
+      <h2>What is Form ADV?</h2>
+      <p>Form ADV is the uniform disclosure document that all registered investment advisers are required to file. It covers:</p>
+      <ul>
+        <li><strong>Part 1</strong> — firm ownership, clients, employees, business practices, and any disciplinary events.</li>
+        <li><strong>Part 2A (Brochure)</strong> — services offered, fees, conflicts of interest, and adviser background, written in plain English.</li>
+        <li><strong>Part 2B (Brochure Supplement)</strong> — the education, business experience, and disciplinary information for the individual advising you.</li>
+        <li><strong>Part 3 (Form CRS / Customer Relationship Summary)</strong> — a short document comparing our relationship to other advisors.</li>
+      </ul>
+
+      <h2>Our current filings</h2>
+      <p>Download our current Form ADV documents below:</p>
+      <div class="grid grid-2" style="margin-top:20px; margin-bottom:20px;">
+        <a href="/documents/wilco-form-adv-part-2a-brochure.pdf" class="card" target="_blank" rel="noopener" style="color:inherit;">
+          <h3 style="margin-top:0;">📄 Form ADV Part 2A</h3>
+          <p class="muted" style="margin-bottom:8px;"><strong>Investment Adviser Brochure</strong></p>
+          <p class="muted" style="margin:0; font-size:0.9rem;">Services, fees, conflicts of interest, and firm background. <strong>Download PDF →</strong></p>
+        </a>
+        <a href="/documents/wilco-form-adv-part-2b-supplement.pdf" class="card" target="_blank" rel="noopener" style="color:inherit;">
+          <h3 style="margin-top:0;">📄 Form ADV Part 2B</h3>
+          <p class="muted" style="margin-bottom:8px;"><strong>Brochure Supplement</strong></p>
+          <p class="muted" style="margin:0; font-size:0.9rem;">Education, experience, and disciplinary information for your advisor. <strong>Download PDF →</strong></p>
+        </a>
+      </div>
+      <p>You can also review our filings at the SEC's <a href="https://adviserinfo.sec.gov" target="_blank" rel="noopener">Investment Adviser Public Disclosure</a> database — search for "Wilco Financial".</p>
+
+      <h2>Tennessee registration</h2>
+      <p>Wilco Financial, LLC is registered as an investment adviser with the State of Tennessee. We are authorized to transact business and provide personalized advice only in those states where we are registered, have filed notice, or are otherwise exempted.</p>
+
+      <h2>Annual updates</h2>
+      <p>We update Form ADV at least annually, and more often when material changes occur. Clients receive our updated Brochure each year.</p>
+    </div>
+  </section>
+  <PrevNext section="about" />
+</PageLayout>

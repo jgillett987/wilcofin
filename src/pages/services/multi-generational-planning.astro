@@ -1,0 +1,46 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PrevNext from '../../components/PrevNext.astro';
+---
+<PageLayout
+  title="Multi-Generational Planning"
+  description="It's in our DNA to provide for the next generation. Multi-generational planning documents your wishes and establishes plans so your children and grandchildren are cared for."
+  eyebrow="Services"
+  heroTitle="Multi-Generational Planning"
+  heroSubtitle="Plan across generations — for what you pass down, how you pass it, and when."
+  heroVideo="/videos/06.mp4"
+  breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'Multi-Generational Planning' }]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">For Those Who Come Next</h2>
+          <p style="font-size:1.15rem;">It's in our DNA to protect and provide for the next generation. Multi-generational planning helps you document your wishes and establish the structures that carry them out.</p>
+          <p style="font-size:1.15rem;">So your children and grandchildren are provided for long-term — with clarity about what you've built and why it matters.</p>
+        </div>
+        <div>
+          <img src="/images/multigen-dinner.jpg" alt="Grandfather and grandchildren at dinner — planning across generations" loading="lazy" style="width:100%; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <h2>What we plan for</h2>
+      <ul class="checklist">
+        <li><strong>Education</strong> — 529 plans, custodial accounts, and direct tuition payments</li>
+        <li><strong>Down payments and first homes</strong> — gifting strategies that don't burden the recipient with taxes</li>
+        <li><strong>Inherited IRAs</strong> — SECURE Act rules, the 10-year distribution window, and how beneficiaries should plan</li>
+        <li><strong>Generation-skipping strategies</strong> — trusts and exemption planning where appropriate</li>
+        <li><strong>Family meetings</strong> — teaching the next generation how money works, and what you've built</li>
+        <li><strong>Shared legacy decisions</strong> — charitable giving, business succession, real estate</li>
+      </ul>
+
+      <h2>Beyond the money</h2>
+      <p>The most durable family legacies aren't just financial — they're cultural. We help families articulate values, set expectations, and prepare heirs so that inheritance strengthens the next generation rather than derailing it.</p>
+
+      <h2>Our fit in the process</h2>
+      <p>We work alongside your estate attorney, CPA, and (where relevant) family-business advisors. We bring the investment and cash-flow modeling, the beneficiary coordination, and the long-term perspective that pulls the whole plan together.</p>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

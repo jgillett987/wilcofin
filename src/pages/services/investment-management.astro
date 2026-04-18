@@ -1,0 +1,54 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PrevNext from '../../components/PrevNext.astro';
+---
+<PageLayout
+  title="Investment Management"
+  description="Custom portfolios built on institutional-quality research. Tax-aware, cost-efficient, and managed to your specific goals at a simple 0.85% annual fee."
+  eyebrow="Services"
+  heroTitle="Investment Management"
+  heroSubtitle="Custom portfolios and ongoing management — institutional research, individual accountability."
+  heroVideo="/videos/08.mp4"
+  breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'Investment Management' }]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">The Long View</h2>
+          <p style="font-size:1.15rem;">We build and manage a portfolio tailored to <strong>you</strong> — your goals, your tax situation, your timeline, and your tolerance for risk.</p>
+          <p style="font-size:1.15rem;">Every recommendation is grounded in research and aligned to a written investment plan. No market-timing. No chasing last year's winners. No products we're paid to sell.</p>
+          <p style="font-size:1.05rem;" class="muted">Led by <a href="/about">Jon Gillett</a> — MBA in Finance, Vanderbilt; 20+ years of institutional investment experience, including years at Courage Capital Management and as a partner at Alloy Global Fund, LP.</p>
+        </div>
+        <div>
+          <img src="/images/tetons-lake.jpg" alt="Grand Teton peak reflected in Jenny Lake — the long view" loading="lazy" style="width:100%; max-height:340px; object-fit:cover; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <h2>What you get</h2>
+      <ul class="checklist">
+        <li><strong>Quality-focused portfolios</strong> — every holding chosen for an attractive combination of valuation, growth, and quality, with a built-in margin of safety and favorable risk/reward</li>
+        <li><strong>Disciplined risk management</strong> — position sizing, correlation awareness, and scenario stress-testing built into every portfolio decision; preserving capital comes first</li>
+        <li><strong>Custom asset allocation</strong> — equities, fixed income, alternatives, and cash, weighted to your goals</li>
+        <li><strong>Low-cost, tax-efficient construction</strong> — built from individual stocks and bonds (zero expense ratio) and low-cost ETFs where appropriate, chosen for quality and cost, never commissions</li>
+        <li><strong>Ongoing rebalancing</strong> — automatic adjustments to keep your risk profile on target</li>
+        <li><strong>Tax-loss harvesting</strong> in taxable accounts when opportunities arise</li>
+        <li><strong>Coordination across accounts</strong> — your 401(k), IRA, Roth, brokerage, and HSA considered as one portfolio</li>
+        <li><strong>Quarterly reporting</strong> — transparent, easy-to-read statements</li>
+      </ul>
+
+      <h2>Our approach</h2>
+      <p>We believe most investors are best served by a disciplined, evidence-based approach: diversification, low costs, tax awareness, and patience. We don't market-time. We don't chase last year's winners. We don't sell products.</p>
+      <p>What we <em>do</em> is build a portfolio designed to give you the highest probability of reaching your goals, and rebalance it as markets — and your life — change.</p>
+
+      <h2>Custody — your assets are held at Charles Schwab</h2>
+      <p>Your assets are held at <strong>Charles Schwab</strong>, the largest custodian in the world with over $10 trillion in client assets. Your account is titled in <strong>your name</strong> — not ours. Schwab's loyalty is to you, the account owner. Our role is limited to managing the portfolio and deducting our quarterly advisory fee; we never have authority to withdraw your funds. You can log in to Schwab directly at any time to see your assets.</p>
+      <p>This is a meaningful investor-protection structure — and a reason we don't take custody ourselves. It's also part of how we keep costs low: Schwab charges $0 commissions on stocks and ETFs.</p>
+
+      <h2>Fee</h2>
+      <p>0.85% per year of assets under management — billed quarterly, in arrears. See our <a href="/fees">Fees page</a> for details.</p>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

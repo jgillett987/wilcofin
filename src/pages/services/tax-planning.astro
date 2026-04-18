@@ -1,0 +1,60 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PrevNext from '../../components/PrevNext.astro';
+---
+<PageLayout
+  title="Tax Planning"
+  description="Forward-looking tax planning — Roth conversions, tax-loss harvesting, asset location, QCDs, and the strategies that compound over a lifetime. Coordinated with your CPA."
+  eyebrow="Services"
+  heroTitle="Tax Planning"
+  heroSubtitle="The tax return looks backward. Tax planning looks forward — where the real money is."
+  heroVideo="/videos/10.mp4"
+  breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'Tax Planning' }]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">What Happens Next</h2>
+          <p style="font-size:1.15rem;">Your tax return tells the story of what already happened. <strong>Tax planning</strong> is about changing what happens next — the Roth conversion in the right year, the loss harvested at the right moment, the charitable gift made from the right account.</p>
+          <p style="font-size:1.15rem;">Small decisions, compounded over decades, produce meaningfully more after-tax wealth.</p>
+        </div>
+        <div>
+          <img src="/images/tax-photo.jpg" alt="Tax forms (1040, W-4, W-9) with calculator and pen — forward-looking tax planning" loading="lazy" style="width:100%; max-height:340px; object-fit:cover; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <p>We don't prepare returns — that's your CPA's job, and we work closely with theirs. What we do is build a year-by-year plan that puts the right dollars in the right accounts, at the right time, taxed at the lowest legal rate.</p>
+
+      <h2>Strategies we use</h2>
+      <ul class="checklist">
+        <li><strong>Roth conversions</strong> — "filling the bracket" in low-income years to lock in today's rate and reduce future RMDs. See <a href="/articles/roth-conversion-decade">The Roth Conversion Decade</a>.</li>
+        <li><strong>Tax-loss harvesting</strong> — systematically realizing losses in taxable accounts to offset gains elsewhere without changing your market exposure.</li>
+        <li><strong>Asset location</strong> — placing tax-inefficient assets (bonds, REITs) in tax-deferred accounts and tax-efficient assets (index ETFs) in taxable accounts, so each dollar works in the right wrapper.</li>
+        <li><strong>Backdoor and mega-backdoor Roth</strong> — for high earners phased out of direct Roth contributions, or with plans that allow after-tax 401(k) contributions with in-plan conversions.</li>
+        <li><strong>Qualified charitable distributions (QCDs)</strong> — direct IRA-to-charity transfers after age 70½ that satisfy RMDs tax-free.</li>
+        <li><strong>Donor-advised funds and appreciated-stock gifting</strong> — bunching deductions and avoiding capital gains tax on long-held positions. See <a href="/services/charitable-planning">Charitable Planning</a>.</li>
+        <li><strong>Capital gains timing</strong> — realizing gains in low-income years, spreading them across tax years, or coordinating with loss-harvesting.</li>
+        <li><strong>Social Security timing</strong> — coordinating claiming age with other income to avoid unnecessary taxation of benefits.</li>
+        <li><strong>Medicare IRMAA planning</strong> — keeping modified AGI below the cliffs that trigger higher Part B and D premiums.</li>
+        <li><strong>State-of-residence planning</strong> — domicile choices have meaningful tax impact, especially for retirees and high earners with flexibility.</li>
+      </ul>
+
+      <h2>Special situations</h2>
+      <ul>
+        <li><strong>Liquidity events</strong> — business sales, secondary offerings, RSU vesting, stock-option exercises. Planning ahead of the event is where most of the value is.</li>
+        <li><strong>Concentrated stock positions</strong> — exchange funds, staged sales, direct indexing, and charitable strategies.</li>
+        <li><strong>Small business owners</strong> — entity structure, retirement plan selection (SEP, SIMPLE, Solo 401(k), cash balance), and owner-compensation strategy.</li>
+        <li><strong>Inherited IRAs</strong> — navigating the SECURE Act's 10-year rule, timing distributions to minimize lifetime taxes.</li>
+      </ul>
+
+      <h2>How we coordinate with your CPA</h2>
+      <p>Tax planning only works if the plan makes it to the return. We send a year-end summary of planned actions — conversions, gain realizations, QCDs, charitable gifts — to your CPA before year-end, with enough time to adjust withholding or estimated payments. We're happy to introduce you to CPAs we know and trust if you don't have one.</p>
+
+      <h2>The math that matters</h2>
+      <p>Over a typical retirement, the difference between a well-coordinated tax plan and a decent-but-uncoordinated one is routinely six figures — sometimes seven. The compounding is real and the decisions are usually small. We do the modeling so you can see the tradeoff before you act.</p>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

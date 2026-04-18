@@ -1,0 +1,83 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const services = [
+  {
+    href: '/services/financial-planning',
+    image: '/images/family-home.jpg',
+    title: 'Financial Planning',
+    desc: 'A roadmap that connects investments, taxes, estates, insurance, and goals into a single coherent plan.',
+  },
+  {
+    href: '/services/retirement-planning',
+    image: '/images/retirement-beach.jpg',
+    title: 'Retirement Planning',
+    desc: 'Build the plan — long before retirement age — that gets you where you want to go, and keeps you there.',
+  },
+  {
+    href: '/services/tax-planning',
+    image: '/images/young-family.jpg',
+    title: 'Tax Planning',
+    desc: 'Forward-looking tax strategy — Roth conversions, loss harvesting, asset location, QCDs. Coordinated with your CPA.',
+  },
+  {
+    href: '/services/multi-generational-planning',
+    image: '/images/multigen-dinner.jpg',
+    title: 'Multi-Generational Planning',
+    desc: 'Document your wishes and establish plans so your children and grandchildren are provided for long-term.',
+  },
+  {
+    href: '/services/investment-management',
+    image: '/images/tetons-lake.jpg',
+    title: 'Investment Management',
+    desc: 'Custom portfolios built on institutional-quality research, managed to your goals, timeline, and risk tolerance.',
+  },
+  {
+    href: '/services/estate-planning',
+    image: '/images/sunset-pier.jpg',
+    title: 'Estate Planning',
+    desc: 'Work alongside your estate attorney to protect and efficiently transfer what you have built.',
+  },
+  {
+    href: '/services/charitable-planning',
+    image: '/images/jenny-lake-rocks.jpg',
+    title: 'Charitable Planning',
+    desc: 'Give to causes you care about in tax-efficient ways — donor-advised funds, QCDs, appreciated securities, and more.',
+  },
+];
+---
+<PageLayout
+  title="Services"
+  description="Investment management, financial planning, retirement planning, estate planning, multi-generational and charitable planning from Wilco Financial."
+  eyebrow="Services"
+  heroTitle="Investment and financial solutions"
+  heroSubtitle="Comprehensive planning designed around your life — not a product menu."
+  breadcrumbs={[{ label: 'Services' }]}
+  heroVideo="/videos/06.mp4"
+>
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        {services.map((s) => (
+          s.image ? (
+            <a href={s.href} class="photo-card">
+              <div class="photo-card-img" style={`background-image:url('${s.image}');`} aria-hidden="true"></div>
+              <div class="photo-card-body">
+                <h3>{s.title}</h3>
+                <p class="muted">{s.desc}</p>
+                <p style="margin-top:12px;"><strong>Learn more →</strong></p>
+              </div>
+            </a>
+          ) : (
+            <a href={s.href} class="card">
+              <div class="icon" aria-hidden="true">{s.icon}</div>
+              <h3>{s.title}</h3>
+              <p class="muted">{s.desc}</p>
+              <p style="margin-top:12px;"><strong>Learn more →</strong></p>
+            </a>
+          )
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

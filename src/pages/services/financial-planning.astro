@@ -1,0 +1,48 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PrevNext from '../../components/PrevNext.astro';
+---
+<PageLayout
+  title="Financial Planning"
+  description="A comprehensive financial plan that connects investments, taxes, estates, insurance, and goals — the roadmap that keeps everything else coherent."
+  eyebrow="Services"
+  heroTitle="Financial Planning"
+  heroSubtitle="A written plan that connects every piece of your financial life."
+  heroVideo="/videos/14.mp4"
+  breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'Financial Planning' }]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">It All Connects</h2>
+          <p style="font-size:1.15rem;">Financial planning is the thread that connects the other pieces — your investments, your taxes, your estate, your insurance, and the goals you're actually trying to accomplish.</p>
+          <p style="font-size:1.15rem;">Without a plan, each decision gets made in isolation and important tradeoffs get missed. With one, everything works together.</p>
+        </div>
+        <div>
+          <img src="/images/family-home.jpg" alt="A family laughing together at home — a plan that coordinates every piece of your life" loading="lazy" style="width:100%; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <h2>What a plan covers</h2>
+      <ul class="checklist">
+        <li><strong>Goal setting</strong> — retirement, education, a second home, starting a business, leaving a legacy</li>
+        <li><strong>Cash flow and savings</strong> — how much to save, where, in what order</li>
+        <li><strong>Tax strategy</strong> — Roth conversions, tax-loss harvesting, asset location</li>
+        <li><strong>Insurance review</strong> — life, disability, umbrella, long-term care</li>
+        <li><strong>Estate coordination</strong> — wills, trusts, beneficiary designations (working with your attorney)</li>
+        <li><strong>Retirement income</strong> — how to turn your assets into a paycheck that lasts</li>
+        <li><strong>Social Security timing</strong> — when to claim, and why</li>
+        <li><strong>Medicare</strong> — enrollment windows and coordination with employer coverage</li>
+      </ul>
+
+      <h2>How it works</h2>
+      <p>We start with a conversation to understand what matters to you. From there we gather the relevant documents, model your situation, and deliver a written plan you can actually use. We revisit and update it as your life changes — because it will.</p>
+
+      <h2>Who it's for</h2>
+      <p>Pre-retirees making decisions about when to stop working, how to draw down assets, and how to think about Social Security. Mid-career professionals trying to optimize the savings they're already doing. Business owners navigating a liquidity event. Employees with complex benefits coordinating their 401(k), profit-sharing, and broader wealth picture.</p>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

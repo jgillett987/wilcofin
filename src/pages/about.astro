@@ -1,0 +1,120 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrevNext from '../components/PrevNext.astro';
+import { SITE, CONTACT, SOCIAL } from '../consts';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Jon Gillett',
+  jobTitle: 'Principal and Investment Adviser',
+  worksFor: { '@id': `${SITE.url}#organization` },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Vanderbilt University — Owen Graduate School of Management',
+  },
+  sameAs: [SOCIAL.linkedin].filter(Boolean),
+  description: 'Founder of Wilco Financial. MBA in Finance from Vanderbilt University. Over 20 years of institutional investment experience, including years as an investment analyst at Courage Capital Management and partner at Alloy Global Fund, LP.',
+};
+---
+<PageLayout
+  title="About Wilco Financial"
+  description="Wilco Financial is a Tennessee-registered investment adviser based in Williamson County. Learn about our fiduciary approach and straightforward 0.85% fee."
+  eyebrow="About"
+  heroTitle="A fiduciary adviser based in Williamson County, Tennessee"
+  heroSubtitle="We help families, individuals, small businesses, and 401(k) plans make better, clearer financial decisions."
+  heroVideo="/videos/05.mp4"
+  breadcrumbs={[{ label: 'About' }]}
+  structuredData={personSchema}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">Who We Are</h2>
+          <p style="font-size:1.15rem;">Wilco Financial, LLC is a <strong>state-registered investment adviser</strong> based in Nolensville, Tennessee (Williamson County). We provide investment management and financial planning to individuals, families, and small businesses across the states where we are registered.</p>
+          <p style="font-size:1.15rem;">We believe financial advice should be simple, honest, and aligned. That shows up in how we charge, how we invest, and how we communicate.</p>
+        </div>
+        <div>
+          <img src="/images/kids-hay-bales.jpg" alt="Three kids jumping on hay bales at sunset" loading="lazy" style="width:100%; max-height:340px; object-fit:cover; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <ul class="checklist">
+        <li><strong>One flat fee</strong> — {SITE.fee}/year of managed assets. No commissions. No product kickbacks. No hidden layers.</li>
+        <li><strong>Fiduciary standard</strong> — we are legally required to act in your best interest.</li>
+        <li><strong>Institutional-quality research</strong> — built for individual investors.</li>
+        <li><strong>Clear, plain-language communication</strong> — no jargon, no pressure, no sales pitch.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section bg-soft">
+    <div class="container">
+      <h2 style="max-width:820px; margin-left:auto; margin-right:auto;">Meet Your Advisor</h2>
+      <div class="split" style="align-items:flex-start; gap:48px; margin-top:24px;">
+        <div style="max-width:260px; margin:0 auto;">
+          <img src="/images/jon-gillett.jpg" alt="Jon Gillett — Principal and Investment Adviser, Wilco Financial" loading="lazy" style="width:100%; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.2);" />
+          <p style="font-size:1.15rem; color:var(--navy); font-weight:700; margin:20px 0 4px; text-align:center;">
+            Jon Gillett
+            {SOCIAL.linkedin && (
+              <a href={SOCIAL.linkedin} target="_blank" rel="noopener" aria-label="Jon Gillett on LinkedIn" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; margin-left:6px; border-radius:4px; background:#0a66c2; color:#fff; vertical-align:middle;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+            )}
+          </p>
+          <p class="muted" style="margin-top:0; text-align:center; font-size:0.92rem;">Principal and Investment Adviser<br />Wilco Financial, LLC</p>
+        </div>
+        <div>
+          <p style="font-size:1.1rem;">Wilco Financial is led by Jon Gillett, who brings over 20 years of institutional investment experience to a fiduciary practice built for families, individuals, small businesses, and 401(k) plans.</p>
+          <ul class="checklist">
+            <li><strong>MBA in Finance, Vanderbilt University</strong> — Owen Graduate School of Management</li>
+            <li><strong>Investment Analyst, Courage Capital Management</strong> — fundamental research and portfolio construction at a hedge fund based in Nashville</li>
+            <li><strong>Partner, Alloy Global Fund, LP</strong> — investment management at a long/short equity hedge fund</li>
+            <li><strong>20+ years managing investments</strong> across multiple market cycles</li>
+          </ul>
+          <p>The valuation rigor, risk management, and long-term perspective that drive our client portfolios came out of that institutional background — now applied directly to individual clients, with aligned incentives and a single flat fee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <h2>What makes us different</h2>
+      <div class="grid grid-2" style="margin-top:24px;">
+        <div class="card">
+          <h3>We are a fiduciary</h3>
+          <p class="muted">Unlike many "advisors" you'll find at banks and brokerages, we are held to the <a href="/fiduciary">fiduciary standard</a>. Our advice is legally required to be in your best interest — not ours.</p>
+        </div>
+        <div class="card">
+          <h3>One simple fee</h3>
+          <p class="muted">{SITE.fee} per year of managed assets — that's the whole fee. No commissions, no surrender charges, no mutual-fund loads, no products we're incentivized to sell you. See our <a href="/fees">Fees page</a>.</p>
+        </div>
+        <div class="card">
+          <h3>Your assets stay at Charles Schwab</h3>
+          <p class="muted">Your account is at <strong>Charles Schwab</strong> — the largest custodian in the world, with over $10 trillion in client assets. It's your account, in your name. Schwab's loyalty is to you. We trade it to your plan and deduct our quarterly fee — nothing more.</p>
+        </div>
+        <div class="card">
+          <h3>Local, not limited</h3>
+          <p class="muted">We're based in Williamson County and serve clients throughout Tennessee and the other states where we're registered. Meetings can be in-person or virtual — whichever fits your life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-soft">
+    <div class="container narrow">
+      <h2>Get in touch</h2>
+      <p>The best way to understand whether we're a fit is a short, no-pressure conversation.</p>
+      <p>
+        <a href={CONTACT.calendlyUrl} class="btn btn-primary" target="_blank" rel="noopener">Schedule a Meeting</a>
+        <a href="/contact" class="btn btn-outline">Contact Us</a>
+      </p>
+    </div>
+  </section>
+  <PrevNext section="about" />
+</PageLayout>

@@ -1,0 +1,52 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrevNext from '../components/PrevNext.astro';
+import { SITE } from '../consts';
+---
+<PageLayout
+  title="Our Fees"
+  description="Wilco Financial charges a simple, flat 0.85% per year of managed assets — no commissions, no hidden costs."
+  eyebrow="About"
+  heroTitle="One simple fee. No surprises."
+  heroSubtitle="We charge a flat 0.85% per year of assets we manage. That's it."
+  breadcrumbs={[{ label: 'About', href: '/about' }, { label: 'Our Fees' }]}
+  heroVideo="/videos/02.mp4"
+>
+  <section class="section">
+    <div class="container narrow">
+      <div class="fee-block" style="margin-bottom:40px;">
+        <div class="small" style="text-transform:uppercase; letter-spacing:0.1em;">Standard Advisory Fee</div>
+        <div class="big">{SITE.fee}</div>
+        <div class="small">per year of managed assets, billed quarterly</div>
+      </div>
+
+      <h2>What's included</h2>
+      <ul class="checklist">
+        <li>Portfolio construction, management, and rebalancing</li>
+        <li>Ongoing investment research and monitoring</li>
+        <li>Financial planning — retirement, tax, estate coordination</li>
+        <li>Unlimited meetings and communication</li>
+        <li>Quarterly reporting and annual reviews</li>
+        <li>Secure client portal access</li>
+      </ul>
+
+      <h2>What's NOT included</h2>
+      <p class="muted">These things simply don't exist in our fee structure:</p>
+      <ul class="checklist">
+        <li>Commissions on products we recommend</li>
+        <li>Sales loads, 12b-1 fees, or surrender charges</li>
+        <li>Custody fees beyond what your custodian charges directly</li>
+        <li>Kickbacks from fund companies</li>
+        <li>"Wrap" fees layered on top of underlying fund expenses</li>
+      </ul>
+      <p>Many of our holdings are individual stocks and bonds, which carry zero expense ratio. Any ETFs we use are low-cost — typically a small fraction of a percent.</p>
+
+      <h2>Why a flat fee?</h2>
+      <p>Commissioned sales models create conflicts of interest. Tiered fee schedules reward size, not service. A flat percentage keeps everything clean: our incentive is to grow and protect your portfolio, because our compensation moves with it.</p>
+
+      <h2>Minimums</h2>
+      <p>We work with households at a range of asset levels. Reach out and we'll be upfront about whether we're the right fit for you — and if we aren't, we'll point you toward someone who is.</p>
+    </div>
+  </section>
+  <PrevNext section="about" />
+</PageLayout>

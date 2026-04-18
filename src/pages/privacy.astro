@@ -1,0 +1,42 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE, CONTACT } from '../consts';
+---
+<PageLayout
+  title="Privacy Policy"
+  description="Wilco Financial privacy policy — how we collect, use, and protect your personal information."
+  eyebrow="Legal"
+  heroTitle="Privacy Policy"
+  heroSubtitle="How we handle your information — written in plain English."
+  breadcrumbs={[{ label: 'Privacy Policy' }]}
+  heroVideo="/videos/00.mp4"
+  hideCTA={true}
+>
+  <section class="section">
+    <div class="container narrow">
+      <p class="muted"><em>Last updated: January 2026</em></p>
+
+      <h2>Information we collect</h2>
+      <p>{SITE.legalName} collects information in two ways:</p>
+      <ul>
+        <li><strong>Information you provide to us.</strong> When you fill out a contact form, schedule a meeting, or become a client, you share information with us — your name, email, phone, financial documents, and any other information relevant to advising you.</li>
+        <li><strong>Automatically collected information.</strong> Our website uses standard logging and may use privacy-respecting analytics to understand site usage. We do not sell this information.</li>
+      </ul>
+
+      <h2>How we use your information</h2>
+      <p>We use your information to respond to your inquiry, provide advisory services, fulfill regulatory obligations, and operate our business. We do not sell client information and we do not share it with third parties except as required to provide services to you (e.g., custodians) or as required by law.</p>
+
+      <h2>How we protect your information</h2>
+      <p>We maintain administrative, technical, and physical safeguards designed to protect your information. Access is limited to personnel who need it to serve you or operate the firm. Electronic systems are secured and monitored.</p>
+
+      <h2>Your choices</h2>
+      <p>You may request access to, correction of, or deletion of your personal information by contacting us at <a href={CONTACT.emailHref}>{CONTACT.email}</a>. Note that regulatory record-keeping rules require us to retain certain client records for periods specified by law.</p>
+
+      <h2>Cookies</h2>
+      <p>Our site uses minimal, non-tracking cookies for functional purposes. We do not use advertising cookies or cross-site trackers.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy? Email <a href={CONTACT.emailHref}>{CONTACT.email}</a> or call <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>.</p>
+    </div>
+  </section>
+</PageLayout>

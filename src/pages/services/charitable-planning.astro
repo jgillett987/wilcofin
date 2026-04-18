@@ -1,0 +1,51 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PrevNext from '../../components/PrevNext.astro';
+---
+<PageLayout
+  title="Charitable Planning"
+  description="Give to causes you care about in tax-efficient ways. Donor-advised funds, qualified charitable distributions, appreciated securities — Wilco Financial helps you maximize impact."
+  eyebrow="Services"
+  heroTitle="Charitable Planning"
+  heroSubtitle="Give more, pay less tax, and build a giving plan that lasts beyond you."
+  heroVideo="/videos/04.mp4"
+  breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'Charitable Planning' }]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">Give With Intention</h2>
+          <p style="font-size:1.15rem;">Charitable giving is personal — but the <em>way</em> you give has significant tax consequences. Done well, a giving plan lets you give more to the causes you care about and pay less tax along the way.</p>
+          <p style="font-size:1.15rem;">And it becomes a framework that continues across generations, long after the first gift is made.</p>
+        </div>
+        <div>
+          <img src="/images/jenny-lake-rocks.jpg" alt="Clear lake water over river rocks — giving with intention and clarity" loading="lazy" style="width:100%; max-height:340px; object-fit:cover; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <h2>Strategies we use</h2>
+      <ul class="checklist">
+        <li><strong>Donor-advised funds (DAFs)</strong> — front-load deductions in a high-income year, distribute grants over time</li>
+        <li><strong>Appreciated securities</strong> — donate stock instead of cash to avoid capital gains tax</li>
+        <li><strong>Qualified charitable distributions (QCDs)</strong> — direct IRA-to-charity transfers after age 70½, satisfying RMDs tax-free</li>
+        <li><strong>Charitable remainder trusts (CRTs)</strong> — generate income for yourself, pass the remainder to charity</li>
+        <li><strong>Private foundations</strong> — when scale and family involvement warrant them</li>
+        <li><strong>Bunching deductions</strong> — combining multiple years of giving to exceed the standard deduction</li>
+      </ul>
+
+      <h2>Who benefits most</h2>
+      <ul>
+        <li>Pre-retirees and retirees with traditional IRAs approaching or past RMD age</li>
+        <li>Households experiencing a high-income event — business sale, IPO, large bonus, stock-option exercise</li>
+        <li>Long-term investors with highly appreciated positions</li>
+        <li>Families who want to involve children and grandchildren in giving decisions</li>
+      </ul>
+
+      <h2>How we work</h2>
+      <p>We coordinate with your CPA and, where needed, your estate attorney. The giving plan becomes part of your overall financial plan — so every year's gifts are intentional, tax-optimized, and aligned with your broader goals.</p>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  author?: string;
+  noindex?: boolean;
+  structuredData?: object | object[];
+}
+const props = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <SEO {...props} />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <Nav />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer />
+  <script is:inline>
+    // Keyboard navigation:
+    //   Shift + PageDown / PageUp — move between top-level menu sections
+    //   Left / Right arrows       — prev/next within a section (looks for a[data-prev-next])
+    (function () {
+      const TOP_NAV = [
+        { label: 'Home',     href: '/',         test: (p) => p === '/' },
+        { label: 'About',    href: '/about',    test: (p) => ['/about','/fiduciary','/fees','/form-adv','/contact'].includes(p) },
+        { label: 'Services', href: '/services', test: (p) => p.startsWith('/services') || p === '/southwest-airlines' },
+        { label: 'Articles', href: '/articles', test: (p) => p === '/articles' || p.startsWith('/articles/') },
+        { label: 'FAQ',      href: '/faq',      test: (p) => p === '/faq' },
+      ];
+
+      const isTyping = (t) => {
+        if (!(t instanceof HTMLElement)) return false;
+        const tag = t.tagName;
+        return tag === 'INPUT' || tag === 'TEXTAREA' || t.isContentEditable;
+      };
+
+      document.addEventListener('keydown', (e) => {
+        if (isTyping(e.target)) return;
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+        // Shift + PageUp/PageDown: top-level nav
+        if (e.shiftKey && (e.key === 'PageUp' || e.key === 'PageDown')) {
+          let path = window.location.pathname || '/';
+          if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
+          const idx = TOP_NAV.findIndex((n) => n.test(path));
+          if (idx < 0) return;
+          const target = TOP_NAV[idx + (e.key === 'PageDown' ? 1 : -1)];
+          if (target) {
+            e.preventDefault();
+            window.location.href = target.href;
+          }
+          return;
+        }
+
+        // Plain arrow keys: in-section prev/next
+        if (!e.shiftKey && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+          const dir = e.key === 'ArrowLeft' ? 'prev' : 'next';
+          const link = document.querySelector('a[data-prev-next="' + dir + '"]');
+          if (link && link instanceof HTMLAnchorElement) {
+            e.preventDefault();
+            window.location.href = link.href;
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

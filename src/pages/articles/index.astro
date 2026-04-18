@@ -1,0 +1,53 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allTags = [...new Set(articles.flatMap((a) => a.data.tags))].sort();
+---
+<PageLayout
+  title="Articles & Insights"
+  description="Articles on investing, retirement, and financial planning — from Wilco Financial, a Tennessee-registered investment adviser."
+  eyebrow="Insights"
+  heroTitle="Articles & Insights"
+  heroSubtitle="Practical, jargon-free writing on investing, planning, and the issues that matter most to our clients."
+  breadcrumbs={[{ label: 'Articles' }]}
+  heroVideo="/videos/04.mp4"
+>
+  <section class="section">
+    <div class="container">
+      {allTags.length > 0 && (
+        <div style="margin-bottom:32px;">
+          <strong>Topics:</strong>
+          {allTags.map((t) => (
+            <a href={`/articles/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="btn btn-outline" style="padding:4px 12px; font-size:0.8rem; margin:4px 4px 0 0; text-transform:none;">{t}</a>
+          ))}
+        </div>
+      )}
+
+      <div class="grid grid-2">
+        {articles.map((a) => (
+          <a href={`/articles/${a.id}`} class="article-card-photo">
+            {a.data.heroImage && (
+              <div class="article-card-img" style={`background-image:url('${a.data.heroImage}')`} aria-hidden="true"></div>
+            )}
+            <div class="article-card-body">
+              <div class="meta">
+                {a.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                {a.data.tags.length > 0 && <> · {a.data.tags.join(', ')}</>}
+              </div>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {articles.length === 0 && (
+        <p class="muted">No articles yet — new content is on the way.</p>
+      )}
+    </div>
+  </section>
+</PageLayout>

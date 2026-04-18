@@ -1,0 +1,19 @@
+{
+  "name": "wilco-financial-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.9",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.16.0"
+  }
+}

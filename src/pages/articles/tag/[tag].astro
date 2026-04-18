@@ -1,0 +1,73 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  const tags = new Set<string>();
+  for (const a of articles) for (const t of a.data.tags) tags.add(t);
+  const allTags = [...tags].sort();
+  return allTags.map((tag) => {
+    const slug = tag.toLowerCase().replace(/\s+/g, '-');
+    const matching = articles
+      .filter((a) => a.data.tags.includes(tag))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return { params: { tag: slug }, props: { tag, articles: matching, allTags } };
+  });
+};
+
+const { tag, articles, allTags } = Astro.props;
+const currentSlug = tag.toLowerCase().replace(/\s+/g, '-');
+---
+<PageLayout
+  title={`Articles tagged "${tag}"`}
+  description={`All Wilco Financial articles tagged "${tag}".`}
+  eyebrow="Topic"
+  heroTitle={tag}
+  heroSubtitle={`${articles.length} article${articles.length === 1 ? '' : 's'} on this topic.`}
+  breadcrumbs={[{ label: 'Articles', href: '/articles' }, { label: tag }]}
+  heroVideo="/videos/08.mp4"
+>
+  <section class="section">
+    <div class="container">
+      {allTags.length > 0 && (
+        <div style="margin-bottom:32px;">
+          <strong>Topics:</strong>
+          <a href="/articles" class="btn btn-outline" style="padding:4px 12px; font-size:0.8rem; margin:4px 4px 0 0; text-transform:none;">All</a>
+          {allTags.map((t) => {
+            const s = t.toLowerCase().replace(/\s+/g, '-');
+            const active = s === currentSlug;
+            return (
+              <a
+                href={`/articles/tag/${s}`}
+                class={`btn ${active ? 'btn-primary' : 'btn-outline'}`}
+                style="padding:4px 12px; font-size:0.8rem; margin:4px 4px 0 0; text-transform:none;"
+                aria-current={active ? 'page' : undefined}
+              >{t}</a>
+            );
+          })}
+        </div>
+      )}
+
+      <div class="grid grid-2">
+        {articles.map((a) => (
+          <a href={`/articles/${a.id}`} class="article-card-photo">
+            {a.data.heroImage && (
+              <div class="article-card-img" style={`background-image:url('${a.data.heroImage}')`} aria-hidden="true"></div>
+            )}
+            <div class="article-card-body">
+              <div class="meta">
+                {a.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                {a.data.tags.length > 0 && <> · {a.data.tags.join(', ')}</>}
+              </div>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p style="margin-top:32px;"><a href="/articles" class="btn btn-outline">← All articles</a></p>
+    </div>
+  </section>
+</PageLayout>

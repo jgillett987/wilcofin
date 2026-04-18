@@ -1,0 +1,53 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PrevNext from '../../components/PrevNext.astro';
+---
+<PageLayout
+  title="Retirement Planning"
+  description="Retirement planning is not something you start a few years before retirement age. Build a plan today — Wilco Financial helps you get there and stay there."
+  eyebrow="Services"
+  heroTitle="Retirement Planning"
+  heroSubtitle="The earlier you plan, the more options you have. The later you plan, the narrower the road."
+  heroVideo="/videos/00.mp4"
+  breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'Retirement Planning' }]}
+>
+  <section class="section">
+    <div class="container">
+      <div class="split" style="margin-bottom:32px;">
+        <div>
+          <h2 class="underline">The Life You've Earned</h2>
+          <p style="font-size:1.15rem;">Retirement planning isn't something you start a few years before retirement age. Your Wilco Financial advisor is ready to work with you starting today to build a plan for the future.</p>
+          <p style="font-size:1.15rem;">And to adjust that plan as your life, your career, and the markets evolve — because they will.</p>
+        </div>
+        <div>
+          <img src="/images/retirement-beach.jpg" alt="A couple on the beach raising their hands — retirement, finally" loading="lazy" style="width:100%; height:auto; border-radius:12px; box-shadow:0 10px 40px rgba(1,19,66,0.15);" />
+        </div>
+      </div>
+    </div>
+    <div class="container narrow">
+      <h2>Key questions a retirement plan answers</h2>
+      <ul class="checklist">
+        <li><strong>Can I retire when I want to?</strong> What income does my current trajectory support?</li>
+        <li><strong>How much can I spend?</strong> Sustainable withdrawal rate modeling given your actual portfolio</li>
+        <li><strong>Where do withdrawals come from?</strong> Taxable, tax-deferred, Roth — sequence matters</li>
+        <li><strong>When should I claim Social Security?</strong> 62, 67, 70 — the right answer depends on spouses, health, and other income</li>
+        <li><strong>Roth conversions?</strong> Evaluating the window between retirement and RMD age</li>
+        <li><strong>Medicare and health coverage?</strong> Planning for coverage gaps and IRMAA thresholds</li>
+        <li><strong>Long-term care?</strong> Self-insure, insure, or hybrid</li>
+        <li><strong>Legacy?</strong> What gets passed on, to whom, and how</li>
+      </ul>
+
+      <h2>What makes retirement planning different</h2>
+      <p>Accumulation (the years you're working and saving) is the easy part. Decumulation — the years you're living off your portfolio — is where most of the complexity and most of the planning value lives. Sequence-of-returns risk, tax diversification, and behavior under market stress all intensify once the paycheck stops.</p>
+      <p>We model the plan, we stress-test it against history and Monte Carlo scenarios, and we build guardrails so you can spend confidently without constantly wondering whether it'll work.</p>
+
+      <h2>Special situations</h2>
+      <ul>
+        <li><strong>Business owners</strong> — integrating a sale, earnout, or deferred compensation into the plan</li>
+        <li><strong>Two-income households</strong> — coordinating benefits, Social Security, and spousal strategies</li>
+        <li><strong>Early retirees</strong> — bridging the gap to Medicare, Rule of 55, 72(t) distributions</li>
+      </ul>
+    </div>
+  </section>
+  <PrevNext section="services" />
+</PageLayout>

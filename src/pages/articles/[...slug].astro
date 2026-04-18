@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/CTA.astro';
+import PrevNext from '../../components/PrevNext.astro';
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import { SITE } from '../../consts';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const articles = (await getCollection('articles', ({ data }) => !data.draft))
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return articles.map((article, i) => ({
+    params: { slug: article.id },
+    props: {
+      article,
+      prev: i < articles.length - 1 ? { label: articles[i + 1].data.title, href: `/articles/${articles[i + 1].id}` } : null,
+      next: i > 0 ? { label: articles[i - 1].data.title, href: `/articles/${articles[i - 1].id}` } : null,
+    },
+  }));
+};
+
+const { article, prev, next } = Astro.props;
+const { Content } = await render(article);
+const prevNextItems = [prev, next].filter(Boolean) as { label: string; href: string }[];
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.data.title,
+  description: article.data.description,
+  datePublished: article.data.pubDate.toISOString(),
+  dateModified: (article.data.updatedDate ?? article.data.pubDate).toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: article.data.author,
+    url: SITE.url,
+  },
+  publisher: { '@id': `${SITE.url}#organization` },
+  mainEntityOfPage: new URL(`/articles/${article.id}`, SITE.url).toString(),
+  keywords: article.data.tags.join(', '),
+};
+
+const breadcrumbsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Articles', item: SITE.url + '/articles' },
+    { '@type': 'ListItem', position: 3, name: article.data.title },
+  ],
+};
+---
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  image={article.data.heroImage}
+  type="article"
+  publishedTime={article.data.pubDate}
+  modifiedTime={article.data.updatedDate}
+  author={article.data.author}
+  structuredData={[articleSchema, breadcrumbsSchema]}
+>
+  <section class="page-hero page-hero-with-video-bg">
+    <video class="page-hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="/videos/00.mp4" type="video/mp4" />
+    </video>
+    <div class="container narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> / <a href="/articles">Articles</a> / <span>{article.data.title}</span>
+      </nav>
+      <h1>{article.data.title}</h1>
+      <p class="article-meta" style="color:#cfe1ff;">
+        {article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        {' · '} {article.data.author}
+        {article.data.tags.length > 0 && <> · {article.data.tags.join(', ')}</>}
+      </p>
+    </div>
+  </section>
+
+  {article.data.heroImage && (
+    <div class="article-hero-image">
+      <img src={article.data.heroImage} alt="" />
+    </div>
+  )}
+
+  <section class="section">
+    <article class="container narrow article-body prose">
+      <Content />
+    </article>
+  </section>
+
+  {(prev || next) && (
+    <nav class="prev-next" aria-label="Article navigation">
+      <div class="container narrow">
+        <div class="prev-next-grid">
+          <div>
+            {prev && (
+              <a href={prev.href} class="prev-next-link prev-next-prev" data-prev-next="prev">
+                <span class="prev-next-arrow" aria-hidden="true">←</span>
+                <span class="prev-next-text">
+                  <span class="prev-next-meta">Older</span>
+                  <span class="prev-next-label">{prev.label}</span>
+                </span>
+              </a>
+            )}
+          </div>
+          <div class="prev-next-right">
+            {next && (
+              <a href={next.href} class="prev-next-link prev-next-next" data-prev-next="next">
+                <span class="prev-next-text">
+                  <span class="prev-next-meta">Newer</span>
+                  <span class="prev-next-label">{next.label}</span>
+                </span>
+                <span class="prev-next-arrow" aria-hidden="true">→</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </nav>
+  )}
+
+  <CTA
+    title="Have questions about what you just read?"
+    subtitle="Let's have a short conversation — no pressure, no sales pitch."
+  />
+</BaseLayout>
