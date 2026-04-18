@@ -118,6 +118,7 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
           )}
         </div>
         <div class="article-top-nav">
+          <button type="button" class="article-top-nav-btn article-pdf-btn" data-article-pdf aria-label="Download as PDF" title="Download as branded PDF">↓ PDF</button>
           {prev && (
             <a href={prev.href} class="article-top-nav-btn" data-prev-next="prev" aria-label={`Older: ${prev.label}`} title={`← ${prev.label}`}>← Prev</a>
           )}
@@ -126,12 +127,40 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
           )}
         </div>
       </div>
+
+      {/* Print-only branded header — hidden on screen, shown at top of PDF */}
+      <div class="print-only print-header" aria-hidden="true">
+        <img src="/logo-color.png" alt="Wilco Financial" class="print-logo" />
+        <div class="print-header-right">
+          <div class="print-site">wilcofin.com</div>
+          <div class="print-tag">Fiduciary investment management & financial planning</div>
+        </div>
+      </div>
+      <div class="print-only print-title-block" aria-hidden="true">
+        {article.data.tags.length > 0 && <div class="print-eyebrow">{article.data.tags[0]}</div>}
+        <h1 class="print-title">{article.data.title}</h1>
+        <p class="print-desc">{article.data.description}</p>
+        <div class="print-byline">{formattedDate} · {article.data.author}</div>
+      </div>
+
       <article class="article-body prose">
         {article.data.heroImage && (
           <img class="article-hero-float" src={article.data.heroImage} alt="" loading="lazy" />
         )}
         <Content />
       </article>
+
+      {/* Print-only footer — last page of PDF */}
+      <div class="print-only print-footer" aria-hidden="true">
+        <div class="print-footer-brand">
+          <strong>Wilco Financial, LLC</strong><br />
+          6688 Nolensville Rd, Ste 108 #3029 · Brentwood, TN 37027<br />
+          (615) 237-8750 · info@wilcofin.com · wilcofin.com
+        </div>
+        <div class="print-disclaimer">
+          Wilco Financial, LLC is a state-registered investment adviser and fiduciary. This article is general educational content, not personalized investment, tax, or legal advice. Consult a qualified professional for advice about your specific situation.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -170,4 +199,22 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
     title="Have questions about what you just read?"
     subtitle="Let's have a short conversation — no pressure, no sales pitch."
   />
+
+  <script is:inline define:vars={{ articleTitle: article.data.title }}>
+    (function () {
+      const btn = document.querySelector('[data-article-pdf]');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        // Browsers use document.title as the default PDF filename.
+        const originalTitle = document.title;
+        const clean = String(articleTitle).replace(/[\\/:*?"<>|]+/g, '').slice(0, 120);
+        document.title = 'Wilco Financial — ' + clean;
+        const restore = () => { document.title = originalTitle; window.removeEventListener('afterprint', restore); };
+        window.addEventListener('afterprint', restore);
+        window.print();
+        // Safari / some browsers don't fire afterprint reliably — restore after a delay too.
+        setTimeout(restore, 3000);
+      });
+    })();
+  </script>
 </BaseLayout>
