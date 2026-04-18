@@ -725,45 +725,81 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
           const filePath = 'src/content/articles/' + slug + '.md';
           const url = 'https://api.github.com/repos/' + CONFIG.repo + '/contents/' + filePath;
 
-          let sha;
-          if (!composing) {
-            const getRes = await fetch(url + '?ref=' + encodeURIComponent(CONFIG.branch), {
+          // Always fetch a fresh SHA (cache-busted) — stale SHAs cause 409s
+          async function fetchSha() {
+            const bust = '&_=' + Date.now();
+            const getRes = await fetch(url + '?ref=' + encodeURIComponent(CONFIG.branch) + bust, {
+              cache: 'no-store',
               headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' },
             });
-            if (!getRes.ok) throw new Error('GET failed: ' + getRes.status + ' ' + (await getRes.text()).slice(0, 200));
+            if (!getRes.ok) {
+              if (getRes.status === 404) return null; // file doesn't exist yet
+              throw new Error('GET failed: ' + getRes.status + ' ' + (await getRes.text()).slice(0, 200));
+            }
             const meta = await getRes.json();
-            sha = meta.sha;
+            return meta.sha;
           }
 
-          const putBody = {
-            message: (composing ? 'Add article: ' : 'Edit article: ') + slug + ' (via admin)',
-            content: b64(out),
-            branch: CONFIG.branch,
-          };
-          if (sha) putBody.sha = sha;
+          let sha = composing ? null : await fetchSha();
 
-          const putRes = await fetch(url, {
-            method: 'PUT',
-            headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
-            body: JSON.stringify(putBody),
-          });
+          async function doPut(withSha) {
+            const putBody = {
+              message: (composing ? 'Add article: ' : 'Edit article: ') + slug + ' (via admin)',
+              content: b64(out),
+              branch: CONFIG.branch,
+            };
+            if (withSha) putBody.sha = withSha;
+            return fetch(url, {
+              method: 'PUT',
+              headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+              body: JSON.stringify(putBody),
+            });
+          }
+
+          let putRes = await doPut(sha);
+          // 409 = SHA conflict; re-fetch fresh SHA and retry once.
+          if (putRes.status === 409 && !composing) {
+            console.warn('[admin] 409 SHA mismatch — retrying with fresh SHA');
+            const fresh = await fetchSha();
+            if (fresh && fresh !== sha) {
+              sha = fresh;
+              putRes = await doPut(sha);
+            }
+          }
           if (!putRes.ok) {
             const txt = (await putRes.text()).slice(0, 400);
+            console.error('[admin] GitHub PUT rejected', putRes.status, txt);
             if (putRes.status === 403 || /not accessible by personal access token/i.test(txt)) {
               throw new Error('GitHub rejected the save (403). Your Personal Access Token does not have write access to this repo. Fix: go to github.com/settings/personal-access-tokens, edit the token, set "Repository permissions → Contents" to "Read and write" for jgillett987/wilcofin, then Sign Out of this admin and paste the new token. Your edits are still in this form — use "⬇ Download .md" to save a copy meanwhile.');
+            }
+            if (putRes.status === 409) {
+              throw new Error('GitHub rejected the save (409 SHA mismatch). The file changed on the server since this page loaded. Reload the admin page to pick up the latest version, then try again. Your edits are still in this form — use "⬇ Download .md" to save a copy meanwhile.');
             }
             throw new Error('PUT failed: ' + putRes.status + ' ' + txt);
           }
 
+          const putJson = await putRes.json();
+          const commitUrl = (putJson && putJson.commit && putJson.commit.html_url) || '';
+          const commitSha = (putJson && putJson.commit && putJson.commit.sha) || '';
+          console.log('[admin] Save succeeded:', slug, commitUrl);
+
           if (composing) {
-            // Add to in-memory ARTS so subsequent edits work without reload
             ARTS[slug] = { slug, body: $('fBody').value, ...data };
-            flash($('flash'), 'Created ' + slug + '. Vercel will redeploy in ~1-2 minutes; after that, refresh this page to see the new article in the list.', 'ok');
           } else {
             Object.assign(editing, data, { body: $('fBody').value, heroVideo: heroVideo });
-            flash($('flash'), 'Saved ' + slug + '. Vercel will redeploy in ~1-2 minutes.', 'ok');
           }
-          returnToList();
+
+          // Stay on the edit view and show a clear, verifiable success state
+          // (with a link to the actual GitHub commit) instead of bouncing to
+          // the stale list. The list is server-rendered at build time, so
+          // changes only appear there after Vercel redeploys.
+          const commitBit = commitUrl
+            ? ' · <a href="' + commitUrl + '" target="_blank" rel="noopener" style="color:#011342;text-decoration:underline"><code>' + (commitSha ? commitSha.slice(0, 7) : 'commit') + '</code> on GitHub</a>'
+            : '';
+          $('editFlash').innerHTML = '<div class="flash ok">✓ Saved <strong>' + slug + '.md</strong>' + commitBit + ' · Vercel will redeploy in ~1–2 minutes.</div>';
+          const savedLabel = composing ? 'Created ✓' : 'Saved ✓';
+          btn.textContent = savedLabel;
+          setTimeout(() => { if (btn.textContent === savedLabel) btn.textContent = labelDefault; }, 2000);
           return true;
         } catch (err) {
           flash($('editFlash'), String(err.message || err), 'err');
