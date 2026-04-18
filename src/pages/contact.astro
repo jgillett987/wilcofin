@@ -36,23 +36,20 @@ const contactSchema = {
         </p>
       </div>
       <div>
-        {/* Form submits securely over HTTPS to Formspree (form meevkkjb).
-            Manage submissions + settings at https://formspree.io/forms. */}
-        <form
-          class="card"
-          action="https://formspree.io/f/meevkkjb"
-          method="POST"
-          autocomplete="on"
-        >
+        {/* Native contact form. Submits via fetch() to /api/contact (a Vercel
+            serverless endpoint), which sends an email to info@wilcofin.com
+            via Resend. Fallback: if JavaScript fails, the form still POSTs
+            to /api/contact natively and the user sees a plain JSON response. */}
+        <form id="contactForm" class="card" action="/api/contact" method="POST" autocomplete="on" novalidate>
           <h3 style="margin-top:0;">Send us a message</h3>
           <p class="muted" style="font-size:0.9rem;">Prefer something else? Email us directly at <a href={CONTACT.emailHref} style="text-decoration:underline; color:var(--navy); font-weight:600;">{CONTACT.email}</a> or <a href={CONTACT.calendlyUrl} target="_blank" rel="noopener" style="text-decoration:underline; color:var(--navy); font-weight:600;">schedule a meeting</a>.</p>
 
-          {/* Subject line on the email you receive */}
-          <input type="hidden" name="_subject" value="New contact-form message from wilcofin.com" />
-
-          {/* After submit, bounce back to our branded thanks page instead
-              of the generic Formspree success screen. */}
-          <input type="hidden" name="_next" value="https://www.wilcofin.com/contact/thanks" />
+          {/* Honeypot — only bots typically fill this. Hidden from sighted users
+              and assistive tech. Real submissions leave it blank; the server
+              silently drops any request where this is non-empty. */}
+          <div style="position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+            <label>Website (leave blank)<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
 
           <label style="display:block; margin-bottom:12px;">
             <span style="display:block; font-weight:600; margin-bottom:4px;">Name</span>
@@ -70,11 +67,68 @@ const contactSchema = {
             <span style="display:block; font-weight:600; margin-bottom:4px;">How can we help?</span>
             <textarea name="message" rows="5" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px; font-family:inherit;"></textarea>
           </label>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div id="contactError" role="alert" style="display:none; background:#fbe8e6; border:1px solid #c46060; color:#601616; padding:10px 14px; border-radius:6px; margin-bottom:12px; font-size:0.95rem;"></div>
+          <button type="submit" id="contactSubmitBtn" class="btn btn-primary">Send Message</button>
         </form>
+
+        {/* Shown after a successful submission. Replaces the form in place. */}
+        <div id="contactSuccess" class="card" style="display:none;" role="status" aria-live="polite">
+          <h3 style="margin-top:0;">Thanks — message received.</h3>
+          <p>{SITE.advisorName} personally reviews every inquiry. You'll hear back within one business day, typically much sooner.</p>
+          <p style="margin-bottom:0;">Want to move faster? You can put a time on the calendar right now:</p>
+          <p style="margin-top:16px;">
+            <a href={CONTACT.calendlyUrl} class="btn btn-primary" target="_blank" rel="noopener">Schedule a Meeting</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <PrevNext section="about" />
+
+  <script is:inline>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const successEl = document.getElementById('contactSuccess');
+      const errorEl = document.getElementById('contactError');
+      const btn = document.getElementById('contactSubmitBtn');
+      if (!form || !successEl || !errorEl || !btn) return;
+
+      const showError = (msg) => {
+        errorEl.textContent = msg;
+        errorEl.style.display = 'block';
+      };
+      const clearError = () => {
+        errorEl.textContent = '';
+        errorEl.style.display = 'none';
+      };
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearError();
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        try {
+          const formData = new FormData(form);
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' },
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || data.ok !== true) {
+            throw new Error(data.error || 'Sorry, your message could not be sent. Please try again or email us directly.');
+          }
+          // Swap form → success card in place
+          form.style.display = 'none';
+          successEl.style.display = 'block';
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (err) {
+          showError(err && err.message ? err.message : 'Something went wrong. Please try again.');
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
+        }
+      });
+    })();
+  </script>
 </PageLayout>
