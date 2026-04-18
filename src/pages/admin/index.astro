@@ -64,7 +64,10 @@ for (const a of articles) {
 const articlesBySlug: Record<string, any> = {};
 for (const a of articles) articlesBySlug[a.slug] = a;
 
-const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
+// Ordered slug list (same order as the list view — newest first). Used by
+// the editor for prev/next keyboard navigation.
+const orderedSlugs = articles.map((a) => a.slug);
+const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, orderedSlugs };
 ---
 <!doctype html>
 <html lang="en">
@@ -230,6 +233,7 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
           </div>
           <div class="right">
             <div id="slugRow" class="hidden"><input type="text" id="fSlug" pattern="[a-z0-9-]+" placeholder="article-slug" style="padding:8px 10px;border:1px solid #d7dce7;border-radius:6px" /></div>
+            <button type="button" class="btn btn-secondary" id="downloadBtn" title="Download the article as a .md file (fallback if GitHub save fails)">⬇ Download .md</button>
             <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
             <button type="submit" class="btn" id="saveBtn">Save &amp; Deploy</button>
           </div>
@@ -265,6 +269,8 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
                 <p style="margin-bottom:0;font-size:0.9rem" contenteditable="true" id="aeTagsLabel" data-placeholder="Tags, comma separated"></p>
               </div>
               <div class="article-top-nav">
+                <a href="#" class="article-top-nav-btn" id="aePrevBtn" onclick="return false" title="Older article (← arrow)">← Prev</a>
+                <a href="#" class="article-top-nav-btn" id="aeNextBtn" onclick="return false" title="Newer article (→ arrow)">Next →</a>
                 <a href="#" class="article-top-nav-btn" id="heroVideoChangeBtn" onclick="return false">🎬 Change video</a>
                 <a href="#" class="article-top-nav-btn" id="heroVideoClearBtn" onclick="return false" title="Use auto-picked video">Remove video</a>
               </div>
@@ -738,7 +744,13 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
             headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
             body: JSON.stringify(putBody),
           });
-          if (!putRes.ok) throw new Error('PUT failed: ' + putRes.status + ' ' + (await putRes.text()).slice(0, 300));
+          if (!putRes.ok) {
+            const txt = (await putRes.text()).slice(0, 400);
+            if (putRes.status === 403 || /not accessible by personal access token/i.test(txt)) {
+              throw new Error('GitHub rejected the save (403). Your Personal Access Token does not have write access to this repo. Fix: go to github.com/settings/personal-access-tokens, edit the token, set "Repository permissions → Contents" to "Read and write" for jgillett987/wilcofin, then Sign Out of this admin and paste the new token. Your edits are still in this form — use "⬇ Download .md" to save a copy meanwhile.');
+            }
+            throw new Error('PUT failed: ' + putRes.status + ' ' + txt);
+          }
 
           if (composing) {
             // Add to in-memory ARTS so subsequent edits work without reload
@@ -837,8 +849,68 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
 
       $('modalCloseBtn').addEventListener('click', closeModal);
       $('mediaModal').addEventListener('click', (e) => { if (e.target.id === 'mediaModal') closeModal(); });
+
+      // Prev/next navigation between articles (matches live-site order: newest first)
+      function navigateRelative(delta) {
+        if (!editing) return;
+        const order = CONFIG.orderedSlugs || [];
+        const idx = order.indexOf(editing.slug);
+        if (idx < 0) return;
+        const target = order[idx + delta];
+        if (!target) return;
+        // Save current edits (best-effort) before jumping, so work isn't lost
+        saveArticle().finally(() => {
+          pushEditState(target);
+          openEdit(target);
+        });
+      }
+      $('aePrevBtn').addEventListener('click', (e) => { e.preventDefault(); navigateRelative(1); }); // older = index+1
+      $('aeNextBtn').addEventListener('click', (e) => { e.preventDefault(); navigateRelative(-1); }); // newer = index-1
+
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalMode) closeModal();
+        if (e.key === 'Escape' && modalMode) { closeModal(); return; }
+        // Arrow-key navigation between articles — only when focus isn't in a
+        // text field / contenteditable (so normal cursor movement is preserved).
+        if (currentView === 'edit' && !modalMode && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+          const ae = document.activeElement;
+          const inEditable = ae && (
+            ae.tagName === 'INPUT' ||
+            ae.tagName === 'TEXTAREA' ||
+            ae.tagName === 'SELECT' ||
+            (ae.getAttribute && ae.getAttribute('contenteditable') === 'true')
+          );
+          if (inEditable) return;
+          e.preventDefault();
+          navigateRelative(e.key === 'ArrowLeft' ? 1 : -1); // Left = older, Right = newer
+        }
+      });
+
+      // Download .md fallback — always works, bypasses GitHub entirely
+      $('downloadBtn').addEventListener('click', () => {
+        syncTitle(); syncDesc();
+        $('fBody').value = htmlToMarkdown($('aeBody'));
+        const slug = (editing && editing.slug) || slugify($('fSlug') && $('fSlug').value || $('fTitle').value) || 'article';
+        const data = {
+          title: $('fTitle').value,
+          description: $('fDesc').value,
+          pubDate: $('fDate').value || new Date().toISOString().slice(0,10),
+          author: $('fAuthor').value || 'Wilco Financial',
+          tags: $('fTags').value.split(',').map((t) => t.trim()).filter(Boolean),
+          heroImage: $('fHeroImage').value || '',
+        };
+        const heroVideo = $('fHeroVideo').value;
+        if (heroVideo) data.heroVideo = heroVideo;
+        const out = stringifyFrontmatter(data, '\n' + $('fBody').value);
+        const blob = new Blob([out], { type: 'text/markdown;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = slug + '.md';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        flash($('editFlash'), 'Downloaded ' + slug + '.md — drop it into src/content/articles/ and commit.', 'ok');
       });
 
       // Initial view — restore edit deep-link if present
