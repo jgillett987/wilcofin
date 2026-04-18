@@ -4,7 +4,7 @@ description: "The IRS 415(c) limit caps total annual 401(k) contributions at $70
 pubDate: 2026-11-18
 author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines", "Tax Planning", "Roth"]
-heroImage: "/images/tetons-framed.jpg"
+heroImage: "/images/iStock-2254421366.jpg"
 ---
 For high-earning Southwest Airlines pilots, one of the most powerful — and least understood — wealth-building features of the 401(k) is the **IRS Section 415(c) limit**. It caps total annual contributions to a single 401(k) plan at $70,000 in 2025 ($77,500 with the standard age 50+ catch-up, or higher with the new SECURE 2.0 super-catch-up at age 60–63).
 
