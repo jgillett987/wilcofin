@@ -1,7 +1,9 @@
 ---
 // Static admin panel. List is rendered at build time for reliability.
 // Edit form + GitHub save are client-side; PAT lives only in the user's
-// browser localStorage.
+// browser localStorage. Edit view reuses the live site's global.css so the
+// preview is visually identical to a published article.
+import '../../styles/global.css';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseFrontmatter } from '../../lib/admin';
@@ -109,63 +111,43 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     .media-current .actions-inline{display:flex;gap:8px;flex-shrink:0}
     .actions{margin-top:20px;display:flex;gap:10px}
     .hidden{display:none !important}
-    /* Article-style editor */
-    .article-editor{max-width:1100px;margin:0 auto}
-    .ae-hero{position:relative;min-height:480px;background:#011342;border-radius:12px;overflow:hidden;color:#fff;box-shadow:0 12px 40px rgba(1,19,66,0.15);display:flex;align-items:flex-end}
-    .ae-hero-video,.ae-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-    .ae-hero-img{z-index:1}
-    .ae-hero-video{z-index:0}
-    .ae-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,19,66,0.35) 0%,rgba(1,19,66,0.55) 55%,rgba(1,19,66,0.85) 100%);z-index:2}
-    .ae-hero-controls{position:absolute;top:16px;right:16px;z-index:4;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:60%}
-    .ae-chip{background:rgba(1,19,66,0.75);color:#fff;border:1px solid rgba(255,255,255,0.25);border-radius:999px;padding:8px 14px;font-size:.85rem;font-weight:600;cursor:pointer;backdrop-filter:blur(6px);transition:background .15s}
-    .ae-chip:hover{background:rgba(1,19,66,0.95)}
-    .ae-chip-ghost{background:rgba(255,255,255,0.08)}
-    .ae-chip-ghost:hover{background:rgba(255,255,255,0.2)}
-    .ae-hero-content{position:relative;z-index:3;padding:40px 48px;width:100%}
-    .ae-hero-meta{color:#a2e37d;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-    .ae-title{font-family:Georgia,serif;color:#fff;font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.15;margin:0 0 14px;font-weight:700;outline:none;padding:4px 6px;border-radius:6px;transition:background .15s;text-shadow:0 2px 14px rgba(0,0,0,0.35);max-width:850px}
-    .ae-title:hover,.ae-title:focus{background:rgba(255,255,255,0.08)}
-    .ae-desc{color:rgba(255,255,255,0.92);font-size:1.1rem;line-height:1.55;margin:0;max-width:780px;outline:none;padding:4px 6px;border-radius:6px;transition:background .15s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
-    .ae-desc:hover,.ae-desc:focus{background:rgba(255,255,255,0.08)}
-    [contenteditable=true][data-placeholder]:empty::before{content:attr(data-placeholder);color:rgba(255,255,255,0.45);font-style:italic}
-    .ae-video-note{position:absolute;bottom:10px;right:16px;z-index:4;color:rgba(255,255,255,0.75);font-size:.75rem;background:rgba(1,19,66,0.7);padding:4px 10px;border-radius:999px}
-    .ae-meta-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;background:#fff;border:1px solid #e5e9f2;border-radius:10px;padding:16px 20px;margin:18px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
-    .ae-meta-row label{margin:0;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:#5a6582}
-    .ae-meta-row input{margin-top:4px}
-    .ae-body{background:#fff;border:1px solid #e5e9f2;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
-    .ae-body-toolbar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#f7f9fc;border-bottom:1px solid #e5e9f2;gap:12px;flex-wrap:wrap}
-    .ae-tabs{display:flex;gap:4px;background:#eef2f8;border-radius:8px;padding:3px}
-    .ae-tab{background:transparent;border:none;padding:6px 14px;border-radius:6px;font-size:.85rem;font-weight:600;color:#5a6582;cursor:pointer}
-    .ae-tab.active{background:#fff;color:#011342;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
-    .ae-help{color:#5a6582;font-size:.78rem}
-    .ae-help code{background:#eef2f8;padding:1px 5px;border-radius:3px;font-size:.85em}
-    .ae-body-panes{display:grid;min-height:500px}
-    .ae-body-panes.mode-write{grid-template-columns:1fr}
-    .ae-body-panes.mode-preview{grid-template-columns:1fr}
-    .ae-body-panes.mode-split{grid-template-columns:1fr 1fr}
-    .ae-body-panes.mode-write .ae-body-preview{display:none}
-    .ae-body-panes.mode-preview .ae-body-input{display:none}
-    .ae-body-input{border:none;border-radius:0;min-height:500px;font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.65;padding:24px 28px;resize:vertical;outline:none;background:#fff}
-    .ae-body-panes.mode-split .ae-body-input{border-right:1px solid #e5e9f2}
-    .ae-body-preview{padding:24px 36px;overflow:auto;background:#fff}
-    .ae-body-preview.article-body h2{font-family:Georgia,serif;color:#011342;margin:1.4em 0 .6em;font-size:1.5rem}
-    .ae-body-preview.article-body h3{font-family:Georgia,serif;color:#011342;margin:1.2em 0 .5em;font-size:1.2rem}
-    .ae-body-preview.article-body p{margin:0 0 1em;font-size:1rem;line-height:1.75;color:#1a2238}
-    .ae-body-preview.article-body ul,.ae-body-preview.article-body ol{margin:0 0 1em;padding-left:1.4em;line-height:1.75}
-    .ae-body-preview.article-body li{margin-bottom:.4em}
-    .ae-body-preview.article-body a{color:#011342;text-decoration:underline}
-    .ae-body-preview.article-body code{background:#eef2f8;padding:1px 6px;border-radius:3px;font-size:.9em}
-    .ae-body-preview.article-body strong{color:#011342}
-    .ae-body-preview.article-body hr{border:none;border-top:1px solid #e5e9f2;margin:1.5em 0}
-    .ae-body-preview.article-body em{font-style:italic}
-    .ae-actions{max-width:1100px;margin:20px auto 40px}
-    @media (max-width:720px){
-      .ae-hero{min-height:380px}
-      .ae-hero-content{padding:28px 24px}
-      .ae-hero-controls{max-width:100%;top:auto;bottom:12px;right:12px;left:12px;justify-content:center}
-      .ae-body-panes.mode-split{grid-template-columns:1fr}
-      .ae-body-panes.mode-split .ae-body-input{border-right:none;border-bottom:1px solid #e5e9f2}
+    /* Edit view overlay — thin layer on top of global.css so the preview
+       looks exactly like a published article. */
+    #editView main,
+    main:has(#editView:not(.hidden)){padding:0;max-width:none}
+    #editView .admin-wrap{max-width:none;margin:0;padding:0}
+    /* Sticky top action bar */
+    .ae-top-bar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid #e5e9f2;padding:10px 24px;display:flex;gap:10px;justify-content:space-between;align-items:center}
+    .ae-top-bar .left,.ae-top-bar .right{display:flex;gap:10px;align-items:center}
+    .ae-top-bar .hint{color:#5a6582;font-size:.82rem}
+    .ae-top-bar .hint kbd{background:#eef2f8;border:1px solid #d7dce7;border-radius:4px;padding:1px 5px;font-family:ui-monospace,Menlo,monospace;font-size:.78rem}
+    /* Edit affordances over the live layout */
+    [contenteditable=true]{outline:none}
+    [contenteditable=true]:hover{background:rgba(162,227,125,0.18);border-radius:4px;box-shadow:0 0 0 4px rgba(162,227,125,0.18)}
+    [contenteditable=true]:focus{background:rgba(255,255,255,0.08);border-radius:4px;box-shadow:0 0 0 4px rgba(129,196,96,0.5)}
+    .page-hero [contenteditable=true]:hover,.page-hero [contenteditable=true]:focus{background:rgba(255,255,255,0.08)}
+    [contenteditable=true][data-placeholder]:empty::before{content:attr(data-placeholder);color:rgba(180,180,180,0.6);font-style:italic}
+    .page-hero [contenteditable=true][data-placeholder]:empty::before{color:rgba(255,255,255,0.45)}
+    /* Click-to-change hotspots on the video + image */
+    .ae-video-click{position:absolute;inset:0;z-index:3;cursor:pointer}
+    .ae-video-click::after{content:'🎬  Click video to change';position:absolute;top:12px;right:12px;background:rgba(1,19,66,0.75);color:#fff;padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:600;opacity:0;transition:opacity .15s;pointer-events:none}
+    .ae-video-click:hover::after{opacity:1}
+    .ae-hero-bg{cursor:pointer}
+    .article-hero-float{cursor:pointer;position:relative}
+    .article-hero-float:hover{outline:3px solid #81c460;outline-offset:3px}
+    .ae-img-hint{position:absolute;top:8px;right:8px;background:rgba(1,19,66,0.75);color:#fff;padding:5px 10px;border-radius:999px;font-size:.75rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .15s;z-index:2}
+    .ae-img-wrap:hover .ae-img-hint{opacity:1}
+    .ae-img-wrap{float:right;width:42%;max-width:420px;margin:8px 0 28px 64px;position:relative}
+    .ae-img-wrap .article-hero-float{float:none;width:100%;max-width:none;margin:0}
+    .ae-img-wrap.empty{background:#eef2f8;border:2px dashed #b5bdd1;border-radius:12px;min-height:220px;display:flex;align-items:center;justify-content:center;color:#5a6582;font-weight:600;text-align:center;padding:20px;cursor:pointer}
+    .ae-img-wrap.empty:hover{background:#dde4ef;border-color:#81c460;color:#011342}
+    @media (max-width: 720px){
+      .ae-img-wrap{float:none;width:100%;max-width:100%;margin:0 0 24px 0}
     }
+    /* Plain contenteditable body that still looks like a rendered article */
+    .ae-body-edit{min-height:400px}
+    .ae-body-edit:focus{outline:none}
+    .ae-video-note{display:inline-block;margin-left:10px;color:#5a6582;font-size:.78rem;font-style:italic}
     /* Modal picker */
     .modal-backdrop{position:fixed;inset:0;background:rgba(1,19,66,0.85);z-index:1000;display:flex;flex-direction:column}
     .modal-head{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:#011342;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15)}
@@ -227,59 +209,77 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     </div>
 
     <div id="editView" class="hidden">
-      <div id="editFlash" style="max-width:900px;margin:0 auto 14px"></div>
-      <form id="editForm" class="article-editor">
+      <form id="editForm">
         <input type="hidden" id="editSlug" />
         <input type="hidden" id="fTitle" />
         <input type="hidden" id="fDesc" />
         <input type="hidden" id="fHeroImage" name="heroImage" />
         <input type="hidden" id="fHeroVideo" name="heroVideo" />
+        <input type="hidden" id="fBody" />
 
-        <!-- Article-style hero preview -->
-        <section class="ae-hero" id="aeHero">
-          <video id="aeHeroVideo" class="ae-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-          <img id="aeHeroImage" class="ae-hero-img" alt="" />
-          <div class="ae-hero-overlay"></div>
-          <div class="ae-hero-controls">
-            <button type="button" class="ae-chip" id="imgSelectBtn">🖼  Change image</button>
-            <button type="button" class="ae-chip" id="vidSelectBtn">🎬  Change video</button>
-            <button type="button" class="ae-chip ae-chip-ghost" id="vidClearBtn" title="Remove explicit video (falls back to auto-picked)">Remove video</button>
+        <!-- Sticky top action bar -->
+        <div class="ae-top-bar">
+          <div class="left">
+            <button type="button" class="btn btn-secondary" id="backBtn" title="Save and return to list (browser Back does the same)">← Back to list</button>
+            <span class="hint">Click the <strong>video</strong>, <strong>photo</strong>, or any <strong>text</strong> to edit · <kbd>Esc</kbd> to cancel edits</span>
           </div>
-          <div class="ae-hero-content">
-            <div class="ae-hero-meta"><span id="aeDate"></span></div>
-            <h1 id="aeTitle" class="ae-title" contenteditable="true" spellcheck="true" data-placeholder="Article title"></h1>
-            <p id="aeDesc" class="ae-desc" contenteditable="true" spellcheck="true" data-placeholder="Short description for social + SEO"></p>
+          <div class="right">
+            <div id="slugRow" class="hidden"><input type="text" id="fSlug" pattern="[a-z0-9-]+" placeholder="article-slug" style="padding:8px 10px;border:1px solid #d7dce7;border-radius:6px" /></div>
+            <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+            <button type="submit" class="btn" id="saveBtn">Save &amp; Deploy</button>
           </div>
-          <div class="ae-video-note" id="aeVideoNote"></div>
+        </div>
+
+        <div id="editFlash" style="max-width:1200px;margin:12px auto 0;padding:0 24px"></div>
+
+        <!-- HERO: mirrors src/pages/articles/[...slug].astro -->
+        <section class="page-hero page-hero-with-video-bg">
+          <video id="aeHeroVideo" class="page-hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+          <div class="ae-video-click" id="aeVideoClick" title="Click to change video"></div>
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="#" onclick="return false">Home</a> / <a href="#" onclick="return false">Articles</a> / <span id="aeCrumbTitle"></span>
+            </nav>
+            <span class="eyebrow" id="aeEyebrow" contenteditable="true" data-placeholder="Tag"></span>
+            <h1 id="aeTitle" contenteditable="true" spellcheck="true" data-placeholder="Article title"></h1>
+            <p id="aeDesc" contenteditable="true" spellcheck="true" data-placeholder="Short description for social + SEO"></p>
+          </div>
         </section>
 
-        <!-- Secondary meta (slug shown only in compose mode) -->
-        <div class="ae-meta-row">
-          <div id="slugRow" class="hidden"><label>Slug<input type="text" id="fSlug" pattern="[a-z0-9-]+" placeholder="my-new-article" /></label></div>
-          <label>Publish date<input type="date" id="fDate" /></label>
-          <label>Author<input type="text" id="fAuthor" /></label>
-          <label>Tags (comma-separated)<input type="text" id="fTags" placeholder="Fiduciary, Tax Planning" /></label>
-        </div>
-
-        <!-- Body editor + live preview -->
-        <div class="ae-body">
-          <div class="ae-body-toolbar">
-            <div class="ae-tabs">
-              <button type="button" class="ae-tab active" data-tab="write">Write</button>
-              <button type="button" class="ae-tab" data-tab="preview">Preview</button>
-              <button type="button" class="ae-tab" data-tab="split">Split</button>
+        <!-- BODY: mirrors the real article section -->
+        <section class="section">
+          <div class="article-container">
+            <div class="article-meta-row">
+              <div>
+                <p class="article-meta" style="font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;color:var(--muted);margin-bottom:8px">
+                  <span contenteditable="true" id="aeDateLabel" data-placeholder="Date"></span>
+                  <span> · </span>
+                  <span contenteditable="true" id="aeAuthorLabel" data-placeholder="Author">Wilco Financial</span>
+                  <span class="ae-video-note" id="aeVideoNote"></span>
+                </p>
+                <p style="margin-bottom:0;font-size:0.9rem" contenteditable="true" id="aeTagsLabel" data-placeholder="Tags, comma separated"></p>
+              </div>
+              <div class="article-top-nav">
+                <a href="#" class="article-top-nav-btn" id="heroVideoChangeBtn" onclick="return false">🎬 Change video</a>
+                <a href="#" class="article-top-nav-btn" id="heroVideoClearBtn" onclick="return false" title="Use auto-picked video">Remove video</a>
+              </div>
             </div>
-            <div class="ae-help">Markdown: <code>## heading</code> · <code>**bold**</code> · <code>*italic*</code> · <code>[text](url)</code> · <code>- list</code></div>
-          </div>
-          <div class="ae-body-panes" id="aeBodyPanes">
-            <textarea id="fBody" class="ae-body-input" placeholder="Write the article in Markdown…"></textarea>
-            <div id="aeBodyPreview" class="ae-body-preview article-body"></div>
-          </div>
-        </div>
 
-        <div class="actions ae-actions">
-          <button type="submit" class="btn" id="saveBtn">Save &amp; Deploy</button>
-          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+            <article class="article-body prose">
+              <div class="ae-img-wrap" id="aeImgWrap">
+                <img id="aeHeroImage" class="article-hero-float" alt="" />
+                <span class="ae-img-hint">🖼 Click to change</span>
+              </div>
+              <div class="ae-body-edit" id="aeBody" contenteditable="true" spellcheck="true" data-placeholder="Write the article body here. Use paragraph breaks; click to add headings/bold; paste plain text…"></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Hidden secondary fields -->
+        <div style="max-width:980px;margin:0 auto 40px;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;background:#fff;border:1px solid #e5e9f2;border-radius:10px;padding:16px 20px">
+          <label style="font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:#5a6582;font-weight:600">Publish date<input type="date" id="fDate" style="width:100%;padding:8px 10px;border:1px solid #d7dce7;border-radius:6px;margin-top:4px" /></label>
+          <label style="font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:#5a6582;font-weight:600">Author<input type="text" id="fAuthor" style="width:100%;padding:8px 10px;border:1px solid #d7dce7;border-radius:6px;margin-top:4px" /></label>
+          <label style="font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:#5a6582;font-weight:600">Tags (comma-separated)<input type="text" id="fTags" placeholder="Fiduciary, Tax Planning" style="width:100%;padding:8px 10px;border:1px solid #d7dce7;border-radius:6px;margin-top:4px" /></label>
         </div>
       </form>
     </div>
@@ -313,11 +313,14 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       });
       const LS_PAT = 'wf_admin_pat';
       const $ = (id) => document.getElementById(id);
+      let currentView = 'gate';
+      let suppressPopstate = false;
 
       function show(view) {
         $('gate').classList.toggle('hidden', view !== 'gate');
         $('listView').classList.toggle('hidden', view !== 'list');
         $('editView').classList.toggle('hidden', view !== 'edit');
+        currentView = view;
         window.scrollTo(0, 0);
       }
       function flash(el, msg, kind) {
@@ -341,14 +344,21 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       }
       function b64(str) { return btoa(unescape(encodeURIComponent(str))); }
 
-      // Update hero preview with selected image
+      // Update body-floated photo + store path
       function setCurrentImage(path) {
         $('fHeroImage').value = path || '';
         const img = $('aeHeroImage');
-        if (path) { img.src = path; img.style.display = 'block'; }
-        else { img.removeAttribute('src'); img.style.display = 'none'; }
+        const wrap = $('aeImgWrap');
+        if (path) {
+          img.src = path;
+          img.style.display = 'block';
+          wrap.classList.remove('empty');
+          wrap.innerHTML = '<img id="aeHeroImage" class="article-hero-float" alt="" src="' + path + '" /><span class="ae-img-hint">🖼 Click to change</span>';
+        } else {
+          wrap.classList.add('empty');
+          wrap.innerHTML = '🖼<br />Click to select an image';
+        }
       }
-      // Update hero preview with selected (or auto-picked) video
       function setCurrentVideo(path) {
         $('fHeroVideo').value = path || '';
         const vid = $('aeHeroVideo');
@@ -357,16 +367,15 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         if (displayPath) {
           vid.src = displayPath;
           vid.style.display = 'block';
-          vid.load && vid.load();
-          vid.play && vid.play().catch(() => {});
+          try { vid.load(); vid.play().catch(() => {}); } catch (e) {}
         } else {
           vid.removeAttribute('src');
           vid.style.display = 'none';
         }
         if (path) {
-          note.textContent = 'Using ' + path.split('/').pop();
+          note.textContent = 'Video: ' + path.split('/').pop() + ' (pinned)';
         } else if (displayPath) {
-          note.textContent = 'Auto-picked from pool: ' + displayPath.split('/').pop() + ' (save one to pin it)';
+          note.textContent = 'Video: auto-picked ' + displayPath.split('/').pop();
         } else {
           note.textContent = '';
         }
@@ -448,15 +457,19 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         $('fDesc').value = a.description || '';
         $('aeTitle').textContent = a.title || '';
         $('aeDesc').textContent = a.description || '';
-        $('aeDate').textContent = formatDateForDisplay(a.pubDate) + (a.tags && a.tags.length ? ' · ' + a.tags.join(' · ') : '');
+        $('aeCrumbTitle').textContent = a.title || '';
+        $('aeEyebrow').textContent = (a.tags && a.tags[0]) || '';
+        $('aeDateLabel').textContent = formatDateForDisplay(a.pubDate);
+        $('aeAuthorLabel').textContent = a.author || 'Wilco Financial';
+        $('aeTagsLabel').textContent = (a.tags || []).join(' · ');
         $('fDate').value = a.pubDate || '';
         $('fAuthor').value = a.author || 'Wilco Financial';
         $('fTags').value = (a.tags || []).join(', ');
-        $('fBody').value = a.body || '';
+        $('aeBody').innerHTML = renderMarkdown(a.body || '');
         setCurrentImage(a.heroImage || '');
         setCurrentVideo(a.heroVideo || '');
-        renderPreview();
         flash($('editFlash'), '', 'ok');
+        pushEditState(slug);
         show('edit');
       }
 
@@ -471,29 +484,52 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         $('fDesc').value = '';
         $('aeTitle').textContent = '';
         $('aeDesc').textContent = '';
+        $('aeCrumbTitle').textContent = '(new article)';
+        $('aeEyebrow').textContent = '';
         const today = new Date().toISOString().slice(0, 10);
-        $('aeDate').textContent = formatDateForDisplay(today);
+        $('aeDateLabel').textContent = formatDateForDisplay(today);
+        $('aeAuthorLabel').textContent = 'Wilco Financial';
+        $('aeTagsLabel').textContent = '';
         $('fDate').value = today;
         $('fAuthor').value = 'Wilco Financial';
         $('fTags').value = '';
-        $('fBody').value = '';
+        $('aeBody').innerHTML = '';
         setCurrentImage('');
         setCurrentVideo('');
-        renderPreview();
         flash($('editFlash'), '', 'ok');
+        pushEditState('__new__');
         show('edit');
       }
 
-      // Contenteditable → hidden input sync
-      function syncTitle() {
-        $('fTitle').value = $('aeTitle').textContent.trim();
-      }
-      function syncDesc() {
-        $('fDesc').value = $('aeDesc').textContent.trim();
-      }
+      // Contenteditable → hidden input sync (title/desc are plain text)
+      function syncTitle() { $('fTitle').value = $('aeTitle').textContent.trim(); $('aeCrumbTitle').textContent = $('fTitle').value; }
+      function syncDesc() { $('fDesc').value = $('aeDesc').textContent.trim(); }
       $('aeTitle').addEventListener('input', syncTitle);
       $('aeDesc').addEventListener('input', syncDesc);
-      // Prevent rich-text paste from injecting styles
+      $('aeEyebrow').addEventListener('input', () => {
+        // First tag follows the eyebrow
+        const current = $('fTags').value.split(',').map((t) => t.trim()).filter(Boolean);
+        const newFirst = $('aeEyebrow').textContent.trim();
+        if (current[0] !== newFirst) {
+          current[0] = newFirst;
+          $('fTags').value = current.filter(Boolean).join(', ');
+          $('aeTagsLabel').textContent = current.filter(Boolean).join(' · ');
+        }
+      });
+      $('aeDateLabel').addEventListener('blur', () => {
+        const t = $('aeDateLabel').textContent.trim();
+        const d = new Date(t);
+        if (!isNaN(d.getTime())) $('fDate').value = d.toISOString().slice(0, 10);
+      });
+      $('aeAuthorLabel').addEventListener('input', () => { $('fAuthor').value = $('aeAuthorLabel').textContent.trim(); });
+      $('aeTagsLabel').addEventListener('input', () => {
+        // Labels in body use " · " separator; frontmatter uses ", "
+        const tags = $('aeTagsLabel').textContent.split(/[·,]/).map((t) => t.trim()).filter(Boolean);
+        $('fTags').value = tags.join(', ');
+        $('aeEyebrow').textContent = tags[0] || '';
+      });
+
+      // Prevent rich-text paste from injecting styles in single-line fields
       function plainTextPaste(e) {
         e.preventDefault();
         const text = (e.clipboardData || window.clipboardData).getData('text/plain');
@@ -501,10 +537,24 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       }
       $('aeTitle').addEventListener('paste', plainTextPaste);
       $('aeDesc').addEventListener('paste', plainTextPaste);
-      // Enter in title/desc should NOT insert a newline (flatten to single line for title)
-      $('aeTitle').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); $('aeDesc').focus(); } });
+      $('aeEyebrow').addEventListener('paste', plainTextPaste);
+      $('aeDateLabel').addEventListener('paste', plainTextPaste);
+      $('aeAuthorLabel').addEventListener('paste', plainTextPaste);
+      $('aeTagsLabel').addEventListener('paste', plainTextPaste);
+      // Single-line: Enter moves focus, doesn't newline
+      ['aeTitle','aeDesc','aeEyebrow','aeDateLabel','aeAuthorLabel','aeTagsLabel'].forEach((id) => {
+        $(id).addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); const next = { aeTitle:'aeDesc', aeDesc:'aeBody', aeEyebrow:'aeTitle', aeDateLabel:'aeAuthorLabel', aeAuthorLabel:'aeTagsLabel', aeTagsLabel:'aeBody' }[id]; if (next) $(next).focus(); } });
+      });
 
-      // Live markdown→HTML preview (minimal, covers the common cases)
+      // Body paste: keep plain text to prevent Google Docs/Word junk
+      $('aeBody').addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+        // Insert as paragraphs so Enter works as expected
+        document.execCommand('insertText', false, text);
+      });
+
+      // Markdown → HTML (used to render the body on load)
       function renderMarkdown(md) {
         if (!md) return '<p style="color:#5a6582;font-style:italic">(empty body)</p>';
         const lines = md.replace(/\r\n/g, '\n').split('\n');
@@ -552,30 +602,54 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         flushPara(); flushList();
         return out.join('\n');
       }
-      function renderPreview() {
-        $('aeBodyPreview').innerHTML = renderMarkdown($('fBody').value);
-      }
-      $('fBody').addEventListener('input', renderPreview);
-
-      // Tab switching (write / preview / split)
-      const panes = $('aeBodyPanes');
-      panes.classList.add('mode-write');
-      document.querySelectorAll('.ae-tab').forEach((tab) => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.ae-tab').forEach((t) => t.classList.remove('active'));
-          tab.classList.add('active');
-          panes.classList.remove('mode-write','mode-preview','mode-split');
-          panes.classList.add('mode-' + tab.dataset.tab);
-          if (tab.dataset.tab !== 'write') renderPreview();
+      // HTML → Markdown serializer for the contenteditable body. Round-trips
+      // the subset used in Wilco articles: headings (h2/h3/h4), bold, italic,
+      // code, links, ul/ol, hr, paragraphs. Anything else falls through as
+      // plain text.
+      function htmlToMarkdown(root) {
+        const inline = (node) => {
+          if (node.nodeType === 3) return node.textContent;
+          if (node.nodeType !== 1) return '';
+          const tag = node.tagName;
+          const kids = Array.from(node.childNodes).map(inline).join('');
+          if (tag === 'STRONG' || tag === 'B') return '**' + kids + '**';
+          if (tag === 'EM' || tag === 'I') return '*' + kids + '*';
+          if (tag === 'CODE') return '`' + kids + '`';
+          if (tag === 'A') return '[' + kids + '](' + (node.getAttribute('href') || '') + ')';
+          if (tag === 'BR') return '\n';
+          return kids;
+        };
+        const block = (node) => {
+          if (node.nodeType === 3) {
+            const t = node.textContent.replace(/\s+/g, ' ').trim();
+            return t ? t : '';
+          }
+          if (node.nodeType !== 1) return '';
+          const tag = node.tagName;
+          if (tag === 'H1') return '# ' + inline(node).trim();
+          if (tag === 'H2') return '## ' + inline(node).trim();
+          if (tag === 'H3') return '### ' + inline(node).trim();
+          if (tag === 'H4') return '#### ' + inline(node).trim();
+          if (tag === 'HR') return '---';
+          if (tag === 'UL') return Array.from(node.children).map((li) => '- ' + inline(li).trim()).join('\n');
+          if (tag === 'OL') return Array.from(node.children).map((li, i) => (i + 1) + '. ' + inline(li).trim()).join('\n');
+          if (tag === 'BLOCKQUOTE') return '> ' + inline(node).trim();
+          if (tag === 'P' || tag === 'DIV') return inline(node).trim();
+          return inline(node).trim();
+        };
+        // Walk top-level children and emit blocks separated by blank lines
+        const blocks = [];
+        Array.from(root.childNodes).forEach((n) => {
+          const b = block(n);
+          if (b !== '') blocks.push(b);
         });
-      });
-
-      // Keep meta strip in sync when date/tags change in the secondary row
-      function syncMetaStrip() {
-        $('aeDate').textContent = formatDateForDisplay($('fDate').value) + ($('fTags').value ? ' · ' + $('fTags').value : '');
+        return blocks.join('\n\n');
       }
-      $('fDate').addEventListener('input', syncMetaStrip);
-      $('fTags').addEventListener('input', syncMetaStrip);
+
+      // Keep the hidden markdown field in sync on every body edit
+      $('aeBody').addEventListener('input', () => {
+        $('fBody').value = htmlToMarkdown($('aeBody'));
+      });
 
       // Auto-fill slug from title while composing (until user edits slug manually)
       let slugManual = false;
@@ -586,10 +660,12 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       });
 
       async function saveArticle(e) {
-        e.preventDefault();
+        if (e && e.preventDefault) e.preventDefault();
         syncTitle(); syncDesc();
+        // Ensure latest body markdown is captured
+        $('fBody').value = htmlToMarkdown($('aeBody'));
         const pat = localStorage.getItem(LS_PAT);
-        if (!pat) { show('gate'); return; }
+        if (!pat) { show('gate'); return false; }
         const btn = $('saveBtn');
         const labelDefault = composing ? 'Create & Deploy' : 'Save & Deploy';
         btn.disabled = true; btn.textContent = composing ? 'Creating…' : 'Saving…';
@@ -654,13 +730,42 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
             Object.assign(editing, data, { body: $('fBody').value, heroVideo: heroVideo });
             flash($('flash'), 'Saved ' + slug + '. Vercel will redeploy in ~1-2 minutes.', 'ok');
           }
-          show('list');
+          returnToList();
+          return true;
         } catch (err) {
           flash($('editFlash'), String(err.message || err), 'err');
+          return false;
         } finally {
           btn.disabled = false; btn.textContent = labelDefault;
         }
       }
+
+      // ── History / browser-back = save and return to list ────────────────
+      function pushEditState(slug) {
+        suppressPopstate = true;
+        try { history.pushState({ view: 'edit', slug }, '', '#edit/' + slug); }
+        finally { setTimeout(() => { suppressPopstate = false; }, 0); }
+      }
+      function returnToList() {
+        // Clear any edit hash so back from list doesn't bounce into edit
+        suppressPopstate = true;
+        try {
+          if (location.hash) history.replaceState({ view: 'list' }, '', location.pathname + location.search);
+        } finally { setTimeout(() => { suppressPopstate = false; }, 0); }
+        show('list');
+      }
+      window.addEventListener('popstate', async () => {
+        if (suppressPopstate) return;
+        if (currentView === 'edit') {
+          // Browser Back from edit → save and return to list
+          const ok = await saveArticle();
+          if (!ok) {
+            // Save failed — re-push edit state so user stays on the article with the error flash
+            const slug = editing ? editing.slug : '__new__';
+            pushEditState(slug);
+          }
+        }
+      });
 
       // Wire up Edit buttons in the server-rendered list
       document.querySelectorAll('button[data-edit]').forEach((btn) => {
@@ -676,24 +781,43 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
         $('patInput').value = '';
         show('list');
       });
-      $('cancelBtn').addEventListener('click', () => show('list'));
+      $('cancelBtn').addEventListener('click', () => returnToList());
+      $('backBtn').addEventListener('click', async () => {
+        // "Back to list" saves first (like browser Back does)
+        const ok = await saveArticle();
+        if (ok) returnToList();
+      });
       $('editForm').addEventListener('submit', saveArticle);
       $('signOutBtn').addEventListener('click', () => {
         localStorage.removeItem(LS_PAT);
         show('gate');
       });
 
-      // Media picker wiring
-      $('imgSelectBtn').addEventListener('click', () => openModal('image'));
-      $('vidSelectBtn').addEventListener('click', () => openModal('video'));
-      $('vidClearBtn').addEventListener('click', () => setCurrentVideo(''));
+      // Click-to-change: video (anywhere over the hero) and image (the floated photo)
+      $('aeVideoClick').addEventListener('click', () => openModal('video'));
+      $('aeImgWrap').addEventListener('click', (e) => {
+        // Avoid swallowing clicks on the hint text; any click in the wrap opens picker
+        openModal('image');
+      });
+      $('heroVideoChangeBtn').addEventListener('click', (e) => { e.preventDefault(); openModal('video'); });
+      $('heroVideoClearBtn').addEventListener('click', (e) => { e.preventDefault(); setCurrentVideo(''); });
+
       $('modalCloseBtn').addEventListener('click', closeModal);
       $('mediaModal').addEventListener('click', (e) => { if (e.target.id === 'mediaModal') closeModal(); });
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modalMode) closeModal();
       });
 
-      if (localStorage.getItem(LS_PAT)) show('list'); else show('gate');
+      // Initial view — restore edit deep-link if present
+      const hashMatch = location.hash.match(/^#edit\/([\w-]+|__new__)$/);
+      if (!localStorage.getItem(LS_PAT)) {
+        show('gate');
+      } else if (hashMatch) {
+        if (hashMatch[1] === '__new__') openCompose();
+        else openEdit(hashMatch[1]);
+      } else {
+        show('list');
+      }
     })();
   </script>
 </body>
