@@ -1,35 +1,55 @@
 ---
-export const prerender = false;
-import { isAuthed, makeToken, authCookieHeader, listArticles } from '../../lib/admin';
+// Static admin panel — all editing happens client-side, saves go directly
+// to the GitHub Contents API using a PAT stored in the user's browser
+// localStorage. No server, no Vercel env vars.
+import fs from 'node:fs';
+import path from 'node:path';
+import { parseFrontmatter } from '../../lib/admin';
 
-let flash = '';
-let showLogin = !isAuthed(Astro.request);
+const ROOT = process.cwd();
+const ARTICLES_DIR = path.join(ROOT, 'src', 'content', 'articles');
+const IMAGES_DIR = path.join(ROOT, 'public', 'images');
 
-if (Astro.request.method === 'POST' && showLogin) {
-  const form = await Astro.request.formData();
-  const pw = String(form.get('password') || '');
-  const expected = process.env.ADMIN_PASSWORD || '';
-  if (expected && pw === expected) {
-    Astro.response.headers.append('Set-Cookie', authCookieHeader(makeToken()));
-    showLogin = false;
-  } else {
-    flash = 'Incorrect password.';
-  }
-}
+const articles = fs.readdirSync(ARTICLES_DIR)
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => {
+    const raw = fs.readFileSync(path.join(ARTICLES_DIR, f), 'utf8');
+    const { data, body } = parseFrontmatter(raw);
+    return {
+      slug: f.replace(/\.md$/, ''),
+      title: data.title || f,
+      description: data.description || '',
+      pubDate: data.pubDate || '',
+      author: data.author || 'Wilco Financial',
+      tags: Array.isArray(data.tags) ? data.tags : [],
+      heroImage: data.heroImage || '',
+      body,
+    };
+  })
+  .sort((a, b) => (b.pubDate || '').localeCompare(a.pubDate || ''));
 
-const url = new URL(Astro.request.url);
-const urlFlash = url.searchParams.get('flash') || '';
-const articles = showLogin ? [] : listArticles();
+const images = fs.readdirSync(IMAGES_DIR)
+  .filter((f) => /\.(jpe?g|png|webp|gif|avif)$/i.test(f))
+  .sort();
+
+const manifest = {
+  articles,
+  images,
+  repo: 'jgillett987/wilcofin',
+  branch: 'main',
+};
 ---
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Admin · Wilco Financial</title>
   <style>
     body{font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1a2238;background:#f7f9fc}
     header{background:#011342;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-    header a{color:#a2e37d;text-decoration:none;font-weight:600}
+    header a,header button.linkish{color:#a2e37d;text-decoration:none;font-weight:600;background:none;border:none;cursor:pointer;font-size:inherit}
     main{max-width:1100px;margin:0 auto;padding:24px}
     h1{font-family:Georgia,serif;margin:0 0 16px;color:#011342}
     table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
@@ -39,47 +59,256 @@ const articles = showLogin ? [] : listArticles();
     .thumb{width:64px;height:40px;object-fit:cover;border-radius:4px;border:1px solid #e5e9f2}
     .btn{display:inline-block;padding:8px 16px;background:#81c460;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;border:none;cursor:pointer;font-size:.9rem}
     .btn:hover{background:#6aad4a}
-    .flash{background:#d8f0c6;border:1px solid #81c460;padding:10px 14px;border-radius:6px;margin-bottom:16px;color:#2d5016}
-    .flash.err{background:#fbd8d8;border-color:#c46060;color:#601616}
-    .login{max-width:360px;margin:80px auto;background:#fff;padding:28px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.06)}
-    .login input{width:100%;padding:10px;border:1px solid #d7dce7;border-radius:6px;font-size:1rem;box-sizing:border-box;margin-top:6px}
-    .login button{margin-top:14px;width:100%}
+    .btn-secondary{background:#fff;color:#011342;border:1px solid #011342}
+    .btn-danger{background:#fff;color:#a33;border:1px solid #c99}
+    .flash{padding:10px 14px;border-radius:6px;margin-bottom:16px}
+    .flash.ok{background:#d8f0c6;border:1px solid #81c460;color:#2d5016}
+    .flash.err{background:#fbd8d8;border-color:#c46060;color:#601616;border:1px solid}
+    .flash.info{background:#dbe8fb;border:1px solid #6b90d9;color:#13336b}
+    .gate{max-width:520px;margin:80px auto;background:#fff;padding:28px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+    .gate label{display:block;margin:14px 0 4px;font-weight:600;font-size:.9rem}
+    .gate input{width:100%;padding:10px;border:1px solid #d7dce7;border-radius:6px;font-size:1rem;box-sizing:border-box;font-family:ui-monospace,Menlo,monospace}
+    .gate .btn{margin-top:14px}
+    .gate small{color:#5a6582;display:block;margin-top:12px;line-height:1.5}
+    .gate small a{color:#011342;text-decoration:underline}
+    form label{display:block;margin:14px 0 4px;font-weight:600;font-size:.9rem}
+    form input[type=text],form input[type=date],form textarea{width:100%;padding:8px 10px;border:1px solid #d7dce7;border-radius:6px;font-family:inherit;font-size:.95rem;box-sizing:border-box}
+    form textarea[name=body]{min-height:360px;font-family:ui-monospace,Menlo,monospace;font-size:13px}
+    form textarea[name=description]{min-height:60px}
+    .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;max-height:420px;overflow:auto;border:1px solid #d7dce7;border-radius:8px;padding:10px;background:#fff}
+    .img-grid label{display:block;cursor:pointer;position:relative;margin:0;font-weight:400}
+    .img-grid img{width:100%;height:90px;object-fit:cover;border-radius:4px;border:2px solid transparent;display:block}
+    .img-grid input{position:absolute;top:6px;left:6px}
+    .img-grid input:checked + img{border-color:#81c460;box-shadow:0 0 0 2px #81c460}
+    .img-grid .name{font-size:.7rem;color:#5a6582;word-break:break-all;margin-top:2px;text-align:center}
+    .actions{margin-top:20px;display:flex;gap:10px}
+    .hidden{display:none !important}
   </style>
 </head>
 <body>
   <header>
     <div><strong>Wilco Admin</strong> <span style="opacity:.6;font-size:.85rem">· article editor</span></div>
-    {!showLogin && <a href="/">View site</a>}
+    <div>
+      <button class="linkish" id="signOutBtn" style="margin-right:14px">Sign out</button>
+      <a href="/">View site</a>
+    </div>
   </header>
   <main>
-    {showLogin ? (
-      <div class="login">
-        <h1>Sign in</h1>
-        {flash && <div class="flash err">{flash}</div>}
-        <form method="post">
-          <label>Password<input type="password" name="password" autofocus required /></label>
-          <button type="submit" class="btn">Sign in</button>
-        </form>
-      </div>
-    ) : (
-      <>
-        <h1>Articles ({articles.length})</h1>
-        {urlFlash && <div class="flash">{urlFlash}</div>}
-        <table>
-          <thead><tr><th></th><th>Title</th><th>Date</th><th></th></tr></thead>
-          <tbody>
-            {articles.map((a) => (
-              <tr>
-                <td>{a.heroImage && <img class="thumb" src={a.heroImage} alt="" />}</td>
-                <td><strong>{a.title}</strong><br /><span style="color:#5a6582;font-size:.85rem">{a.slug}</span></td>
-                <td style="color:#5a6582;font-size:.85rem">{a.pubDate}</td>
-                <td><a class="btn" href={`/admin/edit/${a.slug}`}>Edit</a></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </>
-    )}
+    <div id="gate" class="gate hidden">
+      <h1>Sign in</h1>
+      <div id="gateFlash"></div>
+      <form id="gateForm">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" id="patInput" autocomplete="off" placeholder="github_pat_..." required />
+        <button type="submit" class="btn">Sign in</button>
+        <small>
+          Stored only in this browser's localStorage. Sent only to GitHub when you save.<br /><br />
+          <strong>How to create a token:</strong> <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a> → Repository access: <code>jgillett987/wilcofin</code> only → Repository permissions → Contents: <strong>Read and write</strong>. Pick an expiration you're comfortable with (90 days is reasonable).
+        </small>
+      </form>
+    </div>
+
+    <div id="listView" class="hidden">
+      <h1>Articles (<span id="artCount"></span>)</h1>
+      <div id="flash"></div>
+      <table>
+        <thead><tr><th></th><th>Title</th><th>Date</th><th></th></tr></thead>
+        <tbody id="artTbody"></tbody>
+      </table>
+    </div>
+
+    <div id="editView" class="hidden">
+      <h1>Edit article</h1>
+      <div id="editFlash"></div>
+      <form id="editForm">
+        <input type="hidden" id="editSlug" />
+        <label>Title<input type="text" name="title" id="fTitle" required /></label>
+        <label>Description<textarea name="description" id="fDesc"></textarea></label>
+        <div class="row">
+          <div><label>Publish date<input type="date" name="pubDate" id="fDate" /></label></div>
+          <div><label>Author<input type="text" name="author" id="fAuthor" /></label></div>
+          <div><label>Tags (comma-separated)<input type="text" name="tags" id="fTags" /></label></div>
+        </div>
+        <label>Hero image (current: <span id="fHeroCurrent">—</span>)</label>
+        <div class="img-grid" id="fImgGrid"></div>
+        <label>Body (Markdown)<textarea name="body" id="fBody"></textarea></label>
+        <div class="actions">
+          <button type="submit" class="btn" id="saveBtn">Save &amp; Deploy</button>
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
   </main>
+
+  <script type="application/json" id="manifest" set:html={JSON.stringify(manifest)}></script>
+  <script is:inline>
+    (function () {
+      const MANIFEST = JSON.parse(document.getElementById('manifest').textContent);
+      const LS_PAT = 'wf_admin_pat';
+
+      const $ = (id) => document.getElementById(id);
+      const esc = (s) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+      function flash(el, msg, kind) {
+        el.innerHTML = msg ? '<div class="flash ' + (kind || 'ok') + '">' + esc(msg) + '</div>' : '';
+      }
+
+      function show(view) {
+        $('gate').classList.toggle('hidden', view !== 'gate');
+        $('listView').classList.toggle('hidden', view !== 'list');
+        $('editView').classList.toggle('hidden', view !== 'edit');
+      }
+
+      // ---- frontmatter helpers (match src/lib/admin.ts) ----
+      function stringifyFrontmatter(data, body) {
+        const order = ['title','description','pubDate','daysAgo','author','tags','heroImage','heroVideo','draft'];
+        const keys = Array.from(new Set(order.filter((k) => k in data).concat(Object.keys(data))));
+        const lines = ['---'];
+        for (const k of keys) {
+          const v = data[k];
+          if (v === undefined || v === '' || v === null) continue;
+          if (Array.isArray(v)) {
+            lines.push(k + ': [' + v.map((x) => '"' + x + '"').join(', ') + ']');
+          } else if (k === 'pubDate' || k === 'daysAgo' || k === 'draft') {
+            lines.push(k + ': ' + v);
+          } else if (typeof v === 'string' && (v.indexOf(':') >= 0 || v.indexOf('"') >= 0)) {
+            lines.push(k + ': "' + String(v).replace(/"/g, '\\"') + '"');
+          } else {
+            lines.push(k + ': "' + v + '"');
+          }
+        }
+        lines.push('---');
+        lines.push('');
+        return lines.join('\n') + body.replace(/^\r?\n/, '');
+      }
+
+      // base64 (unicode-safe)
+      function b64(str) {
+        return btoa(unescape(encodeURIComponent(str)));
+      }
+
+      // ---- list view ----
+      function renderList() {
+        $('artCount').textContent = MANIFEST.articles.length;
+        const tbody = $('artTbody');
+        tbody.innerHTML = MANIFEST.articles.map((a) => (
+          '<tr>' +
+            '<td>' + (a.heroImage ? '<img class="thumb" src="' + esc(a.heroImage) + '" alt="">' : '') + '</td>' +
+            '<td><strong>' + esc(a.title) + '</strong><br><span style="color:#5a6582;font-size:.85rem">' + esc(a.slug) + '</span></td>' +
+            '<td style="color:#5a6582;font-size:.85rem">' + esc(a.pubDate) + '</td>' +
+            '<td><button class="btn" data-edit="' + esc(a.slug) + '">Edit</button></td>' +
+          '</tr>'
+        )).join('');
+        tbody.querySelectorAll('button[data-edit]').forEach((btn) => {
+          btn.addEventListener('click', () => openEdit(btn.getAttribute('data-edit')));
+        });
+      }
+
+      // ---- edit view ----
+      let editing = null;
+      function openEdit(slug) {
+        const a = MANIFEST.articles.find((x) => x.slug === slug);
+        if (!a) return;
+        editing = a;
+        $('editSlug').value = a.slug;
+        $('fTitle').value = a.title || '';
+        $('fDesc').value = a.description || '';
+        $('fDate').value = a.pubDate || '';
+        $('fAuthor').value = a.author || 'Wilco Financial';
+        $('fTags').value = (a.tags || []).join(', ');
+        $('fHeroCurrent').textContent = a.heroImage || '—';
+        $('fBody').value = a.body || '';
+        const current = (a.heroImage || '').replace('/images/', '');
+        $('fImgGrid').innerHTML = MANIFEST.images.map((f) => (
+          '<label title="' + esc(f) + '">' +
+            '<input type="radio" name="heroImage" value="/images/' + esc(f) + '"' + (f === current ? ' checked' : '') + '>' +
+            '<img src="/images/' + esc(f) + '" loading="lazy" alt="' + esc(f) + '">' +
+            '<div class="name">' + esc(f) + '</div>' +
+          '</label>'
+        )).join('');
+        flash($('editFlash'), '', 'ok');
+        show('edit');
+      }
+
+      // ---- save (GitHub API) ----
+      async function saveArticle(e) {
+        e.preventDefault();
+        if (!editing) return;
+        const pat = localStorage.getItem(LS_PAT);
+        if (!pat) { flash($('editFlash'), 'Not signed in.', 'err'); show('gate'); return; }
+        const btn = $('saveBtn');
+        btn.disabled = true;
+        btn.textContent = 'Saving…';
+        try {
+          const data = {
+            title: $('fTitle').value,
+            description: $('fDesc').value,
+            pubDate: $('fDate').value || editing.pubDate,
+            author: $('fAuthor').value || 'Wilco Financial',
+            tags: $('fTags').value.split(',').map((t) => t.trim()).filter(Boolean),
+            heroImage: (document.querySelector('input[name=heroImage]:checked') || {}).value || editing.heroImage,
+          };
+          const out = stringifyFrontmatter(data, '\n' + $('fBody').value);
+          const filePath = 'src/content/articles/' + editing.slug + '.md';
+          const url = 'https://api.github.com/repos/' + MANIFEST.repo + '/contents/' + filePath;
+          // 1) GET current SHA
+          const getRes = await fetch(url + '?ref=' + encodeURIComponent(MANIFEST.branch), {
+            headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' },
+          });
+          if (!getRes.ok) throw new Error('GET failed: ' + getRes.status + ' ' + (await getRes.text()).slice(0, 200));
+          const meta = await getRes.json();
+          // 2) PUT new content
+          const putRes = await fetch(url, {
+            method: 'PUT',
+            headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: 'Edit article: ' + editing.slug + ' (via admin)',
+              content: b64(out),
+              sha: meta.sha,
+              branch: MANIFEST.branch,
+            }),
+          });
+          if (!putRes.ok) throw new Error('PUT failed: ' + putRes.status + ' ' + (await putRes.text()).slice(0, 300));
+          // update in-memory manifest so subsequent edits in this session show the new content
+          Object.assign(editing, data, { body: $('fBody').value });
+          flash($('flash'), 'Saved ' + editing.slug + '. Vercel will redeploy in ~1-2 minutes.', 'ok');
+          renderList();
+          show('list');
+        } catch (err) {
+          flash($('editFlash'), String(err.message || err), 'err');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Save & Deploy';
+        }
+      }
+
+      // ---- auth gate ----
+      function tryUnlock() {
+        if (localStorage.getItem(LS_PAT)) { renderList(); show('list'); return; }
+        show('gate');
+      }
+
+      $('gateForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const pat = $('patInput').value.trim();
+        if (!pat) return;
+        localStorage.setItem(LS_PAT, pat);
+        $('patInput').value = '';
+        flash($('gateFlash'), '', 'ok');
+        renderList();
+        show('list');
+      });
+
+      $('cancelBtn').addEventListener('click', () => { show('list'); });
+      $('editForm').addEventListener('submit', saveArticle);
+      $('signOutBtn').addEventListener('click', () => {
+        localStorage.removeItem(LS_PAT);
+        show('gate');
+      });
+
+      tryUnlock();
+    })();
+  </script>
 </body>
 </html>
