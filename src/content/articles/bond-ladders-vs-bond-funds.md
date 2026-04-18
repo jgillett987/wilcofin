@@ -2,11 +2,10 @@
 title: "Bond Ladders vs. Bond Funds for Retirees"
 description: "For retirees with substantial fixed-income allocations, the choice between individual bonds (ladders) and bond funds isn't trivial. The right answer depends on size, time horizon, and what you're trying to accomplish."
 pubDate: 2027-01-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Retirement", "Investments"]
-heroImage: /images/IMG_3340.JPEG
+heroImage: "/images/IMG_3340.JPEG"
 ---
-
 For retirees with meaningful fixed-income allocations, the choice between holding **individual bonds** (typically structured as a "ladder") vs. holding a **bond fund or ETF** is a real planning question. Both approaches deliver fixed-income exposure. They differ in ways that matter for retirees.
 
 Here's the honest comparison.
