@@ -840,6 +840,27 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos, o
           }
           dirty = false;
 
+          // Update the matching row in the list view client-side so the
+          // thumbnail / title / date reflect the edit immediately, instead
+          // of staying stale until Vercel redeploys (the list HTML is
+          // server-rendered at build time).
+          const row = document.querySelector('tr[data-edit="' + slug + '"]');
+          if (row) {
+            const thumbTd = row.querySelector('td.c-thumb');
+            if (thumbTd) {
+              const bust = '?p=' + Date.now();
+              if (data.heroImage) {
+                thumbTd.innerHTML = '<img class="thumb" src="' + data.heroImage + bust + '" alt="" loading="lazy" />';
+              } else {
+                thumbTd.innerHTML = '';
+              }
+            }
+            const titleEl = row.querySelector('td strong');
+            if (titleEl) titleEl.textContent = data.title;
+            const dateEl = row.querySelector('td.c-date');
+            if (dateEl) dateEl.textContent = data.pubDate;
+          }
+
           // Stay on the edit view and show a clear, verifiable success state.
           const commitBit = commitUrl
             ? ' · <a href="' + commitUrl + '" target="_blank" rel="noopener" style="color:#011342;text-decoration:underline"><code>' + (commitSha ? commitSha.slice(0, 7) : 'commit') + '</code> on GitHub</a>'
