@@ -41,6 +41,21 @@ try {
     .sort();
 } catch {}
 
+// Mirror the pool-and-hash logic used on the real article page so the admin
+// preview shows the same auto-picked video when heroVideo is empty.
+const HERO_POOL = [
+  '/videos/00.mp4','/videos/01.mp4','/videos/02.mp4','/videos/03.mp4','/videos/04.mp4',
+  '/videos/05.mp4','/videos/06.mp4','/videos/08.mp4','/videos/10.mp4','/videos/14.mp4',
+];
+const pickVideo = (slug: string) => {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return HERO_POOL[h % HERO_POOL.length];
+};
+for (const a of articles) {
+  (a as any).autoVideo = pickVideo(a.slug);
+}
+
 // Per-article data stored as JSON blocks keyed by slug (safely HTML-escaped
 // via set:html inside <script type="application/json">). Avoids the "one giant
 // inlined JSON" fragility.
@@ -94,6 +109,63 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     .media-current .actions-inline{display:flex;gap:8px;flex-shrink:0}
     .actions{margin-top:20px;display:flex;gap:10px}
     .hidden{display:none !important}
+    /* Article-style editor */
+    .article-editor{max-width:1100px;margin:0 auto}
+    .ae-hero{position:relative;min-height:480px;background:#011342;border-radius:12px;overflow:hidden;color:#fff;box-shadow:0 12px 40px rgba(1,19,66,0.15);display:flex;align-items:flex-end}
+    .ae-hero-video,.ae-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .ae-hero-img{z-index:1}
+    .ae-hero-video{z-index:0}
+    .ae-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,19,66,0.35) 0%,rgba(1,19,66,0.55) 55%,rgba(1,19,66,0.85) 100%);z-index:2}
+    .ae-hero-controls{position:absolute;top:16px;right:16px;z-index:4;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:60%}
+    .ae-chip{background:rgba(1,19,66,0.75);color:#fff;border:1px solid rgba(255,255,255,0.25);border-radius:999px;padding:8px 14px;font-size:.85rem;font-weight:600;cursor:pointer;backdrop-filter:blur(6px);transition:background .15s}
+    .ae-chip:hover{background:rgba(1,19,66,0.95)}
+    .ae-chip-ghost{background:rgba(255,255,255,0.08)}
+    .ae-chip-ghost:hover{background:rgba(255,255,255,0.2)}
+    .ae-hero-content{position:relative;z-index:3;padding:40px 48px;width:100%}
+    .ae-hero-meta{color:#a2e37d;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+    .ae-title{font-family:Georgia,serif;color:#fff;font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.15;margin:0 0 14px;font-weight:700;outline:none;padding:4px 6px;border-radius:6px;transition:background .15s;text-shadow:0 2px 14px rgba(0,0,0,0.35);max-width:850px}
+    .ae-title:hover,.ae-title:focus{background:rgba(255,255,255,0.08)}
+    .ae-desc{color:rgba(255,255,255,0.92);font-size:1.1rem;line-height:1.55;margin:0;max-width:780px;outline:none;padding:4px 6px;border-radius:6px;transition:background .15s;text-shadow:0 1px 8px rgba(0,0,0,0.3)}
+    .ae-desc:hover,.ae-desc:focus{background:rgba(255,255,255,0.08)}
+    [contenteditable=true][data-placeholder]:empty::before{content:attr(data-placeholder);color:rgba(255,255,255,0.45);font-style:italic}
+    .ae-video-note{position:absolute;bottom:10px;right:16px;z-index:4;color:rgba(255,255,255,0.75);font-size:.75rem;background:rgba(1,19,66,0.7);padding:4px 10px;border-radius:999px}
+    .ae-meta-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;background:#fff;border:1px solid #e5e9f2;border-radius:10px;padding:16px 20px;margin:18px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    .ae-meta-row label{margin:0;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:#5a6582}
+    .ae-meta-row input{margin-top:4px}
+    .ae-body{background:#fff;border:1px solid #e5e9f2;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    .ae-body-toolbar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#f7f9fc;border-bottom:1px solid #e5e9f2;gap:12px;flex-wrap:wrap}
+    .ae-tabs{display:flex;gap:4px;background:#eef2f8;border-radius:8px;padding:3px}
+    .ae-tab{background:transparent;border:none;padding:6px 14px;border-radius:6px;font-size:.85rem;font-weight:600;color:#5a6582;cursor:pointer}
+    .ae-tab.active{background:#fff;color:#011342;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+    .ae-help{color:#5a6582;font-size:.78rem}
+    .ae-help code{background:#eef2f8;padding:1px 5px;border-radius:3px;font-size:.85em}
+    .ae-body-panes{display:grid;min-height:500px}
+    .ae-body-panes.mode-write{grid-template-columns:1fr}
+    .ae-body-panes.mode-preview{grid-template-columns:1fr}
+    .ae-body-panes.mode-split{grid-template-columns:1fr 1fr}
+    .ae-body-panes.mode-write .ae-body-preview{display:none}
+    .ae-body-panes.mode-preview .ae-body-input{display:none}
+    .ae-body-input{border:none;border-radius:0;min-height:500px;font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.65;padding:24px 28px;resize:vertical;outline:none;background:#fff}
+    .ae-body-panes.mode-split .ae-body-input{border-right:1px solid #e5e9f2}
+    .ae-body-preview{padding:24px 36px;overflow:auto;background:#fff}
+    .ae-body-preview.article-body h2{font-family:Georgia,serif;color:#011342;margin:1.4em 0 .6em;font-size:1.5rem}
+    .ae-body-preview.article-body h3{font-family:Georgia,serif;color:#011342;margin:1.2em 0 .5em;font-size:1.2rem}
+    .ae-body-preview.article-body p{margin:0 0 1em;font-size:1rem;line-height:1.75;color:#1a2238}
+    .ae-body-preview.article-body ul,.ae-body-preview.article-body ol{margin:0 0 1em;padding-left:1.4em;line-height:1.75}
+    .ae-body-preview.article-body li{margin-bottom:.4em}
+    .ae-body-preview.article-body a{color:#011342;text-decoration:underline}
+    .ae-body-preview.article-body code{background:#eef2f8;padding:1px 6px;border-radius:3px;font-size:.9em}
+    .ae-body-preview.article-body strong{color:#011342}
+    .ae-body-preview.article-body hr{border:none;border-top:1px solid #e5e9f2;margin:1.5em 0}
+    .ae-body-preview.article-body em{font-style:italic}
+    .ae-actions{max-width:1100px;margin:20px auto 40px}
+    @media (max-width:720px){
+      .ae-hero{min-height:380px}
+      .ae-hero-content{padding:28px 24px}
+      .ae-hero-controls{max-width:100%;top:auto;bottom:12px;right:12px;left:12px;justify-content:center}
+      .ae-body-panes.mode-split{grid-template-columns:1fr}
+      .ae-body-panes.mode-split .ae-body-input{border-right:none;border-bottom:1px solid #e5e9f2}
+    }
     /* Modal picker */
     .modal-backdrop{position:fixed;inset:0;background:rgba(1,19,66,0.85);z-index:1000;display:flex;flex-direction:column}
     .modal-head{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:#011342;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15)}
@@ -155,45 +227,57 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
     </div>
 
     <div id="editView" class="hidden">
-      <h1 id="editHeading">Edit article</h1>
-      <div id="editFlash"></div>
-      <form id="editForm">
+      <div id="editFlash" style="max-width:900px;margin:0 auto 14px"></div>
+      <form id="editForm" class="article-editor">
         <input type="hidden" id="editSlug" />
-        <div id="slugRow" class="hidden"><label>Slug (lowercase, dash-separated — becomes the URL)<input type="text" id="fSlug" pattern="[a-z0-9-]+" placeholder="my-new-article" /></label></div>
-        <label>Title<input type="text" name="title" id="fTitle" required /></label>
-        <label>Description<textarea name="description" id="fDesc"></textarea></label>
-        <div class="row">
-          <div><label>Publish date<input type="date" name="pubDate" id="fDate" /></label></div>
-          <div><label>Author<input type="text" name="author" id="fAuthor" /></label></div>
-          <div><label>Tags (comma-separated)<input type="text" name="tags" id="fTags" /></label></div>
-        </div>
-
+        <input type="hidden" id="fTitle" />
+        <input type="hidden" id="fDesc" />
         <input type="hidden" id="fHeroImage" name="heroImage" />
         <input type="hidden" id="fHeroVideo" name="heroVideo" />
 
-        <label>Hero image</label>
-        <div class="media-current" id="imgCurrent">
-          <img id="imgCurrentPreview" class="preview" src="" alt="" />
-          <div class="empty preview hidden" id="imgCurrentEmpty">No image selected</div>
-          <div class="path" id="imgCurrentPath">—</div>
-          <div class="actions-inline">
-            <button type="button" class="btn" id="imgSelectBtn">Select image</button>
+        <!-- Article-style hero preview -->
+        <section class="ae-hero" id="aeHero">
+          <video id="aeHeroVideo" class="ae-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+          <img id="aeHeroImage" class="ae-hero-img" alt="" />
+          <div class="ae-hero-overlay"></div>
+          <div class="ae-hero-controls">
+            <button type="button" class="ae-chip" id="imgSelectBtn">🖼  Change image</button>
+            <button type="button" class="ae-chip" id="vidSelectBtn">🎬  Change video</button>
+            <button type="button" class="ae-chip ae-chip-ghost" id="vidClearBtn" title="Remove explicit video (falls back to auto-picked)">Remove video</button>
+          </div>
+          <div class="ae-hero-content">
+            <div class="ae-hero-meta"><span id="aeDate"></span></div>
+            <h1 id="aeTitle" class="ae-title" contenteditable="true" spellcheck="true" data-placeholder="Article title"></h1>
+            <p id="aeDesc" class="ae-desc" contenteditable="true" spellcheck="true" data-placeholder="Short description for social + SEO"></p>
+          </div>
+          <div class="ae-video-note" id="aeVideoNote"></div>
+        </section>
+
+        <!-- Secondary meta (slug shown only in compose mode) -->
+        <div class="ae-meta-row">
+          <div id="slugRow" class="hidden"><label>Slug<input type="text" id="fSlug" pattern="[a-z0-9-]+" placeholder="my-new-article" /></label></div>
+          <label>Publish date<input type="date" id="fDate" /></label>
+          <label>Author<input type="text" id="fAuthor" /></label>
+          <label>Tags (comma-separated)<input type="text" id="fTags" placeholder="Fiduciary, Tax Planning" /></label>
+        </div>
+
+        <!-- Body editor + live preview -->
+        <div class="ae-body">
+          <div class="ae-body-toolbar">
+            <div class="ae-tabs">
+              <button type="button" class="ae-tab active" data-tab="write">Write</button>
+              <button type="button" class="ae-tab" data-tab="preview">Preview</button>
+              <button type="button" class="ae-tab" data-tab="split">Split</button>
+            </div>
+            <div class="ae-help">Markdown: <code>## heading</code> · <code>**bold**</code> · <code>*italic*</code> · <code>[text](url)</code> · <code>- list</code></div>
+          </div>
+          <div class="ae-body-panes" id="aeBodyPanes">
+            <textarea id="fBody" class="ae-body-input" placeholder="Write the article in Markdown…"></textarea>
+            <div id="aeBodyPreview" class="ae-body-preview article-body"></div>
           </div>
         </div>
 
-        <label>Hero video (optional)</label>
-        <div class="media-current" id="vidCurrent">
-          <video id="vidCurrentPreview" class="preview" muted playsinline preload="metadata"></video>
-          <div class="empty preview" id="vidCurrentEmpty">No video selected</div>
-          <div class="path" id="vidCurrentPath">—</div>
-          <div class="actions-inline">
-            <button type="button" class="btn" id="vidSelectBtn">Select video</button>
-            <button type="button" class="btn btn-secondary" id="vidClearBtn">Remove</button>
-          </div>
-        </div>
-
-        <label>Body (Markdown)<textarea name="body" id="fBody"></textarea></label>
-        <div class="actions">
+        <div class="actions ae-actions">
           <button type="submit" class="btn" id="saveBtn">Save &amp; Deploy</button>
           <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
         </div>
@@ -257,28 +341,34 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       }
       function b64(str) { return btoa(unescape(encodeURIComponent(str))); }
 
-      // Update the "current" preview strip for image/video
+      // Update hero preview with selected image
       function setCurrentImage(path) {
         $('fHeroImage').value = path || '';
-        $('imgCurrentPath').textContent = path || '—';
-        const img = $('imgCurrentPreview');
-        const empty = $('imgCurrentEmpty');
-        if (path) {
-          img.src = path; img.classList.remove('hidden'); empty.classList.add('hidden');
-        } else {
-          img.classList.add('hidden'); empty.classList.remove('hidden');
-        }
+        const img = $('aeHeroImage');
+        if (path) { img.src = path; img.style.display = 'block'; }
+        else { img.removeAttribute('src'); img.style.display = 'none'; }
       }
+      // Update hero preview with selected (or auto-picked) video
       function setCurrentVideo(path) {
         $('fHeroVideo').value = path || '';
-        $('vidCurrentPath').textContent = path || '—';
-        const vid = $('vidCurrentPreview');
-        const empty = $('vidCurrentEmpty');
-        if (path) {
-          vid.src = path; vid.classList.remove('hidden'); empty.classList.add('hidden');
+        const vid = $('aeHeroVideo');
+        const note = $('aeVideoNote');
+        const displayPath = path || (editing && editing.autoVideo) || (composing && CONFIG.videos[0] ? '/videos/' + CONFIG.videos[0] : '');
+        if (displayPath) {
+          vid.src = displayPath;
+          vid.style.display = 'block';
+          vid.load && vid.load();
+          vid.play && vid.play().catch(() => {});
         } else {
-          vid.removeAttribute('src'); vid.load && vid.load();
-          vid.classList.add('hidden'); empty.classList.remove('hidden');
+          vid.removeAttribute('src');
+          vid.style.display = 'none';
+        }
+        if (path) {
+          note.textContent = 'Using ' + path.split('/').pop();
+        } else if (displayPath) {
+          note.textContent = 'Auto-picked from pool: ' + displayPath.split('/').pop() + ' (save one to pin it)';
+        } else {
+          note.textContent = '';
         }
       }
 
@@ -339,23 +429,33 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
           .slice(0, 80);
       }
 
+      function formatDateForDisplay(ymd) {
+        if (!ymd) return '';
+        const d = new Date(ymd);
+        if (isNaN(d.getTime())) return ymd;
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+
       function openEdit(slug) {
         const a = ARTS[slug];
         if (!a) return;
         editing = a;
         composing = false;
-        $('editHeading').textContent = 'Edit article';
         $('saveBtn').textContent = 'Save & Deploy';
         $('slugRow').classList.add('hidden');
         $('editSlug').value = slug;
         $('fTitle').value = a.title || '';
         $('fDesc').value = a.description || '';
+        $('aeTitle').textContent = a.title || '';
+        $('aeDesc').textContent = a.description || '';
+        $('aeDate').textContent = formatDateForDisplay(a.pubDate) + (a.tags && a.tags.length ? ' · ' + a.tags.join(' · ') : '');
         $('fDate').value = a.pubDate || '';
         $('fAuthor').value = a.author || 'Wilco Financial';
         $('fTags').value = (a.tags || []).join(', ');
         $('fBody').value = a.body || '';
         setCurrentImage(a.heroImage || '');
         setCurrentVideo(a.heroVideo || '');
+        renderPreview();
         flash($('editFlash'), '', 'ok');
         show('edit');
       }
@@ -363,34 +463,131 @@ const config = { repo: 'jgillett987/wilcofin', branch: 'main', images, videos };
       function openCompose() {
         editing = null;
         composing = true;
-        $('editHeading').textContent = 'Compose article';
         $('saveBtn').textContent = 'Create & Deploy';
         $('slugRow').classList.remove('hidden');
         $('editSlug').value = '';
         $('fSlug').value = '';
         $('fTitle').value = '';
         $('fDesc').value = '';
+        $('aeTitle').textContent = '';
+        $('aeDesc').textContent = '';
         const today = new Date().toISOString().slice(0, 10);
+        $('aeDate').textContent = formatDateForDisplay(today);
         $('fDate').value = today;
         $('fAuthor').value = 'Wilco Financial';
         $('fTags').value = '';
         $('fBody').value = '';
         setCurrentImage('');
         setCurrentVideo('');
+        renderPreview();
         flash($('editFlash'), '', 'ok');
         show('edit');
       }
+
+      // Contenteditable → hidden input sync
+      function syncTitle() {
+        $('fTitle').value = $('aeTitle').textContent.trim();
+      }
+      function syncDesc() {
+        $('fDesc').value = $('aeDesc').textContent.trim();
+      }
+      $('aeTitle').addEventListener('input', syncTitle);
+      $('aeDesc').addEventListener('input', syncDesc);
+      // Prevent rich-text paste from injecting styles
+      function plainTextPaste(e) {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+        document.execCommand('insertText', false, text);
+      }
+      $('aeTitle').addEventListener('paste', plainTextPaste);
+      $('aeDesc').addEventListener('paste', plainTextPaste);
+      // Enter in title/desc should NOT insert a newline (flatten to single line for title)
+      $('aeTitle').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); $('aeDesc').focus(); } });
+
+      // Live markdown→HTML preview (minimal, covers the common cases)
+      function renderMarkdown(md) {
+        if (!md) return '<p style="color:#5a6582;font-style:italic">(empty body)</p>';
+        const lines = md.replace(/\r\n/g, '\n').split('\n');
+        const out = [];
+        let inList = null; // 'ul' | 'ol' | null
+        let buf = [];
+        const flushPara = () => {
+          if (buf.length) {
+            out.push('<p>' + inline(buf.join(' ').trim()) + '</p>');
+            buf = [];
+          }
+        };
+        const flushList = () => { if (inList) { out.push('</' + inList + '>'); inList = null; } };
+        const escHtml = (s) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const inline = (s) => {
+          s = escHtml(s);
+          s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+          s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+          s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+          s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+          return s;
+        };
+        for (const raw of lines) {
+          const line = raw;
+          if (/^---+$/.test(line.trim())) { flushPara(); flushList(); out.push('<hr />'); continue; }
+          if (/^#{1,6}\s+/.test(line)) {
+            flushPara(); flushList();
+            const m = line.match(/^(#+)\s+(.*)$/);
+            const level = Math.min(m[1].length, 4);
+            out.push('<h' + level + '>' + inline(m[2]) + '</h' + level + '>');
+            continue;
+          }
+          const ulM = line.match(/^\s*[-*]\s+(.*)$/);
+          const olM = line.match(/^\s*\d+\.\s+(.*)$/);
+          if (ulM || olM) {
+            flushPara();
+            const kind = ulM ? 'ul' : 'ol';
+            if (inList !== kind) { flushList(); out.push('<' + kind + '>'); inList = kind; }
+            out.push('<li>' + inline((ulM || olM)[1]) + '</li>');
+            continue;
+          }
+          if (line.trim() === '') { flushPara(); flushList(); continue; }
+          buf.push(line);
+        }
+        flushPara(); flushList();
+        return out.join('\n');
+      }
+      function renderPreview() {
+        $('aeBodyPreview').innerHTML = renderMarkdown($('fBody').value);
+      }
+      $('fBody').addEventListener('input', renderPreview);
+
+      // Tab switching (write / preview / split)
+      const panes = $('aeBodyPanes');
+      panes.classList.add('mode-write');
+      document.querySelectorAll('.ae-tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.ae-tab').forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          panes.classList.remove('mode-write','mode-preview','mode-split');
+          panes.classList.add('mode-' + tab.dataset.tab);
+          if (tab.dataset.tab !== 'write') renderPreview();
+        });
+      });
+
+      // Keep meta strip in sync when date/tags change in the secondary row
+      function syncMetaStrip() {
+        $('aeDate').textContent = formatDateForDisplay($('fDate').value) + ($('fTags').value ? ' · ' + $('fTags').value : '');
+      }
+      $('fDate').addEventListener('input', syncMetaStrip);
+      $('fTags').addEventListener('input', syncMetaStrip);
 
       // Auto-fill slug from title while composing (until user edits slug manually)
       let slugManual = false;
       const fSlug = $('fSlug');
       if (fSlug) fSlug.addEventListener('input', () => { slugManual = true; });
-      $('fTitle').addEventListener('input', (e) => {
-        if (composing && !slugManual) fSlug.value = slugify(e.target.value);
+      $('aeTitle').addEventListener('input', () => {
+        if (composing && !slugManual && fSlug) fSlug.value = slugify($('aeTitle').textContent);
       });
 
       async function saveArticle(e) {
         e.preventDefault();
+        syncTitle(); syncDesc();
         const pat = localStorage.getItem(LS_PAT);
         if (!pat) { show('gate'); return; }
         const btn = $('saveBtn');
