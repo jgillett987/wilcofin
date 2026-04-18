@@ -2,11 +2,10 @@
 title: "Trusts vs. Beneficiary Designations: The Quiet Conflict in Most Estate Plans"
 description: "Most households have both a trust and a stack of beneficiary designations. The two often disagree — and the beneficiary form wins. Here's how to make them work together."
 pubDate: 2024-09-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Estate Planning"]
-heroImage: /images/weathered-wood-4.jpg
+heroImage: "/images/multigen-dinner.jpg"
 ---
-
 When an estate attorney drafts a trust for you, they generally do excellent work on the trust itself. What gets less attention — and is often where the plan fails — is the **coordination between the trust and the beneficiary designations** on your retirement accounts, insurance policies, and other non-probate assets.
 
 The mismatch is so common, and so consequential, that we make it the first thing we look at when we onboard a new client.
@@ -46,12 +45,14 @@ If they're not coordinated, they fight each other.
 There's a real strategic question of whether to name the trust as the beneficiary of retirement accounts. The tradeoff:
 
 **Naming an individual (spouse, child) directly:**
+
 - ✓ Better tax outcome (spouse can roll into own IRA; child gets the 10-year stretch)
 - ✓ Simpler administration
 - ✗ No control after the inheritance — if the inheritor is bad with money, has creditor issues, etc., there's no protection
 - ✗ Subsequent inheritances may not follow your wishes (e.g., child remarries and the new spouse inherits)
 
 **Naming a trust as beneficiary:**
+
 - ✓ Continued control through trustee
 - ✓ Asset protection from beneficiary's creditors and divorces
 - ✓ Coordinated with rest of estate plan
