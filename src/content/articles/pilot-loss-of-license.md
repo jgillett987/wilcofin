@@ -2,11 +2,10 @@
 title: "Loss-of-License Insurance for Professional Pilots"
 description: "What LOL coverage actually pays, what SWAPA provides, and the outside coverage decisions that matter most for pilots at peak earning years."
 pubDate: 2024-08-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Pilots", "Southwest Airlines"]
-heroImage: /images/waterfall-scale.jpg
+heroImage: "/images/Vault.jpg"
 ---
-
 A pilot's most valuable asset isn't their portfolio — it's their medical certificate. Lose the certificate, lose the career. For pilots in peak earning years, a medical event that permanently disqualifies them from flying is a catastrophic financial risk that shouldn't be left to group coverage alone. Here's how to think about **loss-of-license (LOL) insurance** and how it integrates with the broader planning picture.
 
 ## What LOL insurance actually is
