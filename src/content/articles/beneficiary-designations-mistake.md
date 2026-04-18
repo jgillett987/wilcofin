@@ -2,11 +2,10 @@
 title: "The #1 Estate Planning Mistake (and It's Not What You Think)"
 description: "The most expensive estate planning mistake we see isn't a missing will or an unfunded trust. It's the beneficiary designations on retirement accounts and life insurance — and almost every household has at least one wrong one."
 pubDate: 2025-06-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Estate Planning"]
-heroImage: /images/weathered-wood-1.jpg
+heroImage: "/images/family-home.jpg"
 ---
-
 When most people think about estate planning, they think about wills and trusts. Those documents matter. But they govern a smaller portion of most estates than people realize — and they're routinely overridden by a simpler, more powerful document type that almost everyone fills out and almost nobody reviews: **beneficiary designations**.
 
 The single most common — and most expensive — estate planning mistake we see in client households is an outdated or poorly thought-through beneficiary designation on a retirement account, life insurance policy, or transfer-on-death brokerage account.
