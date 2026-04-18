@@ -1,12 +1,11 @@
 ---
-title: "Why Custodian Matters"
+title: "Why Your Custodian Matters"
 description: "Where your money is held — separate from who advises you about it — is one of the most important and least-discussed parts of working with a financial advisor. Here's what to look for, and why."
 pubDate: 2027-03-18
-author: Wilco Financial
+author: "Wilco Financial"
 tags: ["Working With Advisors", "Investments"]
-heroImage: /images/IMG_8787.JPEG
+heroImage: "/images/IMG_8787.JPEG"
 ---
-
 When you hire a financial advisor, two distinct functions get bundled in your mind: **advice** and **custody**. They're separate. Understanding the difference — and why the separation matters — is one of the most important pieces of investor protection that most people never think about.
 
 ## The distinction
