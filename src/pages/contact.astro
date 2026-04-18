@@ -51,7 +51,7 @@ const contactSchema = {
           autocomplete="on"
         >
           <h3 style="margin-top:0;">Send us a message</h3>
-          <p class="muted" style="font-size:0.9rem;">Prefer something else? Email us directly at <a href={CONTACT.emailHref}>{CONTACT.email}</a> or <a href={CONTACT.calendlyUrl} target="_blank" rel="noopener">schedule a meeting</a>.</p>
+          <p class="muted" style="font-size:0.9rem;">Prefer something else? Email us directly at <a href={CONTACT.emailHref} style="text-decoration:underline; color:var(--navy); font-weight:600;">{CONTACT.email}</a> or <a href={CONTACT.calendlyUrl} target="_blank" rel="noopener" style="text-decoration:underline; color:var(--navy); font-weight:600;">schedule a meeting</a>.</p>
 
           {/* Honeypot: real users can't see this; bots fill it and get dropped */}
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;" aria-hidden="true" />
