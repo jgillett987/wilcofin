@@ -38,6 +38,18 @@ export const SOCIAL = {
   linkedin: 'https://www.linkedin.com/in/jongillett',
 } as const;
 
+// Search engine verification codes. Get each one from:
+//   Google:  https://search.google.com/search-console → Add property (Domain) →
+//            wilcofin.com → Verify via HTML tag → copy just the content="..." value.
+//   Bing:    https://www.bing.com/webmasters → Add site → HTML Meta Tag →
+//            copy just the content="..." value.
+//   Ahrefs (optional): if/when you set up Webmaster Tools.
+// Leave empty strings for ones you haven't claimed yet.
+export const VERIFICATION = {
+  google: '',
+  bing: '',
+} as const;
+
 export const NAV = [
   { label: 'Home', href: '/' },
   {

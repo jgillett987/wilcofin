@@ -1,0 +1,136 @@
+---
+/**
+ * Related articles block. Picks up to 3 published articles whose tag
+ * overlap with the current article is highest (ties broken by recency).
+ * Rendered at the bottom of every article page to fix the site's
+ * internal-link deficit in one place without per-article authoring.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { getPublishedArticles } from '../lib/articles';
+
+interface Props {
+  currentSlug: string;
+  tags: readonly string[];
+  limit?: number;
+}
+
+const { currentSlug, tags, limit = 3 } = Astro.props;
+
+const all = await getPublishedArticles();
+const tagSet = new Set(tags);
+
+// Score each other article by shared-tag count. Ignore the current one
+// and anything with zero tag overlap.
+const ranked = all
+  .filter((a) => a.id !== currentSlug)
+  .map((a) => {
+    const shared = (a.data.tags || []).reduce((n, t) => n + (tagSet.has(t) ? 1 : 0), 0);
+    return { a, shared };
+  })
+  .filter((x) => x.shared > 0)
+  .sort((x, y) => {
+    if (y.shared !== x.shared) return y.shared - x.shared;
+    return y.a.data.pubDate.valueOf() - x.a.data.pubDate.valueOf();
+  })
+  .slice(0, limit)
+  .map((x) => x.a);
+
+const related: CollectionEntry<'articles'>[] = ranked;
+---
+{related.length > 0 && (
+  <section class="related-articles">
+    <div class="container narrow">
+      <h3>Related reading</h3>
+      <ul class="related-grid">
+        {related.map((a) => (
+          <li class="related-item">
+            <a href={`/articles/${a.id}`} class="related-card">
+              {a.data.heroImage && <img src={a.data.heroImage} alt="" loading="lazy" class="related-thumb" />}
+              <div class="related-body">
+                {a.data.tags && a.data.tags.length > 0 && (
+                  <span class="related-tag">{a.data.tags[0]}</span>
+                )}
+                <div class="related-title">{a.data.title}</div>
+                <p class="related-desc">{a.data.description}</p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .related-articles {
+    padding: 48px 0 12px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+  }
+  .related-articles h3 {
+    font-family: var(--font-head);
+    color: var(--navy);
+    font-size: 1.5rem;
+    margin: 0 0 24px;
+  }
+  .related-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .related-item { margin: 0; }
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s, box-shadow 0.15s;
+    height: 100%;
+  }
+  .related-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 26px rgba(1, 19, 66, 0.1);
+    color: inherit;
+  }
+  .related-thumb {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+  }
+  .related-body { padding: 16px 18px 18px; }
+  .related-tag {
+    display: inline-block;
+    color: var(--green-dark);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .related-title {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .related-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

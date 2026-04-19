@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACT } from '../consts';
+import { SITE, CONTACT, VERIFICATION } from '../consts';
 
 interface Props {
   title: string;
@@ -98,5 +98,10 @@ const allStructured = [orgJsonLd, ...(structuredData ? (Array.isArray(structured
 <!-- Geo tags for local SEO -->
 <meta name="geo.region" content="US-TN" />
 <meta name="geo.placename" content={`${CONTACT.city}, ${CONTACT.state}`} />
+
+<!-- Search-engine ownership verification. Populated only when the
+     corresponding value in consts.ts/VERIFICATION is non-empty. -->
+{VERIFICATION.google && <meta name="google-site-verification" content={VERIFICATION.google} />}
+{VERIFICATION.bing && <meta name="msvalidate.01" content={VERIFICATION.bing} />}
 
 <script type="application/ld+json" set:html={JSON.stringify(allStructured)} />

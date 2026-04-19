@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
 import { render } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 import { SITE, CONTACT } from '../../consts';
@@ -209,6 +210,8 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
       </div>
     </div>
   </section>
+
+  <RelatedArticles currentSlug={article.id} tags={article.data.tags} />
 
   {(prev || next) && (
     <nav class="prev-next" aria-label="Article navigation">
