@@ -1,5 +1,5 @@
 ---
-title: "Loss-of-License Insurance for Professional Pilots"
+title: "Loss-of-License Insurance for Pilots"
 description: "What LOL coverage actually pays, what SWAPA provides, and the outside coverage decisions that matter most for pilots at peak earning years."
 pubDate: 2024-08-18
 author: "Wilco Financial"
