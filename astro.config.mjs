@@ -5,7 +5,19 @@ import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   site: 'https://www.wilcofin.com',
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      // Don't advertise internal / non-content URLs to search engines.
+      // /admin is the private editor (noindex'd anyway), /api is the
+      // contact-form serverless function (not a page), and the tag pages
+      // are thin aggregators that don't need to be in the sitemap.
+      filter: (page) =>
+        !page.includes('/admin') &&
+        !page.includes('/api') &&
+        !page.includes('/articles/tag/'),
+    }),
+  ],
   // Every page stays static at build time; individual endpoints can opt
   // into server rendering by exporting `prerender = false`. The Vercel
   // adapter turns those endpoints into serverless functions — so the
