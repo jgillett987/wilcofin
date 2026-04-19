@@ -45,6 +45,10 @@ const { article, prev, next } = Astro.props;
 const { Content } = await render(article);
 const heroVideo = article.data.heroVideo ?? pickVideo(article.id);
 
+// E-A-T: YMYL financial content ranks better when authored by a named
+// expert with visible credentials. Point the author at Jon's Person
+// schema (defined on /about) so Google can tie his bio, credentials, and
+// work history to every article.
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -53,9 +57,18 @@ const articleSchema = {
   datePublished: article.data.pubDate.toISOString(),
   dateModified: (article.data.updatedDate ?? article.data.pubDate).toISOString(),
   author: {
-    '@type': 'Organization',
-    name: article.data.author,
-    url: SITE.url,
+    '@type': 'Person',
+    '@id': `${SITE.url}/about#jon-gillett`,
+    name: SITE.advisorName,
+    url: `${SITE.url}/about`,
+    jobTitle: 'Founder & Chief Investment Officer',
+    worksFor: { '@id': `${SITE.url}#organization` },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Vanderbilt University — Owen Graduate School of Management',
+    },
+    knowsAbout: article.data.tags,
+    sameAs: ['https://www.linkedin.com/in/jongillett'],
   },
   publisher: { '@id': `${SITE.url}#organization` },
   mainEntityOfPage: new URL(`/articles/${article.id}`, SITE.url).toString(),

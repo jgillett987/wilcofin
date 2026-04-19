@@ -1,0 +1,1859 @@
+# Wilco Financial, LLC
+
+> Wilco Financial is a Tennessee-registered investment adviser based in Nolensville, Williamson County. We provide fiduciary investment management and financial planning to individuals and families across the states where we're registered, with a specialty practice serving Southwest Airlines pilots and employees.
+
+## Key Facts
+
+- **Legal name:** Wilco Financial, LLC
+- **Registration:** State-registered investment adviser (Tennessee)
+- **Fiduciary status:** Yes — we are held to the fiduciary standard under the Investment Advisers Act of 1940
+- **Advisory fee:** 0.85% per year of managed assets. No commissions. No product kickbacks. No hidden fees.
+- **Custodian:** Charles Schwab (client assets held at Schwab in the client's name)
+- **Mailing address:** 6688 Nolensville Rd, Ste 108 #3029, Brentwood, TN 37027
+- **Based in:** Williamson County, Tennessee. Virtual meetings standard; in-person by appointment.
+- **Phone:** (615) 237-8750
+- **Email:** info@wilcofin.com
+- **Scheduling:** https://calendly.com/wilcofinancial/30min
+
+## Services
+
+- Investment Management
+- Financial Planning
+- Retirement Planning
+- Estate Planning (coordination with client's estate attorney)
+- Multi-Generational Planning
+- Charitable Planning
+
+## Specialty Practice: Southwest Airlines Pilots and Employees
+
+Wilco Financial has a dedicated practice serving Southwest Airlines employees — including SWAPA-represented pilots — covering topics unique to airline careers: FAA Age 65 planning, the SWA 401(k) and profit-sharing plan, variable pilot income, state-of-residence optimization, SWAPA resource coordination, loss-of-license planning, and retirement-date planning. Wilco Financial is NOT affiliated with or endorsed by Southwest Airlines Co. or SWAPA.
+
+## Pages
+
+- [Home](/)
+- [About](/about)
+- [What is a Fiduciary](/fiduciary)
+- [Our Fees](/fees)
+- [Form ADV](/form-adv)
+- [Contact](/contact)
+- [Services overview](/services)
+- [Investment Management](/services/investment-management)
+- [Financial Planning](/services/financial-planning)
+- [Retirement Planning](/services/retirement-planning)
+- [Estate Planning](/services/estate-planning)
+- [Multi-Generational Planning](/services/multi-generational-planning)
+- [Charitable Planning](/services/charitable-planning)
+- [Southwest Airlines Pilots & Employees](/southwest-airlines)
+- [FAQ](/faq)
+- [Articles](/articles)
+
+## Representative Articles
+
+- A Southwest Airlines Pilot's Retirement Planning Essentials — /articles/swa-pilot-retirement-essentials
+- Fiduciary vs. Suitability: What Your Advisor's Standard Actually Means — /articles/fiduciary-vs-suitability
+- How Advisor Fees Actually Work — /articles/how-advisor-fees-actually-work
+- The Roth Conversion Decade — /articles/roth-conversion-decade
+
+## Important Disclosures
+
+Wilco Financial, LLC is a state-registered investment adviser. Wilco Financial may only transact business or render personalized investment advice in those states and international jurisdictions where it is registered, has filed notice, or is otherwise excluded or exempted from registration requirements. Nothing on this website should be construed as personalized investment advice, which can only be provided in one-on-one communications.
+
+Wilco Financial is not affiliated with, endorsed by, or sponsored by Southwest Airlines Co. or SWAPA (Southwest Airlines Pilots Association).
+
+---
+
+# Full Article Archive
+
+Everything Wilco Financial has published. 24 articles, newest first. Each entry includes the full text so an LLM can answer questions with our actual perspective rather than guessing.
+
+## Table of Contents
+
+- [The 0% Long-Term Capital Gains Bracket: Who Gets It and How to Use It](https://www.wilcofin.com/articles/zero-percent-ltcg-bracket)  —  2026-04-18  ·  Tax Planning, Retirement
+- [The Roth Conversion Decade: Why the Years Between Retirement and RMDs Matter Most](https://www.wilcofin.com/articles/roth-conversion-decade)  —  2026-03-18  ·  Retirement, Tax Planning, Roth
+- [Asset Location: The Quiet Tax Win Most Investors Miss](https://www.wilcofin.com/articles/asset-location)  —  2026-02-18  ·  Tax Planning, Investments
+- [The \"Fee-Only\" Label Doesn't Mean What You Think](https://www.wilcofin.com/articles/fee-only-label)  —  2026-01-17  ·  Fees, Fiduciary
+- [Sequence-of-Returns Risk: The Hidden Killer of Retirement Plans](https://www.wilcofin.com/articles/sequence-of-returns-risk)  —  2025-12-18  ·  Retirement, Investments
+- [The Concentrated Stock Position Problem: Five Ways to Solve It](https://www.wilcofin.com/articles/concentrated-stock-position)  —  2025-11-18  ·  Tax Planning, Investments
+- [What to Ask an Advisor Before You Hire Them](https://www.wilcofin.com/articles/questions-to-ask-an-advisor)  —  2025-10-18  ·  Working With Advisors, Fiduciary
+- [Donor-Advised Funds: The Most Underused HNW Strategy](https://www.wilcofin.com/articles/donor-advised-funds)  —  2025-09-18  ·  Charitable Planning, Tax Planning
+- [Tax-Loss Harvesting: What It Is and When It Actually Helps](https://www.wilcofin.com/articles/tax-loss-harvesting)  —  2025-08-18  ·  Tax Planning, Working With Advisors
+- [QCDs: The Tax Move Every Charitable Retiree Over 70½ Should Know](https://www.wilcofin.com/articles/qcds-explained)  —  2025-07-18  ·  Charitable Planning, Tax Planning, Retirement
+- [The #1 Estate Planning Mistake (and It's Not What You Think)](https://www.wilcofin.com/articles/beneficiary-designations-mistake)  —  2025-06-18  ·  Estate Planning
+- [How Advisor Fees Actually Work — and What 'All-In Cost' Really Means](https://www.wilcofin.com/articles/how-advisor-fees-actually-work)  —  2025-05-18  ·  Fees, Working With Advisors
+- [Bunching Charitable Deductions: How TCJA Made an Old Strategy New Again](https://www.wilcofin.com/articles/bunching-charitable-deductions)  —  2025-04-17  ·  Tax Planning, Charitable Planning
+- [The Backdoor Roth and Mega-Backdoor Roth, Explained](https://www.wilcofin.com/articles/backdoor-roth-explained)  —  2025-03-18  ·  Roth, Tax Planning
+- [The Step-Up in Basis at Death: A Tax Cliff Worth Planning Around](https://www.wilcofin.com/articles/step-up-in-basis)  —  2025-02-18  ·  Estate Planning, Tax Planning
+- [When a Pilot Should Consider a Roth Conversion](https://www.wilcofin.com/articles/pilot-roth-conversion)  —  2025-01-18  ·  Pilots, Southwest Airlines, Roth, Retirement, Tax Planning
+- [Fiduciary vs. Suitability: What Your Advisor's Standard Actually Means](https://www.wilcofin.com/articles/fiduciary-vs-suitability)  —  2024-11-18  ·  Fiduciary, Working With Advisors
+- [When a Pilot Should Actually Move States (and When They Shouldn't)](https://www.wilcofin.com/articles/when-pilot-should-move-states)  —  2024-10-18  ·  Pilots, Southwest Airlines, Tax Planning
+- [Trusts vs. Beneficiary Designations: The Quiet Conflict in Most Estate Plans](https://www.wilcofin.com/articles/trusts-vs-beneficiary-designations)  —  2024-09-18  ·  Estate Planning
+- [Loss-of-License Insurance for Pilots](https://www.wilcofin.com/articles/pilot-loss-of-license)  —  2024-08-18  ·  Pilots, Southwest Airlines
+- [Social Security for Two-Earner Households: The Coordination That Saves Six Figures](https://www.wilcofin.com/articles/social-security-two-earners)  —  2024-07-18  ·  Retirement
+- [All-In Cost: How to Read Your Advisor's Fee Stack](https://www.wilcofin.com/articles/all-in-cost)  —  2024-06-18  ·  Fees, Working With Advisors
+- [The SWA 401(k) Decision: Pre-Tax, Roth, or After-Tax?](https://www.wilcofin.com/articles/swa-profit-sharing-decision)  —  2024-05-18  ·  Pilots, Southwest Airlines, Tax Planning, Roth, Retirement
+- [A Southwest Airlines Pilot's Retirement Planning Essentials](https://www.wilcofin.com/articles/swa-pilot-retirement-essentials)  —  2024-04-18  ·  Southwest Airlines, Pilots, Retirement
+
+---
+
+## The 0% Long-Term Capital Gains Bracket: Who Gets It and How to Use It
+
+**Published:** 2026-04-18  ·  **Topics:** Tax Planning, Retirement  ·  **URL:** https://www.wilcofin.com/articles/zero-percent-ltcg-bracket
+
+*Long-term capital gains can be taxed at zero percent at the federal level. The income threshold is wider than most people realize, and the planning value is significant for early retirees and lower-income years.*
+
+Most investors know that long-term capital gains are taxed more favorably than ordinary income. Fewer realize that there's a federal bracket where the long-term capital gains rate is **zero**. Even fewer plan around it deliberately. For households who can model their income year by year, the 0% LTCG bracket is one of the cleanest tax wins available.
+
+## The thresholds
+
+For 2025, long-term capital gains are taxed at:
+
+- **0%** on gains that fall within taxable income up to **$96,700** for married filing jointly (or $48,350 for single)
+- **15%** between roughly $96,700 and $600,050 (MFJ)
+- **20%** above that
+- **+3.8%** Net Investment Income Tax above $250K MAGI (MFJ)
+
+The 0% bracket isn't a tiny edge case. A married couple with modest other income can realize tens of thousands in long-term capital gains *completely tax-free at the federal level*.
+
+## How "taxable income" stacks
+
+Here's the part most people miss: the 0% bracket is measured against your **total taxable income**, not just your capital gains. Capital gains stack on top of ordinary income.
+
+Example. Married couple, $40,000 of ordinary income (small pension, part-time work, etc.), no other income.
+
+Standard deduction (2025): $30,000. Taxable income before any gains: $10,000.
+
+The 0% LTCG bracket runs to $96,700 of taxable income. So they have **$86,700 of room** to realize long-term capital gains at 0% federal tax.
+
+That's a meaningful number for a retiree with appreciated taxable holdings.
+
+## When this opens up
+
+The 0% bracket becomes accessible in a few common scenarios:
+
+**Early retirement, before Social Security and RMDs start.** A couple retired at 62 with no pension, living off taxable savings, can have very low ordinary income for a few years. Prime 0% LTCG harvesting territory.
+
+**Sabbatical year, gap year, or transitional year.** Career pauses create low-income windows.
+
+**Single-earner households where the earning spouse stops working.** One spouse retires; the other still works but at reduced hours.
+
+**Business owners between liquidity events.** A founder between selling one company and starting the next.
+
+**Investors with substantial losses to harvest.** Realizing gains and offsetting them with realized losses is the same idea, with extra flexibility.
+
+## The "tax gain harvest"
+
+The mirror image of [tax-loss harvesting](/articles/tax-loss-harvesting). When you have capital gains room available at 0%, you can:
+
+1. **Sell appreciated holdings.** Realize the gain.
+2. **Pay zero federal tax** (assuming the gain falls within the 0% bracket).
+3. **Immediately repurchase the same security.** No wash-sale rule applies to gains — only losses.
+4. **Reset your cost basis upward.**
+
+The benefit: future gains start from the higher basis. If you sell that holding at a higher tax rate later, less of the appreciation is taxable.
+
+This is an underused move. It works particularly well during the [Roth conversion decade](/articles/roth-conversion-decade) — except that Roth conversions consume the same bracket space, so you have to choose between conversions and gain harvesting.
+
+## The planning conflict to understand
+
+The 0% LTCG bracket and Roth conversions both compete for the same low-income years. Each dollar of Roth conversion fills the bracket and pushes future gains into the 15% bracket.
+
+The right choice depends on:
+
+- **How large is the pre-tax balance?** Big balances tilt toward conversions (RMD risk).
+- **How much appreciated taxable stock is held?** Heavy taxable holdings tilt toward gain harvesting.
+- **What's the time horizon?** Long horizons favor Roth conversions (more years of tax-free compounding).
+- **Are appreciated holdings going to be sold during life, or held to step-up?** If held to step-up, gain harvesting is unnecessary — see [The Step-Up in Basis at Death](/articles/step-up-in-basis).
+
+## State tax — the asterisk
+
+The 0% bracket is federal only. States with their own capital gains tax (California treats LTCG as ordinary income; Tennessee has none) impose their own rate regardless of federal treatment. For Tennessee residents, federal-only is the whole story. For California residents, "0% LTCG" still means roughly 9–13% in state tax.
+
+## What to do
+
+If you're approaching or in early retirement, the planning question is whether each year's income strategy (which accounts to draw from, whether to convert to Roth, whether to harvest gains) is using the 0% bracket fully where it's available.
+
+This is one of those things that disappears once RMDs start. The bracket is still there, but RMD income tends to fill it. The window to use it deliberately is finite — and once you're past it, the opportunity doesn't come back.
+
+If you're in or near a low-income year and you have appreciated taxable holdings, [we should talk about whether gain harvesting belongs in the plan](/contact).
+
+---
+
+*General educational information. The 0% LTCG bracket interacts with Social Security taxation, IRMAA brackets, ACA subsidies, and state taxes — all of which can change the optimal strategy. Coordinate with a tax professional before executing.*
+
+---
+
+## The Roth Conversion Decade: Why the Years Between Retirement and RMDs Matter Most
+
+**Published:** 2026-03-18  ·  **Topics:** Retirement, Tax Planning, Roth  ·  **URL:** https://www.wilcofin.com/articles/roth-conversion-decade
+
+*The years between retirement and required minimum distributions are often the highest-leverage tax-planning window of a lifetime. Here's how to think about Roth conversions during it.*
+
+For a large portion of retirees, the decade between retirement and the start of required minimum distributions (RMDs) is the most valuable tax-planning window of their lives. Income drops. Taxable brackets open up. And the choices made during that window — especially around Roth conversions — ripple through the rest of retirement and into the next generation.
+
+This is a framework for thinking about it. Every situation is different, and the actual execution requires modeling with your specific numbers.
+
+## The setup: why this window is different
+
+During your working years, your income fills the brackets. You're in the 24% or 32% or 37% bracket and there's not much that can change it. You save into your 401(k) or IRA pre-tax, deferring the tax bill until later.
+
+During retirement (but before RMDs start at age 73 or 75, depending on your birth year), several things change:
+
+- **Earned income is usually gone.** Your taxable income drops dramatically unless you're pulling heavily from pre-tax accounts.
+- **Lower brackets become available.** The 10%, 12%, and 22% brackets open up in ways they haven't since your early career.
+- **Social Security may not yet be on.** Many retirees delay claiming to age 70. That further compresses taxable income for several years.
+- **RMDs haven't started.** Once they begin at age 73 (for those born 1951-1959) or 75 (those born 1960+), they'll fill taxable income brackets involuntarily.
+
+This creates a window. For most households, it's 8 to 15 years long.
+
+## What a Roth conversion actually does
+
+A Roth conversion moves money from a traditional (pre-tax) IRA to a Roth IRA. You pay income tax on the converted amount in the year you convert. After that, the money grows tax-free forever, and withdrawals (subject to the five-year rule and age 59½) are tax-free.
+
+The strategy, simplified: **convert at today's rate to avoid a higher future rate.**
+
+## Why it often makes sense
+
+Three forces push toward conversions in the low-income retirement years:
+
+1. **Bracket arbitrage.** Paying 12% or 22% now to avoid paying 32% or 37% later is a direct win, assuming you have an outside source of cash to pay the tax.
+2. **RMD suppression.** Every dollar you convert is a dollar that won't be subject to RMDs. For households with large pre-tax balances, RMDs can push Medicare premiums (IRMAA), Social Security taxation, and ordinary-income tax higher than expected.
+3. **Legacy efficiency.** Inherited Roth IRAs are vastly more favorable than inherited traditional IRAs — especially after the SECURE Act's 10-year rule, which forces most non-spouse beneficiaries to empty the inherited account within a decade.
+
+## Why it sometimes doesn't
+
+Not everyone benefits. Situations where we generally don't convert, or convert less:
+
+- **You'll be in a lower bracket in retirement than today.** Unusual for disciplined savers, but it happens.
+- **You don't have outside cash to pay the tax.** Converting and paying the tax with the converted funds is much weaker economically — you lose the "pay the tax from a different bucket" lever.
+- **You plan to give heavily to charity.** Qualified charitable distributions (QCDs) from traditional IRAs after age 70½ are a very tax-efficient way to both give and reduce RMDs. Converting to Roth removes that option.
+- **Health or longevity concerns are short.** Roth conversions are essentially a bet on longevity. The longer your remaining life, the more the tax-free compounding benefits you. Short horizons reduce the value.
+
+## How much to convert, and when
+
+The mechanical question is "how much should I convert this year?" The usual framework:
+
+1. **Estimate your 2025 taxable income** without any conversion.
+2. **Identify the next tax bracket boundary** — the point at which the marginal rate jumps meaningfully (12% → 22%, 22% → 24%, 24% → 32%).
+3. **Consider converting up to that boundary.** This is "filling the bracket."
+4. **Check second-order effects.** Does the conversion push you into IRMAA? Does it reduce ACA subsidies if you're on an exchange plan? Does it affect state taxes?
+5. **Repeat annually.** Markets change, tax laws change, and your income can shift year to year.
+
+Many clients find that the right conversion amount varies meaningfully from year to year. A market drawdown is often a great conversion year, because you convert more shares for the same tax cost.
+
+## SWA pilot and executive situations
+
+Airline pilots facing the [FAA Age 65 retirement](/articles/swa-pilot-retirement-essentials) often enter the Roth conversion window with unusually large pre-tax balances — driven by years of high 401(k) and profit-sharing contributions. The window is firm (retirement is known), peak earning years end definitively, and the 8-year gap to RMDs at 73 is prime conversion territory.
+
+For executives retiring with significant deferred compensation, the picture is more complex: you may have involuntary income for years post-retirement (NQDC payouts), and that income fills your brackets in ways a pilot's doesn't. Modeling is essential.
+
+## The bottom line
+
+The Roth conversion decade isn't something to tackle casually. But for the right household, at the right rate, with outside cash to pay the tax, it's one of the most valuable planning opportunities the tax code offers — and it expires when RMDs start.
+
+If you'd like help modeling your own situation — with your real numbers, your real tax bracket, and your real goals — [we'd be glad to help](/contact).
+
+---
+
+*This article provides general information about Roth conversions and should not be interpreted as personalized tax or investment advice. Tax laws, contribution limits, and RMD ages change over time. Consult your tax professional for recommendations based on your specific situation.*
+
+---
+
+## Asset Location: The Quiet Tax Win Most Investors Miss
+
+**Published:** 2026-02-18  ·  **Topics:** Tax Planning, Investments  ·  **URL:** https://www.wilcofin.com/articles/asset-location
+
+*Holding the same portfolio in the wrong account types can cost real money over a lifetime. The principle is simple — the execution is where most plans go wrong.*
+
+There's a planning concept that almost every long-term investor has heard of, almost nobody implements properly, and routinely costs households six figures over a working life: **asset location**.
+
+It's not asset *allocation* — that's the mix of stocks, bonds, and cash you hold. Asset location is the question of *which account* each piece of that allocation lives in.
+
+## The principle
+
+Different account types tax different income types differently. Roughly:
+
+- **Taxable brokerage accounts** — tax dividends and interest annually; tax capital gains when realized; allow tax-loss harvesting; favor a step-up in basis at death.
+- **Traditional / pre-tax retirement accounts** (Traditional IRA, 401(k)) — no tax on growth or trades inside the account; full ordinary-income tax on every dollar coming out.
+- **Roth accounts** — no tax on growth, no tax on qualified withdrawals, no required distributions.
+
+When you hold the same dollar of bonds vs. equities in different account types, the after-tax outcome is materially different. The principle, simplified:
+
+- **Tax-inefficient assets** (bonds, REITs, high-turnover funds) belong in **tax-deferred** accounts where the ongoing tax drag disappears.
+- **Tax-efficient assets** (broad-market index ETFs, individual stocks held long) belong in **taxable** accounts where the step-up in basis at death is most valuable.
+- **Highest-expected-return assets** belong in **Roth** accounts, where the largest gains compound tax-free forever.
+
+## Why this gets ignored
+
+Three reasons it doesn't get implemented well:
+
+1. **It requires looking at your accounts as one portfolio, not many.** Most advisors and most investors look at each account separately, build a "balanced" allocation in each, and miss the cross-account optimization entirely.
+2. **Custodial and 401(k) plan constraints.** Your 401(k) only offers what the plan offers. Sometimes the right asset for that account isn't available, and you have to make tradeoffs.
+3. **It's quiet.** Asset location doesn't show up on a quarterly statement. The win compounds invisibly over decades. So it gets deprioritized in favor of more visible work.
+
+## What it's worth
+
+The academic estimates land in the range of **0.2% to 0.7% per year** of additional after-tax return for a typical taxable investor — sometimes higher for households with significant pre-tax balances and large bond allocations. Over 30 years at the higher end, that's the difference between retiring with $3 million and $4 million on the same gross savings rate.
+
+It's also one of the few legitimate "free lunches" in investing: same gross portfolio, lower lifetime tax bill, no additional risk.
+
+## Where it fails
+
+Common mistakes we see:
+
+- **Bonds held in taxable** because someone wanted "diversification in every account." Generates ordinary-income tax annually.
+- **Roth IRAs holding stable bond funds** because the client was "being conservative." Wastes the tax-free growth wrapper on the lowest-return asset.
+- **REITs in a brokerage account** generating non-qualified dividends taxed at ordinary rates.
+- **High-turnover active funds in taxable** spitting off short-term capital gains every December.
+
+## Where to start
+
+For most households, the highest-impact moves are:
+
+1. Move bonds and bond-equivalents into the IRA / 401(k).
+2. Move broad-market equity index funds into the taxable brokerage.
+3. Reserve Roth space for highest-expected-return holdings (often broad equities, sometimes more volatile asset classes if appropriate).
+4. Re-look every year — as the portfolio grows and rebalancing happens, location can drift.
+
+Asset location is one of the items we look at first when we model a new client portfolio. It's almost always something. Sometimes it's a small fix; sometimes it's a meaningfully better trajectory for the next 20 years.
+
+If you want a second look at how your portfolio is distributed across account types, [we'd be glad to take a look](/contact).
+
+---
+
+## The \"Fee-Only\" Label Doesn't Mean What You Think
+
+**Published:** 2026-01-17  ·  **Topics:** Fees, Fiduciary  ·  **URL:** https://www.wilcofin.com/articles/fee-only-label
+
+*\"Fee-only\" sounds clean — no commissions, aligned interests. In practice, the term is self-described and unregulated. Here's how to actually verify.*
+
+"Fee-only" is one of the most repeated — and most loosely defined — phrases in financial services. Advisors use it to signal clean, aligned, client-first economics. Consumers read it as shorthand for "no commissions, no conflicts." The gap between the two is bigger than most people realize.
+
+## The intended meaning
+
+In its strict professional sense, "fee-only" means the advisor's firm receives compensation **exclusively from clients** — advisory fees paid by the client directly. No commissions on products sold. No revenue-sharing from fund companies. No trailing 12b-1 fees. No referral fees from insurance agents. No wholesaler kickbacks. That's it.
+
+When it's actually implemented that way, it's a powerful conflict-reducer. The advisor has exactly one source of revenue: you.
+
+## The loose version
+
+The problem is that "fee-only" is **self-described and unregulated**. No one enforces a definition. Firms that earn the bulk of their revenue from client fees but also collect occasional commissions, referral fees, or insurance trails sometimes still describe themselves as "fee-only" — especially in marketing.
+
+The more rigorous term, **fee-only as defined by NAPFA** (the National Association of Personal Financial Advisors), requires zero non-client compensation. But most firms aren't NAPFA members, and NAPFA doesn't police the phrase outside its membership.
+
+## The term that hides worse conflicts: "fee-based"
+
+Watch out for the cousin: **fee-based**. This explicitly indicates fees *and* commissions. It's a blended model where the advisor can earn advisory fees on some accounts and commissions on product sales in the same relationship. The conflicts the fee-only model is designed to eliminate come right back in.
+
+"Fee-only" and "fee-based" differ by one letter. They are not the same thing.
+
+## How to actually verify
+
+Ask two direct questions:
+
+1. **"Does your firm receive any compensation from anyone other than me?"** The honest answer is yes, no, or "occasionally." Any answer that starts with "well, it depends…" is a yellow flag worth pressing.
+2. **"Do you or your firm sell insurance or annuities?"** If yes, there's a commissioned revenue stream somewhere, regardless of what the business card says.
+
+Then check the filing. Every registered investment adviser files a **Form ADV** publicly at [adviserinfo.sec.gov](https://adviserinfo.sec.gov). Part 2A, Item 5 is titled "Fees and Compensation" and Item 10 is "Other Financial Industry Activities and Affiliations." If the firm has affiliated broker-dealers, insurance agencies, or product distributors, it's disclosed there.
+
+The ADV doesn't lie. Marketing copy sometimes does.
+
+## Why this matters
+
+Over a 30-year investing career, the math on a 1% vs. 1.8% all-in cost runs into hundreds of thousands of dollars. That gap is usually where the undisclosed compensation lives. It's not that commissioned advice is always wrong — it's that you should know what you're actually paying for, and to whom.
+
+The [fiduciary standard](/articles/fiduciary-vs-suitability) requires disclosure; the "fee-only" label is supposed to make that disclosure simple. When the label is being used honestly, it is. When it isn't, you have to dig a layer down.
+
+At Wilco Financial, our only compensation comes from client advisory fees. [Our Form ADV](/form-adv) is public. If you have questions about your current advisor's compensation structure — what's on the label vs. what's actually there — we're happy to help you read it. [Reach out](/contact).
+
+---
+
+## Sequence-of-Returns Risk: The Hidden Killer of Retirement Plans
+
+**Published:** 2025-12-18  ·  **Topics:** Retirement, Investments  ·  **URL:** https://www.wilcofin.com/articles/sequence-of-returns-risk
+
+*The same average return can produce wildly different retirement outcomes depending on the order of the years. Why the first decade after retirement matters disproportionately — and what to do about it.*
+
+Two retirees with identical portfolios, identical withdrawal rates, and the same average annual return over 30 years can end up in completely different places. One ends with more money than they started with. The other runs out at age 78. The difference is **the order in which the returns happened**.
+
+This is sequence-of-returns risk. It's the single most underappreciated risk in retirement planning, and it disproportionately determines whether a plan works.
+
+## The mechanic
+
+When you're accumulating — adding money to an account every month — the order of returns barely matters. Bad early years just mean you're buying more shares cheaply, which works in your favor when markets recover.
+
+When you're distributing — taking money *out* every month or year — the math reverses. Selling shares during a down market means selling more shares to fund the same dollar withdrawal, which permanently shrinks the portfolio. Even if the market recovers later, you've sold those shares at the bottom and lost their compounding power forever.
+
+## A simple example
+
+Two retirees, same starting balance ($1M), same average return (7% over 30 years), same withdrawal ($50K adjusted for inflation each year).
+
+- **Retiree A** experiences strong returns early, weak returns late. After 30 years: ~$2.8M remaining.
+- **Retiree B** experiences weak returns early, strong returns late. Same average. After 30 years: portfolio depleted at year 23.
+
+Same average. Same withdrawals. Different order. Wildly different outcomes.
+
+## Why the first decade matters most
+
+The first 5–10 years after retirement begin sets the trajectory. Bad early returns combined with active withdrawals create a hole the portfolio can never fully climb out of, even if subsequent decades are strong. A 30% drawdown in retirement year 2 with a 4% withdrawal happening simultaneously is materially more damaging than the same drawdown in year 25.
+
+## What you can actually do about it
+
+There's no eliminating sequence risk — markets do what markets do. But several strategies meaningfully reduce its impact:
+
+**1. A cash and short-term bond reserve covering 1–3 years of expenses.** When markets are down, you spend down the reserve instead of selling equities at depressed prices. When markets recover, you refill the reserve from the equity gains. Buys time for the portfolio to do its work.
+
+**2. Dynamic withdrawal rules.** Rather than spending exactly 4% of the starting balance forever, use guardrails: spend more when the portfolio is doing well, cut back modestly in down years. Even small adjustments dramatically improve survival probability.
+
+**3. Glide path away from equity heavy in the first decade.** Counterintuitive — most "rising equity glidepath" research actually suggests the opposite — but the idea of being modestly more conservative right around retirement, then drifting back to equities, has support in the academic literature.
+
+**4. Annuitize a portion of essential expenses.** A SPIA (single premium immediate annuity) or deferred income annuity for the floor of essential spending eliminates sequence risk for that piece. Less common in our practice for HNW clients but worth modeling.
+
+**5. Tax-aware withdrawal sequencing.** Where the money comes from matters. Drawing from taxable accounts in down market years (and paying capital gains at low rates if losses can offset) protects the tax-deferred and Roth balances for later compounding.
+
+## Why this gets missed
+
+Plans that use a "5% return assumption" or even Monte Carlo with average outcomes routinely underweight sequence risk. The plan looks fine until the first severe drawdown after retirement, at which point the math turns.
+
+Good retirement planning models stress-test against the *worst* historical sequences — the 1929 retiree, the 1969 retiree, the 2000 retiree — not the average. If your plan only works in average conditions, it's not really a plan.
+
+If you'd like to see how your plan holds up against the bad sequences in history rather than just the average ones, [we'd be glad to model it](/contact).
+
+---
+
+*General educational information. Sequence-of-returns risk modeling depends on individual circumstances, time horizon, and assumptions about future returns and inflation. Not personalized advice.*
+
+---
+
+## The Concentrated Stock Position Problem: Five Ways to Solve It
+
+**Published:** 2025-11-18  ·  **Topics:** Tax Planning, Investments  ·  **URL:** https://www.wilcofin.com/articles/concentrated-stock-position
+
+*Holding too much of one company — typically your employer or an inherited holding — is one of the most common sources of avoidable risk in HNW portfolios. The unwind is harder than it looks.*
+
+If a meaningful slice of your net worth is tied up in a single stock — usually a current or former employer's shares, sometimes an inherited holding, occasionally a long-held position whose cost basis is now nearly zero — you have a planning problem worth solving carefully. Done well, the unwind preserves wealth and reduces risk. Done badly, it generates a large tax bill and locks you into a worse position than you started.
+
+## Why concentration is a real problem
+
+Single-stock risk is the kind of risk no rational investor takes voluntarily. A diversified portfolio of 30+ uncorrelated holdings has dramatically lower volatility than any single stock. The historical record on individual companies is humbling: most stocks underperform Treasury bills over their lifetime; the index returns come from a small minority of names. Holding one is a bet against statistics.
+
+The classic concentration scenarios:
+
+- **Employer stock** acquired through ESPP, RSU vesting, options exercise, or 401(k) employer match
+- **Founder or executive shares** in a company you built or led
+- **Inherited holdings** from a parent who held a single stock for decades
+- **A long-held winner** that grew to dominate the portfolio simply by appreciating faster than everything else
+
+## The constraint that makes it hard
+
+The reason this isn't just "sell tomorrow" is **tax**. Long-held positions usually have low cost basis. Selling triggers capital gains tax — at federal rates of up to 23.8% (20% LTCG + 3.8% NIIT) plus state. On a $2M position with $200K basis, that's $429K of federal tax just to unwind it. The instinct is to wait — but waiting means continuing to hold concentration risk.
+
+Five strategies that get used, alone or in combination:
+
+## 1. Staged sales over multiple tax years
+
+The simplest answer: spread the sale across years to fill the lower long-term capital gains brackets each year. Pair with tax-loss harvesting elsewhere in the portfolio to offset gains. Useful when there's a long runway and no urgency.
+
+## 2. Charitable contributions of appreciated stock
+
+Gift the appreciated shares directly to a [donor-advised fund](/articles/donor-advised-funds) or a public charity. Avoids capital gains entirely, generates a deduction at fair market value, and lets you redirect what would have been a tax payment into your charitable giving plan. For households already planning meaningful giving, this is often the single best tool.
+
+## 3. Direct indexing for tax-loss harvesting
+
+Build a separately managed account that tracks a broad index using individual stocks. The harvested losses on the rest of the portfolio offset gains realized when selling the concentrated position. Modern direct indexing platforms can systematically generate losses that are then used to retire concentration over time.
+
+## 4. Exchange funds
+
+A specialty vehicle: contribute your concentrated stock alongside other investors with their own concentrated positions, receive a share in a diversified pool, and defer capital gains tax for at least seven years. The exit at year 7+ is staged and complex but avoids the immediate tax hit. Exchange funds have meaningful fees and lock-up periods — they're not for everyone, but they exist as a tool.
+
+## 5. Hedging with options or structured strategies
+
+For positions that can't be sold immediately (lock-up restrictions, founder optics, etc.), various option strategies can reduce downside without triggering a sale. Costly and complex. Sometimes the right answer; often not.
+
+## What we generally recommend
+
+For most concentrated positions, the right answer is a combination:
+
+- Begin a multi-year unwind, sized to fill the 15% LTCG bracket each year
+- Direct part of charitable giving toward gifting appreciated shares
+- Avoid adding to the concentration (stop reinvesting dividends in the same name; redirect new ESPP/RSU income into diversified accounts)
+- Re-evaluate annually as the position shrinks and tax brackets shift
+
+The goal isn't zero exposure — it's reducing concentration to a level where a 50% drop in the stock wouldn't materially threaten your plan.
+
+If you have a concentrated position you've been meaning to unwind but haven't, [we can model the tradeoffs](/contact) — the right path almost always combines several of these tools rather than picking one.
+
+---
+
+*General educational information about concentrated stock strategies. Specific tactics depend heavily on your tax situation, holding period, basis, and goals. Not personalized investment, tax, or legal advice.*
+
+---
+
+## What to Ask an Advisor Before You Hire Them
+
+**Published:** 2025-10-18  ·  **Topics:** Working With Advisors, Fiduciary  ·  **URL:** https://www.wilcofin.com/articles/questions-to-ask-an-advisor
+
+*Ten direct questions that reveal more about a prospective financial advisor than any marketing page. And what the honest answers sound like.*
+
+Most advisor-shopping conversations are too polite. The prospect is nervous, the advisor is selling, and the questions that would actually reveal whether this is the right relationship never get asked. Here are ten direct ones — and what an honest answer sounds like.
+
+## 1. Are you a fiduciary at all times?
+
+A good answer is a plain **yes**, ideally followed by "and I'll put that in writing." Anything equivocal ("well, it depends on which hat I'm wearing") means they operate under dual registration and are a fiduciary only sometimes. That's the opposite of reassuring — it means specific recommendations may come from the non-fiduciary side.
+
+See [Fiduciary vs. Suitability](/articles/fiduciary-vs-suitability) for why the distinction matters.
+
+## 2. How do you make money?
+
+You're listening for three things: (a) advisory fees paid by clients, (b) commissions on products sold, (c) any third-party compensation (referral fees, revenue-sharing, insurance trails). Ideally only (a). The [Form ADV Part 2A, Item 5](/form-adv) spells this out — ask for it.
+
+## 3. What is my all-in cost in dollars and percent?
+
+Not just the advisory fee. The **sum** of the advisory fee, underlying fund expense ratios, platform fees, and any commissions — expressed as both a percentage and an annual dollar figure at your portfolio size. See [How Advisor Fees Actually Work](/articles/how-advisor-fees-actually-work) for the framework.
+
+A good advisor will do this math with you. An uncomfortable one will give you an advisory fee and move on.
+
+## 4. Who holds my money?
+
+The answer should name a **large independent custodian** — Charles Schwab, Fidelity, Pershing. If the answer is "we hold it here" or names the advisor's own firm, that's a meaningful concern. Custody and advice separate for a reason.
+
+## 5. Can I see your Form ADV?
+
+Every RIA files one. The firm-level Brochure (Part 2A) covers fees and conflicts; the Brochure Supplement (Part 2B) covers the specific individual advising you. Any advisor should be able to produce both on request or point you to [adviserinfo.sec.gov](https://adviserinfo.sec.gov).
+
+## 6. What's your investment philosophy?
+
+You're not looking for a specific answer — you're looking for a *coherent* answer. "We use whatever our firm recommends" is not coherent. "We build diversified, low-cost portfolios using evidence-based research, tilted toward X for these reasons" is. Ask them to show you an actual sample portfolio for a client like you.
+
+## 7. Who will I actually work with?
+
+Some firms sell with senior advisors and deliver with junior staff. That can be fine — but you should know. Ask: when I call with a question, who picks up? When there's a plan review, who leads it?
+
+## 8. How often do we meet, and what's covered?
+
+Good answers are specific: quarterly check-ins, annual comprehensive review, ad-hoc for life events. Bad answers are "whenever you need us" (which in practice often means "rarely").
+
+## 9. What does the onboarding process look like?
+
+Document requests, risk questionnaire, plan draft, account opening, transfers, initial rebalance. How long does it take? What's expected from you vs. from them? An advisor who can't walk through a clear onboarding sequence probably hasn't onboarded many clients.
+
+## 10. Why should I *not* hire you?
+
+This is the question that sorts. An honest advisor has a clear answer: we don't do X, we're not the right fit for Y, our minimums are Z, our style doesn't suit someone who wants A. An advisor who says "we're a fit for everyone" hasn't thought carefully about their practice — or is selling.
+
+## What to do with the answers
+
+Ask the same ten questions of two or three advisors. The patterns emerge quickly. The right advisor isn't the one with the slickest pitch — it's the one whose answers are specific, written, and internally consistent.
+
+If you want to run these by us, we'd be glad to talk — no pressure. [Contact us](/contact).
+
+---
+
+## Donor-Advised Funds: The Most Underused HNW Strategy
+
+**Published:** 2025-09-18  ·  **Topics:** Charitable Planning, Tax Planning  ·  **URL:** https://www.wilcofin.com/articles/donor-advised-funds
+
+*A donor-advised fund decouples the timing of your tax deduction from the timing of your charitable giving. For most high earners doing meaningful giving, it's the right tool — and it's nearly free.*
+
+Most households giving meaningful amounts to charity each year would be better off using a donor-advised fund (DAF) than writing checks. The strategy is simple, the cost is minimal, and the tax leverage is real. It's one of the most undeployed tools in HNW planning.
+
+## What a DAF is
+
+A donor-advised fund is a charitable account at a sponsoring organization (Fidelity Charitable, Schwab Charitable, Vanguard Charitable, and many community foundations). You contribute cash or — better — appreciated assets to the fund, take an immediate tax deduction in the year of the contribution, and then recommend grants to qualified public charities over time.
+
+Three things matter:
+
+1. **The deduction happens when you contribute.** The grants to charity can happen later — months, years, or decades later.
+2. **The contribution is irrevocable.** Once dollars are in the fund, they're committed to charity. You can change which charity, but not whether.
+3. **The funds invest while waiting.** Whatever you contribute can be invested in low-cost portfolios chosen by the sponsor; gains compound tax-free until granted out.
+
+## Why it's powerful
+
+**Bunching deductions.** The 2017 Tax Cuts and Jobs Act doubled the standard deduction, which means most households no longer itemize. For a couple where annual giving sits below the standard deduction threshold, those donations effectively generate no tax benefit. Bunch 5 years of giving into one DAF contribution, itemize that one year, take the standard deduction the other four — and the same total giving generates real deductions instead of zero.
+
+**Donating appreciated stock.** Contributing long-held appreciated stock to a DAF avoids capital gains tax entirely *and* generates a deduction at fair market value. For a position with $500K of unrealized gains, that's roughly $119K of avoided federal capital gains tax (23.8% × $500K), plus state — on top of the regular charitable deduction.
+
+**Timing flexibility.** Big income year (business sale, large bonus, IPO)? Front-load DAF contributions in that year to offset the income, distribute grants normally in subsequent years.
+
+**Investment growth.** Dollars sitting in the DAF are invested. At a 7% real return over 10 years, $100K becomes nearly $200K — all available for granting.
+
+## Cost
+
+DAF sponsors charge an administrative fee, typically 0.6% per year on assets under custody (often less at higher balances). Plus the underlying investment expense ratios (Fidelity Charitable's standard pools are around 0.05%–0.10%). All-in: usually under 0.75% per year. Cheap for what you get.
+
+Compare to a private foundation: setup costs in the thousands, ongoing legal/accounting/admin in the tens of thousands, mandatory 5% annual distribution requirement, and full-time governance overhead. Private foundations make sense at very large scales (typically $10M+) and where family governance is a feature, not a bug. For everyone else, DAFs are the right answer.
+
+## When a DAF is the wrong tool
+
+A few situations where it's not the right call:
+
+- **Modest giving levels** that wouldn't itemize even bunched. Just write checks.
+- **Charity-of-the-moment** giving where you want immediate impact and not a long deferral. DAFs can grant quickly, but the value is highest when you defer.
+- **Operating organizations you'd otherwise control or volunteer with substantially.** DAFs prohibit you from receiving any direct benefit from grants — no buying tickets to a gala "with grant funds," etc.
+- **Very high giving levels with multi-generational family governance ambitions.** A private foundation or supporting organization may be better.
+
+## Common HNW use cases
+
+- **Liquidity event year.** Business sale, IPO, large vesting. Make a DAF contribution sized to use up the deduction efficiency at peak income, then grant out over many years.
+- **Concentrated stock unwind.** Direct part of the unwind into the DAF; reduces concentration *and* charitable cost basis.
+- **QCDs running out.** [Qualified charitable distributions](/articles/qcds-explained) cap at $105K/year and require age 70½. For larger gifts before that age, DAFs are the workhorse.
+- **Year-end last-minute giving.** Most DAF sponsors process contributions in 24–48 hours. Useful when December's tax planning surprises you.
+
+## Setting one up
+
+Takes about 20 minutes online at any major sponsor. Minimum contribution is usually $5K–$25K. After that, contribute as often as you like, grant whenever you like.
+
+If you do meaningful charitable giving and don't have a DAF, you're probably leaving tax efficiency on the table. [We can help you decide if it fits your plan](/contact) and walk through the setup.
+
+---
+
+*General educational information. Specific charitable strategies depend on your income, deduction limits, holding periods, and giving goals. Not personalized tax advice.*
+
+---
+
+## Tax-Loss Harvesting: What It Is and When It Actually Helps
+
+**Published:** 2025-08-18  ·  **Topics:** Tax Planning, Working With Advisors  ·  **URL:** https://www.wilcofin.com/articles/tax-loss-harvesting
+
+*The mechanics of tax-loss harvesting — and an honest look at when the tax savings are real, when they're overstated, and when it doesn't apply at all.*
+
+Tax-loss harvesting is one of those strategies that sounds like magic in marketing copy and turns out to be genuinely useful — but more modestly so — once you understand the mechanics. Here's the honest version.
+
+## The mechanics
+
+When an investment in a **taxable account** drops below what you paid for it, you have an unrealized loss. Selling the position turns that into a **realized loss** — which you can use to offset realized gains elsewhere in the same tax year, or (up to $3,000 per year) against ordinary income. Excess losses carry forward indefinitely.
+
+To maintain your market exposure, you immediately buy a **similar but not "substantially identical"** replacement position. A different ETF tracking a closely related index, for example. That keeps you invested in the asset class while booking the tax loss.
+
+Net effect: your portfolio's market exposure is essentially unchanged, but you've generated a usable tax asset.
+
+## Where it actually saves you money
+
+The key word is **defer**. Harvesting doesn't eliminate taxes — it shifts *when* you pay them. The loss reduces your cost basis in the replacement position, which means a larger gain at eventual sale. If your tax rate is the same when you harvest as when you sell, you've just deferred.
+
+Deferral has value — dollars saved now compound — but it's not free money. The real savings come from **rate arbitrage**:
+
+- You harvest at a high marginal rate (working years, high income)
+- You realize the future gain at a lower rate (retirement, lower income, long-term capital gains rate)
+- The difference between the two rates, applied to the harvested amount, is the genuine tax saving
+
+## What it does NOT apply to
+
+- **Tax-deferred accounts** (traditional IRAs, 401(k)s). No capital-gains taxation to harvest against.
+- **Roth accounts.** Same reason — all growth is tax-free anyway.
+- **Positions you plan to hold until death.** If the step-up in basis at death eliminates the gain entirely, harvesting was rate arbitrage against zero — still fine, but less compelling.
+- **Tiny portfolios.** The fixed cost of tracking basis, avoiding wash sales, and coordinating with year-end planning isn't worth it for a $50,000 portfolio.
+
+## The wash sale rule
+
+The IRS prevents a specific abuse: selling at a loss and immediately buying the *same* security back to claim the loss without actually changing your position. If you buy a "substantially identical" security within 30 days before or after the sale, the loss is disallowed.
+
+Two clean ways to stay compliant:
+
+1. Wait the 31 days — but then you're out of the market during the window, accepting tracking error.
+2. Use a **similar but not identical** replacement immediately. Different ETFs from different providers tracking closely related indexes usually qualify. Different mutual funds tracking similar benchmarks also work.
+
+This is one of the places where a coordinated advisor adds value — wash sale rules also apply across your IRA, your spouse's accounts, and automatic dividend reinvestments. It's easy to trip yourself up.
+
+## When it's most valuable
+
+- **Market drawdowns.** Losses are everywhere, opportunities are plentiful.
+- **High-income years.** You're harvesting against higher-rate gains.
+- **Years with large realized gains** from a business sale, RSU vesting, or concentrated-stock unwind. A harvested loss directly offsets a same-year gain.
+- **Approaching a charitable strategy.** Harvested losses carried forward pair well with future donations of appreciated stock — you offset the harvest in high years, donate appreciated stock in later years. See [Charitable Planning](/services/charitable-planning).
+
+## When it's marketed too hard
+
+Some platforms advertise huge "tax alpha" numbers from harvesting. Read carefully — they're usually measuring **nominal tax savings** in the first year without accounting for the basis reduction (and therefore higher future gains) the harvest creates. The real benefit is smaller than the headline. Still real, still worth doing when it applies. Just not magic.
+
+## Bottom line
+
+Tax-loss harvesting is a well-understood, legitimate strategy. Done systematically in the right accounts at the right times, it adds maybe **0.3–0.7% of annual after-tax return** for a typical taxable investor — with significantly higher benefits in big drawdown years. Over a long investing horizon that compounds into real money. It isn't going to make or break retirement by itself, but it shouldn't be left on the table either.
+
+Want to know if it applies to your situation? [Let's talk](/contact).
+
+---
+
+## QCDs: The Tax Move Every Charitable Retiree Over 70½ Should Know
+
+**Published:** 2025-07-18  ·  **Topics:** Charitable Planning, Tax Planning, Retirement  ·  **URL:** https://www.wilcofin.com/articles/qcds-explained
+
+*Qualified charitable distributions let you give from your IRA tax-free, satisfy your RMD, and preserve other deductions. For charitable retirees, it's almost always the most efficient way to give.*
+
+If you're 70½ or older and you do meaningful charitable giving, the **qualified charitable distribution** (QCD) is almost always the most tax-efficient way to give. Yet a striking number of eligible retirees never use it — usually because no one explained it to them clearly.
+
+Here's the clear explanation.
+
+## The mechanic
+
+A QCD is a direct transfer of money from your IRA to a qualified charity. Three things make it special:
+
+1. **The distribution does not appear in your taxable income.** Unlike a normal IRA withdrawal, a QCD never hits your AGI.
+2. **It satisfies your required minimum distribution** for the year, dollar for dollar, up to the QCD limit.
+3. **It's available even to retirees who take the standard deduction.** No itemization required — the benefit comes from the income exclusion, not a deduction.
+
+## Why excluding income beats taking a deduction
+
+For a retiree taking the standard deduction (most do), a charitable contribution from a checking account generates *no* tax benefit because the standard deduction already exceeds the itemizable amount. You write the check; nothing changes on your return.
+
+A QCD, by contrast, reduces your taxable income directly. That has compounding benefits beyond just the income tax:
+
+- **Lower AGI reduces taxation of Social Security benefits.** The tax inclusion of Social Security is tied to a calculation called "provisional income"; lower AGI means more of your Social Security stays tax-free.
+- **Lower AGI keeps you under Medicare IRMAA brackets.** Modified AGI from two years prior determines Medicare Part B and Part D premium surcharges. A QCD that keeps you under an IRMAA threshold can save thousands per year in premium increases.
+- **Lower AGI preserves other deductions.** Some deductions phase out as income rises. A lower AGI keeps more of them in play.
+
+## The rules
+
+- **Age 70½ or older** at the time of the distribution. (Not 73 — the QCD age is older than the RMD age.)
+- **From an IRA only** — not a 401(k), 403(b), or other employer plan. (You'd need to roll funds to an IRA first.)
+- **Direct transfer from custodian to charity.** The check or wire must go from the IRA custodian to the charity. If the money passes through your checking account first, it's a taxable distribution followed by a regular contribution — defeating the entire benefit.
+- **Annual limit:** $105,000 per individual in 2024 (indexed for inflation). For a married couple where each spouse has their own IRA and is 70½+, that's $210K combined.
+- **To qualified public charities only.** Not to donor-advised funds, supporting organizations, or private foundations.
+
+## Coordinating with RMDs
+
+QCDs satisfy required minimum distributions. So if your RMD for the year is $80K and you do a $30K QCD, you only need to take another $50K to satisfy the RMD — and only that $50K is taxable.
+
+The strongest version of this strategy: **time QCDs early in the year**, before any other distributions hit your IRA. That way the QCD counts toward the RMD, the rest of the RMD comes out as a normal taxable distribution, and your AGI is lower than it would have been.
+
+## Where it interacts with other strategies
+
+- **vs. donor-advised funds.** DAFs are great but cannot receive QCDs. For retirees who want both, the typical pattern is: QCDs to public charities, DAF for everything else.
+- **vs. appreciated stock gifts.** If you have low-basis appreciated stock in a taxable account, gifting that directly to charity also avoids capital gains. For a charitable retiree with both sources, the optimal mix uses QCDs first (income exclusion + RMD satisfaction), then appreciated stock (avoids capital gains).
+- **vs. Roth conversions.** Every dollar you convert to Roth is a dollar that can no longer be a QCD. Households planning meaningful future charitable giving should leave enough pre-tax balance to fund QCDs through life expectancy, then convert the rest. See [The Roth Conversion Decade](/articles/roth-conversion-decade).
+
+## The execution
+
+This is one strategy where the mechanics matter as much as the concept:
+
+1. **Tell your IRA custodian** you want to do a QCD. They'll have a form.
+2. **Provide the charity's name, address, and EIN.**
+3. **The custodian sends the funds directly** to the charity.
+4. **Save the documentation.** The 1099-R from your custodian will show the full distribution amount; you (or your tax preparer) note on the return that part of it was a QCD.
+
+## Why it gets missed
+
+Two reasons. First, if your tax preparer isn't asking detailed questions, they may not know which of your distributions were QCDs — and a QCD reported as ordinary income wastes the entire benefit. Second, many retirees genuinely don't know the option exists.
+
+If you're approaching 70½ and you give to charity, this should be on your year-end planning checklist every year going forward. [We're happy to walk through it](/contact).
+
+---
+
+*General educational information. QCD rules, limits, and ages change with tax law updates. Verify current rules with your tax professional before executing.*
+
+---
+
+## The #1 Estate Planning Mistake (and It's Not What You Think)
+
+**Published:** 2025-06-18  ·  **Topics:** Estate Planning  ·  **URL:** https://www.wilcofin.com/articles/beneficiary-designations-mistake
+
+*The most expensive estate planning mistake we see isn't a missing will or an unfunded trust. It's the beneficiary designations on retirement accounts and life insurance — and almost every household has at least one wrong one.*
+
+When most people think about estate planning, they think about wills and trusts. Those documents matter. But they govern a smaller portion of most estates than people realize — and they're routinely overridden by a simpler, more powerful document type that almost everyone fills out and almost nobody reviews: **beneficiary designations**.
+
+The single most common — and most expensive — estate planning mistake we see in client households is an outdated or poorly thought-through beneficiary designation on a retirement account, life insurance policy, or transfer-on-death brokerage account.
+
+## Why beneficiary designations override wills
+
+Most people assume their will controls who gets what. It doesn't, for the assets that matter most.
+
+Assets that pass by **beneficiary designation** (not by will):
+
+- 401(k), 403(b), and other employer retirement accounts
+- Traditional and Roth IRAs
+- Annuities
+- Life insurance death benefits
+- HSAs
+- Transfer-on-death (TOD) brokerage accounts
+- Payable-on-death (POD) bank accounts
+
+For a typical household at retirement, that list often represents 70–90% of the estate.
+
+Whoever is named on the beneficiary form gets the money — regardless of what the will says. The will can be perfectly drafted, recently updated, and legally airtight. If your 401(k) beneficiary form names your ex-spouse from 1998, your ex-spouse gets the 401(k).
+
+## The most common mistakes
+
+**Outdated designations from a previous life.** Ex-spouses on 401(k)s. Deceased parents still listed on old IRAs. Adult children from a first marriage on a life insurance policy that was supposed to support the second marriage's household.
+
+**No contingent beneficiary.** Primary beneficiary listed; if they predecease you, the asset reverts to the estate and goes through probate — defeating the entire point of beneficiary planning.
+
+**"To my estate" as the beneficiary.** Sometimes done deliberately, almost always a mistake. Loses the ability to "stretch" inherited IRA distributions, exposes the asset to estate creditors and probate, and creates tax problems most heirs aren't equipped to navigate.
+
+**Naming a minor child directly.** Insurance companies and IRA custodians cannot pay benefits to a minor. The court appoints a conservator; lawyers' fees consume a meaningful chunk; control of a large sum vests at age 18 or 21 with no guardrails. Should be a trust for the benefit of the minor, drafted carefully.
+
+**Naming a special-needs beneficiary directly.** Disqualifies them from means-tested government benefits. Should be a special needs trust.
+
+**Equal-percentage assumptions that don't add up.** Two children, "50% to each." Then a third child arrives and never gets added. Or one beneficiary is removed and the percentages still total 100% but allocate to the wrong people in the wrong proportions.
+
+**Trust named as beneficiary, but trust never updated for the SECURE Act.** The 2019 SECURE Act fundamentally changed how inherited IRAs distribute. Many trusts drafted before then now produce dramatically worse tax outcomes than intended.
+
+## Why this happens
+
+Beneficiary designations get filled out:
+
+- **Once, when you opened the account.** Often during an HR onboarding session 20 years ago.
+- **Without coordination** with any other planning document.
+- **In a moment of life that has since changed** — single, first marriage, no kids, healthy parents alive, etc.
+
+Then they sit. Untouched. For decades.
+
+## What to do
+
+A complete beneficiary review takes about an hour and should happen:
+
+- **Annually**, as part of year-end planning
+- **At every major life event** — marriage, divorce, birth, death, adoption, second marriage
+- **When a trust is created or updated**
+- **When you change jobs** (the new 401(k) needs designations; the old one may have rolled to an IRA without them)
+
+The review:
+
+1. Pull every account that has a beneficiary designation. Make a complete list.
+2. For each: Who is the primary beneficiary? Who is the contingent? Are the percentages right? Are minors named directly (problem)? Is the spouse / ex-spouse current?
+3. Coordinate with the will and any trusts. The estate plan should be a single coherent system, not a will plus 14 unrelated forms.
+4. Update each form. Many can be done online; some require a paper form returned to the custodian. Keep copies.
+5. Re-review annually.
+
+## The cost of getting this wrong
+
+Real cases we've seen (or heard cleanly documented):
+
+- $1.2M 401(k) inherited by an ex-spouse instead of current spouse and children. No legal recourse — the form controlled.
+- A life insurance policy paid to a minor child directly; $400K tied up in conservatorship for years, with attorney fees consuming a meaningful percentage.
+- A trust beneficiary on an IRA that, post-SECURE Act, forced full distribution within 5 years instead of the 10-year stretch the trust was designed for. ~$200K of additional tax over the distribution period.
+
+These are the easiest planning mistakes to prevent and among the costliest to discover after the fact.
+
+If you can't immediately tell us who the beneficiaries are on every retirement account and life insurance policy you own — and you're our client or you'd like to be — that's the first conversation worth having. [Reach out](/contact).
+
+---
+
+*General educational information. Beneficiary planning interacts with state law, tax law, and trust drafting. Specific decisions require coordination with your estate attorney, tax advisor, and financial planner.*
+
+---
+
+## How Advisor Fees Actually Work — and What 'All-In Cost' Really Means
+
+**Published:** 2025-05-18  ·  **Topics:** Fees, Working With Advisors  ·  **URL:** https://www.wilcofin.com/articles/how-advisor-fees-actually-work
+
+*The advisory fee you see on the proposal is often only part of what you're paying. Learn how to read a fee structure and calculate your true all-in cost.*
+
+One of the more frustrating realities in financial services: the number you see on the advisor's proposal is often a fraction of what you're actually paying. The gap between "what it looks like it costs" and "what it really costs" can exceed 1 percent per year — a figure that compounds into serious money over a long investing life.
+
+Here's a simplified guide to the layers, and how to calculate your true all-in cost.
+
+## Layer 1: The advisory fee
+
+This is the headline number — the percentage (or dollar amount) the advisor charges to manage your assets. It typically ranges from 0.25% to 1.5% per year. It's the most visible piece and often the only piece clients think about.
+
+## Layer 2: The underlying investment costs
+
+Your portfolio is made up of funds (mutual funds, ETFs, separately managed accounts). Each of those has its own **expense ratio** — a fee deducted from the fund's returns before they're reported to you.
+
+Examples:
+
+- A passive index ETF might charge 0.03% to 0.10%.
+- An actively managed mutual fund can charge 0.50% to 1.25%.
+- A "multi-strategy" or alternative fund can charge 1.5% to 3%+, sometimes with additional performance fees.
+
+This layer is often invisible in the advisor's pitch. You have to look at the individual fund fact sheets to find it.
+
+## Layer 3: Platform / wrap / custodial fees
+
+Some arrangements include a "platform fee" or "wrap fee" — a separate charge for the infrastructure the advisor uses. This might add another 0.10% to 0.50%. Legitimate? Sometimes. Duplicative with the advisory fee? Often.
+
+## Layer 4: Transaction costs
+
+Trading costs have mostly vanished for ETFs and stocks at major custodians. Mutual funds can still carry transaction fees ($20-50 per trade) depending on the share class. Bond trades have bid-ask spreads that don't appear on your statement but very much exist.
+
+## Layer 5: Commissions and loads (if applicable)
+
+If your advisor is dual-registered and sells commissioned products — load mutual funds, annuities, insurance — those commissions can be 5% or more of the amount invested. They're paid once, but they come out of your principal.
+
+## The sum
+
+Let's do some rough math. Assume a $1,000,000 portfolio at a fee-based firm with a 1.0% advisory fee, using a mix of actively managed funds averaging 0.75% expense ratios, plus a 0.15% platform fee:
+
+- Advisory fee: 1.00%
+- Underlying expense ratios: 0.75%
+- Platform fee: 0.15%
+- **All-in cost: 1.90% per year — or $19,000 annually**
+
+Same client, at a fee-only RIA using low-cost index ETFs:
+
+- Advisory fee: 0.85%
+- Underlying expense ratios: 0.08%
+- Platform fee: none
+- **All-in cost: 0.93% per year — or $9,300 annually**
+
+The difference: **$9,700 per year**, or roughly 0.97% annually. Over 20 years, compounded at a 7% real return, that's close to $500,000 in foregone wealth.
+
+## How to find your actual number
+
+1. **Add up the advisory fee** — ask in writing, and ask if it's "all-in" or just the advisor's cut.
+2. **List every holding in your portfolio** and look up the expense ratio for each. Weighted by percentage of portfolio, calculate the blended fund expense ratio.
+3. **Ask whether there are platform, wrap, or custodial fees.** Get it in writing.
+4. **Identify any commissioned products** — annuities, load funds, private investments — and understand the up-front and trailing compensation.
+5. **Sum the layers.** That's your real annual drag.
+
+If your advisor can't or won't help you do this math, that's itself information.
+
+## The fiduciary-transparency connection
+
+This is one of the practical reasons the [fiduciary standard](/articles/fiduciary-vs-suitability) matters. A fiduciary has disclosure obligations; a suitability-standard broker does not, to the same degree. The opacity that makes all-in cost hard to calculate is often a feature of the commissioned model — and a bug for you.
+
+## Our approach
+
+At Wilco Financial, the advisory fee is **0.85% per year** of assets under management. There are no layered fees, no commissions, no product kickbacks, no platform wraps. Many portfolio holdings are individual stocks and bonds, which have zero expense ratio. Any ETFs we use are low-cost — typically 0.05% to 0.15% blended on the ETF portion.
+
+All-in, most of our clients pay under 1% per year to have their entire portfolio managed by a fiduciary. We think that's a reasonable number for institutional-quality management. We're happy to run the math on your current setup if you're curious how it compares — [just reach out](/contact).
+
+---
+
+## Bunching Charitable Deductions: How TCJA Made an Old Strategy New Again
+
+**Published:** 2025-04-17  ·  **Topics:** Tax Planning, Charitable Planning  ·  **URL:** https://www.wilcofin.com/articles/bunching-charitable-deductions
+
+*The 2017 doubling of the standard deduction made annual charitable giving tax-invisible for most households. Bunching multiple years of giving into one tax year solves it.*
+
+If you give meaningfully to charity every year and take the standard deduction on your tax return, your charitable giving is generating zero current tax benefit. Most people don't realize this. Most CPAs don't bring it up because the fix isn't a tax-prep matter — it's a planning matter, made before the year ends.
+
+The fix is **bunching**.
+
+## The math that changed in 2017
+
+Before 2017, the standard deduction was $12,700 for a married couple. Most charitable households itemized. Every dollar of charitable giving above the standard threshold reduced taxable income.
+
+The Tax Cuts and Jobs Act (TCJA) raised the standard deduction to $29,200 for married couples in 2024 (continuing to inflate). A typical charitable household at $20K/year of giving plus $10K of state and local taxes (capped at $10K, so SALT ≤ $10K)plus $5K of mortgage interest now totals ~$35K of itemizable deductions — barely above the standard. The marginal benefit of the next charitable dollar is *zero* until you push above the standard.
+
+A household giving $20K/year for 5 years, taking the standard deduction every year, gets the same tax outcome as a household that gave $0. The IRS is indifferent.
+
+## The bunching fix
+
+Concentrate multiple years of charitable giving into a single tax year. That year, you itemize and clear the standard deduction substantially. The other years, you take the standard deduction.
+
+Same total giving over 5 years. Same charities receive the same money. But the tax benefit goes from zero to meaningful.
+
+## A concrete example
+
+Married couple, $200K AGI, $10K SALT (capped), $0 mortgage interest, $20K/year of charitable giving, 24% marginal bracket.
+
+**Without bunching (5 years, status quo):**
+
+- Each year: itemizable = $30K vs. standard = $29.2K. They itemize at $30K.
+- Marginal tax benefit of charity: $30K - $29.2K = $800 of benefit at 24% = **$192/year × 5 = $960 over 5 years**
+
+**With bunching (5 years' giving in year 1):**
+
+- Year 1: $100K to a [donor-advised fund](/articles/donor-advised-funds). Itemizable = $110K. Tax benefit of itemizing over standard: $110K - $29.2K = $80.8K × 24% = **$19,400**
+- Years 2–5: take standard deduction. No itemized deductions. $0 charity-related tax benefit.
+
+**Difference: $19,400 - $960 = ~$18,400 of additional tax savings over 5 years**, on the same total amount given.
+
+That's the rough math. Specific situations vary based on bracket, state, and other deductions, but the direction is consistent: meaningful single-digit-thousand to mid-five-figure savings depending on giving level.
+
+## How donor-advised funds enable bunching
+
+The strategy depends on being able to **contribute to a charity now** and **distribute the funds to specific charities later**. A check directly to a charity doesn't allow that — once written, it's spent.
+
+A [donor-advised fund](/articles/donor-advised-funds) accepts the lump-sum contribution, generates the immediate deduction, and lets you grant out to charities over the following years at your normal pace. This is the workhorse vehicle for bunching.
+
+## When bunching doesn't work
+
+- **Already itemizing well above the standard.** If your existing itemizable deductions (SALT, mortgage interest, medical) already total $50K+, the marginal benefit of bunching is smaller because you're already capturing most of the deduction value annually.
+- **Charitable giving below ~$10K/year.** The math gets thin. Bunching 5 years of $5K = $25K is below the $29.2K standard for a couple. Doesn't help unless paired with other itemizable deductions.
+- **Giving directly to operating organizations that need the cash flow this year.** A DAF deferral may not work if a charity is depending on your annual gift. (Though DAFs can grant immediately too — defer the tax, distribute the grants on the same schedule.)
+
+## Combining with appreciated stock
+
+The strategy gets stronger when the bunched contribution is funded with **appreciated stock** rather than cash. Two compounding benefits:
+
+1. The deduction at fair market value
+2. Avoidance of capital gains tax on the embedded gain
+
+For a $100K stock position with $30K of cost basis given to a DAF, you skip ~$16,700 of federal capital gains tax (23.8% × $70K) *and* take a $100K deduction — adding another five figures of tax savings on top of the bunching benefit.
+
+## Common bunching cycles
+
+- **Every other year.** Give double in odd years; take standard in even years. Smooth and simple.
+- **Every 3 years.** Bunch three years of giving in year 1; standard in years 2 and 3.
+- **5-year load.** Front-load 5 years of giving in a high-income year (business sale, large bonus, IPO), then standard for 4 years. Common at liquidity events.
+- **One-time mega-bunch.** A 70-year-old planning lifetime charitable giving might fund a DAF with 10–15 years of giving in a single year — typically before [QCDs](/articles/qcds-explained) take over at 70½.
+
+## The conversation worth having
+
+Most CPAs file your return based on the activity that already happened. Most don't proactively model "what if you bunched five years into one?" That's a financial planning conversation, ideally happening in October or November so there's time to execute before year-end.
+
+If you give meaningfully and aren't sure whether bunching applies to your situation, [we'll run the numbers](/contact).
+
+---
+
+*General educational information. Specific bunching benefits depend on income, deduction profile, state taxes, and charitable goals. Coordinate with your tax preparer before executing any large-deduction strategy.*
+
+---
+
+## The Backdoor Roth and Mega-Backdoor Roth, Explained
+
+**Published:** 2025-03-18  ·  **Topics:** Roth, Tax Planning  ·  **URL:** https://www.wilcofin.com/articles/backdoor-roth-explained
+
+*Two legal strategies that let high earners put meaningful dollars into Roth accounts despite income limits. The mechanics, the traps, and when they're worth doing.*
+
+The IRS phases out direct Roth IRA contributions above certain income thresholds — $161,000 for single filers and $240,000 for married filing jointly in 2024. For high earners, that's supposed to close the door on Roth contributions. In practice, two perfectly legal strategies — the **backdoor Roth** and the **mega-backdoor Roth** — reopen it. Here's how they work and when to use them.
+
+## The backdoor Roth — the basics
+
+The standard backdoor Roth is a two-step process:
+
+1. **Make a non-deductible contribution to a traditional IRA.** There's no income limit on non-deductible contributions. For 2024, you can contribute up to $7,000 ($8,000 if age 50+).
+2. **Convert the traditional IRA to a Roth IRA.** No income limit on conversions either. Since the original contribution was non-deductible (you already paid tax on the money), and the conversion happens right away before any meaningful growth, there's no additional tax due.
+
+Net result: $7,000 into a Roth account that you technically shouldn't have been able to contribute to directly.
+
+## The pro-rata rule — the main trap
+
+The backdoor works cleanly only if you have **no pre-tax balances in any traditional IRA, SEP-IRA, or SIMPLE IRA** at year-end. If you do, the IRS's **pro-rata rule** treats your conversion as a blended mix of pre-tax and post-tax dollars, generating a taxable event on the pre-tax portion.
+
+Workarounds:
+
+- **Roll pre-tax IRA balances into your current 401(k)** (if the plan accepts incoming rollovers). The pro-rata rule only looks at IRAs, not 401(k)s.
+- Convert the whole pre-tax balance in a high-income-tolerant year, paying the tax. Expensive but clean.
+- Skip the backdoor if neither works — it's not worth triggering a pro-rata tax.
+
+## The mega-backdoor Roth — a much bigger door
+
+The "mega" version operates through a **401(k)** — not an IRA — and moves much larger amounts. It requires two plan features to work:
+
+1. **After-tax contributions** allowed (not to be confused with Roth 401(k) contributions — these are a third, separate bucket)
+2. **In-plan Roth conversions** or **in-service withdrawals** permitted
+
+If both are available, you can contribute beyond the standard elective deferral limit — up to the IRS 415(c) overall limit ($69,000 in 2024, including employee + employer contributions) — and then immediately convert the after-tax portion to Roth. That can mean an additional $30,000–$40,000 per year into a Roth vehicle for a well-compensated employee.
+
+Not all plans allow this. Check the plan document or call HR and ask specifically: "Does the plan allow after-tax contributions and in-plan Roth conversions?" Many do; many don't.
+
+## Who should use these
+
+- **High earners phased out of direct Roth contributions** — backdoor applies
+- **W-2 employees with a 401(k) allowing after-tax contributions and in-plan conversions** — mega-backdoor applies
+- **Pilots and airline employees** whose plan structure sometimes includes these features (check yours)
+- **Self-employed / solo 401(k) participants** — solo 401(k) plans can be customized to permit mega-backdoor contributions
+
+## Who shouldn't bother
+
+- **Low earners** — just contribute directly to a Roth IRA
+- **People with large pre-tax IRA balances** they can't roll into a 401(k) — pro-rata rule makes the backdoor messy
+- **Anyone whose retirement tax rate will be meaningfully lower than current rate** — the traditional deduction may be worth more than the Roth conversion, depending on the math
+
+## Execution matters
+
+Both strategies are legal and common, but the IRS notices sloppy execution. Key discipline:
+
+- **Report Form 8606** for every non-deductible IRA contribution. This tracks your basis so future conversions don't get taxed twice.
+- **Don't contribute to a traditional IRA and a Roth IRA in the same year** thinking it gets you more total Roth dollars — it doesn't, and makes the paperwork messier.
+- **Keep the backdoor IRA clean** — use it only as a pass-through, not a place where balances linger.
+
+## The bigger picture
+
+A 35-year-old high earner who executes the mega-backdoor for 20 years can accumulate a seven-figure Roth balance that will never be taxed again — and won't have RMDs when they retire. That's one of the most valuable savings vehicles in the U.S. tax code, and it's available legally, just under-advertised.
+
+If you want help figuring out whether these apply to you, we'd be glad to run your numbers. [Get in touch](/contact).
+
+---
+
+*General information only. IRS limits and rules change annually. Verify current limits and consult your tax professional before executing.*
+
+---
+
+## The Step-Up in Basis at Death: A Tax Cliff Worth Planning Around
+
+**Published:** 2025-02-18  ·  **Topics:** Estate Planning, Tax Planning  ·  **URL:** https://www.wilcofin.com/articles/step-up-in-basis
+
+*Holding appreciated assets until death wipes out the embedded capital gains tax for your heirs. Most people know that. The planning question is which assets to hold, which to sell, and when.*
+
+One of the most powerful provisions in the U.S. tax code is also one of the most easily wasted. The **step-up in basis at death** wipes out unrealized capital gains on most assets passed to heirs. For households with substantial appreciated holdings, getting the planning right can save heirs hundreds of thousands — sometimes millions — in capital gains tax.
+
+The principle is simple. The execution is where most plans fall short.
+
+## The mechanic
+
+When you die and an asset passes to your heirs (through your will, a beneficiary designation, or a non-grantor trust), the heirs receive a **new cost basis** equal to the asset's fair market value on the date of your death. Any unrealized capital gain that built up during your lifetime is effectively erased.
+
+A simple example. You bought $100K of XYZ stock in 1995. By the time you die, it's worth $1M. If you'd sold during your lifetime, you'd have owed capital gains tax on $900K of appreciation. If your heirs inherit the position and sell the next day, their capital gain is zero.
+
+That's a one-time tax savings, on this example, of roughly $214K (23.8% federal LTCG + NIIT × $900K) — plus state.
+
+## What gets a step-up
+
+Most appreciated assets:
+
+- Stocks, bonds, mutual funds, ETFs held in taxable brokerage accounts
+- Real estate
+- Privately held business interests
+- Collectibles
+
+What does NOT get a step-up:
+
+- **Traditional / pre-tax retirement accounts** (401(k), Traditional IRA, etc.). Heirs inherit your basis; distributions are taxed as ordinary income.
+- **Roth IRAs** — but they don't need it; distributions are tax-free anyway.
+- **Annuities** — gains are taxed as ordinary income to heirs.
+- **HSAs** (when inherited by a non-spouse) — taxed as ordinary income.
+
+## The planning implications
+
+Once you understand which buckets get a step-up and which don't, the spending order in retirement should change accordingly.
+
+**For households planning to leave substantial assets to heirs**, the conventional withdrawal sequence ("spend taxable accounts first, then traditional, then Roth") often produces a worse outcome than the alternative. The reason: spending taxable accounts first means *selling* appreciated assets and *paying* the gains tax during your lifetime — exactly the tax that the step-up was designed to eliminate.
+
+A more nuanced sequence for charitable / legacy-oriented households:
+
+1. **Take RMDs from traditional accounts** as required (no choice).
+2. **Spend cash and short-term bonds first** — minimal embedded gains.
+3. **Use [QCDs](/articles/qcds-explained)** to satisfy charitable giving from the IRA, reducing future RMDs without spending taxable basis.
+4. **Tap traditional IRAs** for non-essential spending where Roth conversions don't make sense.
+5. **Defer selling appreciated taxable holdings** to preserve the step-up for heirs.
+6. **Use [Roth conversions](/articles/roth-conversion-decade) strategically** — pay tax from cash, not from the converted amount itself.
+
+The exact sequence depends on individual circumstances, but the principle is: **highly appreciated taxable holdings are the last assets to spend in life and the most valuable to pass at death.**
+
+## The traps to avoid
+
+**Selling concentrated stock during life "to diversify."** If diversification is the only goal and the position is meaningful, sometimes the better answer is to *hedge* rather than sell — see [The Concentrated Stock Position Problem](/articles/concentrated-stock-position). Or to wait until death and let heirs sell with stepped-up basis.
+
+**Joint titling that destroys half the step-up.** In community property states (TN is *not* one — TN is a common law state), assets held as community property get a 100% step-up at the first spouse's death. In common law states, only the deceased spouse's share gets a step-up; the surviving spouse keeps their original basis on their half.
+
+**Funding bypass trusts ("credit shelter trusts") with appreciated assets.** Done historically to avoid estate tax, this can lock in the original basis and forfeit the step-up at the second spouse's death. With current federal estate tax exemptions at $13.61M per person ($27.22M per couple), the bypass trust math has changed dramatically — many old plans should be reviewed.
+
+**Transferring appreciated assets to children during life.** Gifts carry the donor's original basis. If your goal is to help heirs, the same gift made at death (with stepped-up basis) is more tax-efficient.
+
+## When the step-up may go away
+
+The step-up has been on Congress's potential-revenue-source list for years. Various proposals have circulated to eliminate or modify it. None have passed. The current planning landscape assumes the step-up continues — but plans built entirely around it should have a backup if rules change.
+
+## What to do
+
+- Review which of your accounts hold appreciated positions and the embedded gains in each
+- Coordinate spending sequence in retirement to preserve the step-up where possible
+- Re-evaluate joint titling, especially for households that moved between common law and community property states
+- Have your estate attorney review old bypass trust language; many are outdated
+- For HNW estates, model the after-tax outcome to heirs under different spending sequences
+
+The step-up is one of the largest single tax benefits the code offers. Building a retirement plan that captures it deliberately — rather than incidentally — is the difference between an OK estate plan and a good one.
+
+If you'd like to model the after-tax outcomes of different spending sequences in your situation, [we'd be glad to help](/contact).
+
+---
+
+*General educational information about the basis step-up rules under current U.S. federal tax law. Rules vary by state and change over time. Specific decisions require coordination with your estate attorney and tax advisor.*
+
+---
+
+## When a Pilot Should Consider a Roth Conversion
+
+**Published:** 2025-01-18  ·  **Topics:** Pilots, Southwest Airlines, Roth, Retirement, Tax Planning  ·  **URL:** https://www.wilcofin.com/articles/pilot-roth-conversion
+
+*Airline pilots often have an unusually clean Roth conversion window — if they know when it opens and when it closes. The planning rules that matter most for Age 65 retirees.*
+
+Airline pilots face a retirement math problem most professions don't: a legally mandated, absolutely fixed stop date. For pilots at Southwest Airlines and every U.S. Part 121 carrier, the FAA's Age 65 rule ends the career on a specific day, often with a seven-figure 401(k) and profit-sharing balance sitting in pre-tax accounts. That combination makes the **Roth conversion decade** — the years between retirement and the start of RMDs — one of the most valuable tax-planning windows a pilot ever has.
+
+Here's how to think about it.
+
+## Why it matters more for pilots
+
+A few factors stack in the pilot's favor — and against — relative to the average retiree:
+
+- **High peak-earning years.** Large pre-tax contributions mean large pre-tax balances to eventually draw down (or have forced out as RMDs at age 73).
+- **Fixed end date.** Age 65 is known, not probabilistic. You can plan backward from it with precision.
+- **Often no deferred comp or post-career wages.** Income falls off a cliff, not a ramp. That drop creates a wider bracket window than executives experience.
+- **Possible second career.** If you intend to instruct, consult, or fly corporate after Age 65, that post-retirement income compresses the window.
+
+The gap between Age 65 and Age 73 (current RMD age for those born 1951–1959, or 75 for those born 1960+) is the prime conversion zone: ~8 to 10 years of low taxable income before the IRS forces withdrawals that fill your brackets.
+
+## The bracket arbitrage
+
+Roth conversions are a bet that **today's marginal rate is lower than tomorrow's**. For a pilot at Age 65 with:
+
+- No W-2 income
+- Social Security possibly delayed
+- Low or no investment income in taxable accounts
+
+…taxable income in the first few retirement years can be near zero. The 10%, 12%, 22%, and 24% brackets are all open. Meanwhile, once RMDs start on a $2M+ pre-tax balance, the forced distributions can easily push a pilot into the 24%, 32%, or higher brackets, alongside higher Medicare IRMAA premiums.
+
+Converting $100,000–$300,000 per year in the window — at ~15–22% effective — and avoiding future RMDs at 28–32% marginal is real money. Over a decade, we routinely see $300,000–$600,000 in total lifetime tax savings for pilots with large 401(k) balances. The math varies, but the shape of the opportunity doesn't.
+
+## The complications
+
+**Social Security timing.** Most high-earning pilots benefit from delaying Social Security to age 70, which extends the low-income window. Claiming at 62 or 65 narrows it substantially.
+
+**ACA subsidies.** Pilots retiring before Medicare age (65) sometimes use ACA marketplace plans. Large Roth conversions push modified AGI up and can cost subsidies. Planning conversions against the ACA cliff is delicate.
+
+**IRMAA brackets.** Once on Medicare, modified AGI two years back determines Part B and Part D premiums. A big conversion in year N raises premiums in year N+2. Usually still worth it, but it belongs in the math.
+
+**State taxes.** See [state-of-residence planning](/articles/swa-pilot-retirement-essentials). A pilot domiciled in Tennessee (no state income tax) converts at federal rates only. A pilot in California pays an additional 9.3–13.3% on the conversion. This is one of the largest single variables.
+
+**Charitable plans.** If you intend to do meaningful charitable giving after age 70½, **qualified charitable distributions (QCDs)** from a traditional IRA are extraordinarily tax-efficient — up to $105,000/year in 2024, direct from IRA to charity, not included in AGI, and satisfying RMDs. Converting those dollars to Roth first would eliminate the QCD option. If charitable giving is a large part of your plan, convert less.
+
+## The SWA 401(k) and conversion mechanics
+
+A pilot's 401(k) balance at Southwest Airlines (or most airlines) has to be **rolled to an IRA** to execute partial Roth conversions — plans rarely allow in-plan Roth conversions of pre-tax balances. The typical sequence:
+
+1. Retire at Age 65.
+2. Roll 401(k) to a traditional IRA.
+3. Execute partial Roth conversions in each tax year, targeting the top of a chosen bracket (often the 22% or 24% bracket for most pilots).
+4. Pay the tax from a **taxable account** if possible — paying tax from the IRA itself is much less efficient.
+5. Repeat annually through about age 72, adjusting for Social Security, IRMAA, and actual portfolio performance.
+
+## When conversions don't make sense
+
+- **Intended heavy charitable giving via QCDs after 70½.**
+- **Expected retirement tax rate clearly lower than current rate** (unusual for most pilots, but possible).
+- **No outside cash to pay the conversion tax.**
+- **Short expected horizon** — heirs, not longevity, should drive the decision in this case.
+
+## The bottom line
+
+The Roth conversion decade isn't an optimization to leave to your tax preparer in March. It's a multi-year strategy that needs to be modeled annually against projected income, Social Security claiming, Medicare premiums, state taxes, and your actual balance. For most SWA pilots with a full-career 401(k), the window opens the day you retire and closes the year RMDs begin. What you do in between matters.
+
+If you'd like to model your own window — with your balances, your state, your timing — we'd be glad to help. [Let's talk](/contact).
+
+---
+
+*This article is general information for airline pilots and is not personalized tax, legal, or investment advice. IRS limits, RMD ages, and contribution rules change; consult your tax professional for recommendations on your specific situation.*
+
+---
+
+## Fiduciary vs. Suitability: What Your Advisor's Standard Actually Means
+
+**Published:** 2024-11-18  ·  **Topics:** Fiduciary, Working With Advisors  ·  **URL:** https://www.wilcofin.com/articles/fiduciary-vs-suitability
+
+*Not every 'financial advisor' is legally required to act in your best interest. Here's the difference between the fiduciary and suitability standards — and how to verify which one applies to you.*
+
+If you've ever wondered why two advisors looking at the same situation might make very different recommendations, the answer often comes down to a single word: **standard**. Specifically, whether the advisor is held to the *fiduciary* standard or the *suitability* standard.
+
+This isn't an academic distinction. It changes what kinds of products end up in your portfolio, how much you pay, and whose interests come first when the two are in conflict.
+
+## The two standards in one paragraph
+
+The **fiduciary standard** requires an advisor to put your interests ahead of their own and their firm's. Registered investment advisers (RIAs) — firms registered with the SEC or a state regulator under the Investment Advisers Act of 1940 — are fiduciaries. Wilco Financial is one.
+
+The **suitability standard** requires a recommendation to be merely *suitable* for you — appropriate given your age, income, and risk tolerance. Under suitability, two recommendations can both be "suitable" even if one pays the advisor a large commission and the other costs you nothing.
+
+## Why the difference shows up in real decisions
+
+Consider a 60-year-old nearing retirement who asks about a $200,000 rollover from their 401(k). Both a fiduciary and a suitability-standard broker might recommend an annuity product. But:
+
+- **The fiduciary** is required to compare that annuity to alternatives — a low-cost IRA, for example — and choose based on your best interest, even if the annuity pays them a commission and the IRA doesn't.
+- **The suitability-standard broker** is required to recommend something that fits your profile. If the annuity is "suitable" for a 60-year-old nearing retirement, it clears the bar — even if a lower-cost alternative would have served you better.
+
+Both may be legal. Only one has legal accountability for *optimizing* the recommendation to you.
+
+## The hybrid problem
+
+It gets murkier. Many firms operate **dual registrations** — they're both a registered investment adviser *and* a broker-dealer. In the same meeting, a representative can act as a fiduciary for one piece of advice and a suitability-standard broker for another.
+
+This isn't inherently predatory, but it's easy to miss. If you're not sure which hat your advisor is wearing for a given recommendation, ask directly: *"Are you acting as a fiduciary for this recommendation?"* Then ask them to put the answer in writing.
+
+## How to verify
+
+Every RIA files a **Form ADV** with regulators. Two places to look:
+
+1. **SEC's Investment Adviser Public Disclosure:** [adviserinfo.sec.gov](https://adviserinfo.sec.gov). Search any firm by name. You'll see the firm's registration, the individuals licensed with it, their disciplinary history (if any), and the firm's brochure.
+2. **Direct request.** Any RIA will happily give you their Form ADV Part 2A Brochure and Part 3 Customer Relationship Summary. If someone calling themselves an "advisor" can't produce these, they probably aren't an RIA.
+
+## The "fee-only" shorthand — and its limits
+
+You'll often see the phrase **fee-only** as shorthand for fiduciary. It usually does mean fiduciary, because a fee-only firm takes compensation *only* from clients (no commissions, no product kickbacks, no revenue-sharing). But "fee-only" is self-described, not regulated. Confirm the firm is an RIA and ask specifically about their compensation sources.
+
+Note the difference from **fee-based** — that term explicitly indicates both fees *and* commissions, which reintroduces the conflicts that fee-only aims to eliminate.
+
+## What to ask any advisor
+
+If you're interviewing advisors, a short, direct list:
+
+1. Are you a registered investment adviser, and are you acting as a fiduciary for me at all times?
+2. Are you compensated by anyone other than me? (Commissions, 12b-1 fees, revenue-sharing, referral fees.)
+3. What's your total all-in cost — advisory fee plus underlying fund expenses — as a percentage?
+4. Can I see your Form ADV, specifically the Brochure and Customer Relationship Summary?
+5. Who holds my money? (A good answer names a major independent custodian like Charles Schwab, Fidelity, or Pershing; a concerning answer names the advisor's own firm.)
+
+## The bottom line
+
+The fiduciary standard isn't a marketing phrase. It's a legal framework that defines whose interests come first. Knowing whether your advisor is held to it — and in which capacity — is one of the most consequential things you can learn about the relationship.
+
+If you'd like to talk through your current setup and whether the fit is right, [we're happy to have the conversation](/contact).
+
+---
+
+## When a Pilot Should Actually Move States (and When They Shouldn't)
+
+**Published:** 2024-10-18  ·  **Topics:** Pilots, Southwest Airlines, Tax Planning  ·  **URL:** https://www.wilcofin.com/articles/when-pilot-should-move-states
+
+*Many pilots have meaningful flexibility on where to live. Over a 25-year career, the difference between a no-tax state and a high-tax state can run into seven figures. Here's the realistic framework.*
+
+Few professions have as much flexibility on residency as commercial pilots. Your work is wherever the airplane is, your schedule lets you commute, and the tax implications of where you live are often the largest controllable variable in your financial life. Yet most pilots default to "I live where I lived when I got hired" without ever modeling the alternative.
+
+For pilots considering a move — or considering whether to consider it — here's the honest framework.
+
+## The math, in concrete terms
+
+Take a senior captain at a major airline making $400K/year, with another $40K/year of variable income. Roughly $440K of W-2 income.
+
+State income tax burden in selected states (rough effective rates after standard deductions):
+
+- **Tennessee, Florida, Texas, Nevada, Washington, South Dakota, Wyoming**: $0 (no state income tax)
+- **Arizona**: ~$11K
+- **Pennsylvania**: ~$13K
+- **Massachusetts**: ~$22K
+- **New York**: ~$28K
+- **California**: ~$40K (top brackets)
+
+Over 20 remaining career years, the difference between Tennessee and California for that pilot is roughly **$800K** — assuming flat income. Adjusted for compensation growth and reasonable returns on the saved tax, it crosses $1M comfortably.
+
+For the same career income.
+
+## Why this isn't more obvious to pilots
+
+Three reasons pilots underweight the residency decision:
+
+1. **They don't fully control where they fly from.** A pilot based in JFK isn't moving to Florida and commuting to JFK every trip — except, actually, many do. Commuting is a normal part of airline pilot life. Whether to commute is a separate decision from where to be domiciled.
+
+1. **They overweight commute pain.** Most senior pilots already dead-head, jumpseat, or commute to base. Adding 90 minutes of flight time isn't trivial but is often manageable for the tax savings.
+
+1. **They underestimate the tax difference.** Most know "no state income tax" exists. Few have done the actual math on their own income.
+
+## The cases where moving genuinely makes sense
+
+- **Senior pilots with 10+ years of high-earning career remaining.** The compounding tax savings dwarf the move costs.
+- **Pilots whose family circumstances allow flexibility.** No child in the middle of a great school they don't want to leave; spouse can work remotely or is in a profession that's portable.
+- **Pilots considering a property change anyway.** Bundling a state-of-residence change with a planned move is much easier than relocating purely for tax.
+- **Pilots whose spouse also has flexible work.** Two-earner households where both can be in a no-tax state amplify the benefit.
+- **Pilots near retirement.** Establishing residency in a no-tax state before retirement protects retirement income (pensions, IRA distributions, Social Security) from state tax for the rest of life.
+
+## The cases where it doesn't make sense
+
+- **Family stability is non-negotiable.** Mid-school-age children with strong roots, aging parents you actively support, etc. Tax matters but family doesn't move on a tax spreadsheet.
+- **Spouse has a non-portable career.** A surgeon, a tenured professor, or an executive whose role doesn't relocate cleanly. The household income matters more than the tax bill.
+- **Short remaining career horizon.** With 5 or fewer earning years left, the breakeven on moving costs and disruption is often unfavorable.
+- **You're early-career and your base assignments are still volatile.** Don't commit to a residency until you've stabilized at a base you intend to commute from for the foreseeable future.
+
+## What "moving" actually requires
+
+This is where pilots and their advisors most often get it wrong. Moving for tax purposes doesn't mean changing your mailing address or buying a vacation home. State revenue agencies — particularly aggressive ones like New York and California — challenge claimed residency changes when patterns suggest the move was a paper exercise.
+
+Establishing genuine domicile typically requires:
+
+- **Physical presence.** Spending a majority of nights in the new state, particularly the first year. Many states use the 183-day rule plus additional facts.
+- **Surrender of old state's driver's license; acquisition of new state's.**
+- **Vehicle registration change.**
+- **Voter registration change.**
+- **Updated estate documents** referencing the new state.
+- **Primary residence in the new state** (not just a rental).
+- **Bank, brokerage, and primary medical relationships moved (or established) in the new state.**
+- **Family / close personal relationships** anchoring you to the new state where possible.
+- **Documentation** — domicile audits look at calendar entries, credit card statements, EZ-Pass records, social media. The defense is documentation.
+
+A "we kept the New York apartment for the kids and bought a Florida condo" arrangement is the classic recipe for a domicile audit — and a losing one.
+
+## Tennessee specifically
+
+Tennessee is one of the most pilot-friendly states for tax purposes:
+
+- **No state income tax** on wages or retirement income (Hall Tax fully phased out)
+- **No estate tax** at the state level
+- **Generally favorable cost of living** (Nashville metro has appreciated, but vs. coastal cities still moderate)
+- **Multiple major airports** — BNA (Nashville), MEM (Memphis), TYS (Knoxville), CHA (Chattanooga) — and proximity to ATL, DFW, MCO for commuters
+- **Significant aviation community** including SWA bases (BNA), and a generally pilot-positive culture
+
+Wilco Financial is based here, and a meaningful number of our clients made the residency decision deliberately. We're happy to talk through whether it makes sense for you. The math should drive it, not vice versa — and the math is highly individual. [Reach out](/contact) if you want to model it.
+
+---
+
+*General educational information for airline pilots about state-of-residence planning. Specific decisions require analysis of your income, family situation, base assignments, and the tax laws of your current and prospective states. Domicile establishment is fact-intensive and audit-prone — coordinate with a tax professional familiar with multi-state issues before executing.*
+
+---
+
+## Trusts vs. Beneficiary Designations: The Quiet Conflict in Most Estate Plans
+
+**Published:** 2024-09-18  ·  **Topics:** Estate Planning  ·  **URL:** https://www.wilcofin.com/articles/trusts-vs-beneficiary-designations
+
+*Most households have both a trust and a stack of beneficiary designations. The two often disagree — and the beneficiary form wins. Here's how to make them work together.*
+
+When an estate attorney drafts a trust for you, they generally do excellent work on the trust itself. What gets less attention — and is often where the plan fails — is the **coordination between the trust and the beneficiary designations** on your retirement accounts, insurance policies, and other non-probate assets.
+
+The mismatch is so common, and so consequential, that we make it the first thing we look at when we onboard a new client.
+
+## The structural problem
+
+A revocable living trust controls assets that have been **titled in the name of the trust**. Your house, your taxable brokerage account, your business interests — once retitled, they pass according to the trust document.
+
+But many of the largest assets in a typical estate cannot be retitled to a trust:
+
+- **401(k) and 403(b) accounts** — IRS rules require the participant be an individual; cannot be owned by a trust during life
+- **IRAs (Traditional and Roth)** — same; titled to the individual
+- **Life insurance** — owned by the individual or, occasionally, by an irrevocable life insurance trust set up specifically for that purpose
+- **Annuities**
+
+For these, the **beneficiary designation form controls who inherits the asset**, regardless of what the trust says.
+
+So most households end up with two parallel inheritance systems:
+
+1. The trust (controlling the house, taxable accounts, etc.)
+2. Beneficiary designations (controlling retirement accounts, insurance, annuities)
+
+If they're not coordinated, they fight each other.
+
+## The common conflicts we see
+
+**The trust says "everything to my children equally" but the IRA names the spouse as primary and the children equally as contingent.** At the surviving spouse's death, the contingent kicks in — but maybe one child has predeceased, or has divorced badly, or has special needs. The trust would have handled all of those scenarios elegantly. The beneficiary form doesn't.
+
+**The trust includes a special needs provision for one beneficiary, but the IRA names that beneficiary directly.** Direct inheritance disqualifies them from means-tested government benefits. Years of trust drafting effort, wiped out by a paper form.
+
+**The trust uses a generation-skipping provision to benefit grandchildren, but the IRA names the children directly.** Grandchildren get nothing from the IRA portion. The estate plan's central strategy is partially defeated.
+
+**The trust is structured to avoid probate, but the IRA names "my estate" as beneficiary.** The IRA goes through probate anyway, and now it's a non-spouse-inherited IRA with the worst possible distribution rules.
+
+## Why the trust usually wins for some assets, the beneficiary form for others
+
+There's a real strategic question of whether to name the trust as the beneficiary of retirement accounts. The tradeoff:
+
+**Naming an individual (spouse, child) directly:**
+
+- ✓ Better tax outcome (spouse can roll into own IRA; child gets the 10-year stretch)
+- ✓ Simpler administration
+- ✗ No control after the inheritance — if the inheritor is bad with money, has creditor issues, etc., there's no protection
+- ✗ Subsequent inheritances may not follow your wishes (e.g., child remarries and the new spouse inherits)
+
+**Naming a trust as beneficiary:**
+
+- ✓ Continued control through trustee
+- ✓ Asset protection from beneficiary's creditors and divorces
+- ✓ Coordinated with rest of estate plan
+- ✓ Special needs and minor-child provisions handled
+- ✗ More complex tax treatment — the SECURE Act significantly tightened the rules for trusts inheriting IRAs
+- ✗ Requires a properly drafted "see-through trust" or a conduit/accumulation trust depending on goals
+- ✗ Loses some flexibility for the beneficiary
+
+Neither answer is right in all cases. The right answer is **coordinated** — the same person sees both the trust language and the beneficiary form, and decides for each asset which approach makes more sense.
+
+## The SECURE Act problem
+
+In December 2019, the SECURE Act fundamentally changed how inherited IRAs distribute. Before SECURE: most non-spouse beneficiaries could "stretch" distributions over their own life expectancy (often 30+ years), maximizing tax-deferral. After SECURE: most non-spouse beneficiaries must fully distribute the inherited account within 10 years.
+
+The implication: many trusts drafted before December 2019 were designed around the old stretch rules. After SECURE, those same trusts can produce *worse* tax outcomes than naming an individual directly — or in some cases, force full distribution within 5 years (a more punitive option than the standard 10).
+
+If your trust was drafted before 2020 and names retirement accounts as beneficiaries, it should be reviewed for SECURE compliance. Many haven't been.
+
+## What a coordinated review looks like
+
+When we look at a client's estate plan, the workflow is:
+
+1. **Inventory every account that has a beneficiary form.** Pull current designations.
+2. **Read the trust(s) and the will.** Understand the intended distribution.
+3. **For each asset, decide: trust or individual?** Based on tax, control, and asset-protection considerations.
+4. **For trust beneficiaries, confirm SECURE compliance.** If the trust was drafted pre-2020 and hasn't been updated, flag for the estate attorney.
+5. **Update each beneficiary form** to align with the decision. Confirm receipt with each custodian.
+6. **Document the rationale.** A short memo to file explaining why each asset was designated as it was. Helpful for future reviews and for executors.
+7. **Re-review at every life event** — marriage, divorce, birth, death, major asset change.
+
+This is one of those quiet planning items that does real work without ever showing up on a quarterly statement. The cost of not doing it shows up at exactly the moment it can no longer be fixed.
+
+If you have a trust and you can't immediately tell us how each of your retirement accounts and insurance policies is designated to interact with it, [we should talk](/contact).
+
+---
+
+*General educational information about estate plan coordination. Specific trust and beneficiary decisions require coordination with your estate attorney and tax advisor. Tax rules for inherited retirement accounts have changed significantly under the SECURE Act of 2019 and SECURE 2.0 of 2022 — older trusts may need updates.*
+
+---
+
+## Loss-of-License Insurance for Pilots
+
+**Published:** 2024-08-18  ·  **Topics:** Pilots, Southwest Airlines  ·  **URL:** https://www.wilcofin.com/articles/pilot-loss-of-license
+
+*What LOL coverage actually pays, what SWAPA provides, and the outside coverage decisions that matter most for pilots at peak earning years.*
+
+A pilot's most valuable asset isn't their portfolio — it's their medical certificate. Lose the certificate, lose the career. For pilots in peak earning years, a medical event that permanently disqualifies them from flying is a catastrophic financial risk that shouldn't be left to group coverage alone. Here's how to think about **loss-of-license (LOL) insurance** and how it integrates with the broader planning picture.
+
+## What LOL insurance actually is
+
+Loss-of-license coverage is a specialized form of disability insurance. Unlike standard "own-occupation" disability, which pays when you can't perform the essential duties of your occupation, LOL pays specifically when a **regulatory medical disqualification** prevents you from flying — even if you're physically capable of many other types of work.
+
+A pilot who loses a first-class medical due to a cardiac event, neurological diagnosis, or a mental-health condition may be fully able to drive, work an office job, or run a business — but can no longer fly for an airline. LOL coverage is designed for exactly that scenario.
+
+## What SWAPA provides
+
+Southwest Airlines Pilots Association offers a loss-of-license benefit as part of membership. The specifics — benefit amount, waiting period, payout structure (lump sum vs. monthly), and term — are determined by SWAPA's current program. Every pilot should know three things about their SWAPA coverage:
+
+1. **Monthly or lump-sum benefit amount.** What does it actually pay?
+2. **Duration of benefits.** Until age 65? For a fixed number of years? Lump sum and done?
+3. **How it interacts with Social Security disability.** Some coverages offset, some don't.
+
+These details matter. A $500,000 lump-sum LOL benefit is meaningful, but it's not the same as a 15-year monthly stream, and the right supplemental coverage depends on which structure applies.
+
+## Where outside coverage becomes important
+
+For pilots at the upper end of the career income curve — widebody captains, senior narrowbody captains at major carriers — the gap between SWAPA group coverage and actual income replacement needs can be substantial. Common situations where supplemental individual coverage is worth evaluating:
+
+- **Household income heavily dependent on pilot salary.** Single-earner or near-single-earner families.
+- **Pre-retirement pilots with high fixed expenses.** Younger children, active mortgage, kids still in college.
+- **High debt levels that would outlive the group benefit period.**
+- **Meaningful charitable or family financial commitments that rely on continued income.**
+
+Individual long-term disability policies with **own-occupation riders** for commercial pilots are underwritten by a handful of specialty carriers. Coverage amounts, waiting periods, and benefit periods are customizable. The policies aren't cheap — a $15,000/month benefit to age 65 for a 40-year-old captain can run $4,000–$8,000/year — but they're paid with after-tax dollars and pay out tax-free, which effectively doubles the coverage.
+
+## What to actually evaluate
+
+For most pilots, the right analysis is sequenced:
+
+1. **Calculate total expected career earnings remaining.** Gross income × years to Age 65.
+2. **Subtract what's already earned and saved.** Assets, pensions, non-pilot income streams.
+3. **Estimate post-loss expenses honestly.** Most pilots' post-loss spending doesn't drop as much as financial plans assume — kids still go to college, houses still have mortgages, the family still wants to vacation.
+4. **Identify the gap.** This is the amount that should be insured.
+5. **Compare SWAPA coverage against the gap.** If SWAPA covers 60% and the gap is the full thing, supplemental coverage fills the other 40%.
+6. **Shop individual policies** — get quotes from at least three specialty carriers. Material price differences are common.
+
+## The cost of underinsuring vs. overinsuring
+
+Underinsurance is obvious: an LOL event wipes out the plan. Overinsurance is less obvious but real — paying $8,000/year for coverage you don't actually need costs $200,000+ over 25 years that could have compounded elsewhere.
+
+The right answer varies by pilot age, household structure, and assets. A 60-year-old with $3M in retirement accounts, an inherited house, and working-age kids likely needs far less supplemental LOL coverage than a 38-year-old with young children, a recent upgrade, and a growth-stage savings balance.
+
+## Where it fits in a financial plan
+
+LOL coverage is risk management, not investment. Its purpose is to prevent a low-probability, high-impact event from derailing the plan. Done right, it's a line item you forget about — you pay the premium, you fly healthy, you never use it. Done wrong — either absent when needed, or paying for coverage that overlaps what SWAPA already provides — it's a silent drag on a financial plan that's otherwise well constructed.
+
+For a meaningful piece of a family's financial security, it deserves a review every 3–5 years, at every major life change (marriage, children, home purchase, debt payoff), and before any big-ticket medical concern emerges.
+
+If you want help evaluating whether your current LOL coverage is adequate — and whether SWAPA's benefits leave a gap worth filling — [get in touch](/contact).
+
+---
+
+*General information for airline pilots. Not insurance advice or a recommendation of specific policies. Individual coverage decisions should be made in consultation with a licensed insurance professional after reviewing current SWAPA benefits and your personal situation.*
+
+---
+
+## Social Security for Two-Earner Households: The Coordination That Saves Six Figures
+
+**Published:** 2024-07-18  ·  **Topics:** Retirement  ·  **URL:** https://www.wilcofin.com/articles/social-security-two-earners
+
+*When both spouses worked, Social Security claiming becomes a coordination problem. The right strategy depends on the income gap, age gap, and health expectations — and the wrong default can cost a household hundreds of thousands.*
+
+Single-earner Social Security claiming is straightforward: model the breakeven, weigh longevity against immediate cash, pick a date. Two-earner Social Security is meaningfully harder, and most households don't optimize it. The difference between a coordinated strategy and the default "we'll both claim at full retirement age" is routinely six figures over a household's lifetime.
+
+Here's the framework.
+
+## The four claiming variables
+
+Each spouse independently has a claiming decision. The key inputs:
+
+1. **Each spouse's own benefit at Full Retirement Age (FRA)** — the "primary insurance amount" or PIA
+2. **The age gap between spouses**
+3. **Health and life-expectancy expectations** for each spouse
+4. **Other income sources** that might fill or not fill the early-retirement years
+
+What most households don't realize is that **survivor benefits are based on the higher earner's claiming age, not their PIA**. If the higher earner delays to age 70, the surviving spouse — whoever that turns out to be — receives that higher delayed amount for the rest of their life.
+
+## The dominant strategy for most households
+
+For a typical two-earner household where one spouse earned meaningfully more than the other (the common case):
+
+**Higher-earning spouse: delay to age 70.**
+- This maximizes both their own benefit and the eventual survivor benefit
+- Even if the higher earner doesn't live long enough to "break even" on the delay personally, the surviving spouse benefits for the rest of their life
+
+**Lower-earning spouse: claim earlier, often at FRA or even age 62**
+- Provides early household income while the higher earner waits
+- Their own benefit is permanent for their life
+- At the higher earner's eventual death, the lower earner switches to the survivor benefit (which is higher than their own benefit)
+
+This pattern — delay the higher, claim the lower earlier — is the right answer surprisingly often. Not always, but it should be the default starting point for the modeling.
+
+## Why "we'll both claim at FRA" is usually wrong
+
+Defaulting both spouses to claiming at Full Retirement Age (66–67 depending on birth year) leaves real money on the table for two reasons:
+
+1. **The higher earner's delay credits.** From FRA to 70, the benefit grows 8% per year — roughly a 24%–32% lifetime increase, plus inflation. That's a guaranteed real return that's hard to beat in any portfolio.
+2. **The survivor benefit ratchet.** If the higher earner claims at FRA and dies at 75, the surviving spouse is locked into the FRA benefit for the rest of life. If the higher earner had delayed to 70, the surviving spouse gets the larger amount for life.
+
+For households where the higher earner has reasonable health, delaying is almost always the right call.
+
+## When to deviate from the default
+
+Several scenarios where the standard "delay the higher" doesn't apply:
+
+**Higher earner has serious health concerns.** If life expectancy is below the breakeven (typically mid-80s for the standard analysis), claiming earlier can be the right move — particularly if the lower earner has independently strong benefits or other income sources.
+
+**Lower earner has substantially higher benefits than expected** because of their own work history. Sometimes the "lower earner" actually has comparable benefits, and the calculus shifts.
+
+**Significant age gap.** A 15-year age gap between spouses changes everything. Survivor planning becomes the dominant consideration.
+
+**Strong other income sources** (pension, real estate, business sale proceeds). If the household doesn't need the lower spouse's Social Security for current cash flow, both spouses might delay.
+
+**Poor health on both sides.** Less common but happens. Earlier claiming can be the right answer.
+
+## The tax interaction
+
+Social Security taxation is calculated based on "provisional income" — a formula that includes other income plus 50% of Social Security benefits. The thresholds:
+
+- Below ~$32K (married filing jointly): 0% of benefits taxable
+- $32K–$44K: up to 50% of benefits taxable
+- Above $44K: up to 85% of benefits taxable
+
+For households doing [Roth conversions](/articles/roth-conversion-decade) in early retirement, the conversion income raises provisional income, which can push more Social Security into the taxable column. The interaction:
+
+- Heavy Roth conversion years often pair best with claiming Social Security later (so it's not also being taxed)
+- Years claiming Social Security pair best with smaller (or zero) Roth conversions
+
+Coordinating claiming with conversion strategy is one of the most underweighted moves in retirement planning.
+
+## The decision framework
+
+For every two-earner household, the modeling should consider:
+
+1. What's each spouse's FRA benefit?
+2. What's the breakeven age for delaying each spouse from FRA to 70?
+3. What's the household cash flow need from age 62 to 70?
+4. What are the realistic life expectancies for each spouse?
+5. How does each claiming combination interact with [Roth conversions](/articles/roth-conversion-decade), [IRMAA](/articles/qcds-explained), and other tax planning?
+
+A good plan models multiple scenarios and stress-tests against early death of either spouse. The right answer often emerges clearly once the math is laid out.
+
+For most two-earner households that haven't done this analysis, the change in claiming strategy alone — without changing anything else — is worth six figures over the household's lifetime.
+
+If you and your spouse are within 5 years of claiming and haven't done the analysis, [we'd be glad to model it for you](/contact).
+
+---
+
+*General educational information about Social Security claiming for two-earner households. Specific decisions depend on each spouse's earnings record, ages, health, and other income sources. Coordinate with a financial planner and review the latest SSA guidance before claiming.*
+
+---
+
+## All-In Cost: How to Read Your Advisor's Fee Stack
+
+**Published:** 2024-06-18  ·  **Topics:** Fees, Working With Advisors  ·  **URL:** https://www.wilcofin.com/articles/all-in-cost
+
+*The advisory fee on the proposal is usually only one layer of what you're paying. A straightforward method for calculating your real all-in cost — and what a reasonable number looks like.*
+
+If someone asks you what your financial advisor charges, you probably quote the advisory fee — 0.85%, 1.0%, 1.25%, whatever it is. That number is usually only a fraction of what you're actually paying. The gap between headline fee and **all-in cost** can easily exceed another full percentage point per year, and over a long investing horizon, one percentage point is a career-changing amount of money. Here's how to actually calculate it.
+
+## The layers
+
+Every dollar you invest passes through one or more of these layers. Each takes a small cut, and the cuts compound:
+
+**Layer 1 — Advisory fee.** The headline number. The advisor's (or firm's) charge for managing your account. Typical range: 0.25%–1.5% per year. Usually billed quarterly.
+
+**Layer 2 — Underlying fund expense ratios.** Every mutual fund and ETF you hold has its own expense ratio, deducted from the fund's returns before you ever see them. Passive index ETFs: 0.03%–0.10%. Actively managed funds: 0.50%–1.25%. Alternative or multi-strategy funds: 1.5%–3%+ (sometimes with additional performance fees).
+
+**Layer 3 — Platform or wrap fees.** Some advisory arrangements include a separate "platform," "wrap," or "custodial" fee — an infrastructure surcharge on top of the advisory fee. Typical range: 0.10%–0.50%.
+
+**Layer 4 — Transaction costs.** Historically significant, mostly vanished for ETFs and stocks at major custodians (Charles Schwab, Fidelity, etc. charge $0). Still present for some mutual fund share classes ($20–50 per trade) and embedded in bond bid-ask spreads.
+
+**Layer 5 — Commissions and loads.** If your advisor sells commissioned products — A-share mutual funds with front-end loads, annuities, insurance — the commission is typically 3%–8% of the amount invested, paid once, taken out of principal. Trail commissions on annuities continue annually.
+
+## A real-world calculation
+
+Let's compare two portfolios, both $1,000,000.
+
+**Portfolio A — fee-based firm, actively managed funds:**
+
+| Layer | Cost | |---|---| | Advisory fee | 1.00% | | Weighted fund expense ratios (actively managed) | 0.75% | | Platform/wrap fee | 0.15% | | **All-in** | **1.90%** |
+
+Annual dollar cost: **$19,000.**
+
+**Portfolio B — fee-only RIA, low-cost index ETFs:**
+
+| Layer | Cost | |---|---| | Advisory fee | 0.85% | | Weighted fund expense ratios (index ETFs) | 0.08% | | Platform/wrap fee | 0 | | **All-in** | **0.93%** |
+
+Annual dollar cost: **$9,300.**
+
+The difference is **$9,700/year — 0.97% annually**. Compounded at a 7% real return over 20 years, that's roughly **$490,000** in foregone wealth. Over 30 years, closer to **$900,000**.
+
+## How to calculate yours
+
+1. **Pull your last statement.** List every holding with its ticker or identifier.
+2. **Look up the expense ratio of each.** Morningstar, the fund company's website, or the prospectus all show it.
+3. **Weight by portfolio percentage.** Sum `weight × expense_ratio` across all holdings. That's your blended fund expense ratio.
+4. **Add the advisory fee** — from your fee schedule, not just the marketing page.
+5. **Ask your advisor, in writing, whether there are any platform, wrap, custodial, or administrative fees** beyond the advisory fee.
+6. **Identify any commissioned products** — annuities, insurance-wrapped investments, A-share funds. Get the commission schedule.
+
+Your all-in cost is the sum.
+
+## What's a reasonable number?
+
+For a typical diversified investor working with a full-service fiduciary advisor managing an IRA + taxable account using low-cost ETFs, **all-in costs under 1.0%** are achievable and common. Under 0.75% is possible for larger balances with tiered fee schedules.
+
+All-in costs of 1.5%–2.0% are not inherently wrong — complex situations (concentrated stock management, multi-entity structures, private investments, estate coordination) can justify more — but they should come with a clear articulation of what the additional cost buys.
+
+All-in costs above 2.0% deserve real scrutiny. At that level, the math starts requiring meaningfully above-benchmark returns just to break even with a lower-cost alternative, and above-benchmark returns are, on average, not delivered.
+
+## The disclosure tell
+
+An advisor who hands you a clear, one-page summary of all five layers with specific numbers is demonstrating a particular kind of confidence. An advisor who says "let's focus on performance, not costs" is telling you something else entirely.
+
+## Wilco's all-in
+
+For context: our advisory fee is **0.85% per year** of assets under management. There are no platform fees, no commissions, no product kickbacks, no wraps. We use low-cost ETFs with weighted expense ratios typically in the 0.05%–0.15% range. Most clients' all-in cost works out to **under 1.0% annually**, with the underlying fund costs being substantially less than a typical active-management arrangement.
+
+If you want help calculating yours, [we're happy to run the math](/contact) — no pressure, no sales pitch.
+
+---
+
+## The SWA 401(k) Decision: Pre-Tax, Roth, or After-Tax?
+
+**Published:** 2024-05-18  ·  **Topics:** Pilots, Southwest Airlines, Tax Planning, Roth, Retirement  ·  **URL:** https://www.wilcofin.com/articles/swa-profit-sharing-decision
+
+*Southwest Airlines pilots and employees with access to all three contribution buckets face a real planning question every year. The right mix depends on age, income, marginal bracket, and what comes next.*
+
+Southwest Airlines' 401(k) plan, like many institutional plans, offers three contribution buckets: **traditional pre-tax**, **Roth**, and (where the plan allows) **after-tax** contributions that can be converted to Roth via the in-plan mega-backdoor mechanism. For SWA pilots and employees with the income and the discipline to fill multiple buckets, the question of how to split annual contributions is one of the highest-leverage planning decisions you face every year.
+
+There's no single right answer. Here's how to think about it.
+
+## The three buckets, briefly
+
+**Pre-tax (Traditional 401(k))**: Contributions reduce current taxable income. Money grows tax-deferred. Withdrawals in retirement taxed as ordinary income. Subject to RMDs at age 73 (or 75 depending on birth year).
+
+**Roth 401(k)**: Contributions made with after-tax dollars (no current deduction). Money grows tax-free. Qualified withdrawals fully tax-free in retirement. Subject to RMDs in the 401(k); easily rolled to a Roth IRA at separation/retirement to escape RMDs entirely.
+
+**After-tax (mega-backdoor mechanism)**: Contributions beyond the standard $23K (2024) elective deferral limit, up to the IRS 415(c) overall limit ($69K in 2024), made with after-tax dollars. When the plan allows in-plan Roth conversions, these convert immediately to Roth treatment — effectively adding tens of thousands of additional Roth space per year. See [The Backdoor Roth and Mega-Backdoor Roth, Explained](/articles/backdoor-roth-explained).
+
+The first $23K of your contributions can go to pre-tax, Roth, or any mix of the two — your choice. Above that, anything additional has to be after-tax, and is only useful if your plan permits the in-plan conversion.
+
+## The framework
+
+The decision turns on one core question: **is your tax rate higher today, or will it be higher in retirement?**
+
+If the answer is "higher today" → favor pre-tax. The deduction is more valuable now than later.
+
+If the answer is "higher in retirement" → favor Roth. Pay the tax now at a lower rate; harvest tax-free growth later at a higher rate.
+
+If the answer is "about the same" → Roth is usually still preferred because of the optionality benefits (no RMDs, easier estate planning, hedging against future tax law changes).
+
+## Why pilots are usually closer to "Roth" than they think
+
+The standard intuition is "I'm in a high bracket now; I'll be in a lower bracket in retirement; therefore pre-tax." For a typical retiree, that's usually right.
+
+For a senior pilot at SWA, it's often wrong. Three reasons:
+
+1. **You're going to retire on a lot.** A senior captain with 20+ years of full-deferral 401(k) plus profit-sharing contributions, plus other savings, is going to retire with seven figures in pre-tax accounts. Required minimum distributions on a $3M pre-tax balance at age 73 will be approximately $113K/year — and growing. Add Social Security and any taxable account income, and you're not in a low bracket in retirement.
+
+1. **Tax rates are historically low.** Federal marginal rates above 24% used to be much higher. The 2017 Tax Cuts and Jobs Act dropped them, and those provisions are scheduled to sunset (currently set for end of 2025, though Congressional action may extend them). The bet that "rates will be lower when I retire" is a bet on continued low rates over decades — not historically a great bet.
+
+1. **You have a fixed retirement age.** [FAA Age 65](/articles/swa-pilot-retirement-essentials) is a hard stop. You don't have the option to "just keep working a bit longer if I need to." Roth dollars give you flexibility — they're not subject to RMDs, they don't push you into IRMAA brackets, they don't make Social Security more taxable.
+
+For most pilots in their final 10–15 career years with a substantial pre-tax balance already accumulated, the marginal next dollar should generally go to Roth. The first $23K elective deferral split should lean Roth-heavy.
+
+## When pre-tax is still right
+
+Several scenarios where pre-tax remains the better answer:
+
+**Early-career pilots with low pre-tax balances.** The compounding asymmetry hasn't kicked in yet. The current deduction is more valuable than the marginal future tax difference.
+
+**Single-earner households at the top of the 32% bracket where retirement spending will be significantly lower.** True for some pilots, false for many.
+
+**Households with strong charitable plans.** Pre-tax dollars in a traditional IRA can later be distributed as [QCDs](/articles/qcds-explained) — completely tax-free. Households planning meaningful charitable giving after age 70½ should preserve some pre-tax balance specifically for QCD use.
+
+**Households where current cash flow is tight.** A pre-tax contribution costs less out of pocket because it reduces current taxes. If the alternative is contributing less, pre-tax may be the right tradeoff.
+
+## The mega-backdoor Roth question
+
+If your SWA plan allows after-tax contributions with in-plan Roth conversions (verify with HR), this is one of the most valuable wealth-building features available to high earners. The math:
+
+- Standard elective deferral limit: $23K (2024)
+- Plus profit sharing contributions from SWA
+- Plus your additional after-tax contributions, up to the 415(c) limit of $69K total
+
+For a high-earning senior pilot with the cash flow to fund it, after-tax contributions converted to Roth can add $20K–$40K of Roth balance per year — for 10+ years, that's a quarter million or more in additional tax-free retirement assets.
+
+The catch: requires the plan to allow it (most major-airline plans do but verify), requires you to actually have the cash flow above other obligations, and requires you to execute the in-plan conversion promptly before significant earnings accrue on the after-tax basis.
+
+## The annual decision
+
+For most senior pilots we work with, the framework looks something like:
+
+1. **First $23K of elective deferral:** Roth-leaning (often 80–100% Roth) for late-career; mixed (~50/50) for mid-career.
+2. **Profit-sharing contributions:** Goes into pre-tax automatically (you don't choose).
+3. **After-tax contributions (if plan allows and cash flow supports):** Maximize. Convert to Roth in-plan immediately.
+4. **Plus a Backdoor Roth IRA** outside the plan: $7K/year (2024 limit; spouse can do their own).
+
+This combination, executed annually, can build $40K–$80K of new Roth space per year for a high-earning pilot — without sacrificing pre-tax planning entirely.
+
+Every pilot's situation is different. The right split this year may not be the right split next year. The discipline of revisiting it annually is what compounds.
+
+If you'd like to model what your retirement balance looks like under different contribution mixes for the rest of your career, [we'd be glad to do it](/contact).
+
+---
+
+*General educational information for SWA pilots and employees about 401(k) contribution strategy. Plan specifics including the availability of after-tax contributions and in-plan conversions vary; verify with HR. IRS contribution limits change annually. Specific decisions require analysis of your tax situation, retirement timeline, and goals — coordinate with a tax professional.*
+
+---
+
+## A Southwest Airlines Pilot's Retirement Planning Essentials
+
+**Published:** 2024-04-18  ·  **Topics:** Southwest Airlines, Pilots, Retirement  ·  **URL:** https://www.wilcofin.com/articles/swa-pilot-retirement-essentials
+
+*The retirement-planning items every SWAPA-represented Southwest Airlines pilot should be thinking about — from Age 65 to the 401(k) to state-of-residence planning.*
+
+A career at Southwest Airlines — especially as a SWAPA-represented pilot — comes with a retirement picture unlike most professions. The FAA's Age 65 mandatory retirement puts a hard date on the calendar. Variable monthly pay adds complexity to savings discipline. And a handful of decisions made in the final decade of flying can meaningfully reshape what you leave the career with.
+
+This is a short tour of the items we think every SWA pilot should have a view on — not exhaustive, not tax advice, just a starting map.
+
+## The Age 65 backstop
+
+Most careers end when someone decides to end them. For pilots, the FAA decides — and the backstop is firm. That changes the planning calculus in several ways:
+
+- **The asset allocation glide path is non-negotiable.** You cannot "just keep working a few more years" if the market disappoints late in your career. Your portfolio needs to be ready when the calendar says you're done.
+- **Roth conversions have a narrower window.** The gap between retirement and age 73 (current RMD age) is where most conversion value lives. Planning backward from Age 65 gives you a ~8-year window to execute.
+- **Pension-style thinking applies even without a pension.** Predictability matters. Many pilots treat their 401(k) and profit-sharing like a defined-contribution pension — and structure withdrawals with the same income-replacement discipline.
+
+## The 401(k) and profit-sharing plan
+
+Southwest's 401(k) includes an employer match and profit-sharing contributions. The total employer plus employee contributions can push against the IRS 415(c) limit ($69,000 in 2024, rising to $70,000 in 2025, plus catch-up) in strong earning years. A few practical points:
+
+- **Where Roth 401(k) is available, the question is usually "how much, not whether."** For a late-career pilot in a high tax bracket, traditional deferrals often win in a vacuum — but tax diversification (having both pre-tax and Roth buckets) is worth something too.
+- **The mega-backdoor Roth strategy** applies where the plan permits after-tax contributions and in-plan conversions. This can be a meaningful additional Roth savings vehicle.
+- **Coordinate with your outside accounts.** Your 401(k) isn't an island. The asset mix inside it should work with your IRAs, brokerage, and spouse's accounts — not independently.
+
+## Variable income, consistent saving
+
+Bid lines, overrides, overtime, and commuting realities make airline income highly variable month to month. Some approaches that work:
+
+- **Save to a percentage of gross, not an absolute dollar amount.** That way good months do more, and lean months still do something.
+- **Automate the maximum.** Many pilots hit the IRS elective-deferral limit early in the year. Planning the flow — and not overshooting the match window — matters.
+- **Keep a robust cash buffer.** Variable income + a job where "loss of license" is a real risk = more months of expenses than the standard 3-6 month rule suggests.
+
+## State of residence
+
+Many pilots have meaningful optionality on where to domicile. Over a career, the difference between a no-income-tax state and a high-tax state is measured in six to seven figures. This isn't about gaming — it's about making an intentional decision rather than letting it happen by accident.
+
+A few caveats:
+
+- **Domicile is about more than mailing address.** It's where you have your primary residence, where you vote, where your car is registered, where your kids go to school, where you spend the majority of your time.
+- **State rules differ.** Some states are more aggressive than others about asserting residency.
+- **Pension and withdrawal taxation varies.** Some states tax retirement income heavily. Others don't.
+
+Tennessee, where Wilco Financial is based, has no state income tax on wages (and no state income tax at all, after the final phase-out of the Hall Tax). For pilots who live or are considering living in TN, this alone can be a significant planning factor.
+
+## Loss of license and disability
+
+SWAPA provides loss-of-license benefits for its members. Outside disability coverage can supplement those — especially for high earners where the group coverage doesn't fully replace income. A few planning questions:
+
+- Is your coverage adequate for the real income level you've achieved?
+- How does group disability interact with your own policies?
+- What's the plan if you medical-out in your mid-50s versus your early 60s?
+
+## Social Security and the "high earner" curve
+
+For peak-earning pilots, Social Security benefits look small relative to income — but they're still a meaningful, inflation-protected, lifetime income stream. Key decisions:
+
+- **When to claim** — 62, Full Retirement Age, or 70. For most high earners with reasonable health, delaying pays off.
+- **Spousal strategies** — particularly when there's a large earnings gap between spouses.
+- **Coordination with the Age 65 retirement date** — Social Security doesn't automatically match your calendar.
+
+## The bigger picture
+
+None of this is a plan by itself. A plan is the exercise of laying all of it — the 401(k), the IRAs, Social Security, state-of-residence, insurance, estate structure, and what you actually want out of retirement — on the same page, and then making informed tradeoffs.
+
+If you want to talk through yours, we'd be glad to. [Schedule a call](/contact).
+
+---
+
+*This article is general information for SWA pilots and does not constitute personalized tax, legal, or investment advice. Plan specifics, IRS limits, and contract terms change over time — we keep this article current but it should not be relied on as the sole source of truth for decisions.*
+
+---
