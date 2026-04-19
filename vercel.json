@@ -34,5 +34,11 @@
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/monthly-summary",
+      "schedule": "0 13 25 * *"
+    }
   ]
 }
