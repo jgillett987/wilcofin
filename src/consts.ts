@@ -46,8 +46,8 @@ export const SOCIAL = {
 //   Ahrefs (optional): if/when you set up Webmaster Tools.
 // Leave empty strings for ones you haven't claimed yet.
 export const VERIFICATION = {
-  google: '',
-  bing: '',
+  google: '', // Verified via DNS (Domain property), no meta tag needed.
+  bing: 'CC9623C1457EE65FE1671AEDD039447B',
 } as const;
 
 export const NAV = [
