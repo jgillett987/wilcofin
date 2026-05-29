@@ -73,10 +73,10 @@ const contactSchema = {
 
         {/* Shown after a successful submission. Replaces the form in place. */}
         <div id="contactSuccess" class="card" style="display:none;" role="status" aria-live="polite">
-          <h3 style="margin-top:0;">Thanks — message received.</h3>
-          <p>You'll hear back within one business day, typically much sooner.</p>
-          <p style="margin-bottom:0;">Want to move faster? You can put a time on the calendar right now:</p>
-          <p style="margin-top:16px;">
+          <h3 style="margin-top:0;">Thank you.</h3>
+          <p>Your message has been received. You'll hear back within one business day.</p>
+          <p style="margin:24px 0 12px; color:var(--muted); font-size:0.95rem;">Or schedule a time directly:</p>
+          <p style="margin:0;">
             <a href={CONTACT.calendlyUrl} class="btn btn-primary" target="_blank" rel="noopener">Schedule a Meeting</a>
           </p>
         </div>
