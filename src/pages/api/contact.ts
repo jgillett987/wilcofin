@@ -18,6 +18,58 @@ const json = (data: unknown, status = 200) =>
     headers: { 'Content-Type': 'application/json' },
   });
 
+/**
+ * Returns a short reason string if the submission has strong spam
+ * signals — false-positive-resistant heuristics tuned for the kind of
+ * random-consonant-cluster bots that hit small contact forms. Returns
+ * null for legitimate-looking submissions.
+ */
+function looksLikeSpam(args: { name: string; email: string; message: string; phone: string }): string | null {
+  const m = args.message.toLowerCase();
+  const lettersOnly = m.replace(/[^a-z]/g, '');
+
+  // 1. Vowel ratio. Real English averages 35-45% vowels per letter.
+  // Random consonant strings sit below 25%. Apply only on substantial
+  // messages so a real one-liner ("ok?") doesn't trip it.
+  if (lettersOnly.length >= 40) {
+    const vowels = (lettersOnly.match(/[aeiouy]/g) || []).length;
+    const vowelRatio = vowels / lettersOnly.length;
+    if (vowelRatio < 0.22) return 'low-vowel-ratio';
+  }
+
+  // 2. Single tokens longer than 22 chars. Real English caps around
+  // ~18 chars except for chemical compounds. Bots produce words like
+  // "YyErjcwdkdjwjjwjjdwjddjwsjf".
+  const tokens = m.split(/\s+/).filter(Boolean);
+  if (tokens.some((t) => t.length > 22)) return 'over-long-token';
+
+  // 3. Embedded mention of our own domain inside the message body —
+  // a common bot tell where they paste the target URL into the
+  // text field. (Legitimate prospects don't write "wilcofin.com"
+  // back at us inside the message.)
+  if (/\bwilcofin\.com\b/i.test(args.message)) return 'self-domain-mention';
+
+  // 4. Long run of repeating characters ("aaaaa", "wwwww") — gibberish
+  // or keyboard mash.
+  if (/(.)\1{4,}/.test(m)) return 'repeated-chars';
+
+  // 5. Substantial message with zero spaces — bots that smash random
+  // text without punctuation.
+  if (args.message.length > 60 && !args.message.includes(' ')) return 'no-spaces';
+
+  // 6. Name field that looks bot-generated. Real names: usually 2+
+  // tokens, mostly letters. Bots: random strings like "GeraldTek".
+  // We don't reject single-word names (people legitimately use them),
+  // but we flag a name that has zero vowels.
+  const nameLetters = args.name.replace(/[^a-zA-Z]/g, '').toLowerCase();
+  if (nameLetters.length >= 6) {
+    const nv = (nameLetters.match(/[aeiouy]/g) || []).length / nameLetters.length;
+    if (nv < 0.15) return 'low-vowel-name';
+  }
+
+  return null;
+}
+
 export const POST: APIRoute = async ({ request }) => {
   // Resolve API key at call time (not at module load) so builds without
   // the secret still compile; only requests at runtime require it.
@@ -73,6 +125,17 @@ export const POST: APIRoute = async ({ request }) => {
   if (!message || message.length > 8000)
     return json({ ok: false, error: 'Please include a message.' }, 400);
   if (phone.length > 40) return json({ ok: false, error: 'Phone number is too long.' }, 400);
+
+  // Heuristic spam filter — catches the random-consonant-cluster bots
+  // that fill the form with gibberish to bypass simple validation.
+  // Returns a "spam" signature label if any signal trips; logged server-
+  // side so we can audit false positives. Response to the client is
+  // still ok:true so the bot thinks it succeeded.
+  const spamReason = looksLikeSpam({ name, email, message, phone });
+  if (spamReason) {
+    console.warn('[contact] dropped as spam:', spamReason, '| from:', email, '| msg snippet:', message.slice(0, 80));
+    return json({ ok: true, spam: true });
+  }
 
   const resend = new Resend(apiKey);
 
