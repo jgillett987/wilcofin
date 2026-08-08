@@ -5,10 +5,14 @@ export const SITE = {
   legalName: 'Wilco Financial, LLC',
   url: 'https://www.wilcofin.com',
   tagline: 'Let us handle the details, so you can focus on more important things.',
+  // Written to work as both a meta description and a search snippet.
+  // Front-loaded with the geographic + service keywords Google weights
+  // most heavily; the pilot specialty is called out for the SWA-pilot
+  // search population; fee closes with something distinctive.
   description:
-    'Wilco Financial is a Tennessee-registered investment adviser based in Williamson County, serving families, individuals, small businesses, and 401(k) plans with fiduciary investment management and financial planning at a simple 0.85% fee.',
+    'Fiduciary financial advisor in Brentwood, TN. Wilco Financial is a Tennessee-registered investment adviser serving families, individuals, small businesses, and 401(k) plans across Williamson County and the Nashville metro — with a specialty practice for Southwest Airlines pilots and employees nationwide. Simple 0.85% annual fee. Assets custodied at Charles Schwab.',
   shortDescription:
-    'Fiduciary investment management and financial planning from Williamson County, TN. Simple 0.85% fee. Assets custodied at Charles Schwab.',
+    'Fee-only fiduciary financial advisor in Brentwood, TN. Serving Williamson County and the Nashville metro, with a specialty practice for Southwest Airlines pilots. 0.85% annual fee. Assets held at Charles Schwab.',
   advisorName: 'Jon Gillett',
   fee: '0.85%',
   swaDiscount: '20%',

@@ -390,6 +390,39 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .card h3 { margin-top: 0; }
+
+/* "Who we work with" cards — general practice + pilot specialty pair */
+.who-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid var(--border);
+}
+.who-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.who-card.who-card-featured {
+  border-left-color: var(--green);
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf3 100%);
+}
+.who-card-eyebrow {
+  color: var(--green-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.who-card.who-card-featured .who-card-eyebrow { color: var(--green-dark); }
+.who-card-title {
+  font-family: var(--font-head);
+  color: var(--navy);
+  font-size: 1.35rem;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.who-card p { color: var(--muted); line-height: 1.65; }
+
 /* Photo card — image hero on top, body below */
 .photo-card {
   display: block;

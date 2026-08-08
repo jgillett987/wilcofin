@@ -64,10 +64,14 @@ Wilco Financial is not affiliated with, endorsed by, or sponsored by Southwest A
 
 # Full Article Archive
 
-Everything Wilco Financial has published. 24 articles, newest first. Each entry includes the full text so an LLM can answer questions with our actual perspective rather than guessing.
+Everything Wilco Financial has published. 28 articles, newest first. Each entry includes the full text so an LLM can answer questions with our actual perspective rather than guessing.
 
 ## Table of Contents
 
+- [Pilot Estate Planning: The Issues Most Plans Miss](https://www.wilcofin.com/articles/pilot-estate-planning)  —  2026-06-18  ·  Pilots, Southwest Airlines, Estate Planning
+- [The HSA: The Most Underused Retirement Account in America](https://www.wilcofin.com/articles/hsa-stealth-retirement-account)  —  2026-05-18  ·  Retirement, Tax Planning
+- [Day Trading vs. Investing: What the Data Actually Shows](https://www.wilcofin.com/articles/day-trading-vs-investing)  —  2026-04-19  ·  Investments, Working With Advisors
+- [Why We Overweight Small-Cap Stocks](https://www.wilcofin.com/articles/why-we-overweight-small-caps)  —  2026-04-19  ·  Investments
 - [The 0% Long-Term Capital Gains Bracket: Who Gets It and How to Use It](https://www.wilcofin.com/articles/zero-percent-ltcg-bracket)  —  2026-04-18  ·  Tax Planning, Retirement
 - [The Roth Conversion Decade: Why the Years Between Retirement and RMDs Matter Most](https://www.wilcofin.com/articles/roth-conversion-decade)  —  2026-03-18  ·  Retirement, Tax Planning, Roth
 - [Asset Location: The Quiet Tax Win Most Investors Miss](https://www.wilcofin.com/articles/asset-location)  —  2026-02-18  ·  Tax Planning, Investments
@@ -92,6 +96,355 @@ Everything Wilco Financial has published. 24 articles, newest first. Each entry 
 - [All-In Cost: How to Read Your Advisor's Fee Stack](https://www.wilcofin.com/articles/all-in-cost)  —  2024-06-18  ·  Fees, Working With Advisors
 - [The SWA 401(k) Decision: Pre-Tax, Roth, or After-Tax?](https://www.wilcofin.com/articles/swa-profit-sharing-decision)  —  2024-05-18  ·  Pilots, Southwest Airlines, Tax Planning, Roth, Retirement
 - [A Southwest Airlines Pilot's Retirement Planning Essentials](https://www.wilcofin.com/articles/swa-pilot-retirement-essentials)  —  2024-04-18  ·  Southwest Airlines, Pilots, Retirement
+
+---
+
+## Pilot Estate Planning: The Issues Most Plans Miss
+
+**Published:** 2026-06-18  ·  **Topics:** Pilots, Southwest Airlines, Estate Planning  ·  **URL:** https://www.wilcofin.com/articles/pilot-estate-planning
+
+*Airline pilots have a few estate planning considerations that the typical estate attorney doesn't ask about. Multiple-state property, international family, mid-flight contingencies, and SWAPA-specific benefits all deserve coordination.*
+
+Most estate plans for pilots look like estate plans for everyone else: a will, a trust if assets warrant, beneficiary designations, powers of attorney. The structure is fine. What gets missed are the items unique to airline life that almost no general-practice estate attorney thinks to ask about.
+
+A handful that come up regularly in our pilot conversations.
+
+## Multi-state property situations
+
+Pilots commute. Pilots own crash pads. Pilots maintain a primary residence in a no-tax state and a secondary residence near base. Pilots often inherit property from parents in third states.
+
+This creates an estate planning issue most attorneys don't anticipate: **ancillary probate** in every state where the pilot owns titled real estate. Without proper structuring, the surviving spouse or estate could have to open separate probate proceedings in each state — expensive, slow, and visible.
+
+The fix is usually one of:
+
+- Title each property in the name of the **revocable living trust** (avoids probate entirely in most states)
+- Use an **LLC** for investment properties, with the LLC owned by the trust
+- For homes you intend to keep long-term, **transfer-on-death deeds** where the state allows them (cheaper than retitling to a trust)
+
+Worth the conversation specifically with an estate attorney who has seen multi-state portfolios. The default "we'll just title everything jointly" approach falls apart at the second probate.
+
+## State of domicile vs. state of residence
+
+For pilots who [moved to a no-tax state](/articles/when-pilot-should-move-states), the estate plan should explicitly reference the new domicile. Several practical items:
+
+- **Will and trust documents** should be drafted (or restated) under the new state's law
+- **Beneficiary designations** should be reviewed for state-specific implications
+- **Powers of attorney and healthcare directives** should comply with the new state's specific requirements (some states require specific witness or notary procedures)
+- **State estate tax exposure** should be evaluated — Tennessee has no state estate tax; some other no-income-tax states do
+
+A pilot who moved to Tennessee 5 years ago but still has a 20-year-old California-drafted estate plan is leaving real value on the table. Worse, in some states, an out-of-state document may not be recognized cleanly.
+
+## International family or assets
+
+Pilots who fly international routes sometimes accumulate international relationships — spouses, children, parents — who hold foreign citizenship or live abroad. International estate planning is its own specialty:
+
+- **Foreign citizens as beneficiaries** of U.S. retirement accounts are treated differently from U.S. citizens — the unlimited spousal rollover doesn't apply to non-citizen spouses
+- **Foreign-held assets** (a property in a country where you're based, foreign bank accounts) require separate U.S. reporting (FBAR, Form 8938) during life *and* in the estate
+- **Treaty considerations** — the U.S. has estate tax treaties with some countries that affect how cross-border estates are taxed
+
+If any meaningful asset or beneficiary is international, the standard local estate attorney isn't enough. You need a cross-border specialist. Some planning items become legally complicated to fix after death; many are easy to handle in advance.
+
+## SWAPA benefits in the estate plan
+
+[SWAPA loss-of-license coverage](/articles/pilot-loss-of-license) and any related disability benefits should be coordinated with the rest of the plan. Practical items:
+
+- Beneficiary designations on SWAPA-administered benefits should be reviewed at every life event
+- Lump-sum vs. monthly benefit options sometimes have estate implications
+- For pilots with significant outside disability insurance, the interaction between SWAPA and outside coverage at death is worth understanding
+
+Most SWAPA documentation is clear, but it's outside what a generalist estate attorney typically reviews.
+
+## The "what if I'm flying" contingency
+
+A morbid but practical consideration: what happens if you're incapacitated while on a trip — in the cockpit, in a hotel, in another country? Different from "what happens at death" but in some ways more pressing.
+
+Specific items worth having in place:
+
+- **Healthcare power of attorney** that's recognized in the states/countries you fly to (or at minimum, a clear medical directive)
+- **A copy of the directive** with someone reachable at any time (spouse, designated agent)
+- **Known medication list and major health history** in a place that travels with you
+- **Spouse or designated agent authority** to make immediate decisions about home/family logistics
+- **A short, clear letter to your spouse** about who to call (financial advisor, estate attorney, trustee) and where to find documents
+
+This isn't legal-document territory. It's logistics. But it matters when something happens 1,500 miles from home.
+
+## Beneficiary designations on the SWA 401(k)
+
+This deserves specific mention because it's one of the most common errors we see across all clients, but particularly common among pilots whose work history includes multiple stops:
+
+- The SWA 401(k) has its own beneficiary form
+- Old 401(k)s from previous airlines or earlier roles may have outdated forms
+- Old Individual Account Plans (IAPs) and Pension Equity Plans (PEPs) from carriers in bankruptcy or in the PBGC system have their own beneficiary forms
+- IRAs that received rolled-over balances need their own designations
+
+The single most expensive estate planning failure mode we see in pilots is an inherited 401(k) or IRA going to an ex-spouse from 15 years ago. See [The #1 Estate Planning Mistake](/articles/beneficiary-designations-mistake).
+
+## When to coordinate
+
+Estate planning items for pilots should be reviewed:
+
+- **At every life event** — marriage, divorce, birth, death, second career
+- **Every 3–5 years** as a baseline
+- **When SWAPA changes** disability or death benefits
+- **When tax law changes** (current federal estate exemption is scheduled to sunset at end of 2025 unless extended)
+- **When you move** between states
+- **When you're considering retirement** — particularly the [Roth conversion decade](/articles/pilot-roth-conversion) interactions with estate planning
+
+We work with several estate attorneys who understand the pilot picture. Happy to introduce — or to review your existing plan and flag what we'd want your attorney to look at. [Get in touch](/contact).
+
+---
+
+*General educational information for airline pilots about estate planning considerations. Specific decisions require coordination with a licensed estate attorney in your state. Pilots with international family, multi-state property, or SWAPA-specific benefits should ensure their attorney is comfortable with the relevant complexity.*
+
+---
+
+## The HSA: The Most Underused Retirement Account in America
+
+**Published:** 2026-05-18  ·  **Topics:** Retirement, Tax Planning  ·  **URL:** https://www.wilcofin.com/articles/hsa-stealth-retirement-account
+
+*Health Savings Accounts get pitched as a way to pay current medical bills. The much bigger play is using them as a stealth retirement account — triple tax-free and uniquely flexible.*
+
+If you have access to a Health Savings Account (HSA) and you're using it the way most people do — funding it just enough to cover current-year medical bills — you're missing the most tax-favored retirement vehicle available in the U.S. tax code.
+
+The HSA is the only account that gets **three layers of tax exemption**:
+
+1. **Contributions are deductible** (or pre-tax through payroll).
+2. **Growth is tax-free** while in the account.
+3. **Withdrawals for qualified medical expenses are tax-free** — even decades after the contribution.
+
+There is no other account with that combination. Not the 401(k). Not the IRA. Not the Roth. Only the HSA.
+
+## The "spend it now" trap
+
+Most HSA marketing describes it as a way to pay deductibles and current medical bills with pre-tax dollars. That's the surface-level use.
+
+The much more powerful play: pay current medical bills out of pocket (from your taxable savings), let the HSA grow untouched for 20+ years, and use the accumulated balance as tax-free retirement spending money.
+
+By the time you retire, you'll have spent the medical bills you'd have spent anyway, and you'll have an HSA balance of $200K–$500K that you can withdraw entirely tax-free for healthcare expenses in retirement (which are typically substantial — Fidelity estimates $165,000+ per person over retirement).
+
+Or — and this is the surprising part — you can keep receipts.
+
+## The receipts trick
+
+Qualified medical expenses paid out of pocket can be reimbursed from the HSA at any time in the future. There's no statute of limitations.
+
+The implication: every medical bill you pay out of pocket today, save the receipt. In 30 years, when you want to take a tax-free distribution from the HSA, you can reimburse yourself for those decades-old medical bills — completely tax-free.
+
+You've effectively turned the HSA into a long-horizon Roth IRA for that portion of the contributions. The HSA grew tax-free for 30 years, the withdrawal is tax-free, and you can spend the money on anything — because the receipts are unrelated to current spending.
+
+Required: keep the receipts (digital scans are fine), and confirm each was a qualified medical expense in the year incurred.
+
+## The contribution limits
+
+For 2025:
+
+- **$4,300** annual contribution for self-only HDHP coverage
+- **$8,550** for family HDHP coverage
+- **+$1,000** catch-up if 55 or older
+- **+$1,000** for spouse 55 or older if separate spousal HSA
+
+Modest annually. Compound over 30 years at 7%, the family-coverage version becomes ~$880,000.
+
+## Eligibility — the key constraint
+
+HSAs require you to be enrolled in a **qualified high-deductible health plan (HDHP)** with no other disqualifying coverage:
+
+- No FSA (other than a limited-purpose FSA for dental/vision)
+- No traditional health insurance from a spouse's plan
+- No Medicare enrollment (a hard cutoff at 65)
+- No VA medical benefits used in the last 3 months (with limited exceptions)
+
+For two-earner households, this can require coordinating which spouse's health plan to use. Often the right structure is one spouse on an HDHP (with the HSA) and the other on traditional coverage, depending on the math.
+
+## The two-bucket strategy
+
+For working-age households eligible for an HSA:
+
+1. **Max out the HSA contribution every year.** Through payroll if available (avoids FICA tax too); otherwise direct contribution at tax time.
+2. **Pay current medical bills out of pocket** from your taxable savings. Save every receipt.
+3. **Invest the HSA aggressively** — equity-heavy, low-cost ETFs. This is a retirement account, not a checking account. Most HSA custodians offer investment options once your balance exceeds $1,000–$2,000.
+4. **Re-evaluate at age 65.** Once on Medicare, contributions stop. The HSA continues to grow and remain available for tax-free medical reimbursement (including Medicare premiums).
+
+## The estate consideration
+
+HSAs have an estate planning quirk: they don't get a [step-up in basis at death](/articles/step-up-in-basis), and a non-spouse heir who inherits an HSA pays ordinary income tax on the entire balance in the year of inheritance.
+
+For HNW households, that means HSAs should generally be **spent during life** rather than left for heirs. The strategy: in the early retirement years, deliberately reimburse yourself for accumulated medical receipts and use the HSA balance for retirement spending. Don't let it become a tax bomb for non-spouse heirs.
+
+A spouse can inherit an HSA tax-free and continue using it.
+
+## The Wilco recommendation
+
+For pilots, executives, and other HNW clients with HDHP eligibility, the HSA is **always** the second-most-favored savings dollar after 401(k) match — and arguably first if your employer doesn't match.
+
+Yet the typical HSA balance at retirement, per the Employee Benefit Research Institute, is around $14,000. The tool is there. Most people don't use it.
+
+If you have HDHP eligibility and aren't maxing your HSA — or you're using it as a checking account for medical bills — [we should talk about restructuring](/contact).
+
+---
+
+*General educational information. HSA eligibility and qualified medical expense rules are complex; verify with the IRS Publication 969 and a tax professional for your situation.*
+
+---
+
+## Day Trading vs. Investing: What the Data Actually Shows
+
+**Published:** 2026-04-19  ·  **Topics:** Investments, Working With Advisors  ·  **URL:** https://www.wilcofin.com/articles/day-trading-vs-investing
+
+*Long-term investing has positive expected returns for the average participant. Day trading does not. The retail day trader loss rate is consistently 70–97% across studies — here's why, and what it means.*
+
+Long-term investing in a diversified portfolio of stocks and bonds has produced positive returns for the average participant for as long as anyone has measured. Day trading — buying and selling securities within the same day to profit from short-term price movements — has produced losses for the average participant in every credible study ever done. These two facts coexist, and the distinction matters because the financial media and short-form social platforms blur them constantly.
+
+Here's what the actual research says.
+
+## The loss rate is real, and it's been replicated everywhere
+
+Several large-scale academic studies have tracked actual day-trader behavior across years and markets:
+
+- **Brazil, 2020 (Chague, De-Losso, Giovannetti).** Followed every individual who attempted day trading on Brazilian equity futures over a 7-year window. Of those who persisted for more than 300 trading days, **97% lost money.** Only 1.1% earned more than the Brazilian minimum wage. Three traders made more than a starting bank-teller salary.
+- **Taiwan, 1992–2006 (Barber, Lee, Liu, Odean).** Covered the entire population of Taiwanese retail traders for 15 years. Fewer than 1% of day traders were able to beat the market net of costs in a way that would persist. The vast majority lost meaningful money.
+- **United States, multiple eras.** FINRA-cited data from the 2020 retail trading surge showed roughly **72% of pandemic-era retail day traders ended the year with net losses.** The profitable 28% had a median profit of about $13,000 — meaningful, but not "quit your day job" money relative to the capital and hours required.
+- **Brazilian pandemic update, through 2023.** At peak, around 100,000 daily-active day traders. Aggregate gross losses by individuals reached R$9.9 billion. Average loss: about R$10,200 per individual. The pattern repeated.
+
+The numbers are striking in their consistency. Different country, different decade, different platform, different regulatory regime — same outcome. The structural conclusion is not "most day traders are bad at it." The structural conclusion is that **day trading is a negative-expected-value activity for the average participant.**
+
+## Why this is the case (it's not random)
+
+The 70–97% loss rate isn't bad luck. Four forces stack against the retail day trader:
+
+**1. Transaction costs.** Even with zero commissions, every trade incurs a bid-ask spread, a small market-impact cost, and a tax cost — short-term gains are taxed as ordinary income, not at the favorable long-term capital-gains rate. A trader who breaks even before costs loses real money after.
+
+**2. The other side of the trade.** When a retail day trader buys at 10:32 AM, the seller on the other side is — most of the time — a sophisticated market maker, a quantitative hedge fund, or an institutional desk with information and execution advantages no retail trader can match. The retail trader is the marginal liquidity provider in a fight against professionals.
+
+**3. Behavioral leakage.** The same studies that document losses also document predictable behavioral patterns: holding losing positions too long, selling winners too early, overtrading after a win, doubling down after a loss. These patterns produce a cumulative drag that compounds across many trades per day.
+
+**4. Persistence collapses.** Of day traders who are profitable in a given year, only about 6–7% are profitable the next year. Over five years, that figure drops near 1%. Meaning even people who appear to have an edge in a single year usually don't keep it. The set of consistently profitable retail day traders is genuinely small — well under 1% of attempts.
+
+## What long-term investing looks like instead
+
+Now contrast with the actual data on the buy-and-hold investor in a diversified portfolio:
+
+- The U.S. equity market has produced roughly 9–10% nominal annualized returns over century-long windows. Investment-grade bonds have produced 4–5%. A blended portfolio sits between, with much lower volatility than equities alone.
+- A globally diversified portfolio of stocks and bonds, rebalanced periodically, has produced **positive real returns over every rolling 20-year period in modern market history.** Not most. Every.
+- The average dollar invested for 20+ years in a sensibly diversified portfolio has been profitable. Not 28% of dollars. The average dollar.
+
+This isn't the same comparison as "active vs. passive" or "picking individual stocks vs. an index fund." It's a more fundamental comparison: **time horizon and capital compounding vs. high-frequency trading against professionals.** The first earns the long-term reward for bearing market risk — the equity risk premium. The second tries to earn an information or execution edge in a marketplace dominated by people whose full-time job is having those edges.
+
+This is also the same arithmetic behind [why we don't try to time the broad market](/articles/why-we-dont-time-the-market). Day trading is essentially extreme market timing — same headwinds, amplified by frequency.
+
+## The "but what about" question
+
+A common pushback: "But what about [famous trader / YouTuber / hedge fund manager who day-trades]?" Two things are true at once:
+
+1. A small number of individuals genuinely are profitable day traders. The Chague Brazil study found three out of more than 200,000 attempts who matched a normal banking salary.
+2. The visibility of those few is enormously magnified by survivorship bias. The 97% who lost don't post their P&L screenshots. The 0.001% who won post relentlessly.
+
+The base-rate question isn't "can it be done?" — it can. The question is "what's the probability that *I* will be one of them, before having spent years and substantial capital finding out?" The answer from the data is: very low.
+
+## What this means in practice
+
+A few practical takeaways:
+
+- **If you're considering day trading as a primary strategy or income source, the evidence is overwhelmingly against it for the average participant.** This is not a moral judgment; it's an arithmetic one. The expected value is negative after costs.
+- **If you want to actively engage with markets as a hobby or learning experience, treat it as such** — with a strictly capped amount of money you can afford to lose entirely, separate from your retirement and emergency savings. The educational value of watching markets can be real; don't conflate it with a path to wealth.
+- **The core of your wealth should be invested for the long term in a diversified portfolio.** This is the part where the math works in your favor — quietly, slowly, compounding, with real positive expected returns. It's also the part the financial media talks about least, because patience doesn't sell ad impressions.
+
+The choice between day trading and long-term investing isn't really a choice between two strategies. It's a choice between two arithmetic regimes — one where the average participant loses money, and one where the average participant makes money. The historical data is unambiguous about which is which.
+
+---
+
+*General educational information about retail day trading and long-term investing. Not personalized investment advice. Specific investment decisions should be made in light of your own circumstances, goals, and risk tolerance. Past performance does not guarantee future results.*
+
+---
+
+## Why We Overweight Small-Cap Stocks
+
+**Published:** 2026-04-19  ·  **Topics:** Investments  ·  **URL:** https://www.wilcofin.com/articles/why-we-overweight-small-caps
+
+*Buffett famously said managing small capital was a 'huge structural advantage.' Here's why we agree — and why our portfolios deliberately tilt toward a part of the market the largest managers can't effectively touch.*
+
+In 1999, at a Berkshire Hathaway annual meeting, Warren Buffett said something we've never forgotten:
+
+> *"If I was running $1 million today, or $10 million for that matter, I'd be fully invested. It's a huge structural advantage not to have a lot of money. The universe I can't play in has become more attractive than the universe I can play in. I have to look for elephants. It may be that the elephants are not as attractive as the mosquitoes. But that is the universe I must live in."*
+
+The same year, he claimed he could guarantee 50% annual returns on $1 million by accessing exactly those kinds of opportunities — opportunities he had personally exploited in the 1950s, before capital constraints at Berkshire forced him up-market into mega-cap territory.
+
+Two things in that quote are striking. First, the world's most respected investor was saying — publicly, on the record — that being *small was an advantage*, not a limitation. Second, he was implying that the inefficiencies he made his early career on still existed, just in places he could no longer reach.
+
+Twenty-five years later, both points are still true. And they shape how we build client portfolios at Wilco.
+
+## What Buffett was talking about
+
+The universe of publicly traded equities sorts roughly into three buckets by market capitalization:
+
+- **Large-cap** (~$10B+) — household names. Apple, Microsoft, JPMorgan, Walmart. Followed by hundreds of analysts, owned by every large fund, priced efficiently by deep institutional participation.
+- **Mid-cap** (~$2B–$10B) — established but less covered.
+- **Small-cap** (~$300M–$2B) and below — a much wider universe of companies with thin analyst coverage, light institutional ownership, and frequent mispricing. This is where Buffett's "mosquitoes" live.
+
+A fund manager with $50 billion under management cannot meaningfully buy a $500 million small-cap company. Even taking a 5% stake would be only 0.05% of their fund — not worth the diligence work. And if they did, the stake would often exceed the company's average daily trading volume, making it nearly impossible to exit without moving the price against themselves.
+
+So they don't. The world's largest managers — by *necessity*, not by *preference* — concentrate their effort in the large-cap universe where they can deploy capital efficiently. The small-cap universe is left to a much smaller pool of participants.
+
+## Why this creates real opportunity
+
+A few structural facts compound on each other:
+
+**1. Coverage gap.** Large-cap stocks are followed by dozens of professional analysts each. Many small-caps are followed by zero or one. Less coverage means more information that hasn't yet been reflected in the price.
+
+**2. Forced flows.** When a stock crosses size thresholds — entering or leaving an index, hitting a fund's market-cap floor, getting added to a mid-cap mandate — institutional buying and selling can move the price for reasons that have nothing to do with the underlying business. A patient small-cap investor can be on the right side of those flows.
+
+**3. Less algorithmic competition.** High-frequency trading firms care about liquidity. The deeper and faster the order book, the more profitable their strategies. They concentrate in large-caps and ETF arbitrage. Small-caps are quieter and more fundamentally driven.
+
+**4. Founder-led companies.** Many small-caps are still run by their founders or operating CEOs, with meaningful inside ownership. Capital allocation tends to be more thoughtful when the CEO's net worth is in the stock. Long-window aggregate studies have shown founder-led companies modestly outperform peer non-founder-led companies.
+
+**5. The size premium.** There's a long-documented historical pattern of small-caps earning higher returns than large-caps over long horizons, partly as compensation for lower liquidity and higher volatility. The magnitude has varied considerably over time. The *direction* has been consistent across decades and countries.
+
+None of this is a free lunch. Small-caps are more volatile, more sensitive to recessions, and more likely to fail outright. The structural opportunity comes with structural risk. But for the type of investor willing to bear that risk and patient enough to ride out the volatility, the long-run history has rewarded the willingness.
+
+## Why we can fish here when most can't
+
+Wilco Financial isn't $50 billion. We're a boutique investment adviser, and that places us squarely in the category Buffett was describing — small enough to take meaningful positions in companies the giants can't touch, while having the analytical experience to underwrite them.
+
+Our portfolios deliberately overweight small-cap stocks relative to a market-cap-weighted benchmark because:
+
+- We have access to the universe Buffett said he wished he could still reach.
+- We're not constrained by mandate floors that force us up-market.
+- We can hold positions long enough for the underlying business value to be recognized — often years.
+- We're not subject to redemption pressures that force open-end mutual funds to sell on the worst days.
+
+The work isn't trivial. Small-cap investing rewards careful business analysis, patience, and a willingness to hold positions through volatility that would force a forced seller to capitulate. That's where two decades of institutional investment experience — analyzing businesses at deep-value and distressed hedge funds across multiple market cycles — earns its keep.
+
+## What this means for our clients
+
+For clients with appropriate risk tolerance and a long enough horizon, the practical results of our small-cap tilt should be:
+
+- **Higher expected returns over long periods** — driven by the structural premium plus security selection
+- **Higher short-term volatility** — small-caps move more aggressively than large-caps in both directions
+- **Periods of underperformance vs. the S&P 500** — particularly when mega-caps dominate (as in much of the 2018–2023 cycle, when a handful of large-cap names drove most of the index's return)
+- **A portfolio that looks different from a vanilla index fund** — because the math behind the tilt is different from the math behind market-cap weighting
+
+We're transparent about this during onboarding. Not every client wants a portfolio that looks different from the S&P 500 in any given year, and that's a legitimate preference. For clients who do — and who can stay disciplined through the bumpier ride — the structural case is durable, and we lean into it.
+
+## The honest caveats
+
+A few things we don't claim:
+
+- **We can't promise outperformance.** Nobody can. Buffett's "guaranteed 50%" was a rhetorical flourish, not a regulatory representation, and even he no longer operates in that universe.
+- **Past relative performance of small-caps does not guarantee future relative performance.** The size premium has had long stretches of underperformance — notably 2014–2023 in the U.S., when large-caps decisively beat small-caps.
+- **Volatility is real, and behavioral discipline matters.** A small-cap tilt only works if you don't sell during the drawdowns it inevitably produces.
+- **Position sizing and risk management matter as much as security selection.** Owning a small piece of a great company doesn't move a portfolio. Owning the wrong size of a deeply mispriced one *can* — in either direction.
+
+What we believe is durable:
+
+The structural reasons large funds can't meaningfully operate in the small-cap universe haven't changed since Buffett described them in 1999. If anything, AUM concentration in the world's largest managers has grown — which means the *relative* opportunity for smaller, focused investors in the small-cap space has likely grown along with it. The arithmetic of "you cannot meaningfully invest in a $400 million company from a $50 billion fund" is the same arithmetic it was 25 years ago, and the same arithmetic it will be 25 years from now.
+
+We cannot promise the size premium will reassert itself in any particular year. We can promise we are doing the work — and that the universe we are working in is structurally different from the one the largest firms have to confine themselves to.
+
+If you're a current client and want to understand how this shows up in your specific portfolio, [reach out](/contact) and we'll walk through your holdings.
+
+---
+
+*Educational discussion of our investment philosophy. Not personalized investment advice or a recommendation to purchase any specific security. Past performance does not guarantee future results. Small-capitalization stocks involve elevated risk, including greater price volatility, lower liquidity, and a higher probability of business failure compared with larger-capitalization stocks. The Buffett quotation is paraphrased from public remarks made at the 1999 Berkshire Hathaway annual meeting. Forward-looking statements reflect current views and are subject to risks and uncertainties that may cause actual results to differ materially. Investment decisions should be made in light of individual circumstances, goals, and risk tolerance. Verify Wilco Financial, LLC's registration status at adviserinfo.sec.gov.*
 
 ---
 

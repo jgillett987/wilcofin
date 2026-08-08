@@ -29,19 +29,24 @@ const canonical = new URL(Astro.url.pathname, SITE.url).toString();
 const ogImage = new URL(image, SITE.url).toString();
 const fullTitle = title === SITE.name ? SITE.name : `${title} | ${SITE.name}`;
 
-// Default organization structured data — always included
+// Default organization structured data — always included. Rich areaServed
+// and audience blocks help Google understand *who* and *where* — critical
+// for local ("financial advisor Brentwood TN") and audience-specific
+// ("financial advisor for Southwest Airlines pilots") queries.
 const orgJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FinancialService',
+  '@type': ['FinancialService', 'LocalBusiness'],
   '@id': `${SITE.url}#organization`,
   name: SITE.legalName,
   alternateName: SITE.name,
   url: SITE.url,
   logo: `${SITE.url}/logo.svg`,
+  image: `${SITE.url}/og-default.png`,
   description: SITE.description,
   telephone: CONTACT.phone,
   email: CONTACT.email,
   priceRange: '$$',
+  currenciesAccepted: 'USD',
   address: {
     '@type': 'PostalAddress',
     streetAddress: `${CONTACT.addressLine1}, ${CONTACT.addressLine2}`,
@@ -50,17 +55,50 @@ const orgJsonLd = {
     postalCode: CONTACT.zip,
     addressCountry: CONTACT.country,
   },
-  areaServed: {
-    '@type': 'State',
-    name: 'Tennessee',
-  },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Williamson County, Tennessee' },
+    { '@type': 'AdministrativeArea', name: 'Davidson County, Tennessee' },
+    { '@type': 'City', name: 'Brentwood, Tennessee' },
+    { '@type': 'City', name: 'Franklin, Tennessee' },
+    { '@type': 'City', name: 'Nashville, Tennessee' },
+    { '@type': 'State', name: 'Tennessee' },
+  ],
+  audience: [
+    { '@type': 'Audience', audienceType: 'Families and Individuals' },
+    { '@type': 'Audience', audienceType: 'Small Business Owners' },
+    { '@type': 'Audience', audienceType: '401(k) Plan Sponsors' },
+    { '@type': 'Audience', audienceType: 'Southwest Airlines Pilots' },
+    { '@type': 'Audience', audienceType: 'Southwest Airlines Employees' },
+    { '@type': 'Audience', audienceType: 'Airline Pilots' },
+  ],
   knowsAbout: [
-    'Investment Management',
-    'Financial Planning',
+    'Fiduciary Investment Management',
+    'Fee-Only Financial Planning',
     'Retirement Planning',
     'Estate Planning',
-    'Fiduciary Advice',
+    'Charitable Planning',
+    'Multi-Generational Planning',
+    'Tax Planning',
+    'Southwest Airlines Pilot Retirement Planning',
+    'Airline Pilot Financial Planning',
+    'SWA 401(k) and Profit Sharing',
+    'FAA Age 65 Retirement Planning',
   ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Advisory Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Investment Management' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Financial Planning' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Retirement Planning' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Estate Planning' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Charitable Planning' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Multi-Generational Planning' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Tax Planning' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SWA Pilot & Employee Specialty Practice' } },
+    ],
+  },
+  sameAs: ['https://www.linkedin.com/in/jongillett'],
 };
 
 const allStructured = [orgJsonLd, ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [])];
