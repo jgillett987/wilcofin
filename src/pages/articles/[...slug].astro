@@ -152,9 +152,12 @@ const formattedDate = article.data.pubDate.toLocaleDateString('en-US', { year: '
           <div class="print-tag">Fiduciary investment management & financial planning</div>
         </div>
       </div>
+      {/* Print-only title block — uses a styled div, not a second <h1>,
+          so search engines don't see two H1s per page. The rendered PDF
+          still displays it as a large title via .print-title styling. */}
       <div class="print-only print-title-block" aria-hidden="true">
         {article.data.tags.length > 0 && <div class="print-eyebrow">{article.data.tags[0]}</div>}
-        <h1 class="print-title">{article.data.title}</h1>
+        <div class="print-title" role="heading" aria-level="1">{article.data.title}</div>
         <p class="print-desc">{article.data.description}</p>
         <div class="print-byline">{formattedDate} · {article.data.author}</div>
       </div>
