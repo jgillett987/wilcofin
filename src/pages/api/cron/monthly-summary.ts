@@ -1,7 +1,11 @@
-// Monthly summary cron. Fires at 13:00 UTC (~8 AM CT) on the 25th of
-// every month via Vercel Cron (see vercel.json). Emails a plain-English
-// operations recap to info@wilcofin.com: what got published, what's
-// coming, anything worth attention.
+// Weekly site summary cron. Fires at 13:00 UTC every Monday (~8 AM CT
+// during CST, 9 AM CT during CDT) via Vercel Cron (see vercel.json).
+// Emails a plain-English operations recap to info@wilcofin.com: what
+// got published, what's coming, anything worth attention.
+//
+// (File is still named monthly-summary.ts to avoid changing the cron
+// URL path — internal detail only; the send frequency is controlled by
+// vercel.json.)
 //
 // Auth: Vercel Cron sends an Authorization header of value
 //   `Bearer <CRON_SECRET>` where CRON_SECRET is the env var Vercel
@@ -28,14 +32,8 @@ const json = (data: unknown, status = 200) =>
     headers: { 'Content-Type': 'application/json' },
   });
 
-const fmtDate = (d: Date) =>
-  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-
 const shortDate = (d: Date) =>
   d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-
-const monthYear = (d: Date) =>
-  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
 
 export const GET: APIRoute = async ({ request }) => {
   // Auth: Vercel Cron → Authorization: Bearer <CRON_SECRET>
@@ -52,17 +50,11 @@ export const GET: APIRoute = async ({ request }) => {
   // truth the public site uses). pubDate is coerced to a Date by Zod.
   const all = await getCollection('articles');
   const now = new Date();
-  const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
-  const nextMonthStart = new Date(now.getFullYear(), now.getMonth() + 1, 1);
   const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
 
   const published = all
     .filter((a) => !a.data.draft && a.data.pubDate.valueOf() <= now.valueOf())
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-  const publishedThisMonth = published.filter(
-    (a) => a.data.pubDate >= thisMonthStart && a.data.pubDate < nextMonthStart,
-  );
 
   const publishedLast30 = published.filter((a) => a.data.pubDate >= thirtyDaysAgo);
 
@@ -74,8 +66,9 @@ export const GET: APIRoute = async ({ request }) => {
   const nextScheduled = scheduled[0];
   const monthsOfRunway = scheduled.length;
 
-  // Render the email
-  const subject = `Wilco site summary — ${monthYear(now)}`;
+  // Render the email — subject includes the week-of date so weekly
+  // sends have distinguishable subject lines in the inbox.
+  const subject = `Wilco site summary — week of ${shortDate(now)}`;
 
   const listHtml = (items: typeof published, limit = 5) => {
     const top = items.slice(0, limit);
@@ -110,8 +103,8 @@ export const GET: APIRoute = async ({ request }) => {
   <div style="max-width:640px; margin:0 auto; padding:0 20px;">
 
     <div style="text-align:center; padding-bottom:16px; border-bottom:2px solid #81c460; margin-bottom:24px;">
-      <div style="color:#6aad4a; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;">Monthly Summary</div>
-      <h1 style="font-family:Georgia,serif; color:#011342; font-size:26px; margin:8px 0 0; font-weight:700;">${esc(monthYear(now))}</h1>
+      <div style="color:#6aad4a; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;">Weekly Site Summary</div>
+      <h1 style="font-family:Georgia,serif; color:#011342; font-size:26px; margin:8px 0 0; font-weight:700;">Week of ${esc(shortDate(now))}</h1>
       <div style="color:#5a6582; font-size:13px; margin-top:4px;">Wilco Financial · wilcofin.com</div>
     </div>
 
@@ -125,8 +118,8 @@ export const GET: APIRoute = async ({ request }) => {
     </div>
 
     <div style="${cardStyle}">
-      <h2 style="${h2Style}">Published this month</h2>
-      ${listHtml(publishedThisMonth, 10)}
+      <h2 style="${h2Style}">Published in the last 30 days</h2>
+      ${listHtml(publishedLast30, 10)}
     </div>
 
     <div style="${cardStyle}">
@@ -155,7 +148,7 @@ export const GET: APIRoute = async ({ request }) => {
     </div>
 
     <div style="text-align:center; color:#5a6582; font-size:12px; padding:8px 0;">
-      Automated summary. Sent on the 25th of every month.<br />
+      Automated summary. Sent every Monday morning.<br />
       <a href="https://www.wilcofin.com" style="color:#011342; text-decoration:underline;">wilcofin.com</a>
     </div>
 
@@ -165,16 +158,16 @@ export const GET: APIRoute = async ({ request }) => {
   `.trim();
 
   const textBody = [
-    `Wilco site summary — ${monthYear(now)}`,
+    `Wilco site summary — week of ${shortDate(now)}`,
     '',
     `Published in the last 30 days: ${publishedLast30.length}`,
     `Published total: ${published.length}`,
     `Scheduled ahead: ${scheduled.length}`,
     '',
-    'Published this month:',
-    ...(publishedThisMonth.length === 0
+    'Published in the last 30 days:',
+    ...(publishedLast30.length === 0
       ? ['  (none)']
-      : publishedThisMonth.map((a) => `  - ${a.data.title} (${shortDate(a.data.pubDate)})`)),
+      : publishedLast30.map((a) => `  - ${a.data.title} (${shortDate(a.data.pubDate)})`)),
     '',
     'Coming up next:',
     ...(nextUp.length === 0
