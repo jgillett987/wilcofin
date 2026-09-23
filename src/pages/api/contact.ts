@@ -43,11 +43,24 @@ function looksLikeSpam(args: { name: string; email: string; message: string; pho
   const tokens = m.split(/\s+/).filter(Boolean);
   if (tokens.some((t) => t.length > 22)) return 'over-long-token';
 
-  // 3. Embedded mention of our own domain inside the message body —
-  // a common bot tell where they paste the target URL into the
-  // text field. (Legitimate prospects don't write "wilcofin.com"
-  // back at us inside the message.)
-  if (/\bwilcofin\.com\b/i.test(args.message)) return 'self-domain-mention';
+  // 3. Embedded mention of our own domain or firm name inside the
+  // message body — a common bot tell where they paste the target
+  // brand into the text field ("...please contact me — wilco
+  // financial."). Legitimate prospects don't sign a first message
+  // with the firm they're contacting.
+  const brandRe = /\b(wilcofin(?:\.com)?|wilco\s+fin(?:ancial)?)\b/i;
+  if (brandRe.test(args.message)) return 'self-brand-mention';
+
+  // 3b. Short generic first-contact bodies (< 20 words, no specific
+  // question or context). These are the bot template — "I would like
+  // more information. Please contact me." — where the volume of
+  // vagueness signals automation. We tolerate short messages fine
+  // when they contain something specific (a name, a topic, a number),
+  // but a 15-word body composed entirely of generic filler is spam.
+  const wordCount = tokens.length;
+  const genericPhrases = /\b(more information|please contact me|get in touch|reach out to me|interested in your services)\b/i;
+  const genericHits = (args.message.match(new RegExp(genericPhrases, 'gi')) || []).length;
+  if (wordCount < 20 && genericHits >= 2) return 'short-generic-body';
 
   // 4. Long run of repeating characters ("aaaaa", "wwwww") — gibberish
   // or keyboard mash.
