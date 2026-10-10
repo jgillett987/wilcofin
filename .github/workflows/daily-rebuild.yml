@@ -4,6 +4,19 @@ name: Daily Vercel rebuild
 # pubDate has now arrived will start showing on the live site.
 # Also lets articles' "X days ago" displays stay current.
 
+# REQUIRES TWO PIECES, BOTH OF WHICH MUST EXIST:
+#   1. A Vercel deploy hook on branch `main` in the `wilcofin` project
+#      (Vercel -> Settings -> Git -> Deploy Hooks).
+#   2. A repo Actions secret VERCEL_DEPLOY_HOOK holding that hook's URL.
+#
+# If either is missing, this job exits 1 and scheduled articles silently stop
+# publishing: the live site just keeps serving the previous build, so there is
+# no outward sign anything is wrong. That is precisely what happened between
+# 2026-04-18 (when this workflow was added) and 2026-10-10 -- neither piece was
+# ever created, so ~6 months of daily runs failed and articles only went live
+# when someone happened to push a commit. See the README section
+# "Scheduling an article for a future date".
+
 on:
   schedule:
     # 06:00 UTC daily = 01:00 CT (CST) / 02:00 CT (CDT)

@@ -59,6 +59,44 @@ npm run preview
 
 ---
 
+### Scheduling an article for a future date
+
+A `pubDate` in the future hides the article until that date arrives — see
+`src/lib/articles.ts`, which keeps only articles where `pubDate <= Date.now()`.
+
+**That comparison runs at build time, not in the visitor's browser.** The site
+is `output: 'static'`, so every page is baked when the site is built. A
+scheduled article does not appear by itself — *something has to rebuild the
+site on or after its pubDate.*
+
+That something is the **Daily Vercel rebuild** workflow
+(`.github/workflows/daily-rebuild.yml`), which runs at 06:00 UTC daily. It
+depends on two pieces, and **both** must exist:
+
+| Piece | Where it lives | Name |
+| --- | --- | --- |
+| Vercel deploy hook | Vercel → project `wilcofin` → Settings → Git → Deploy Hooks | `Daily scheduled-article rebuild` (branch `main`) |
+| GitHub Actions secret holding that hook's URL | GitHub → repo → Settings → Secrets and variables → Actions | `VERCEL_DEPLOY_HOOK` |
+
+If either is missing, the workflow exits 1 and **scheduled articles silently
+stop publishing**. Nothing looks broken from the outside: the live site simply
+keeps serving the previous build.
+
+> **This actually happened.** The workflow was added 2026-04-18, but neither
+> the deploy hook nor the secret was ever created, so it failed every single
+> day until 2026-10-10 — roughly six months, with no successful run. Articles
+> went live only when someone happened to push a commit:
+> `roth-five-year-rules` (pubDate 2026-09-18) did not appear until the
+> 2026-09-23 push, five days late. Fixed 2026-10-10 by creating both pieces.
+
+To recreate them: create a deploy hook on `main` in the Vercel project, copy
+its URL, then run `gh secret set VERCEL_DEPLOY_HOOK --repo jgillett987/wilcofin`
+and paste it in. Confirm with
+`gh workflow run daily-rebuild.yml --repo jgillett987/wilcofin`, which should
+finish green and queue a Vercel production deploy.
+
+---
+
 ## How to add a new FAQ
 
 1. Create a new file in `src/content/faqs/` — e.g. `my-faq.md`.
