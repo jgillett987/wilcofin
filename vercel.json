@@ -5,6 +5,9 @@
   "framework": "astro",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/plan", "destination": "https://wilcosimpleplan.com/start", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",
