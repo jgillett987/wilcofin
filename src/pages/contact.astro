@@ -51,6 +51,17 @@ const contactSchema = {
             <label>Website (leave blank)<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
           </div>
 
+          {/* First-touch lead source, filled from sessionStorage on load.
+              Empty if the visitor has no JS or no stored attribution. */}
+          <input type="hidden" name="utm_source" value="" />
+          <input type="hidden" name="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" value="" />
+          <input type="hidden" name="utm_content" value="" />
+          <input type="hidden" name="utm_term" value="" />
+          <input type="hidden" name="landing_path" value="" />
+          <input type="hidden" name="referrer" value="" />
+          <input type="hidden" name="first_touch" value="" />
+
           <label style="display:block; margin-bottom:12px;">
             <span style="display:block; font-weight:600; margin-bottom:4px;">Name</span>
             <input type="text" name="name" autocomplete="name" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px;" />
@@ -94,6 +105,20 @@ const contactSchema = {
       const btn = document.getElementById('contactSubmitBtn');
       if (!form || !successEl || !errorEl || !btn) return;
 
+      const LEAD_FIELDS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','landing_path','referrer','first_touch'];
+      const applyLeadSourceFields = () => {
+        try {
+          const raw = sessionStorage.getItem('wf_lead_source');
+          if (!raw) return;
+          const data = JSON.parse(raw);
+          LEAD_FIELDS.forEach((name) => {
+            const el = form.querySelector('input[name="' + name + '"]');
+            if (el && data[name]) el.value = String(data[name]);
+          });
+        } catch (e) {}
+      };
+      applyLeadSourceFields();
+
       const showError = (msg) => {
         errorEl.textContent = msg;
         errorEl.style.display = 'block';
@@ -109,6 +134,7 @@ const contactSchema = {
         btn.disabled = true;
         btn.textContent = 'Sending…';
         try {
+          applyLeadSourceFields();
           const formData = new FormData(form);
           const res = await fetch('/api/contact', {
             method: 'POST',
