@@ -9,6 +9,7 @@
     "prebuild": "node scripts/generate-llms-full.mjs",
     "build": "astro build",
     "preview": "astro preview",
+    "test": "node --test --experimental-strip-types src/lib/lead-source.test.ts",
     "astro": "astro",
     "edit": "node scripts/edit-server.mjs"
   },
@@ -17,6 +18,8 @@
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/vercel": "^8.2.11",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.1.1",
     "astro": "^5.16.0",
     "resend": "^6.12.0"
   },

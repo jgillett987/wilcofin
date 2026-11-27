@@ -8,6 +8,7 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
+import { formatLeadSourceHtml, formatLeadSourceText, parseLeadSource } from '../../lib/lead-source';
 
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -101,6 +102,7 @@ export const POST: APIRoute = async ({ request }) => {
   let phone = '';
   let message = '';
   let trap = ''; // simple spam check
+  let leadSource = parseLeadSource(undefined);
 
   const contentType = request.headers.get('content-type') || '';
   try {
@@ -111,6 +113,7 @@ export const POST: APIRoute = async ({ request }) => {
       phone = String(body.phone ?? '');
       message = String(body.message ?? '');
       trap = String(body.website ?? '');
+      leadSource = parseLeadSource(body);
     } else {
       const form = await request.formData();
       name = String(form.get('name') ?? '');
@@ -118,6 +121,7 @@ export const POST: APIRoute = async ({ request }) => {
       phone = String(form.get('phone') ?? '');
       message = String(form.get('message') ?? '');
       trap = String(form.get('website') ?? '');
+      leadSource = parseLeadSource(form);
     }
   } catch (err) {
     return json({ ok: false, error: 'Could not read submission.' }, 400);
@@ -161,6 +165,8 @@ export const POST: APIRoute = async ({ request }) => {
     'Message:',
     message,
     '',
+    formatLeadSourceText(leadSource),
+    '',
     '---',
     'Sent from the contact form at https://www.wilcofin.com/contact',
   ]
@@ -176,6 +182,7 @@ export const POST: APIRoute = async ({ request }) => {
         ${phone ? `<tr><td style="padding:6px 0;color:#5a6582;font-size:14px;">Phone</td><td style="padding:6px 0;"><a href="tel:${esc(phone)}" style="color:#011342;">${esc(phone)}</a></td></tr>` : ''}
       </table>
       <div style="border-left:3px solid #81c460;padding:4px 14px;background:#f7f9fc;white-space:pre-wrap;line-height:1.55;">${esc(message)}</div>
+      ${formatLeadSourceHtml(leadSource)}
       <p style="color:#5a6582;font-size:12px;margin-top:24px;">Sent from the contact form at <a href="https://www.wilcofin.com/contact" style="color:#011342;">wilcofin.com/contact</a>.</p>
     </div>
   `;
